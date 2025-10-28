@@ -411,7 +411,7 @@
             <outputs>
                 <tool>
                     <name>ILINK</name>
-                    <file> 387 87</file>
+                    <file> 87 387</file>
                 </tool>
             </outputs>
         </file>
@@ -1474,6 +1474,10 @@
         <file>
             <name>$PROJ_DIR$\..\user_app\user_app_modbus_rtu\user_app_modbus_rtu.c</name>
             <outputs>
+                <tool>
+                    <name>ICCARM</name>
+                    <file> 97</file>
+                </tool>
                 <tool>
                     <name>__cstat</name>
                     <file> 358</file>
