@@ -1551,6 +1551,10 @@
             <name>$PROJ_DIR$\..\user_app\user_app_sensor\user_app_sensor.c</name>
             <outputs>
                 <tool>
+                    <name>ICCARM</name>
+                    <file> 142</file>
+                </tool>
+                <tool>
                     <name>__cstat</name>
                     <file> 136</file>
                 </tool>
