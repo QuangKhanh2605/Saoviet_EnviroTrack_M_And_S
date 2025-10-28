@@ -1,96 +1,96 @@
 user_connect_sensor.pbi: \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\user_app\user_app_sensor\user_connect_sensor.c \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\user_app\user_app_sensor/user_connect_sensor.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_util\user_util.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Core/Inc\stm32l4xx_hal_conf.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_rcc.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/CMSIS/Device/ST/STM32L4xx/Include\stm32l4xx.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l433xx.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/CMSIS/Include\core_cm4.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\user_app\user_app_sensor\user_connect_sensor.c \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\user_app\user_app_sensor/user_connect_sensor.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_util\user_util.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Core/Inc\stm32l4xx_hal_conf.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_rcc.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/CMSIS/Device/ST/STM32L4xx/Include\stm32l4xx.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l433xx.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/CMSIS/Include\core_cm4.h \
   C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdint.h \
   C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\ycheck.h \
   C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\yvals.h \
   C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Defaults.h \
   C:\\Program\ Files\ (x86)\\IAR\ Systems\\Embedded\ Workbench\ 8.3\\arm\\inc\\c\\DLib_Config_Full.h \
   C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/CMSIS/Include/cmsis_version.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/CMSIS/Include/cmsis_compiler.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/CMSIS/Include\cmsis_iccarm.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/CMSIS/Include/cmsis_version.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/CMSIS/Include/cmsis_compiler.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/CMSIS/Include\cmsis_iccarm.h \
   C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\iccarm_builtin.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/CMSIS/Include/mpu_armv7.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/CMSIS/Include/mpu_armv7.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
   C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stddef.h \
   C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\ysizet.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_gpio.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_dma.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_cortex.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_exti.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_flash.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_iwdg.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_pwr.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_rtc.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc_ex.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_spi.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi_ex.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_uart.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Core/Inc\main.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_gpio.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_dma.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_cortex.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_exti.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_flash.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_iwdg.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_pwr.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_rtc.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc_ex.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_spi.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi_ex.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_uart.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Core/Inc\main.h \
   C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\string.h \
   C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product_string.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_trace\user_adv_trace.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_trace\user_adv_trace.h \
   C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdio.h \
   C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdlib.h \
   C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product_stdlib.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_util\user_tiny_vsnprintf.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_util\user_tiny_vsnprintf.h \
   C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdarg.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_eventdriven\event_driven.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_app_common\user_define.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_app_common/user_app_comm.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_app_common/user_define.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_app_modbus_rtu\user_app_rs485.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\user_app\user_app_sensor\user_app_sensor.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_app_interface\lcd_display.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd\glcd.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd/devices/STM32L4.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd/controllers/ST7565R.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd/glcd_controllers.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd/glcd_graphics.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd/glcd_graphs.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd/glcd_text_tiny.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd/glcd_text.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd/unit_tests.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd\fonts\Liberation_Sans11x14_Numbers.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd\fonts\font5x7.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_app_interface/button.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd\fonts\Liberation_Sans17x17_Alpha.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd\fonts\Liberation_Sans15x21_Numbers.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_component\user_mem\user_internal_mem\user_internal_mem.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_util\onchipflash.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_util/user_util.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_queue\queue_p.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_component\user_mem\user_mem_comm.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_app_common/user_modem.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_util\user_lpm.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_app_common/user_log.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_uart\user_uart.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_util\user_time.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_timer\user_rtc.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_timer/user_timer.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_eventdriven\event_driven.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_app_common\user_define.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_app_common/user_app_comm.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_app_common/user_define.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_app_modbus_rtu\user_app_rs485.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\user_app\user_app_sensor\user_app_sensor.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_app_interface\lcd_display.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd\glcd.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd/devices/STM32L4.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd/controllers/ST7565R.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd/glcd_controllers.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd/glcd_graphics.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd/glcd_graphs.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd/glcd_text_tiny.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd/glcd_text.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd/unit_tests.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd\fonts\Liberation_Sans11x14_Numbers.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd\fonts\font5x7.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_app_interface/button.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd\fonts\Liberation_Sans17x17_Alpha.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_glcd\fonts\Liberation_Sans15x21_Numbers.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_component\user_mem\user_internal_mem\user_internal_mem.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_util\onchipflash.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_util/user_util.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_queue\queue_p.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_component\user_mem\user_mem_comm.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_app_common/user_modem.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_util\user_lpm.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_app_common/user_log.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_uart\user_uart.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_util\user_time.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_timer\user_rtc.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_timer/user_timer.h \
   C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdbool.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_util\user_obis_sv.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_util\user_string.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_at_serial\user_at_serial.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Core/Inc\usart.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Core/Inc/main.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_app_modbus_rtu\user_rs485.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\user_app\user_app_sensor\user_connect_sensor.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_app_modbus_rtu\user_app_modbus_rtu.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Sensor_Slave\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_component\user_convert_variable\user_convert_variable.h
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_util\user_obis_sv.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_util\user_string.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_at_serial\user_at_serial.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Core/Inc\usart.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM/../Core/Inc/main.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_app_modbus_rtu\user_rs485.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\user_app\user_app_sensor\user_connect_sensor.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_app_modbus_rtu\user_app_modbus_rtu.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_component\user_convert_variable\user_convert_variable.h

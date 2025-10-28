@@ -213,6 +213,21 @@ void Handle_Data_Measure(uint8_t KindRecv)
             
             sSensor_pH.pH_Filter_f = Filter_pH(sSensor_pH.pH_Value_f);
             sSensor_pH.temp_Filter_f = Filter_Temp(sSensor_pH.temp_Value_f);
+            
+            sSensor_pH.temp_Filter_f += sSensor_pH.temp_Offset_f;
+            
+            if(sSensor_pH.pH_Filter_f + sSensor_pH.pH_Offset_f < 0)
+            {
+                sSensor_pH.pH_Filter_f = 0;
+            }
+            else if(sSensor_pH.pH_Filter_f + sSensor_pH.pH_Offset_f > PH_RANGE_MAX)
+            {
+                sSensor_pH.pH_Filter_f = PH_RANGE_MAX;
+            }
+            else
+            {
+                sSensor_pH.pH_Filter_f += sSensor_pH.pH_Offset_f;
+            }
           break;
           
         default:

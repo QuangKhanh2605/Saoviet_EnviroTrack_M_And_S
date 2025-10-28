@@ -19,6 +19,8 @@
 #define DAC_MIN                 0
 #define DAC_MAX                 4095
 
+#define PH_RANGE_MAX            14
+
 typedef enum
 {
     _EVENT_SENSOR_ENTRY,

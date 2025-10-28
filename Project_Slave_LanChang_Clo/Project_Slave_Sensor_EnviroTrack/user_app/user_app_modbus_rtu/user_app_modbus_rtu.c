@@ -10,18 +10,22 @@ uint8_t _Cb_W_ModbusRTU_REG_ID(sData *str, uint16_t Pos);
 uint8_t _Cb_R_ModbusRTU_REG_Baudrate(sData *str, uint16_t Pos);
 uint8_t _Cb_W_ModbusRTU_REG_Baudrate(sData *str, uint16_t Pos);
 
-uint8_t _Cb_R_ModbusRTU_REG_pH_Measure(sData *str, uint16_t Pos);
+uint8_t _Cb_R_ModbusRTU_REG_Clo_Measure(sData *str, uint16_t Pos);
 uint8_t _Cb_R_ModbusRTU_REG_Temp_Measure(sData *str, uint16_t Pos);
+
+uint8_t _Cb_R_ModbusRTU_REG_pH_Compensation(sData *str, uint16_t Pos);
+uint8_t _Cb_W_ModbusRTU_REG_pH_Compensation(sData *str, uint16_t Pos);
 
 /*============================ Struct var ============================*/
 struct_CheckList_Reg_Modbus_RTU sCheckList_Reg_Modbus_RTU[] =
 {
 //      id ENUM                     id Reg      Length          Cb_Read         Cb_Write
-      {_E_REGISTER_BEGIN,           NULL,       NULL,     NONE_Register_CallBack,           NONE_Register_CallBack},
-      {_E_REGISTER_ID,              0x0000,     1,        _Cb_R_ModbusRTU_REG_ID,           _Cb_W_ModbusRTU_REG_ID},
-      {_E_REGISTER_BAUDRATE,        0x0001,     1,        _Cb_R_ModbusRTU_REG_Baudrate,     _Cb_W_ModbusRTU_REG_Baudrate},
-      {_E_REGISTER_PH_MEASURE,      0x0002,     2,        _Cb_R_ModbusRTU_REG_pH_Measure,   NONE_Register_CallBack},
-      {_E_REGISTER_TEMP_MEASURE,    0x0004,     2,        _Cb_R_ModbusRTU_REG_Temp_Measure, NONE_Register_CallBack},
+      {_E_REGISTER_BEGIN,           NULL,       NULL,     NONE_Register_CallBack,               NONE_Register_CallBack},
+      {_E_REGISTER_ID,              0x0000,     1,        _Cb_R_ModbusRTU_REG_ID,               _Cb_W_ModbusRTU_REG_ID},
+      {_E_REGISTER_BAUDRATE,        0x0001,     1,        _Cb_R_ModbusRTU_REG_Baudrate,         _Cb_W_ModbusRTU_REG_Baudrate},
+      {_E_REGISTER_CLO_MEASURE,     0x0002,     2,        _Cb_R_ModbusRTU_REG_Clo_Measure,      NONE_Register_CallBack},
+      {_E_REGISTER_TEMP_MEASURE,    0x0004,     2,        _Cb_R_ModbusRTU_REG_Temp_Measure,     NONE_Register_CallBack},
+      {_E_REGISTER_PH_COMPENSATION, 0x0006,     2,        _Cb_R_ModbusRTU_REG_pH_Compensation,  _Cb_W_ModbusRTU_REG_pH_Compensation},
 };
 static uint8_t aDATA_CONFIG[128];
 
@@ -90,7 +94,7 @@ uint8_t _Cb_W_ModbusRTU_REG_Baudrate(sData *str, uint16_t Pos)
 }
 
 /*----------- _E_REGISTER_TEMP_OBJECT -----------*/
-uint8_t _Cb_R_ModbusRTU_REG_pH_Measure(sData *str, uint16_t Pos)
+uint8_t _Cb_R_ModbusRTU_REG_Clo_Measure(sData *str, uint16_t Pos)
 {
     uint32_t hexValue = 0;
     hexValue = Handle_Float_To_hexUint32(sSensor_Clo.Clo_Value_f);
@@ -110,6 +114,38 @@ uint8_t _Cb_R_ModbusRTU_REG_Temp_Measure(sData *str, uint16_t Pos)
     sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue;
     sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue >> 24;
     sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue >> 16;
+    return 1;
+}
+
+/*----------- _E_REGISTER_PH_COMPENSATION -----------*/
+uint8_t _Cb_R_ModbusRTU_REG_pH_Compensation(sData *str, uint16_t Pos)
+{
+    uint32_t hexValue = 0;
+    hexValue = Handle_Float_To_hexUint32(spHRecvMaster.pH_f);
+    sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue >> 8;
+    sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue;
+    sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue >> 24;
+    sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue >> 16;
+    return 1;
+}
+uint8_t _Cb_W_ModbusRTU_REG_pH_Compensation(sData *str, uint16_t Pos)
+{
+    uint32_t ConvertData = 0;
+    float Convert_F = 0;
+    uint8_t pos = 0;
+    pos = Pos;
+    ConvertData = str->Data_a8[pos+2]<<8 | str->Data_a8[pos+3];
+    ConvertData = (ConvertData << 16) | (str->Data_a8[pos]<<8 | str->Data_a8[pos+1]);
+    sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = str->Data_a8[pos];
+    sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = str->Data_a8[pos+1];
+    sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = str->Data_a8[pos+2];
+    sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = str->Data_a8[pos+3];
+    
+    Convert_uint32Hex_To_Float(ConvertData, &Convert_F);
+    spHRecvMaster.pH_f = Convert_F;
+    
+    spHRecvMaster.StateConnect = _SENSOR_CONNECT;
+    fevent_enable(sEventAppSensor, _EVENT_DETECT_PH_RECV);
     return 1;
 }
 

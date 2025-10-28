@@ -13,7 +13,7 @@ static uint8_t fevent_sensor_receive_handle(uint8_t event);
 static uint8_t fevent_sensor_receive_complete(uint8_t event);
 static uint8_t fevent_sensor_wait_calib(uint8_t event);
 
-static uint8_t fevent_detect_connect(uint8_t event);
+static uint8_t fevent_detect_ph_recv(uint8_t event);
 static uint8_t fevent_temp_alarm(uint8_t event);
 static uint8_t fevent_refresh_iwdg(uint8_t event);
 /*==============================Struct=============================*/
@@ -27,7 +27,7 @@ sEvent_struct               sEventAppSensor[]=
   
   {_EVENT_SENSOR_WAIT_CALIB,         0, 5, 5000,             fevent_sensor_wait_calib},
   
-  {_EVENT_DETECT_CONNECT,            1, 5, 15000,            fevent_detect_connect},
+  {_EVENT_DETECT_PH_RECV,            1, 5, 60000,            fevent_detect_ph_recv},
   {_EVENT_TEMP_ALARM,                1, 5, 2000,             fevent_temp_alarm},
   {_EVENT_REFRESH_IWDG,              1, 5, 250,              fevent_refresh_iwdg},
 };
@@ -50,8 +50,8 @@ uint8_t Kind_Trans_Calib = 0;
 struct_TempAlarm    sTempAlarm = {0};
 Struct_Sensor_Clo   sSensor_Clo= {0};
 Struct_Hanlde_RS485 sHandleRs485 = {0};
+Struct_pH_Recv_Master   spHRecvMaster={0,7};
 
-float  pH_Recv_Master = 0; 
 int32_t DCU_Log_DataCalib = 0;
 uint8_t DCU_Log_KindCalib = 0;
 /*========================Function Handle========================*/
@@ -168,9 +168,9 @@ static uint8_t fevent_sensor_wait_calib(uint8_t event)
     return 1;
 }
 
-static uint8_t fevent_detect_connect(uint8_t event)
+static uint8_t fevent_detect_ph_recv(uint8_t event)
 {
-//    sSensorLevel.LevelValueFilter_f = 0;
+    spHRecvMaster.StateConnect = _SENSOR_DISCONNECT;
     fevent_enable(sEventAppSensor, event);
     return 1;
 }
@@ -211,6 +211,22 @@ void Handle_Data_Measure(uint8_t KindRecv)
             
             sSensor_Clo.Clo_Filter_f = Filter_Clo(sSensor_Clo.Clo_Value_f);
             sSensor_Clo.temp_Filter_f = Filter_Temp(sSensor_Clo.temp_Value_f);
+            
+            sSensor_Clo.temp_Filter_f += sSensor_Clo.temp_Offset_f;
+            
+            if(sSensor_Clo.Clo_Filter_f + sSensor_Clo.Clo_Offset_f < 0)
+            {
+                sSensor_Clo.Clo_Filter_f = 0;
+            }
+            else if(sSensor_Clo.Clo_Filter_f + sSensor_Clo.Clo_Offset_f > CLO_RANGE_MAX)
+            {
+                sSensor_Clo.Clo_Filter_f = CLO_RANGE_MAX;
+            }
+            else
+            {
+                sSensor_Clo.Clo_Filter_f += sSensor_Clo.Clo_Offset_f;
+            }
+            
           break;
           
         default:
@@ -493,7 +509,7 @@ void Handle_Data_Recv_SS_Clo(sData sDataRS485, uint8_t KindRecv)
           Convert_uint32Hex_To_Float(Stamp_Hex, &sSensor_Clo.temp_Value_f);
           
           //chuyen doi du lieu
-          test_1 = Chlorine_Compensation_pH(sConvertChlorine.Measure_AD, (int16_t)(pH_Recv_Master*100), (int16_t)(sSensor_Clo.temp_Value_f*100));
+          test_1 = Chlorine_Compensation_pH(sConvertChlorine.Measure_AD, (int16_t)(spHRecvMaster.pH_f *100), (int16_t)(sSensor_Clo.temp_Value_f*100));
           
           sConvertChlorine.sClo_Du.Value = (int16_t)(test_1*100);
           
@@ -514,7 +530,7 @@ void Handle_Data_Recv_SS_Clo(sData sDataRS485, uint8_t KindRecv)
           Stamp_Hex = Read_Register_Rs485(sDataRS485.Data_a8, &Pos, 4);
           sConvertChlorine.Measure_AD =  Handle_HexFloat_To_Int32_Round(Stamp_Hex, 0xFE);
           
-          test_1 = Chlorine_Compensation_pH(sConvertChlorine.Measure_AD, (int16_t)(pH_Recv_Master*100), (int16_t)(sSensor_Clo.temp_Value_f));
+          test_1 = Chlorine_Compensation_pH(sConvertChlorine.Measure_AD, (int16_t)(spHRecvMaster.pH_f*100), (int16_t)(sSensor_Clo.temp_Value_f));
           
           sConvertChlorine.sClo_Du.Value = (int16_t)(test_1*100);
           break;
@@ -1029,14 +1045,14 @@ void DCU_Enter_Calib(void)
                                   sConvertChlorine.Measure_AD, 
                                   Value,
                                   (int16_t)(sSensor_Clo.temp_Value_f*100),
-                                  (int16_t)(pH_Recv_Master*100));
+                                  (int16_t)(spHRecvMaster.pH_f*100));
               break;
               
             case _DCU_CALIB_CLO_POINT1:
               Save_Chlorine_PointCalib(sConvertChlorine.Measure_AD, 
                                        Value, 
                                        (int16_t)(sSensor_Clo.temp_Value_f*100),
-                                       (int16_t)(pH_Recv_Master*100),
+                                       (int16_t)(spHRecvMaster.pH_f*100),
                                        sConvertChlorine.ADC_CalibPoint_2, 
                                        sConvertChlorine.Clo_CalibPoint_2, 
                                        sConvertChlorine.Temp_CalibPoint_2, 
@@ -1051,7 +1067,7 @@ void DCU_Enter_Calib(void)
                                        sConvertChlorine.Measure_AD, 
                                        Value, 
                                        (int16_t)(sSensor_Clo.temp_Value_f*100),
-                                       (int16_t)(pH_Recv_Master*100));
+                                       (int16_t)(spHRecvMaster.pH_f*100));
               break;
               
             case _DCU_CALIB_CLO_CONST_TEMP:
@@ -1625,7 +1641,7 @@ void       AT_CMD_Set_Clo_Calib_Point(sData *str_Receiv, uint16_t Pos)
 void       Init_AppSensor(void)
 {
     Init_ParamCalib();
-    Init_TempAlarm();
+//    Init_TempAlarm();
     Init_Parameter_Sensor();
     
     Init_Chlorine_Calib();

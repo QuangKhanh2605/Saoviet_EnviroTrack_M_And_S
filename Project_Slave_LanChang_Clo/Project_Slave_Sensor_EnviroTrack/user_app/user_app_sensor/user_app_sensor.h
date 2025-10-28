@@ -19,6 +19,8 @@
 #define DAC_MIN                 0
 #define DAC_MAX                 4095
 
+#define CLO_RANGE_MAX           2
+
 typedef enum
 {
     _EVENT_SENSOR_ENTRY,
@@ -27,6 +29,7 @@ typedef enum
     _EVENT_SENSOR_RECEIVE_COMPLETE,
     
     _EVENT_SENSOR_WAIT_CALIB,
+    _EVENT_DETECT_PH_RECV,
     
     _EVENT_DETECT_CONNECT,
     _EVENT_TEMP_ALARM,
@@ -154,13 +157,19 @@ typedef struct
     uint32_t        Measure_AD;
 }Struct_Sensor_Clo;
 
+typedef struct
+{
+    uint8_t StateConnect;
+    float   pH_f;
+}Struct_pH_Recv_Master;
+
 extern sEvent_struct        sEventAppSensor[];
 extern Struct_KindMode485   sKindMode485;
 extern struct_TempAlarm     sTempAlarm;
 extern Struct_Sensor_Clo    sSensor_Clo;
 extern Struct_Hanlde_RS485  sHandleRs485;
 extern Struct_ConvertChlorine      sConvertChlorine;
-extern float  pH_Recv_Master;
+extern Struct_pH_Recv_Master   spHRecvMaster;
 /*====================Function Handle====================*/
 
 uint8_t    AppSensor_Task(void);
