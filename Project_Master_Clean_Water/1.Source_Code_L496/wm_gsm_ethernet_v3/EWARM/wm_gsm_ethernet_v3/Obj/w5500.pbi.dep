@@ -1,0 +1,11 @@
+w5500.pbi: \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\user_component\user_ethernet\W5500\w5500.c \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\user_component\user_ethernet\W5500/w5500.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdint.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\ycheck.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\yvals.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Defaults.h \
+  C:\\Program\ Files\ (x86)\\IAR\ Systems\\Embedded\ Workbench\ 8.3\\arm\\inc\\c\\DLib_Config_Full.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM\..\user_component\user_ethernet\wizchip_conf.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM\..\user_component\user_ethernet/W5500/w5500.h

@@ -13,6 +13,8 @@ uint8_t _Cb_W_ModbusRTU_REG_Baudrate(sData *str, uint16_t Pos);
 uint8_t _Cb_R_ModbusRTU_REG_pH_Measure(sData *str, uint16_t Pos);
 uint8_t _Cb_R_ModbusRTU_REG_Temp_Measure(sData *str, uint16_t Pos);
 
+uint8_t _Cb_R_ModbusRTU_REG_TDS_Measure(sData *str, uint16_t Pos);
+uint8_t _Cb_R_ModbusRTU_REG_Sal_Measure(sData *str, uint16_t Pos);
 /*============================ Struct var ============================*/
 struct_CheckList_Reg_Modbus_RTU sCheckList_Reg_Modbus_RTU[] =
 {
@@ -22,6 +24,8 @@ struct_CheckList_Reg_Modbus_RTU sCheckList_Reg_Modbus_RTU[] =
       {_E_REGISTER_BAUDRATE,        0x0001,     1,        _Cb_R_ModbusRTU_REG_Baudrate,     _Cb_W_ModbusRTU_REG_Baudrate},
       {_E_REGISTER_PH_MEASURE,      0x0002,     2,        _Cb_R_ModbusRTU_REG_pH_Measure,   NONE_Register_CallBack},
       {_E_REGISTER_TEMP_MEASURE,    0x0004,     2,        _Cb_R_ModbusRTU_REG_Temp_Measure, NONE_Register_CallBack},
+      {_E_REGISTER_TDS_MEASURE,     0x0006,     2,        _Cb_R_ModbusRTU_REG_TDS_Measure,  NONE_Register_CallBack},
+      {_E_REGISTER_SAL_MEASURE,     0x0008,     2,        _Cb_R_ModbusRTU_REG_Sal_Measure,  NONE_Register_CallBack},
 };
 static uint8_t aDATA_CONFIG[128];
 
@@ -101,11 +105,35 @@ uint8_t _Cb_R_ModbusRTU_REG_pH_Measure(sData *str, uint16_t Pos)
     return 1;
 }
 
-/*----------- _E_REGISTER_TEMP_AMBIENT -----------*/
+/*----------- _E_REGISTER_TEMP_MEASURE -----------*/
 uint8_t _Cb_R_ModbusRTU_REG_Temp_Measure(sData *str, uint16_t Pos)
 {
     uint32_t hexValue = 0;
     hexValue = Handle_Float_To_hexUint32(sSensor_EC.temp_Value_f);
+    sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue >> 8;
+    sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue;
+    sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue >> 24;
+    sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue >> 16;
+    return 1;
+}
+
+/*----------- _E_REGISTER_TDS_MEASURE -----------*/
+uint8_t _Cb_R_ModbusRTU_REG_TDS_Measure(sData *str, uint16_t Pos)
+{
+    uint32_t hexValue = 0;
+    hexValue = Handle_Float_To_hexUint32(sSensor_EC.TDS_Value_f);
+    sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue >> 8;
+    sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue;
+    sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue >> 24;
+    sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue >> 16;
+    return 1;
+}
+
+/*----------- _E_REGISTER_SAL_MEASURE -----------*/
+uint8_t _Cb_R_ModbusRTU_REG_Sal_Measure(sData *str, uint16_t Pos)
+{
+    uint32_t hexValue = 0;
+    hexValue = Handle_Float_To_hexUint32(sSensor_EC.Salinity_Value_f);
     sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue >> 8;
     sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue;
     sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue >> 24;

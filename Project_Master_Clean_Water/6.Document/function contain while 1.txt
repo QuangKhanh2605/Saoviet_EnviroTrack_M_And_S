@@ -1,0 +1,21 @@
+
+
+
+
+
+int32_t Eth_Send_Data (uint8_t sn, uint8_t * buf, uint16_t len)
+
+void AppEth_Cb_IP_Conflict (void)
+
+int32_t recv(uint8_t sn, uint8_t * buf, uint16_t len)
+
+int32_t send(uint8_t sn, uint8_t * buf, uint16_t len)
+int32_t sendto(uint8_t sn, uint8_t * buf, uint16_t len, uint8_t * addr, uint16_t port)
+int32_t recvfrom(uint8_t sn, uint8_t * buf, uint16_t len, uint8_t * addr, uint16_t *port)
+
+int8_t DNS_run(uint8_t * dns_ip, uint8_t * name, uint8_t * ip_from_dns)
+
+
+
+
+

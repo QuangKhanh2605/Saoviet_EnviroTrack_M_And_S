@@ -1,0 +1,49 @@
+stm32l4xx_hal_adc.pbi: \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_adc.c \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Core/Inc\stm32l4xx_hal_conf.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_rcc.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_def.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/CMSIS/Device/ST/STM32L4xx/Include\stm32l4xx.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/CMSIS/Device/ST/STM32L4xx/Include/stm32l496xx.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/CMSIS/Include\core_cm4.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stdint.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\ycheck.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\yvals.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Defaults.h \
+  C:\\Program\ Files\ (x86)\\IAR\ Systems\\Embedded\ Workbench\ 8.3\\arm\\inc\\c\\DLib_Config_Full.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\DLib_Product.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/CMSIS/Include/cmsis_version.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/CMSIS/Include/cmsis_compiler.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/CMSIS/Include\cmsis_iccarm.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\iccarm_builtin.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/CMSIS/Include/mpu_armv7.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/CMSIS/Device/ST/STM32L4xx/Include/system_stm32l4xx.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\stddef.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 8.3\arm\inc\c\ysizet.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc_ex.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_gpio.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_gpio_ex.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_dma.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_cortex.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_adc.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_ll_adc.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_adc_ex.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_exti.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_flash.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ex.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_flash_ramfunc.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_i2c.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_i2c_ex.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_lptim.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_pwr.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_rtc.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rtc_ex.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_spi.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_spi_ex.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_tim.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_tim_ex.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc\stm32l4xx_hal_uart.h \
+  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\1.Source_Code_L496\wm_gsm_ethernet_v3\EWARM/../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h

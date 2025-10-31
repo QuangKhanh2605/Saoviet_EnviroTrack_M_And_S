@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<settings>
+    <Stack>
+        <FillEnabled>0</FillEnabled>
+        <OverflowWarningsEnabled>1</OverflowWarningsEnabled>
+        <WarningThreshold>90</WarningThreshold>
+        <SpWarningsEnabled>1</SpWarningsEnabled>
+        <WarnLogOnly>1</WarnLogOnly>
+        <UseTrigger>1</UseTrigger>
+        <TriggerName>main</TriggerName>
+        <LimitSize>0</LimitSize>
+        <ByteLimit>50</ByteLimit>
+    </Stack>
+    <StLinkDriver>
+        <stlinkserialNo>31531457</stlinkserialNo>
+        <stlinkfoundProbes />
+        <CStepIntDis>_ 0</CStepIntDis>
+        <LeaveTargetRunning>_ 0</LeaveTargetRunning>
+        <stlinkResetStyle>0</stlinkResetStyle>
+        <stlinkResetStrategy>2</stlinkResetStrategy>
+    </StLinkDriver>
+    <DebugChecksum>
+        <Checksum>1830833392</Checksum>
+    </DebugChecksum>
+    <Exceptions>
+        <StopOnUncaught>_ 0</StopOnUncaught>
+        <StopOnThrow>_ 0</StopOnThrow>
+    </Exceptions>
+    <Disassembly>
+        <MixedMode>1</MixedMode>
+        <InstrCount>0</InstrCount>
+    </Disassembly>
+    <CodeCoverage>
+        <Enabled>0</Enabled>
+        <ShowSource>0</ShowSource>
+        <HideCovered>0</HideCovered>
+    </CodeCoverage>
+    <CallStack>
+        <ShowArgs>0</ShowArgs>
+    </CallStack>
+    <SWOTraceHWSettings>
+        <OverrideDefaultClocks>0</OverrideDefaultClocks>
+        <CpuClock>80000000</CpuClock>
+        <ClockAutoDetect>0</ClockAutoDetect>
+        <ClockWanted>2000000</ClockWanted>
+        <JtagSpeed>2000000</JtagSpeed>
+        <Prescaler>40</Prescaler>
+        <TimeStampPrescIndex>0</TimeStampPrescIndex>
+        <TimeStampPrescData>0</TimeStampPrescData>
+        <PcSampCYCTAP>1</PcSampCYCTAP>
+        <PcSampPOSTCNT>15</PcSampPOSTCNT>
+        <PcSampIndex>0</PcSampIndex>
+        <DataLogMode>0</DataLogMode>
+        <ITMportsEnable>0</ITMportsEnable>
+        <ITMportsTermIO>0</ITMportsTermIO>
+        <ITMportsLogFile>0</ITMportsLogFile>
+        <ITMlogFile>$PROJ_DIR$\ITM.log</ITMlogFile>
+    </SWOTraceHWSettings>
+    <struct_types>
+        <Fmt0>ST_TIME_FORMAT-date	3	0</Fmt0>
+        <Fmt1>ST_TIME_FORMAT-day	3	0</Fmt1>
+        <Fmt2>ST_TIME_FORMAT-hour	3	0</Fmt2>
+        <Fmt3>ST_TIME_FORMAT-min	3	0</Fmt3>
+        <Fmt4>ST_TIME_FORMAT-month	3	0</Fmt4>
+        <Fmt5>ST_TIME_FORMAT-sec	3	0</Fmt5>
+        <Fmt6>ST_TIME_FORMAT-year	3	0</Fmt6>
+        <Fmt7>Struct_Pulse-Direct_u8	3	0</Fmt7>
+        <Fmt8>Struct_Pulse-Factor_u8	3	0</Fmt8>
+        <Fmt9>Struct_Pulse-Flow_i32	3	0</Fmt9>
+        <Fmt10>Struct_Pulse-IsOver5Pulse_u8	3	0</Fmt10>
+        <Fmt11>Struct_UserSensor-User_Clo	3	0</Fmt11>
+        <Fmt12>Struct_UserSensor-User_EC	3	0</Fmt12>
+        <Fmt13>Struct_UserSensor-User_Turb	3	0</Fmt13>
+        <Fmt14>Struct_UserSensor-User_pH	3	0</Fmt14>
+        <Fmt15>sAppWmPressureInfor-Mode_u8	3	0</Fmt15>
+        <Fmt16>sAppWmPressureInfor-Val_i32	3	0</Fmt16>
+        <Fmt17>sEvent_struct-e_name	3	0</Fmt17>
+        <Fmt18>sEvent_struct-e_status	3	0</Fmt18>
+        <Fmt19>sModbusDeviceData-Factor	4	0</Fmt19>
+        <Fmt20>sModbusDeviceData-Status_u8	3	0</Fmt20>
+        <Fmt21>sModbusDeviceData-Type_u8	3	0</Fmt21>
+        <Fmt22>sModbusInfor-MType_u8	3	0</Fmt22>
+        <Fmt23>sModbusInfor-SlaveId_u8	3	0</Fmt23>
+        <Fmt24>sOjectInformation-Col_u8	3	0</Fmt24>
+        <Fmt25>sOjectInformation-Mode_u8	3	0</Fmt25>
+        <Fmt26>sOjectInformation-Para_u8	3	0</Fmt26>
+        <Fmt27>sOjectInformation-Row_u8	3	0</Fmt27>
+        <Fmt28>sOjectInformation-Scale_u8	3	0</Fmt28>
+        <Fmt29>sOjectInformation-Screen_u8	3	0</Fmt29>
+        <Fmt30>sOjectInformation-dType_u8	3	0</Fmt30>
+        <Fmt31>sPressureLinearInter-InUnit_u8	3	0</Fmt31>
+        <Fmt32>sPressureLinearInter-OutUnit_u8	3	0</Fmt32>
+        <Fmt33>sRecordMemoryManager-AddAStart_u32	4	0</Fmt33>
+        <Fmt34>sRecordMemoryManager-AddAStop_u32	4	0</Fmt34>
+        <Fmt35>sRecordMemoryManager-AddA_u32	4	0</Fmt35>
+        <Fmt36>sRecordMemoryManager-AddBStart_u32	4	0</Fmt36>
+        <Fmt37>sRecordMemoryManager-AddBStop_u32	4	0</Fmt37>
+        <Fmt38>sRecordMemoryManager-AddB_u32	4	0</Fmt38>
+        <Fmt39>sRecordMemoryManager-AddIndex_u32	4	0</Fmt39>
+        <Fmt40>sRecordMemoryManager-cReaded_u8	3	0</Fmt40>
+        <Fmt41>sRequestATcmd-Port_u8	3	0</Fmt41>
+        <Fmt42>sRequestATcmd-Status_u8	3	0</Fmt42>
+        <Fmt43>sScreenInformation-Flag_u8	4	0</Fmt43>
+        <Fmt44>sScreenInformation-Index_u8	3	0</Fmt44>
+        <Fmt45>sScreenInformation-ParaMax_u8	3	0</Fmt45>
+        <Fmt46>sScreenInformation-ParaMin_u8	3	0</Fmt46>
+        <Fmt47>sScreenInformation-Para_u8	3	0</Fmt47>
+        <Fmt48>sScreenInformation-SubIndex_u8	3	0</Fmt48>
+    </struct_types>
+    <array_types>
+        <Fmt0>uint32_t[6]	3	0</Fmt0>
+        <Fmt1>uint8_t[35]	3	0</Fmt1>
+        <Fmt2>uint8_t[3]	3	0</Fmt2>
+        <Fmt3>uint8_t[4]	4	0</Fmt3>
+    </array_types>
+    <watch_formats>
+        <Fmt0>{W}1:Stamp_Hex	3	0</Fmt0>
+        <Fmt1>{W}42:BytePos	3	0</Fmt1>
+        <Fmt2>{W}42:Const_PH_Compensation_Chlorine	3	0</Fmt2>
+        <Fmt3>{W}42:Count1	3	0</Fmt3>
+        <Fmt4>{W}42:Count2	3	0</Fmt4>
+        <Fmt5>{W}42:Count3	3	0</Fmt5>
+        <Fmt6>{W}42:Count4	3	0</Fmt6>
+        <Fmt7>{W}42:DATA_PING_2	3	0</Fmt7>
+        <Fmt8>{W}42:DurationTimeWarningSensor	3	0</Fmt8>
+        <Fmt9>{W}42:Old_Value_i16	4	0</Fmt9>
+        <Fmt10>{W}42:PressureKey_u8	4	0</Fmt10>
+        <Fmt11>{W}42:Rs485_2Status_u8	3	0</Fmt11>
+        <Fmt12>{W}42:SIZE_DATA	3	0</Fmt12>
+        <Fmt13>{W}42:TempFlag	3	0</Fmt13>
+        <Fmt14>{W}42:_ETH_MQTT_CONNECTED	3	0</Fmt14>
+        <Fmt15>{W}42:_LCD_SCREEN_9	3	0</Fmt15>
+        <Fmt16>{W}42:_UNIT_BAR	3	0</Fmt16>
+        <Fmt17>{W}42:__OJECT_END	3	0</Fmt17>
+        <Fmt18>{W}42:__PASS_WORD_2	3	0</Fmt18>
+        <Fmt19>{W}42:__SET_CALIB_SS_TUR	3	0</Fmt19>
+        <Fmt20>{W}42:__SET_PRESSURE	3	0</Fmt20>
+        <Fmt21>{W}42:__SET_PRESSURE_2_2	3	0</Fmt21>
+        <Fmt22>{W}42:__SET_PRESSURE_2_7	3	0</Fmt22>
+        <Fmt23>{W}42:__SET_PULSE_SET2_1	3	0</Fmt23>
+        <Fmt24>{W}42:__SET_PULSE_SET2_4	3	0</Fmt24>
+        <Fmt25>{W}42:__SET_REQ_1	3	0</Fmt25>
+        <Fmt26>{W}42:__SET_REQ_2_1	3	0</Fmt26>
+        <Fmt27>{W}42:arr_Point	3	0</Fmt27>
+        <Fmt28>{W}42:arr_Slope	3	0</Fmt28>
+        <Fmt29>{W}42:check_data	4	0</Fmt29>
+        <Fmt30>{W}42:count_init	3	0</Fmt30>
+        <Fmt31>{W}42:num	4	0</Fmt31>
+        <Fmt32>{W}42:ph_Send_f	4	0</Fmt32>
+        <Fmt33>{W}42:sAppEthVar.Status_u8	3	0</Fmt33>
+        <Fmt34>{W}42:sAppMem.sReqATcmd.Status_u8	3	0</Fmt34>
+        <Fmt35>{W}42:sButton.IndexMax	3	0</Fmt35>
+        <Fmt36>{W}42:sButton.IndexMin	3	0</Fmt36>
+        <Fmt37>{W}42:sButton.Old_value	3	0</Fmt37>
+        <Fmt38>{W}42:sButton.Status	3	0</Fmt38>
+        <Fmt39>{W}42:sButton.index_para	3	0</Fmt39>
+        <Fmt40>{W}42:sLCD.sScreenNow.Index_u8	3	0</Fmt40>
+        <Fmt41>{W}42:sLCD.sScreenNow.Para_u8	3	0</Fmt41>
+        <Fmt42>{W}42:sLCD.sScreenNow.SubIndex_u8	3	0</Fmt42>
+        <Fmt43>{W}42:sLCDInfor.ScreenIndex_u8	3	0</Fmt43>
+        <Fmt44>{W}42:sLCDInfor.ScreenNow_u8	3	0</Fmt44>
+        <Fmt45>{W}42:sLCDObject[__SET_PULSE_SET2_1].Scale_u8	3	0</Fmt45>
+        <Fmt46>{W}42:sLCDObject[__SET_PULSE_SET2_4].Col_u8	3	0</Fmt46>
+        <Fmt47>{W}42:sLCDObject[sLCD.sScreenNow.Para_u8].Mode_u8	4	0</Fmt47>
+        <Fmt48>{W}42:sMQTT.Status_u8	3	0</Fmt48>
+        <Fmt49>{W}42:sModemInfor.sFrequence.DurOnline_u32	3	0</Fmt49>
+        <Fmt50>{W}42:sOnFlash.Status_u8	3	0</Fmt50>
+        <Fmt51>{W}42:sSimFwUpdate.LasCrcCal_u8	3	0</Fmt51>
+        <Fmt52>{W}42:sSimFwUpdate.LastCrcFile_u8	3	0</Fmt52>
+        <Fmt53>{W}42:sWmDigVar.nModbus_u8	3	0</Fmt53>
+        <Fmt54>{W}42:test1	4	0</Fmt54>
+        <Fmt55>{W}42:test_data1	4	0</Fmt55>
+        <Fmt56>{W}42:test_old_value	4	0</Fmt56>
+        <Fmt57>{W}42:tester	3	0</Fmt57>
+        <Fmt58>{W}42:tmpPHYStatus	3	0</Fmt58>
+    </watch_formats>
+    <Trace2>
+        <Enabled>0</Enabled>
+        <ShowSource>0</ShowSource>
+    </Trace2>
+    <SWOTraceWindow>
+        <PcSampling>0</PcSampling>
+        <InterruptLogs>0</InterruptLogs>
+        <ForcedTimeStamps>0</ForcedTimeStamps>
+        <EventCPI>0</EventCPI>
+        <EventEXC>0</EventEXC>
+        <EventFOLD>0</EventFOLD>
+        <EventLSU>0</EventLSU>
+        <EventSLEEP>0</EventSLEEP>
+    </SWOTraceWindow>
+    <DataLog>
+        <LogEnabled>0</LogEnabled>
+        <GraphEnabled>0</GraphEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+        <SumEnabled>0</SumEnabled>
+        <ShowTimeSum>1</ShowTimeSum>
+    </DataLog>
+    <InterruptLog>
+        <LogEnabled>0</LogEnabled>
+        <GraphEnabled>0</GraphEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+        <SumEnabled>0</SumEnabled>
+        <ShowTimeSum>1</ShowTimeSum>
+        <SumSortOrder>0</SumSortOrder>
+    </InterruptLog>
+    <EventLog>
+        <Title_0>Ch3</Title_0>
+        <Symbol_0>0 0 1</Symbol_0>
+        <Title_1>Ch2</Title_1>
+        <Symbol_1>0 0 1</Symbol_1>
+        <Title_2>Ch1</Title_2>
+        <Symbol_2>0 0 1</Symbol_2>
+        <Title_3>Ch0</Title_3>
+        <Symbol_3>0 0 1</Symbol_3>
+        <LogEnabled>0</LogEnabled>
+        <GraphEnabled>0</GraphEnabled>
+        <ShowTimeLog>1</ShowTimeLog>
+        <SumEnabled>0</SumEnabled>
+        <ShowTimeSum>1</ShowTimeSum>
+        <SumSortOrder>0</SumSortOrder>
+    </EventLog>
+    <DisassembleMode>
+        <mode>0</mode>
+    </DisassembleMode>
+    <Breakpoints2>
+        <Bp0>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\user_glcd\controllers\PCD8544.c}.87.1" 0 0 1 "" 0 "" 0</Bp0>
+        <Count>1</Count>
+    </Breakpoints2>
+    <TermIOLog>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+    </TermIOLog>
+    <LogFile>
+        <LoggingEnabled>_ 0</LoggingEnabled>
+        <LogFile>_ ""</LogFile>
+        <Category>_ 0</Category>
+    </LogFile>
+    <Aliases>
+        <A0>_ "D:\Project_STM32\4.wm_gsm_ethernet_v3\4.wm_gsm_ethernet_v3\1.Source_Code_L496\wm_gsm_ethernet_v3\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_lptim.c" ""</A0>
+        <A1>_ "D:\wm_gsm_ethernet_v3\user_component\user_mem\user_internal_mem\user_internal_mem.c" ""</A1>
+        <Count>2</Count>
+        <SuppressDialog>0</SuppressDialog>
+    </Aliases>
+    <DriverProfiling>
+        <Enabled>0</Enabled>
+        <Mode>3</Mode>
+        <Graph>0</Graph>
+        <Symbiont>0</Symbiont>
+        <Exclusions />
+    </DriverProfiling>
+    <CallStackLog>
+        <Enabled>0</Enabled>
+    </CallStackLog>
+    <CallStackStripe>
+        <ShowTiming>1</ShowTiming>
+    </CallStackStripe>
+</settings>
