@@ -203,6 +203,7 @@ static uint8_t fevent_refresh_iwdg(uint8_t event)
 /*==================Function Handle Data=================*/
 void Handle_Data_Measure(uint8_t KindRecv)
 {
+    float Stamp = 0;
     switch(KindRecv)
     {
         case _RS485_SS_CLO_OPERA:
@@ -214,19 +215,8 @@ void Handle_Data_Measure(uint8_t KindRecv)
             
             sSensor_Clo.temp_Filter_f += sSensor_Clo.temp_Offset_f;
             
-            if(sSensor_Clo.Clo_Filter_f + sSensor_Clo.Clo_Offset_f < 0)
-            {
-                sSensor_Clo.Clo_Filter_f = 0;
-            }
-            else if(sSensor_Clo.Clo_Filter_f + sSensor_Clo.Clo_Offset_f > CLO_RANGE_MAX)
-            {
-                sSensor_Clo.Clo_Filter_f = CLO_RANGE_MAX;
-            }
-            else
-            {
-                sSensor_Clo.Clo_Filter_f += sSensor_Clo.Clo_Offset_f;
-            }
-            
+            Stamp = sSensor_Clo.Clo_Filter_f + sSensor_Clo.Clo_Offset_f;
+            sSensor_Clo.Clo_Filter_f = ((Stamp) > CLO_RANGE_MAX) ? CLO_RANGE_MAX : ((Stamp) < 0 ? 0 : (Stamp));
           break;
           
         default:

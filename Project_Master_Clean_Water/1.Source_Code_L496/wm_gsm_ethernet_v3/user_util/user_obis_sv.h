@@ -111,6 +111,7 @@
 
 #define OBIS_WARNING_SENSOR_CONNECT 0xD9
 #define OBIS_WARNING_SENSOR_THREAD  0xD6
+#define OBIS_WARNING_DETECT_POWER   0xD3
 
 
 void SV_Protocol_Packet_Data (uint8_t *pTarget, uint16_t *LenTarget, uint8_t Obis, 

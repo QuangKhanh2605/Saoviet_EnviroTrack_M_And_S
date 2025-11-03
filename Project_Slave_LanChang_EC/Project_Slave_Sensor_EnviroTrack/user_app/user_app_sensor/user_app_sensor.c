@@ -200,6 +200,7 @@ static uint8_t fevent_refresh_iwdg(uint8_t event)
 /*==================Function Handle Data=================*/
 void Handle_Data_Measure(uint8_t KindRecv)
 {
+    float Stamp = 0;
     switch(KindRecv)
     {
         case _RS485_SS_EC_OPERA:
@@ -213,45 +214,14 @@ void Handle_Data_Measure(uint8_t KindRecv)
             
             sSensor_EC.temp_Filter_f += sSensor_EC.temp_Offset_f;
             
-            if(sSensor_EC.EC_Filter_f + sSensor_EC.EC_Offset_f < 0)
-            {
-                sSensor_EC.EC_Filter_f = 0;
-            }
-            else if(sSensor_EC.EC_Filter_f + sSensor_EC.EC_Offset_f > EC_RANGE_MAX)
-            {
-                sSensor_EC.EC_Filter_f = EC_RANGE_MAX;
-            }
-            else
-            {
-                sSensor_EC.EC_Filter_f += sSensor_EC.EC_Offset_f;
-            }
+            Stamp = sSensor_EC.EC_Filter_f + sSensor_EC.EC_Offset_f;
+            sSensor_EC.EC_Filter_f = ((Stamp) > EC_RANGE_MAX) ? EC_RANGE_MAX : ((Stamp) < 0 ? 0 : (Stamp));
             
-            if(sSensor_EC.TDS_Filter_f + sSensor_EC.TDS_Offset_f < 0)
-            {
-                sSensor_EC.TDS_Filter_f = 0;
-            }
-            else if(sSensor_EC.TDS_Filter_f + sSensor_EC.TDS_Offset_f > TDS_RANGE_MAX)
-            {
-                sSensor_EC.TDS_Filter_f = TDS_RANGE_MAX;
-            }
-            else
-            {
-                sSensor_EC.TDS_Filter_f += sSensor_EC.TDS_Offset_f;
-            }
+            Stamp = sSensor_EC.TDS_Filter_f + sSensor_EC.TDS_Offset_f;
+            sSensor_EC.TDS_Filter_f = ((Stamp) > TDS_RANGE_MAX) ? TDS_RANGE_MAX : ((Stamp) < 0 ? 0 : (Stamp));
             
-            if(sSensor_EC.EC_Filter_f + sSensor_EC.EC_Offset_f < 0)
-            {
-                sSensor_EC.EC_Filter_f = 0;
-            }
-            else if(sSensor_EC.Salinity_Filter_f + sSensor_EC.Salinity_Offset_f > SALINITY_RANGE_MAX)
-            {
-                sSensor_EC.Salinity_Filter_f = SALINITY_RANGE_MAX;
-            }
-            else
-            {
-                sSensor_EC.Salinity_Filter_f += sSensor_EC.Salinity_Offset_f;
-            }
-            
+            Stamp = sSensor_EC.Salinity_Filter_f + sSensor_EC.Salinity_Offset_f;
+            sSensor_EC.Salinity_Filter_f = ((Stamp) > SALINITY_RANGE_MAX) ? SALINITY_RANGE_MAX : ((Stamp) < 0 ? 0 : (Stamp));
           break;
           
         default:

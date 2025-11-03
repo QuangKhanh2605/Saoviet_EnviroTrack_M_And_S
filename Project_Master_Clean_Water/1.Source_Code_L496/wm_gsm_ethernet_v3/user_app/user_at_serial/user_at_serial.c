@@ -110,6 +110,18 @@ struct_CheckList_AT CheckList_AT_CONFIG[] =
         {_GET_OFFSET_NTU,       NULL,           {(uint8_t*)"at+offsetntu?",13}},
         {_SET_OFFSET_NTU,       NULL,           {(uint8_t*)"at+offsetntu=",13}},
         
+        {_GET_OFFSET_EC,        NULL,           {(uint8_t*)"at+offsetec?",12}},
+        {_SET_OFFSET_EC,        NULL,           {(uint8_t*)"at+offsetec=",12}},
+        
+        {_GET_OFFSET_SAL,       NULL,           {(uint8_t*)"at+offsetsal?",13}},
+        {_SET_OFFSET_SAL,       NULL,           {(uint8_t*)"at+offsetsal=",13}},
+        
+        {_GET_OFFSET_TEMP,      NULL,           {(uint8_t*)"at+offsettemp?",14}},
+        {_SET_OFFSET_TEMP,      NULL,           {(uint8_t*)"at+offsettemp=",14}},
+        
+        {_GET_USER_SENSOR,      NULL,           {(uint8_t*)"at+usersensor?",14}},
+        {_SET_USER_SENSOR,      NULL,           {(uint8_t*)"at+usersensor=",14}},
+        
         {_END_AT_CMD,	        NULL,           {(uint8_t*)"at+end",6}},
 };
 

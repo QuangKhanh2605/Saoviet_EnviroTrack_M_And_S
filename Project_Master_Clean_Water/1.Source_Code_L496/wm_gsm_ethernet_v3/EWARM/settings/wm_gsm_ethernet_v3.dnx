@@ -14,13 +14,13 @@
     <StLinkDriver>
         <stlinkserialNo>31531457</stlinkserialNo>
         <stlinkfoundProbes />
-        <CStepIntDis>_ 0</CStepIntDis>
-        <LeaveTargetRunning>_ 0</LeaveTargetRunning>
         <stlinkResetStyle>0</stlinkResetStyle>
         <stlinkResetStrategy>2</stlinkResetStrategy>
+        <CStepIntDis>_ 0</CStepIntDis>
+        <LeaveTargetRunning>_ 0</LeaveTargetRunning>
     </StLinkDriver>
     <DebugChecksum>
-        <Checksum>1830833392</Checksum>
+        <Checksum>4117894348</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -106,6 +106,9 @@
         <Fmt46>sScreenInformation-ParaMin_u8	3	0</Fmt46>
         <Fmt47>sScreenInformation-Para_u8	3	0</Fmt47>
         <Fmt48>sScreenInformation-SubIndex_u8	3	0</Fmt48>
+        <Fmt49>sStruct_RS485_pH-Count_Disconnect	3	0</Fmt49>
+        <Fmt50>sStruct_RS485_pH-State_Connect_u8	3	0</Fmt50>
+        <Fmt51>sStruct_RS485_pH-State_Recv_Data	3	0</Fmt51>
     </struct_types>
     <array_types>
         <Fmt0>uint32_t[6]	3	0</Fmt0>
@@ -219,13 +222,6 @@
         <ShowTimeSum>1</ShowTimeSum>
         <SumSortOrder>0</SumSortOrder>
     </EventLog>
-    <DisassembleMode>
-        <mode>0</mode>
-    </DisassembleMode>
-    <Breakpoints2>
-        <Bp0>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\user_glcd\controllers\PCD8544.c}.87.1" 0 0 1 "" 0 "" 0</Bp0>
-        <Count>1</Count>
-    </Breakpoints2>
     <TermIOLog>
         <LoggingEnabled>_ 0</LoggingEnabled>
         <LogFile>_ ""</LogFile>
@@ -235,12 +231,6 @@
         <LogFile>_ ""</LogFile>
         <Category>_ 0</Category>
     </LogFile>
-    <Aliases>
-        <A0>_ "D:\Project_STM32\4.wm_gsm_ethernet_v3\4.wm_gsm_ethernet_v3\1.Source_Code_L496\wm_gsm_ethernet_v3\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_lptim.c" ""</A0>
-        <A1>_ "D:\wm_gsm_ethernet_v3\user_component\user_mem\user_internal_mem\user_internal_mem.c" ""</A1>
-        <Count>2</Count>
-        <SuppressDialog>0</SuppressDialog>
-    </Aliases>
     <DriverProfiling>
         <Enabled>0</Enabled>
         <Mode>3</Mode>
@@ -254,4 +244,17 @@
     <CallStackStripe>
         <ShowTiming>1</ShowTiming>
     </CallStackStripe>
+    <DisassembleMode>
+        <mode>0</mode>
+    </DisassembleMode>
+    <Breakpoints2>
+        <Bp0>_ 0 "EMUL_CODE" "{$PROJ_DIR$\..\user_glcd\controllers\PCD8544.c}.87.1" 0 0 1 "" 0 "" 0</Bp0>
+        <Count>1</Count>
+    </Breakpoints2>
+    <Aliases>
+        <A0>_ "D:\Project_STM32\4.wm_gsm_ethernet_v3\4.wm_gsm_ethernet_v3\1.Source_Code_L496\wm_gsm_ethernet_v3\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_lptim.c" ""</A0>
+        <A1>_ "D:\wm_gsm_ethernet_v3\user_component\user_mem\user_internal_mem\user_internal_mem.c" ""</A1>
+        <Count>2</Count>
+        <SuppressDialog>0</SuppressDialog>
+    </Aliases>
 </settings>

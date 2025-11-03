@@ -19,10 +19,8 @@
 typedef enum
 {
     _EVENT_SENSOR_ENTRY,
-    _EVENT_SENSOR_STATE_PH,
-    _EVENT_SENSOR_STATE_CLO,
-    _EVENT_SENSOR_STATE_EC,
-    _EVENT_SENSOR_STATE_TURB,
+    
+    _EVENT_SENSOR_HANDLE_STATE,
     
     _EVENT_SENSOR_END,
 }eKindEventSensor;
@@ -51,6 +49,17 @@ typedef enum
     _ACTIVE_TURB,           //Active sensor Turbidity
 }eKindDCU_StateSensor;
 
+typedef enum
+{
+    _DETECT_POWER,
+    _SENSOR_PH,
+    _SENSOR_CLO,
+    _SENSOR_EC,
+    _SENSOR_TURB,
+    
+    _END_SENSOR,
+}eKind_Sensor;
+
 typedef struct
 {
     float Clo_f;            //Value float offset Clo
@@ -68,6 +77,18 @@ typedef struct
     uint8_t User_EC;            //Chon su dung EC hay khong
     uint8_t User_Turb;     //Chon su dung Turb 10 NTU hay khong
 }Struct_UserSensor;
+
+typedef uint8_t (*_Cb_Handler_Sensor_Connect) (uint8_t);
+
+typedef struct
+{
+    uint8_t e_Name;
+    uint8_t State_Active;
+    uint8_t State_Connect_Now;
+    uint8_t State_Connect_Befor;
+    uint32_t Gettick_Handle;
+    _Cb_Handler_Sensor_Connect 	_Cb_Handler_SS_Connect;
+}Struct_SensorWarning;
 
 extern sEvent_struct                sEventAppSensor[];
 extern Struct_Offset_Measure        sOffsetMeasure;

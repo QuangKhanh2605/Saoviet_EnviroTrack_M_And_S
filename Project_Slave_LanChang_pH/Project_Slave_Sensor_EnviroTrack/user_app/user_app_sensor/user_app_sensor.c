@@ -205,6 +205,7 @@ static uint8_t fevent_refresh_iwdg(uint8_t event)
 /*==================Function Handle Data=================*/
 void Handle_Data_Measure(uint8_t KindRecv)
 {
+    float Stamp = 0;
     switch(KindRecv)
     {
         case _RS485_SS_PH_OPERA:
@@ -216,18 +217,8 @@ void Handle_Data_Measure(uint8_t KindRecv)
             
             sSensor_pH.temp_Filter_f += sSensor_pH.temp_Offset_f;
             
-            if(sSensor_pH.pH_Filter_f + sSensor_pH.pH_Offset_f < 0)
-            {
-                sSensor_pH.pH_Filter_f = 0;
-            }
-            else if(sSensor_pH.pH_Filter_f + sSensor_pH.pH_Offset_f > PH_RANGE_MAX)
-            {
-                sSensor_pH.pH_Filter_f = PH_RANGE_MAX;
-            }
-            else
-            {
-                sSensor_pH.pH_Filter_f += sSensor_pH.pH_Offset_f;
-            }
+            Stamp = sSensor_pH.pH_Filter_f + sSensor_pH.pH_Offset_f;
+            sSensor_pH.pH_Filter_f = ((Stamp) > PH_RANGE_MAX) ? PH_RANGE_MAX : ((Stamp) < 0 ? 0 : (Stamp));
           break;
           
         default:

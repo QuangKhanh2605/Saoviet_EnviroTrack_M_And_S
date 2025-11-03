@@ -125,12 +125,12 @@ sOjectInformation   sLCDObject[] =
     {   __SET_REQ_2_1,      "*Tsend Data:",     NULL,   _DTYPE_STRING,   0,      NULL,      2,  24, 0x00,    _LCD_SCR_SET_FREQ },
     {   __SET_REQ_2_2,      NULL,               NULL,   _DTYPE_U32,      0,      " (min)",  3,  36, 0x02,    _LCD_SCR_SET_FREQ },
 
-    {   __SET_OFFSET_SS_PH,         "1.pH  : ",     NULL,   _DTYPE_I32,    0xFE,      "  pH       ",      2,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
-    {   __SET_OFFSET_SS_CLO,        "2.Clo : ",     NULL,   _DTYPE_I32,    0xFE,      "  mg/L     ",      3,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
-    {   __SET_OFFSET_SS_TURB,       "3.Turb: ",     NULL,   _DTYPE_I32,    0xFE,      "  NTU      ",      4,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
-    {   __SET_OFFSET_SS_EC,         "4.EC  : ",     NULL,   _DTYPE_I32,    0xFE,      "  uS/cm    ",      5,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
-    {   __SET_OFFSET_SS_SALINITY,   "5.Sal : ",     NULL,   _DTYPE_I32,    0xFE,      "  %        ",      6,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
-    {   __SET_OFFSET_SS_TEMP,       "6.Temp: ",     NULL,   _DTYPE_I32,    0xFE,      "  ‰C       ",      7,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
+    {   __SET_OFFSET_SS_PH,         "1.pH  : ",     NULL,   _DTYPE_I32,    0xFE,      " pH       ",      2,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
+    {   __SET_OFFSET_SS_CLO,        "2.Clo : ",     NULL,   _DTYPE_I32,    0xFE,      " mg/L     ",      3,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
+    {   __SET_OFFSET_SS_TURB,       "3.Turb: ",     NULL,   _DTYPE_I32,    0xFE,      " NTU      ",      4,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
+    {   __SET_OFFSET_SS_EC,         "4.EC  : ",     NULL,   _DTYPE_I32,    0xFE,      " uS/cm    ",      5,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
+    {   __SET_OFFSET_SS_SALINITY,   "5.Sal : ",     NULL,   _DTYPE_I32,    0xFE,      " %        ",      6,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
+    {   __SET_OFFSET_SS_TEMP,       "6.Temp: ",     NULL,   _DTYPE_I32,    0xFE,      " ‰C       ",      7,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
     
     {   __SET_OPTION_SS_TITLE,  "OPTION SENSOR",  NULL,   _DTYPE_STRING,   0x00, NULL,        2,  26,  0x00,    _LCD_SCR_SET_OPTION_SENSOR  },
     {   __SET_OPTION_SS_PH,     "1.pH      : ",   NULL,   _DTYPE_U8,   0x00, NULL,            3,  14,  0x00,    _LCD_SCR_SET_OPTION_SENSOR  },

@@ -543,9 +543,9 @@ void Handle_Data_Measure(uint8_t KindRecv)
     float   Stamp = 0;
     if(sUserSensor.User_pH == _ACTIVE_SENSOR && sRs485_pH.State_Recv_Data == 1)
     {
-        Stamp = (sRs485_pH.pH_Value_f + sOffsetMeasure.pH_f >= 0) ? (sRs485_pH.pH_Value_f + sOffsetMeasure.pH_f) : 0;
+        Stamp = sRs485_pH.pH_Value_f + sOffsetMeasure.pH_f;
         sDataSensorMeasure.spH.State_u8 = 1;
-        sDataSensorMeasure.spH.Value_i32 = (int32_t)(Stamp * 100);
+        sDataSensorMeasure.spH.Value_i32 = (int32_t)((Stamp >= 0) ? (Stamp * 100) : 0);
         sDataSensorMeasure.spH.Scale_u8 = 0xFE;
         
         if(Recv_Temp == 0)
@@ -560,9 +560,9 @@ void Handle_Data_Measure(uint8_t KindRecv)
     
     if(sUserSensor.User_Clo == _ACTIVE_SENSOR && sRs485_Clo.State_Recv_Data == 1)
     {
-        Stamp = (sRs485_Clo.Clo_Value_f + sOffsetMeasure.Clo_f >= 0) ? (sRs485_Clo.Clo_Value_f + sOffsetMeasure.Clo_f) : 0;
+        Stamp = sRs485_Clo.Clo_Value_f + sOffsetMeasure.Clo_f;
         sDataSensorMeasure.sClo.State_u8 = 1;
-        sDataSensorMeasure.sClo.Value_i32 = (int32_t)(Stamp * 100);
+        sDataSensorMeasure.sClo.Value_i32 = (int32_t)(int32_t)((Stamp >= 0) ? (Stamp * 100) : 0);
         sDataSensorMeasure.sClo.Scale_u8 = 0xFE;
         
         if(Recv_Temp == 0)
@@ -577,14 +577,14 @@ void Handle_Data_Measure(uint8_t KindRecv)
     
     if(sUserSensor.User_EC == _ACTIVE_SENSOR && sRs485_EC.State_Recv_Data == 1)
     {
-        Stamp = (sRs485_EC.EC_Value_f + sOffsetMeasure.EC_f >= 0) ? (sRs485_EC.EC_Value_f + sOffsetMeasure.EC_f) : 0;
+        Stamp = sRs485_EC.EC_Value_f + sOffsetMeasure.EC_f;
         sDataSensorMeasure.sEC.State_u8 = 1;
-        sDataSensorMeasure.sEC.Value_i32 = (int32_t)(Stamp * 100);
+        sDataSensorMeasure.sEC.Value_i32 = (int32_t)((Stamp >= 0) ? (Stamp * 100) : 0);
         sDataSensorMeasure.sEC.Scale_u8 = 0xFE;
         
-        Stamp = (sRs485_EC.Sal_Value_f + sOffsetMeasure.Sal_f >= 0) ? (sRs485_EC.Sal_Value_f + sOffsetMeasure.Sal_f) : 0;
+        Stamp = sRs485_EC.Sal_Value_f + sOffsetMeasure.Sal_f;
         sDataSensorMeasure.sSal.State_u8 = 1;
-        sDataSensorMeasure.sSal.Value_i32 = (int32_t)(Stamp * 100);
+        sDataSensorMeasure.sSal.Value_i32 = (int32_t)((Stamp >= 0) ? (Stamp * 100) : 0);
         sDataSensorMeasure.sSal.Scale_u8 = 0xFE;
         
         if(Recv_Temp == 0)
@@ -603,16 +603,16 @@ void Handle_Data_Measure(uint8_t KindRecv)
     
     if(sUserSensor.User_Turb == _ACTIVE_SENSOR && sRs485_Turb.State_Recv_Data == 1)
     {
-        Stamp = (sRs485_Turb.Turb_Value_f + sOffsetMeasure.Turb_f >= 0) ? (sRs485_Turb.Turb_Value_f + sOffsetMeasure.Turb_f) : 0;
+        Stamp = sRs485_Turb.Turb_Value_f + sOffsetMeasure.Turb_f;
         sDataSensorMeasure.sTurb.State_u8 = 1;
         if(sRs485_Turb.Turb_Value_f <= 10)
         {
-            sDataSensorMeasure.sTurb.Value_i32 = (int32_t)(Stamp * 100);
+            sDataSensorMeasure.sTurb.Value_i32 = (int32_t)((Stamp >= 0) ? (Stamp * 100) : 0);
             sDataSensorMeasure.sTurb.Scale_u8 = 0xFE;
         }
         else
         {
-            sDataSensorMeasure.sTurb.Value_i32 = (int32_t)(Stamp * 100);
+            sDataSensorMeasure.sTurb.Value_i32 = (int32_t)((Stamp >= 0) ? (Stamp * 10) : 0);
             sDataSensorMeasure.sTurb.Scale_u8 = 0xFF;
         }
         
@@ -629,30 +629,30 @@ void Handle_Data_Measure(uint8_t KindRecv)
     switch(Recv_Temp)
     {
         case 1:
-            Stamp = (sRs485_pH.Temp_Value_f + sOffsetMeasure.Temp_f >= 0) ? (sRs485_pH.Temp_Value_f + sOffsetMeasure.Temp_f) : 0;
+            Stamp = sRs485_pH.Temp_Value_f + sOffsetMeasure.Temp_f;
             sDataSensorMeasure.sTemp.State_u8 = 1;
-            sDataSensorMeasure.sTemp.Value_i32 = (int32_t)(Stamp * 100);
+            sDataSensorMeasure.sTemp.Value_i32 = (int32_t)((Stamp >= 0) ? (Stamp * 100) : 0);
             sDataSensorMeasure.sTemp.Scale_u8 = 0xFE;
             break;
             
         case 2:
-            Stamp = (sRs485_Clo.Temp_Value_f + sOffsetMeasure.Temp_f >= 0) ? (sRs485_Clo.Temp_Value_f + sOffsetMeasure.Temp_f) : 0;
+            Stamp = sRs485_Clo.Temp_Value_f + sOffsetMeasure.Temp_f;
             sDataSensorMeasure.sTemp.State_u8 = 1;
-            sDataSensorMeasure.sTemp.Value_i32 = (int32_t)(Stamp * 100);
+            sDataSensorMeasure.sTemp.Value_i32 = (int32_t)((Stamp >= 0) ? (Stamp * 100) : 0);
             sDataSensorMeasure.sTemp.Scale_u8 = 0xFE;
             break;
             
         case 3:
-            Stamp = (sRs485_EC.Temp_Value_f + sOffsetMeasure.Temp_f >= 0) ? (sRs485_EC.Temp_Value_f + sOffsetMeasure.Temp_f) : 0;
+            Stamp = sRs485_EC.Temp_Value_f + sOffsetMeasure.Temp_f;
             sDataSensorMeasure.sTemp.State_u8 = 1;
-            sDataSensorMeasure.sTemp.Value_i32 = (int32_t)(Stamp * 100);
+            sDataSensorMeasure.sTemp.Value_i32 = (int32_t)((Stamp >= 0) ? (Stamp * 100) : 0);
             sDataSensorMeasure.sTemp.Scale_u8 = 0xFE;
             break;
             
         case 4:
-            Stamp = (sRs485_Turb.Temp_Value_f + sOffsetMeasure.Temp_f >= 0) ? (sRs485_Turb.Temp_Value_f + sOffsetMeasure.Temp_f) : 0;
+            Stamp = sRs485_Turb.Temp_Value_f + sOffsetMeasure.Temp_f;
             sDataSensorMeasure.sTemp.State_u8 = 1;
-            sDataSensorMeasure.sTemp.Value_i32 = (int32_t)(Stamp * 100);
+            sDataSensorMeasure.sTemp.Value_i32 = (int32_t)((Stamp >= 0) ? (Stamp * 100) : 0);
             sDataSensorMeasure.sTemp.Scale_u8 = 0xFE;
             break;
             

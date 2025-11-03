@@ -116,6 +116,18 @@ typedef enum
     
     _GET_OFFSET_NTU,
     _SET_OFFSET_NTU,
+    
+    _GET_OFFSET_EC,
+    _SET_OFFSET_EC,
+    
+    _GET_OFFSET_SAL,
+    _SET_OFFSET_SAL,
+    
+    _GET_OFFSET_TEMP,
+    _SET_OFFSET_TEMP,
+    
+    _GET_USER_SENSOR,
+    _SET_USER_SENSOR,
 
     _END_AT_CMD,
 }Type_Command_AT_PC;

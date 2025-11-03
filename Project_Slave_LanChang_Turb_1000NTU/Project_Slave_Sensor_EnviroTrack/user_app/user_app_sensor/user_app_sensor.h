@@ -19,7 +19,7 @@
 #define DAC_MIN                 0
 #define DAC_MAX                 4095
 
-#define TURB_RANGE_MAX          10
+#define TURB_RANGE_MAX          1000
 
 typedef enum
 {

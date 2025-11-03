@@ -40,7 +40,9 @@ static uint8_t fevent_rs485_init_uart(uint8_t event)
 static uint8_t fevent_rs485_receive_complete(uint8_t event)
 {
 /*------------------Xu ly chuoi nhan duoc----------------*/
-    Modem_Check_RTU(&sUart485);
+    if(sHandleRs485.State_Recv_pH == 1)
+        Modem_Check_RTU(&sUart485);
+    
     Reset_Buff(&sUart485);
     return 1;
 }

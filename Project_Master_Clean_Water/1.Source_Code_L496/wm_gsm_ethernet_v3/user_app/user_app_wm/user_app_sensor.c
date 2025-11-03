@@ -7,185 +7,149 @@
 /*============== Function static ===============*/
 static uint8_t fevent_sensor_entry(uint8_t event);
 
-static uint8_t fevent_sensor_state_ph(uint8_t event);
-static uint8_t fevent_sensor_state_clo(uint8_t event);
-static uint8_t fevent_sensor_state_ec(uint8_t event);
-static uint8_t fevent_sensor_state_turb(uint8_t event);
+static uint8_t fevent_sensor_handle_state(uint8_t event);
 /*=================== struct ==================*/
 sEvent_struct               sEventAppSensor[] = 
 {
   {_EVENT_SENSOR_ENTRY,              1, 5, 60000,                fevent_sensor_entry},
   
-  {_EVENT_SENSOR_STATE_PH,           0, 5, 500,                  fevent_sensor_state_ph},
-  {_EVENT_SENSOR_STATE_CLO,          0, 5, 500,                  fevent_sensor_state_clo},
-  {_EVENT_SENSOR_STATE_EC,           0, 5, 500,                  fevent_sensor_state_ec},
-  {_EVENT_SENSOR_STATE_TURB,         0, 5, 500,                  fevent_sensor_state_turb},
+  {_EVENT_SENSOR_HANDLE_STATE,       0, 5, 500,                  fevent_sensor_handle_state},
 };
 uint8_t DurationTimeWarningSensor = 0;
-
 Struct_Offset_Measure       sOffsetMeasure = {0};
 Struct_UserSensor           sUserSensor = {0};
+
+uint8_t _Cb_Handle_Detect_Power(uint8_t State);
+uint8_t _Cb_Handle_SS_pH(uint8_t State);
+uint8_t _Cb_Handle_SS_Clo(uint8_t State);
+uint8_t _Cb_Handle_SS_EC(uint8_t State);
+uint8_t _Cb_Handle_SS_Turb(uint8_t State);
+Struct_SensorWarning        sSensorWarning[] = 
+{
+    //e_Name        State_Active    State_Connect_Now       State_Connect_Befor     Gettick_Handle      _Cb_Handler_SS_Connect
+  {_DETECT_POWER,   _ACTIVE_SENSOR, _SENSOR_CONNECT,      _SENSOR_CONNECT,                  0,          _Cb_Handle_Detect_Power},
+  {_SENSOR_PH,      NULL,           _SENSOR_DISCONNECT,   _SENSOR_DISCONNECT,               0,          _Cb_Handle_SS_pH},
+  {_SENSOR_CLO,     NULL,           _SENSOR_DISCONNECT,   _SENSOR_DISCONNECT,               0,          _Cb_Handle_SS_Clo},
+  {_SENSOR_EC,      NULL,           _SENSOR_DISCONNECT,   _SENSOR_DISCONNECT,               0,          _Cb_Handle_SS_EC},
+  {_SENSOR_TURB,    NULL,           _SENSOR_DISCONNECT,   _SENSOR_DISCONNECT,               0,          _Cb_Handle_SS_Turb},
+};
 /*================= Function Handle ==============*/
 
 static uint8_t fevent_sensor_entry(uint8_t event)
 {
-    fevent_enable(sEventAppSensor, _EVENT_SENSOR_STATE_PH);
+    fevent_enable(sEventAppSensor, _EVENT_SENSOR_HANDLE_STATE);
     return 1;
 }
 
-static uint8_t fevent_sensor_state_ph(uint8_t event)
-{
-    static uint32_t gettick_state_slave = 0;
-    static uint8_t StateSensor_Before = _SENSOR_CONNECT;
-    uint8_t aData[2] = {0};
-
-    if(sRs485_pH.State_Connect_u8 != StateSensor_Before)
+static uint8_t fevent_sensor_handle_state(uint8_t event)
+{   
+    static uint8_t i = _DETECT_POWER;
+    
+    if(sVout.mVol_u32 < 5000)
+        sSensorWarning[_DETECT_POWER].State_Connect_Now = _SENSOR_DISCONNECT;
+    else
+        sSensorWarning[_DETECT_POWER].State_Connect_Now = _SENSOR_CONNECT;
+    
+    sSensorWarning[_SENSOR_PH].State_Active = sUserSensor.User_pH;
+    sSensorWarning[_SENSOR_CLO].State_Active = sUserSensor.User_Clo;
+    sSensorWarning[_SENSOR_EC].State_Active = sUserSensor.User_EC;
+    sSensorWarning[_SENSOR_TURB].State_Active = sUserSensor.User_Turb;
+    
+    sSensorWarning[_SENSOR_PH].State_Connect_Now = sRs485_pH.State_Connect_u8;
+    sSensorWarning[_SENSOR_CLO].State_Connect_Now = sRs485_Clo.State_Connect_u8;
+    sSensorWarning[_SENSOR_EC].State_Connect_Now = sRs485_EC.State_Connect_u8;
+    sSensorWarning[_SENSOR_TURB].State_Connect_Now = sRs485_Turb.State_Connect_u8;
+    
+    if(sSensorWarning[i].State_Active == _ACTIVE_SENSOR)
     {
-        gettick_state_slave = HAL_GetTick();
+        if(sSensorWarning[i].State_Connect_Now != sSensorWarning[i].State_Connect_Befor)
+        {
+            sSensorWarning[i].Gettick_Handle = HAL_GetTick();
+            if(sSensorWarning[i].State_Connect_Now == _SENSOR_DISCONNECT)
+                sSensorWarning[i]._Cb_Handler_SS_Connect(sSensorWarning[i].State_Connect_Now);
+            
+            sSensorWarning[i].State_Connect_Befor = sSensorWarning[i].State_Connect_Now;
+        }
         
-        if(sRs485_pH.State_Connect_u8 == _SENSOR_CONNECT)      
+        if(sSensorWarning[i].State_Connect_Now == _SENSOR_DISCONNECT)
         {
-
+            if(HAL_GetTick() - sSensorWarning[i].Gettick_Handle >= DurationTimeWarningSensor*60000)
+            {
+                sSensorWarning[i].Gettick_Handle = HAL_GetTick();
+                sSensorWarning[i]._Cb_Handler_SS_Connect(sSensorWarning[i].State_Connect_Now);
+            }
         }
-        else
-        {
-            aData[0] = 0x00;
-            aData[1] = 0x00;
-            Log_EventWarnig(OBIS_WARNING_SENSOR_CONNECT, 0x01, aData);
-        }
-
-        StateSensor_Before = sRs485_pH.State_Connect_u8;
     }
-
-    if(sRs485_pH.State_Connect_u8 == _SENSOR_DISCONNECT)
+    else
     {
-        if(HAL_GetTick() - gettick_state_slave >= DurationTimeWarningSensor*60000)
+        sSensorWarning[i].Gettick_Handle = HAL_GetTick();
+    }
+    
+    if(i+1 < _END_SENSOR)
+        i++;
+    else
+        i = _DETECT_POWER;
+    
+    if(sSensorWarning[_DETECT_POWER].State_Connect_Now == _SENSOR_DISCONNECT)
+    {
+        i = _DETECT_POWER;
+        for(uint8_t j = _DETECT_POWER + 1; j < _END_SENSOR; j++)
         {
-            gettick_state_slave = HAL_GetTick();
-            aData[0] = 0x00;
-            aData[1] = 0x00;
-            Log_EventWarnig(OBIS_WARNING_SENSOR_CONNECT, 0x01, aData);
+            sSensorWarning[j].Gettick_Handle = HAL_GetTick();
+            sSensorWarning[j].State_Connect_Befor = _SENSOR_DISCONNECT;
         }
     }
-
-    fevent_enable(sEventAppSensor, _EVENT_SENSOR_STATE_CLO);
+    else
+    {
+        sSensorWarning[_DETECT_POWER].Gettick_Handle = 0;
+    }
+    
+    fevent_enable(sEventAppSensor, event);
+    return 0;
+}
+/*====================Function Handle====================*/
+uint8_t _Cb_Handle_Detect_Power(uint8_t State)
+{
+    uint8_t aData[2] = {0};
+    aData[0] = 0x00;
+    aData[1] = 0x00;
+    Log_EventWarnig(OBIS_WARNING_DETECT_POWER, 0x01, aData);
     return 1;
 }
 
-static uint8_t fevent_sensor_state_clo(uint8_t event)
+uint8_t _Cb_Handle_SS_pH(uint8_t State)
 {
-    static uint32_t gettick_state_slave = 0;
-    static uint8_t StateSensor_Before = _SENSOR_CONNECT;
     uint8_t aData[2] = {0};
-
-    if(sRs485_Clo.State_Connect_u8 != StateSensor_Before)
-    {
-        gettick_state_slave = HAL_GetTick();
-        
-        if(sRs485_Clo.State_Connect_u8 == _SENSOR_CONNECT)      
-        {
-
-        }
-        else
-        {
-            aData[0] = 0x02;
-            aData[1] = 0x00;
-            Log_EventWarnig(OBIS_WARNING_SENSOR_CONNECT, 0x01, aData);
-        }
-
-        StateSensor_Before = sRs485_Clo.State_Connect_u8;
-    }
-
-    if(sRs485_Clo.State_Connect_u8 == _SENSOR_DISCONNECT)
-    {
-        if(HAL_GetTick() - gettick_state_slave >= DurationTimeWarningSensor*60000)
-        {
-            gettick_state_slave = HAL_GetTick();
-            aData[0] = 0x02;
-            aData[1] = 0x00;
-            Log_EventWarnig(OBIS_WARNING_SENSOR_CONNECT, 0x01, aData);
-        }
-    }
-
-    fevent_enable(sEventAppSensor, _EVENT_SENSOR_STATE_EC);
+    aData[0] = 0x00;
+    aData[1] = 0x00;
+    Log_EventWarnig(OBIS_WARNING_SENSOR_CONNECT, 0x01, aData);
     return 1;
 }
 
-static uint8_t fevent_sensor_state_ec(uint8_t event)
+uint8_t _Cb_Handle_SS_Clo(uint8_t State)
 {
-    static uint32_t gettick_state_slave = 0;
-    static uint8_t StateSensor_Before = _SENSOR_CONNECT;
     uint8_t aData[2] = {0};
-
-    if(sRs485_EC.State_Connect_u8 != StateSensor_Before)
-    {
-        gettick_state_slave = HAL_GetTick();
-        
-        if(sRs485_EC.State_Connect_u8 == _SENSOR_CONNECT)      
-        {
-
-        }
-        else
-        {
-            aData[0] = 0x04;
-            aData[1] = 0x00;
-            Log_EventWarnig(OBIS_WARNING_SENSOR_CONNECT, 0x01, aData);
-        }
-
-        StateSensor_Before = sRs485_EC.State_Connect_u8;
-    }
-
-    if(sRs485_EC.State_Connect_u8 == _SENSOR_DISCONNECT)
-    {
-        if(HAL_GetTick() - gettick_state_slave >= DurationTimeWarningSensor*60000)
-        {
-            gettick_state_slave = HAL_GetTick();
-            aData[0] = 0x04;
-            aData[1] = 0x00;
-            Log_EventWarnig(OBIS_WARNING_SENSOR_CONNECT, 0x01, aData);
-        }
-    }
-
-    fevent_enable(sEventAppSensor, _EVENT_SENSOR_STATE_TURB);
+    aData[0] = 0x02;
+    aData[1] = 0x00;
+    Log_EventWarnig(OBIS_WARNING_SENSOR_CONNECT, 0x01, aData);
     return 1;
 }
 
-static uint8_t fevent_sensor_state_turb(uint8_t event)
+uint8_t _Cb_Handle_SS_EC(uint8_t State)
 {
-    static uint32_t gettick_state_slave = 0;
-    static uint8_t StateSensor_Before = _SENSOR_CONNECT;
     uint8_t aData[2] = {0};
+    aData[0] = 0x04;
+    aData[1] = 0x00;
+    Log_EventWarnig(OBIS_WARNING_SENSOR_CONNECT, 0x01, aData);
+    return 1;
+}
 
-    if(sRs485_Turb.State_Connect_u8 != StateSensor_Before)
-    {
-        gettick_state_slave = HAL_GetTick();
-        
-        if(sRs485_Turb.State_Connect_u8 == _SENSOR_CONNECT)      
-        {
-
-        }
-        else
-        {
-            aData[0] = 0x06;
-            aData[1] = 0x00;
-            Log_EventWarnig(OBIS_WARNING_SENSOR_CONNECT, 0x01, aData);
-        }
-
-        StateSensor_Before = sRs485_Turb.State_Connect_u8;
-    }
-
-    if(sRs485_Turb.State_Connect_u8 == _SENSOR_DISCONNECT)
-    {
-        if(HAL_GetTick() - gettick_state_slave >= DurationTimeWarningSensor*60000)
-        {
-            gettick_state_slave = HAL_GetTick();
-            aData[0] = 0x06;
-            aData[1] = 0x00;
-            Log_EventWarnig(OBIS_WARNING_SENSOR_CONNECT, 0x01, aData);
-        }
-    }
-
-    fevent_enable(sEventAppSensor, _EVENT_SENSOR_STATE_PH);
+uint8_t _Cb_Handle_SS_Turb(uint8_t State)
+{
+    uint8_t aData[2] = {0};
+    aData[0] = 0x06;
+    aData[1] = 0x00;
+    Log_EventWarnig(OBIS_WARNING_SENSOR_CONNECT, 0x01, aData);
     return 1;
 }
 
@@ -266,7 +230,7 @@ void AT_CMD_Get_Offset_Clo (sData *str, uint16_t Pos)
     uint8_t aTemp[50] = "Offset Clo: ";   //13 ki tu dau tien
     sData StrResp = {&aTemp[0], 12}; 
 
-    Convert_Point_Int_To_String_Scale (aTemp, &StrResp.Length_u16, (int)(sOffsetMeasure.Clo_f), 0xFE);
+    Convert_Point_Int_To_String_Scale (aTemp, &StrResp.Length_u16, (int)(sOffsetMeasure.Clo_f*100), 0xFE);
     Insert_String_To_String(aTemp, &StrResp.Length_u16, (uint8_t*)" mg/L",0 , 5);
 
 	Modem_Respond(PortConfig, StrResp.Data_a8, StrResp.Length_u16, 0);
@@ -310,7 +274,7 @@ void AT_CMD_Get_Offset_pH (sData *str, uint16_t Pos)
     uint8_t aTemp[50] = "Offset pH: ";   //13 ki tu dau tien
     sData StrResp = {&aTemp[0], 11}; 
 
-    Convert_Point_Int_To_String_Scale (aTemp, &StrResp.Length_u16, (int)(sOffsetMeasure.pH_f), 0xFE);
+    Convert_Point_Int_To_String_Scale (aTemp, &StrResp.Length_u16, (int)(sOffsetMeasure.pH_f*100), 0xFE);
     Insert_String_To_String(aTemp, &StrResp.Length_u16, (uint8_t*)" pH",0 , 3);
 
 	Modem_Respond(PortConfig, StrResp.Data_a8, StrResp.Length_u16, 0);
@@ -353,7 +317,7 @@ void AT_CMD_Get_Offset_NTU (sData *str, uint16_t Pos)
     uint8_t aTemp[50] = "Offset NTU: ";   //13 ki tu dau tien
     sData StrResp = {&aTemp[0], 12}; 
 
-    Convert_Point_Int_To_String_Scale (aTemp, &StrResp.Length_u16, (int)(sOffsetMeasure.Turb_f), 0xFE);
+    Convert_Point_Int_To_String_Scale (aTemp, &StrResp.Length_u16, (int)(sOffsetMeasure.Turb_f*100), 0xFE);
     Insert_String_To_String(aTemp, &StrResp.Length_u16, (uint8_t*)" NTU",0 , 4);
 
 	Modem_Respond(PortConfig, StrResp.Data_a8, StrResp.Length_u16, 0);
@@ -391,6 +355,225 @@ void AT_CMD_Set_Offset_NTU (sData *str_Receiv, uint16_t Pos)
         Modem_Respond(PortConfig, (uint8_t*)"ERROR", 5, 0);
     }
 }
+
+void AT_CMD_Get_Offset_EC (sData *str, uint16_t Pos)
+{
+    uint8_t aTemp[50] = "Offset EC: ";   //13 ki tu dau tien
+    sData StrResp = {&aTemp[0], 11}; 
+
+    Convert_Point_Int_To_String_Scale (aTemp, &StrResp.Length_u16, (int)(sOffsetMeasure.EC_f*100), 0xFE);
+    Insert_String_To_String(aTemp, &StrResp.Length_u16, (uint8_t*)" uS/Cm",0 , 6);
+
+	Modem_Respond(PortConfig, StrResp.Data_a8, StrResp.Length_u16, 0);
+}
+
+void AT_CMD_Set_Offset_EC (sData *str_Receiv, uint16_t Pos)
+{
+    int32_t  Temp_I32 = 0;
+    float    Temp_f = 0;
+    
+    uint8_t checkTemp = 0;
+    
+    if(str_Receiv->Data_a8[0] == '-')
+      checkTemp = 1;
+    
+    if( str_Receiv->Data_a8[checkTemp] >= '0' && str_Receiv->Data_a8[checkTemp] <= '9')
+    {
+        uint8_t length = 0;
+        for(uint8_t i = checkTemp; i < str_Receiv->Length_u16; i++)
+        {
+            if( str_Receiv->Data_a8[i] < '0' || str_Receiv->Data_a8[i]>'9') break;
+            else length++;
+        }
+        Temp_I32 = Convert_String_To_Dec(str_Receiv->Data_a8 + checkTemp, length);
+        
+        if(checkTemp == 1)
+          Temp_I32 = 0 - Temp_I32;
+        
+        Temp_f = Handle_int32_To_Float_Scale(Temp_I32, 0xFE);
+        Save_OffsetMeasure(_OFFSET_EC, Temp_f);
+        Modem_Respond(PortConfig, (uint8_t*)"OK", 2, 0);
+    }
+    else
+    {
+        Modem_Respond(PortConfig, (uint8_t*)"ERROR", 5, 0);
+    }
+}
+
+void AT_CMD_Get_Offset_Sal (sData *str, uint16_t Pos)
+{
+    uint8_t aTemp[50] = "Offset Sal: ";   //13 ki tu dau tien
+    sData StrResp = {&aTemp[0], 12}; 
+
+    Convert_Point_Int_To_String_Scale (aTemp, &StrResp.Length_u16, (int)(sOffsetMeasure.Sal_f*100), 0xFE);
+    Insert_String_To_String(aTemp, &StrResp.Length_u16, (uint8_t*)" %",0 , 2);
+
+	Modem_Respond(PortConfig, StrResp.Data_a8, StrResp.Length_u16, 0);
+}
+
+void AT_CMD_Set_Offset_Sal (sData *str_Receiv, uint16_t Pos)
+{
+    int32_t  Temp_I32 = 0;
+    float    Temp_f = 0;
+    
+    uint8_t checkTemp = 0;
+    
+    if(str_Receiv->Data_a8[0] == '-')
+      checkTemp = 1;
+    
+    if( str_Receiv->Data_a8[checkTemp] >= '0' && str_Receiv->Data_a8[checkTemp] <= '9')
+    {
+        uint8_t length = 0;
+        for(uint8_t i = checkTemp; i < str_Receiv->Length_u16; i++)
+        {
+            if( str_Receiv->Data_a8[i] < '0' || str_Receiv->Data_a8[i]>'9') break;
+            else length++;
+        }
+        Temp_I32 = Convert_String_To_Dec(str_Receiv->Data_a8 + checkTemp, length);
+        
+        if(checkTemp == 1)
+          Temp_I32 = 0 - Temp_I32;
+        
+        Temp_f = Handle_int32_To_Float_Scale(Temp_I32, 0xFE);
+        Save_OffsetMeasure(_OFFSET_SAL, Temp_f);
+        Modem_Respond(PortConfig, (uint8_t*)"OK", 2, 0);
+    }
+    else
+    {
+        Modem_Respond(PortConfig, (uint8_t*)"ERROR", 5, 0);
+    }
+}
+
+void AT_CMD_Get_Offset_Temp (sData *str, uint16_t Pos)
+{
+    uint8_t aTemp[50] = "Offset Temp: ";   //13 ki tu dau tien
+    sData StrResp = {&aTemp[0], 13}; 
+
+    Convert_Point_Int_To_String_Scale (aTemp, &StrResp.Length_u16, (int)(sOffsetMeasure.Temp_f*100), 0xFE);
+    Insert_String_To_String(aTemp, &StrResp.Length_u16, (uint8_t*)" °C",0 , 3);
+
+	Modem_Respond(PortConfig, StrResp.Data_a8, StrResp.Length_u16, 0);
+}
+
+void AT_CMD_Set_Offset_Temp (sData *str_Receiv, uint16_t Pos)
+{
+    int32_t  Temp_I32 = 0;
+    float    Temp_f = 0;
+    
+    uint8_t checkTemp = 0;
+    
+    if(str_Receiv->Data_a8[0] == '-')
+      checkTemp = 1;
+    
+    if( str_Receiv->Data_a8[checkTemp] >= '0' && str_Receiv->Data_a8[checkTemp] <= '9')
+    {
+        uint8_t length = 0;
+        for(uint8_t i = checkTemp; i < str_Receiv->Length_u16; i++)
+        {
+            if( str_Receiv->Data_a8[i] < '0' || str_Receiv->Data_a8[i]>'9') break;
+            else length++;
+        }
+        Temp_I32 = Convert_String_To_Dec(str_Receiv->Data_a8 + checkTemp, length);
+        
+        if(checkTemp == 1)
+          Temp_I32 = 0 - Temp_I32;
+        
+        Temp_f = Handle_int32_To_Float_Scale(Temp_I32, 0xFE);
+        Save_OffsetMeasure(_OFFSET_TEMP, Temp_f);
+        Modem_Respond(PortConfig, (uint8_t*)"OK", 2, 0);
+    }
+    else
+    {
+        Modem_Respond(PortConfig, (uint8_t*)"ERROR", 5, 0);
+    }
+}
+
+void AT_CMD_Get_User_Sensor (sData *str_Receiv, uint16_t Pos)
+{
+    uint8_t aTemp[80] = "";   //11 ki tu dau tien
+    uint16_t length = 0;
+
+    Insert_String_To_String(aTemp, &length, (uint8_t*)"User_pH:",0 , 8);
+    Convert_Point_Int_To_String_Scale (aTemp, &length, (int)(sUserSensor.User_pH), 0x00);
+
+    Insert_String_To_String(aTemp, &length, (uint8_t*)" User_Clo: ",0 , 10);
+    Convert_Point_Int_To_String_Scale (aTemp, &length, (int)(sUserSensor.User_Clo), 0x00);
+    
+    Insert_String_To_String(aTemp, &length, (uint8_t*)" User_EC:",0 , 9);
+    Convert_Point_Int_To_String_Scale (aTemp, &length, (int)(sUserSensor.User_EC), 0x00);
+    
+    Insert_String_To_String(aTemp, &length, (uint8_t*)" User_Turb:",0 , 11);
+    Convert_Point_Int_To_String_Scale (aTemp, &length, (int)(sUserSensor.User_Turb), 0x00);
+
+	Modem_Respond(PortConfig, aTemp, length, 0);
+}
+
+void AT_CMD_Set_User_Sensor (sData *str_Receiv, uint16_t Pos)
+{
+    uint32_t TempU32 = 0;
+    if( str_Receiv->Data_a8[0] >= '0' && str_Receiv->Data_a8[0] <= '9')
+    {
+        uint8_t length = 0;
+        for(uint8_t i = 0; i < str_Receiv->Length_u16; i++)
+        {
+            if( str_Receiv->Data_a8[i] < '0' || str_Receiv->Data_a8[i]>'9') break;
+            else length++;
+        }
+        TempU32 = Convert_String_To_Dec(str_Receiv->Data_a8 , length);
+        
+        switch(TempU32)
+        {
+        case 10:
+            Save_UserSensor(_ACTIVE_PH, 0);
+            Modem_Respond(PortConfig, (uint8_t*)"OK", 2, 0);
+            break;
+            
+        case 11:
+            Save_UserSensor(_ACTIVE_PH, 1);
+            Modem_Respond(PortConfig, (uint8_t*)"OK", 2, 0);
+            break;
+            
+        case 20:
+            Save_UserSensor(_ACTIVE_CLO, 0);
+            Modem_Respond(PortConfig, (uint8_t*)"OK", 2, 0);
+            break;
+            
+        case 21:
+            Save_UserSensor(_ACTIVE_CLO, 1);
+            Modem_Respond(PortConfig, (uint8_t*)"OK", 2, 0);
+            break;
+            
+        case 30:
+            Save_UserSensor(_ACTIVE_EC, 0);
+            Modem_Respond(PortConfig, (uint8_t*)"OK", 2, 0);
+            break;
+            
+        case 31:
+            Save_UserSensor(_ACTIVE_EC, 1);
+            Modem_Respond(PortConfig, (uint8_t*)"OK", 2, 0);
+            break;
+            
+        case 40:
+            Save_UserSensor(_ACTIVE_TURB, 0);
+            Modem_Respond(PortConfig, (uint8_t*)"OK", 2, 0);
+            break;
+            
+        case 41:
+            Save_UserSensor(_ACTIVE_TURB, 1);
+            Modem_Respond(PortConfig, (uint8_t*)"OK", 2, 0);
+            break;
+          
+        default:
+            Modem_Respond(PortConfig, (uint8_t*)"ERROR", 5, 0);
+            break;
+        }
+    }
+    else
+    {
+        Modem_Respond(PortConfig, (uint8_t*)"ERROR", 5, 0);
+    }
+}
+
 #endif
 
 /*---------------------Save and Init User Sensor----------------------*/
@@ -637,6 +820,18 @@ void Init_AppSensor(void)
     
     CheckList_AT_CONFIG[_GET_OFFSET_NTU].CallBack = AT_CMD_Get_Offset_NTU;
     CheckList_AT_CONFIG[_SET_OFFSET_NTU].CallBack = AT_CMD_Set_Offset_NTU;
+    
+    CheckList_AT_CONFIG[_GET_OFFSET_EC].CallBack = AT_CMD_Get_Offset_EC;
+    CheckList_AT_CONFIG[_SET_OFFSET_EC].CallBack = AT_CMD_Set_Offset_EC;
+    
+    CheckList_AT_CONFIG[_GET_OFFSET_SAL].CallBack = AT_CMD_Get_Offset_Sal;
+    CheckList_AT_CONFIG[_SET_OFFSET_SAL].CallBack = AT_CMD_Set_Offset_Sal;
+    
+    CheckList_AT_CONFIG[_GET_OFFSET_TEMP].CallBack = AT_CMD_Get_Offset_Temp;
+    CheckList_AT_CONFIG[_SET_OFFSET_TEMP].CallBack = AT_CMD_Set_Offset_Temp;
+    
+    CheckList_AT_CONFIG[_GET_USER_SENSOR].CallBack = AT_CMD_Get_User_Sensor;
+    CheckList_AT_CONFIG[_SET_USER_SENSOR].CallBack = AT_CMD_Set_User_Sensor;
 #endif
 }
 
