@@ -279812,27 +279812,13 @@
         "scope": null
       },
       {
-        "ID": "c:@EA@eKindEventSENSOR@_EVENT_DETECT_CONNECT",
-        "What": "Enumerator",
-        "defdec": "Def",
-        "display": "_EVENT_DETECT_CONNECT",
-        "location": {
-          "column": "5",
-          "line": "34",
-          "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
-        },
-        "name": "_EVENT_DETECT_CONNECT",
-        "origin": "user_include",
-        "scope": null
-      },
-      {
         "ID": "c:@EA@eKindEventSENSOR@_EVENT_TEMP_ALARM",
         "What": "Enumerator",
         "defdec": "Def",
         "display": "_EVENT_TEMP_ALARM",
         "location": {
           "column": "5",
-          "line": "35",
+          "line": "33",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_EVENT_TEMP_ALARM",
@@ -279846,10 +279832,24 @@
         "display": "_EVENT_REFRESH_IWDG",
         "location": {
           "column": "5",
-          "line": "36",
+          "line": "34",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_EVENT_REFRESH_IWDG",
+        "origin": "user_include",
+        "scope": null
+      },
+      {
+        "ID": "c:@EA@eKindEventSENSOR@_EVENT_REFRESH_WDG_HARD",
+        "What": "Enumerator",
+        "defdec": "Def",
+        "display": "_EVENT_REFRESH_WDG_HARD",
+        "location": {
+          "column": "5",
+          "line": "35",
+          "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
+        },
+        "name": "_EVENT_REFRESH_WDG_HARD",
         "origin": "user_include",
         "scope": null
       },
@@ -279860,7 +279860,7 @@
         "display": "_EVENT_SENSOR_END",
         "location": {
           "column": "5",
-          "line": "38",
+          "line": "37",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_EVENT_SENSOR_END",
@@ -279890,7 +279890,7 @@
         "display": "_KIND_CALIB_OFFSET",
         "location": {
           "column": "5",
-          "line": "43",
+          "line": "42",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_KIND_CALIB_OFFSET",
@@ -279904,7 +279904,7 @@
         "display": "_KIND_CALIB_POINT_1",
         "location": {
           "column": "5",
-          "line": "44",
+          "line": "43",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_KIND_CALIB_POINT_1",
@@ -279918,7 +279918,7 @@
         "display": "_KIND_CALIB_POINT_2",
         "location": {
           "column": "5",
-          "line": "45",
+          "line": "44",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_KIND_CALIB_POINT_2",
@@ -279928,7 +279928,7 @@
     ],
     "location": {
       "column": "9",
-      "line": "41",
+      "line": "40",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "",
@@ -279948,7 +279948,7 @@
         "display": "_RS485_SS_CLO_SEND_PH",
         "location": {
           "column": "5",
-          "line": "50",
+          "line": "49",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_RS485_SS_CLO_SEND_PH",
@@ -279962,7 +279962,7 @@
         "display": "_RS485_SS_CLO_READ_CURRENT",
         "location": {
           "column": "5",
-          "line": "51",
+          "line": "50",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_RS485_SS_CLO_READ_CURRENT",
@@ -279976,7 +279976,7 @@
         "display": "_RS485_SS_CLO_OPERA",
         "location": {
           "column": "5",
-          "line": "52",
+          "line": "51",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_RS485_SS_CLO_OPERA",
@@ -279990,7 +279990,7 @@
         "display": "_RS485_SS_CLO_CALIB_READ_AD",
         "location": {
           "column": "5",
-          "line": "54",
+          "line": "53",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_RS485_SS_CLO_CALIB_READ_AD",
@@ -280004,7 +280004,7 @@
         "display": "_RS485_SS_CLO_CALIB_READ_SOLUTION",
         "location": {
           "column": "5",
-          "line": "55",
+          "line": "54",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_RS485_SS_CLO_CALIB_READ_SOLUTION",
@@ -280018,7 +280018,7 @@
         "display": "_RS485_SS_CLO_CALIB_STD_SOLUTION",
         "location": {
           "column": "5",
-          "line": "56",
+          "line": "55",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_RS485_SS_CLO_CALIB_STD_SOLUTION",
@@ -280032,7 +280032,7 @@
         "display": "_RS485_SS_CLO_CALIB_ZERO",
         "location": {
           "column": "5",
-          "line": "57",
+          "line": "56",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_RS485_SS_CLO_CALIB_ZERO",
@@ -280046,7 +280046,7 @@
         "display": "_RS485_SS_CLO_CALIB_SLOPE",
         "location": {
           "column": "5",
-          "line": "58",
+          "line": "57",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_RS485_SS_CLO_CALIB_SLOPE",
@@ -280060,7 +280060,7 @@
         "display": "_RS485_5_END",
         "location": {
           "column": "5",
-          "line": "60",
+          "line": "59",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_RS485_5_END",
@@ -280070,7 +280070,7 @@
     ],
     "location": {
       "column": "9",
-      "line": "48",
+      "line": "47",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "",
@@ -280090,7 +280090,7 @@
         "display": "_SENSOR_DISCONNECT",
         "location": {
           "column": "5",
-          "line": "65",
+          "line": "64",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_SENSOR_DISCONNECT",
@@ -280104,7 +280104,7 @@
         "display": "_SENSOR_CONNECT",
         "location": {
           "column": "5",
-          "line": "66",
+          "line": "65",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_SENSOR_CONNECT",
@@ -280114,7 +280114,7 @@
     ],
     "location": {
       "column": "9",
-      "line": "63",
+      "line": "62",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "",
@@ -280134,7 +280134,7 @@
         "display": "_RS485_UNRESPOND",
         "location": {
           "column": "5",
-          "line": "71",
+          "line": "70",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_RS485_UNRESPOND",
@@ -280148,7 +280148,7 @@
         "display": "_RS485_RESPOND",
         "location": {
           "column": "5",
-          "line": "72",
+          "line": "71",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_RS485_RESPOND",
@@ -280158,7 +280158,7 @@
     ],
     "location": {
       "column": "9",
-      "line": "69",
+      "line": "68",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "",
@@ -280178,7 +280178,7 @@
         "display": "_DCU_CALIB_CLO_ZERO",
         "location": {
           "column": "5",
-          "line": "77",
+          "line": "76",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_DCU_CALIB_CLO_ZERO",
@@ -280192,7 +280192,7 @@
         "display": "_DCU_CALIB_CLO_SLOPE",
         "location": {
           "column": "5",
-          "line": "78",
+          "line": "77",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_DCU_CALIB_CLO_SLOPE",
@@ -280206,7 +280206,7 @@
         "display": "_DCU_CALIB_CLO_POINT1",
         "location": {
           "column": "5",
-          "line": "79",
+          "line": "78",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_DCU_CALIB_CLO_POINT1",
@@ -280220,7 +280220,7 @@
         "display": "_DCU_CALIB_CLO_POINT2",
         "location": {
           "column": "5",
-          "line": "80",
+          "line": "79",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_DCU_CALIB_CLO_POINT2",
@@ -280234,7 +280234,7 @@
         "display": "_DCU_CALIB_CLO_CONST_TEMP",
         "location": {
           "column": "5",
-          "line": "81",
+          "line": "80",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "_DCU_CALIB_CLO_CONST_TEMP",
@@ -280244,7 +280244,7 @@
     ],
     "location": {
       "column": "9",
-      "line": "75",
+      "line": "74",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "",
@@ -280258,7 +280258,7 @@
     "display": "",
     "location": {
       "column": "9",
-      "line": "84",
+      "line": "83",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "members": [
@@ -280269,12 +280269,12 @@
         "display": "CountDisconnectRS485_1",
         "location": {
           "column": "13",
-          "line": "86",
+          "line": "85",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "CountDisconnectRS485_1",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_84_9"
+        "scope": "_anonymous_user_app_sensor_h_83_9"
       },
       {
         "ID": "c:@SA@Struct_Hanlde_RS485@FI@CountDisconnectRS485_2",
@@ -280283,12 +280283,12 @@
         "display": "CountDisconnectRS485_2",
         "location": {
           "column": "13",
-          "line": "87",
+          "line": "86",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "CountDisconnectRS485_2",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_84_9"
+        "scope": "_anonymous_user_app_sensor_h_83_9"
       },
       {
         "ID": "c:@SA@Struct_Hanlde_RS485@FI@State_Wait_Calib",
@@ -280297,12 +280297,12 @@
         "display": "State_Wait_Calib",
         "location": {
           "column": "13",
-          "line": "89",
+          "line": "88",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "State_Wait_Calib",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_84_9"
+        "scope": "_anonymous_user_app_sensor_h_83_9"
       },
       {
         "ID": "c:@SA@Struct_Hanlde_RS485@FI@State_Recv_Clo",
@@ -280311,12 +280311,12 @@
         "display": "State_Recv_Clo",
         "location": {
           "column": "13",
-          "line": "91",
+          "line": "90",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "State_Recv_Clo",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_84_9"
+        "scope": "_anonymous_user_app_sensor_h_83_9"
       },
       {
         "ID": "c:@SA@Struct_Hanlde_RS485@FI@State_Recv_Temperature",
@@ -280325,12 +280325,12 @@
         "display": "State_Recv_Temperature",
         "location": {
           "column": "13",
-          "line": "92",
+          "line": "91",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "State_Recv_Temperature",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_84_9"
+        "scope": "_anonymous_user_app_sensor_h_83_9"
       },
       {
         "ID": "c:@T@Struct_Hanlde_RS485",
@@ -280339,12 +280339,12 @@
         "display": "struct Struct_Hanlde_RS485",
         "location": {
           "column": "2",
-          "line": "93",
+          "line": "92",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Struct_Hanlde_RS485",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_84_9"
+        "scope": "_anonymous_user_app_sensor_h_83_9"
       }
     ],
     "name": "",
@@ -280358,7 +280358,7 @@
     "display": "",
     "location": {
       "column": "9",
-      "line": "95",
+      "line": "94",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "members": [
@@ -280369,12 +280369,12 @@
         "display": "Trans",
         "location": {
           "column": "13",
-          "line": "97",
+          "line": "96",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Trans",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_95_9"
+        "scope": "_anonymous_user_app_sensor_h_94_9"
       },
       {
         "ID": "c:@SA@Struct_KindMode485@FI@Recv",
@@ -280383,12 +280383,12 @@
         "display": "Recv",
         "location": {
           "column": "13",
-          "line": "98",
+          "line": "97",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Recv",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_95_9"
+        "scope": "_anonymous_user_app_sensor_h_94_9"
       },
       {
         "ID": "c:@T@Struct_KindMode485",
@@ -280397,12 +280397,12 @@
         "display": "struct Struct_KindMode485",
         "location": {
           "column": "2",
-          "line": "99",
+          "line": "98",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Struct_KindMode485",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_95_9"
+        "scope": "_anonymous_user_app_sensor_h_94_9"
       }
     ],
     "name": "",
@@ -280416,7 +280416,7 @@
     "display": "",
     "location": {
       "column": "9",
-      "line": "101",
+      "line": "100",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "members": [
@@ -280427,12 +280427,12 @@
         "display": "Value",
         "location": {
           "column": "13",
-          "line": "103",
+          "line": "102",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Value",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_101_9"
+        "scope": "_anonymous_user_app_sensor_h_100_9"
       },
       {
         "ID": "c:@SA@Struct_SS_Value@FI@Scale",
@@ -280441,12 +280441,12 @@
         "display": "Scale",
         "location": {
           "column": "13",
-          "line": "104",
+          "line": "103",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Scale",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_101_9"
+        "scope": "_anonymous_user_app_sensor_h_100_9"
       },
       {
         "ID": "c:@T@Struct_SS_Value",
@@ -280455,12 +280455,12 @@
         "display": "struct Struct_SS_Value",
         "location": {
           "column": "2",
-          "line": "105",
+          "line": "104",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Struct_SS_Value",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_101_9"
+        "scope": "_anonymous_user_app_sensor_h_100_9"
       }
     ],
     "name": "",
@@ -280474,7 +280474,7 @@
     "display": "",
     "location": {
       "column": "9",
-      "line": "107",
+      "line": "106",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "members": [
@@ -280485,12 +280485,12 @@
         "display": "sClo_Du",
         "location": {
           "column": "21",
-          "line": "109",
+          "line": "108",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "sClo_Du",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_107_9"
+        "scope": "_anonymous_user_app_sensor_h_106_9"
       },
       {
         "ID": "c:@SA@Struct_ConvertChlorine@FI@sConst_Compensation_Temp",
@@ -280499,12 +280499,12 @@
         "display": "sConst_Compensation_Temp",
         "location": {
           "column": "21",
-          "line": "110",
+          "line": "109",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "sConst_Compensation_Temp",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_107_9"
+        "scope": "_anonymous_user_app_sensor_h_106_9"
       },
       {
         "ID": "c:@SA@Struct_ConvertChlorine@FI@Scale",
@@ -280513,12 +280513,12 @@
         "display": "Scale",
         "location": {
           "column": "17",
-          "line": "112",
+          "line": "111",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Scale",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_107_9"
+        "scope": "_anonymous_user_app_sensor_h_106_9"
       },
       {
         "ID": "c:@SA@Struct_ConvertChlorine@FI@Measure_AD",
@@ -280527,12 +280527,12 @@
         "display": "Measure_AD",
         "location": {
           "column": "17",
-          "line": "113",
+          "line": "112",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Measure_AD",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_107_9"
+        "scope": "_anonymous_user_app_sensor_h_106_9"
       },
       {
         "ID": "c:@SA@Struct_ConvertChlorine@FI@ADC_Zero",
@@ -280541,12 +280541,12 @@
         "display": "ADC_Zero",
         "location": {
           "column": "17",
-          "line": "115",
+          "line": "114",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "ADC_Zero",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_107_9"
+        "scope": "_anonymous_user_app_sensor_h_106_9"
       },
       {
         "ID": "c:@SA@Struct_ConvertChlorine@FI@ADC_SLope",
@@ -280555,12 +280555,12 @@
         "display": "ADC_SLope",
         "location": {
           "column": "17",
-          "line": "117",
+          "line": "116",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "ADC_SLope",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_107_9"
+        "scope": "_anonymous_user_app_sensor_h_106_9"
       },
       {
         "ID": "c:@SA@Struct_ConvertChlorine@FI@Clo_Calib_Slope",
@@ -280569,12 +280569,12 @@
         "display": "Clo_Calib_Slope",
         "location": {
           "column": "17",
-          "line": "118",
+          "line": "117",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Clo_Calib_Slope",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_107_9"
+        "scope": "_anonymous_user_app_sensor_h_106_9"
       },
       {
         "ID": "c:@SA@Struct_ConvertChlorine@FI@Temp_Calib_Slope",
@@ -280583,12 +280583,12 @@
         "display": "Temp_Calib_Slope",
         "location": {
           "column": "17",
-          "line": "119",
+          "line": "118",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Temp_Calib_Slope",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_107_9"
+        "scope": "_anonymous_user_app_sensor_h_106_9"
       },
       {
         "ID": "c:@SA@Struct_ConvertChlorine@FI@Ph_Calib_Slope",
@@ -280597,12 +280597,12 @@
         "display": "Ph_Calib_Slope",
         "location": {
           "column": "17",
-          "line": "120",
+          "line": "119",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Ph_Calib_Slope",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_107_9"
+        "scope": "_anonymous_user_app_sensor_h_106_9"
       },
       {
         "ID": "c:@SA@Struct_ConvertChlorine@FI@ADC_CalibPoint_1",
@@ -280611,12 +280611,12 @@
         "display": "ADC_CalibPoint_1",
         "location": {
           "column": "17",
-          "line": "122",
+          "line": "121",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "ADC_CalibPoint_1",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_107_9"
+        "scope": "_anonymous_user_app_sensor_h_106_9"
       },
       {
         "ID": "c:@SA@Struct_ConvertChlorine@FI@Clo_CalibPoint_1",
@@ -280625,12 +280625,12 @@
         "display": "Clo_CalibPoint_1",
         "location": {
           "column": "17",
-          "line": "123",
+          "line": "122",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Clo_CalibPoint_1",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_107_9"
+        "scope": "_anonymous_user_app_sensor_h_106_9"
       },
       {
         "ID": "c:@SA@Struct_ConvertChlorine@FI@Temp_CalibPoint_1",
@@ -280639,12 +280639,12 @@
         "display": "Temp_CalibPoint_1",
         "location": {
           "column": "17",
-          "line": "124",
+          "line": "123",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Temp_CalibPoint_1",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_107_9"
+        "scope": "_anonymous_user_app_sensor_h_106_9"
       },
       {
         "ID": "c:@SA@Struct_ConvertChlorine@FI@Ph_CalibPoint_1",
@@ -280653,12 +280653,12 @@
         "display": "Ph_CalibPoint_1",
         "location": {
           "column": "17",
-          "line": "125",
+          "line": "124",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Ph_CalibPoint_1",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_107_9"
+        "scope": "_anonymous_user_app_sensor_h_106_9"
       },
       {
         "ID": "c:@SA@Struct_ConvertChlorine@FI@ADC_CalibPoint_2",
@@ -280667,12 +280667,12 @@
         "display": "ADC_CalibPoint_2",
         "location": {
           "column": "17",
-          "line": "127",
+          "line": "126",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "ADC_CalibPoint_2",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_107_9"
+        "scope": "_anonymous_user_app_sensor_h_106_9"
       },
       {
         "ID": "c:@SA@Struct_ConvertChlorine@FI@Clo_CalibPoint_2",
@@ -280681,12 +280681,12 @@
         "display": "Clo_CalibPoint_2",
         "location": {
           "column": "17",
-          "line": "128",
+          "line": "127",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Clo_CalibPoint_2",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_107_9"
+        "scope": "_anonymous_user_app_sensor_h_106_9"
       },
       {
         "ID": "c:@SA@Struct_ConvertChlorine@FI@Temp_CalibPoint_2",
@@ -280695,12 +280695,12 @@
         "display": "Temp_CalibPoint_2",
         "location": {
           "column": "17",
-          "line": "129",
+          "line": "128",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Temp_CalibPoint_2",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_107_9"
+        "scope": "_anonymous_user_app_sensor_h_106_9"
       },
       {
         "ID": "c:@SA@Struct_ConvertChlorine@FI@Ph_CalibPoint_2",
@@ -280709,12 +280709,12 @@
         "display": "Ph_CalibPoint_2",
         "location": {
           "column": "17",
-          "line": "130",
+          "line": "129",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Ph_CalibPoint_2",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_107_9"
+        "scope": "_anonymous_user_app_sensor_h_106_9"
       },
       {
         "ID": "c:@T@Struct_ConvertChlorine",
@@ -280723,12 +280723,12 @@
         "display": "struct Struct_ConvertChlorine",
         "location": {
           "column": "2",
-          "line": "132",
+          "line": "131",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Struct_ConvertChlorine",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_107_9"
+        "scope": "_anonymous_user_app_sensor_h_106_9"
       }
     ],
     "name": "",
@@ -280742,7 +280742,7 @@
     "display": "",
     "location": {
       "column": "9",
-      "line": "134",
+      "line": "133",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "members": [
@@ -280753,12 +280753,12 @@
         "display": "State",
         "location": {
           "column": "13",
-          "line": "136",
+          "line": "135",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "State",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_134_9"
+        "scope": "_anonymous_user_app_sensor_h_133_9"
       },
       {
         "ID": "c:@SA@struct_TempAlarm@FI@Alarm_Lower",
@@ -280767,12 +280767,12 @@
         "display": "Alarm_Lower",
         "location": {
           "column": "11",
-          "line": "137",
+          "line": "136",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Alarm_Lower",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_134_9"
+        "scope": "_anonymous_user_app_sensor_h_133_9"
       },
       {
         "ID": "c:@SA@struct_TempAlarm@FI@Alarm_Upper",
@@ -280781,12 +280781,12 @@
         "display": "Alarm_Upper",
         "location": {
           "column": "11",
-          "line": "138",
+          "line": "137",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Alarm_Upper",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_134_9"
+        "scope": "_anonymous_user_app_sensor_h_133_9"
       },
       {
         "ID": "c:@T@struct_TempAlarm",
@@ -280795,12 +280795,12 @@
         "display": "struct struct_TempAlarm",
         "location": {
           "column": "2",
-          "line": "139",
+          "line": "138",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "struct_TempAlarm",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_134_9"
+        "scope": "_anonymous_user_app_sensor_h_133_9"
       }
     ],
     "name": "",
@@ -280814,7 +280814,7 @@
     "display": "",
     "location": {
       "column": "9",
-      "line": "141",
+      "line": "140",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "members": [
@@ -280825,12 +280825,12 @@
         "display": "State_Connect",
         "location": {
           "column": "13",
-          "line": "143",
+          "line": "142",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "State_Connect",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_141_9"
+        "scope": "_anonymous_user_app_sensor_h_140_9"
       },
       {
         "ID": "c:@SA@Struct_Sensor_Clo@FI@Count_Disconnect",
@@ -280839,12 +280839,12 @@
         "display": "Count_Disconnect",
         "location": {
           "column": "13",
-          "line": "144",
+          "line": "143",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Count_Disconnect",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_141_9"
+        "scope": "_anonymous_user_app_sensor_h_140_9"
       },
       {
         "ID": "c:@SA@Struct_Sensor_Clo@FI@Clo_Value_f",
@@ -280853,12 +280853,12 @@
         "display": "Clo_Value_f",
         "location": {
           "column": "13",
-          "line": "146",
+          "line": "145",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Clo_Value_f",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_141_9"
+        "scope": "_anonymous_user_app_sensor_h_140_9"
       },
       {
         "ID": "c:@SA@Struct_Sensor_Clo@FI@temp_Value_f",
@@ -280867,12 +280867,12 @@
         "display": "temp_Value_f",
         "location": {
           "column": "13",
-          "line": "147",
+          "line": "146",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "temp_Value_f",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_141_9"
+        "scope": "_anonymous_user_app_sensor_h_140_9"
       },
       {
         "ID": "c:@SA@Struct_Sensor_Clo@FI@Clo_Filter_f",
@@ -280881,12 +280881,12 @@
         "display": "Clo_Filter_f",
         "location": {
           "column": "13",
-          "line": "149",
+          "line": "148",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Clo_Filter_f",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_141_9"
+        "scope": "_anonymous_user_app_sensor_h_140_9"
       },
       {
         "ID": "c:@SA@Struct_Sensor_Clo@FI@temp_Filter_f",
@@ -280895,12 +280895,12 @@
         "display": "temp_Filter_f",
         "location": {
           "column": "13",
-          "line": "150",
+          "line": "149",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "temp_Filter_f",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_141_9"
+        "scope": "_anonymous_user_app_sensor_h_140_9"
       },
       {
         "ID": "c:@SA@Struct_Sensor_Clo@FI@Clo_Offset_f",
@@ -280909,12 +280909,12 @@
         "display": "Clo_Offset_f",
         "location": {
           "column": "13",
-          "line": "152",
+          "line": "151",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Clo_Offset_f",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_141_9"
+        "scope": "_anonymous_user_app_sensor_h_140_9"
       },
       {
         "ID": "c:@SA@Struct_Sensor_Clo@FI@temp_Offset_f",
@@ -280923,12 +280923,12 @@
         "display": "temp_Offset_f",
         "location": {
           "column": "13",
-          "line": "153",
+          "line": "152",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "temp_Offset_f",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_141_9"
+        "scope": "_anonymous_user_app_sensor_h_140_9"
       },
       {
         "ID": "c:@SA@Struct_Sensor_Clo@FI@sSolution_Calibration",
@@ -280937,12 +280937,12 @@
         "display": "sSolution_Calibration",
         "location": {
           "column": "21",
-          "line": "155",
+          "line": "154",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "sSolution_Calibration",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_141_9"
+        "scope": "_anonymous_user_app_sensor_h_140_9"
       },
       {
         "ID": "c:@SA@Struct_Sensor_Clo@FI@Measure_AD",
@@ -280951,12 +280951,12 @@
         "display": "Measure_AD",
         "location": {
           "column": "21",
-          "line": "157",
+          "line": "156",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Measure_AD",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_141_9"
+        "scope": "_anonymous_user_app_sensor_h_140_9"
       },
       {
         "ID": "c:@T@Struct_Sensor_Clo",
@@ -280965,12 +280965,12 @@
         "display": "struct Struct_Sensor_Clo",
         "location": {
           "column": "2",
-          "line": "158",
+          "line": "157",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Struct_Sensor_Clo",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_141_9"
+        "scope": "_anonymous_user_app_sensor_h_140_9"
       }
     ],
     "name": "",
@@ -280984,7 +280984,7 @@
     "display": "",
     "location": {
       "column": "9",
-      "line": "160",
+      "line": "159",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "members": [
@@ -280995,12 +280995,12 @@
         "display": "StateConnect",
         "location": {
           "column": "13",
-          "line": "162",
+          "line": "161",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "StateConnect",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_160_9"
+        "scope": "_anonymous_user_app_sensor_h_159_9"
       },
       {
         "ID": "c:@SA@Struct_pH_Recv_Master@FI@pH_f",
@@ -281009,12 +281009,12 @@
         "display": "pH_f",
         "location": {
           "column": "13",
-          "line": "163",
+          "line": "162",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "pH_f",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_160_9"
+        "scope": "_anonymous_user_app_sensor_h_159_9"
       },
       {
         "ID": "c:@T@Struct_pH_Recv_Master",
@@ -281023,12 +281023,12 @@
         "display": "struct Struct_pH_Recv_Master",
         "location": {
           "column": "2",
-          "line": "164",
+          "line": "163",
           "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
         },
         "name": "Struct_pH_Recv_Master",
         "origin": "user_include",
-        "scope": "_anonymous_user_app_sensor_h_160_9"
+        "scope": "_anonymous_user_app_sensor_h_159_9"
       }
     ],
     "name": "",
@@ -281042,7 +281042,7 @@
     "display": "sEventAppSensor",
     "location": {
       "column": "29",
-      "line": "166",
+      "line": "165",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "sEventAppSensor",
@@ -281056,7 +281056,7 @@
     "display": "sEventAppSensor",
     "location": {
       "column": "29",
-      "line": "166",
+      "line": "165",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "sEventAppSensor",
@@ -281070,7 +281070,7 @@
     "display": "sKindMode485",
     "location": {
       "column": "29",
-      "line": "167",
+      "line": "166",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "sKindMode485",
@@ -281084,7 +281084,7 @@
     "display": "sKindMode485",
     "location": {
       "column": "29",
-      "line": "167",
+      "line": "166",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "sKindMode485",
@@ -281098,7 +281098,7 @@
     "display": "sTempAlarm",
     "location": {
       "column": "29",
-      "line": "168",
+      "line": "167",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "sTempAlarm",
@@ -281112,7 +281112,7 @@
     "display": "sTempAlarm",
     "location": {
       "column": "29",
-      "line": "168",
+      "line": "167",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "sTempAlarm",
@@ -281126,7 +281126,7 @@
     "display": "sSensor_Clo",
     "location": {
       "column": "29",
-      "line": "169",
+      "line": "168",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "sSensor_Clo",
@@ -281140,7 +281140,7 @@
     "display": "sSensor_Clo",
     "location": {
       "column": "29",
-      "line": "169",
+      "line": "168",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "sSensor_Clo",
@@ -281154,7 +281154,7 @@
     "display": "sHandleRs485",
     "location": {
       "column": "29",
-      "line": "170",
+      "line": "169",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "sHandleRs485",
@@ -281168,7 +281168,7 @@
     "display": "sHandleRs485",
     "location": {
       "column": "29",
-      "line": "170",
+      "line": "169",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "sHandleRs485",
@@ -281182,7 +281182,7 @@
     "display": "sConvertChlorine",
     "location": {
       "column": "36",
-      "line": "171",
+      "line": "170",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "sConvertChlorine",
@@ -281196,7 +281196,7 @@
     "display": "sConvertChlorine",
     "location": {
       "column": "36",
-      "line": "171",
+      "line": "170",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "sConvertChlorine",
@@ -281210,7 +281210,7 @@
     "display": "spHRecvMaster",
     "location": {
       "column": "32",
-      "line": "172",
+      "line": "171",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "spHRecvMaster",
@@ -281224,7 +281224,7 @@
     "display": "spHRecvMaster",
     "location": {
       "column": "32",
-      "line": "172",
+      "line": "171",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "spHRecvMaster",
@@ -281238,7 +281238,7 @@
     "display": "uint8_t AppSensor_Task(void)",
     "location": {
       "column": "12",
-      "line": "175",
+      "line": "174",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "AppSensor_Task",
@@ -281252,7 +281252,7 @@
     "display": "uint8_t AppSensor_Task(void)",
     "location": {
       "column": "12",
-      "line": "175",
+      "line": "174",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "AppSensor_Task",
@@ -281266,7 +281266,7 @@
     "display": "void Init_AppSensor(void)",
     "location": {
       "column": "12",
-      "line": "176",
+      "line": "175",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Init_AppSensor",
@@ -281280,7 +281280,7 @@
     "display": "void Init_AppSensor(void)",
     "location": {
       "column": "12",
-      "line": "176",
+      "line": "175",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Init_AppSensor",
@@ -281294,7 +281294,7 @@
     "display": "void Init_Parameter_Sensor(void)",
     "location": {
       "column": "12",
-      "line": "177",
+      "line": "176",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Init_Parameter_Sensor",
@@ -281308,7 +281308,7 @@
     "display": "void Init_Parameter_Sensor(void)",
     "location": {
       "column": "12",
-      "line": "177",
+      "line": "176",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Init_Parameter_Sensor",
@@ -281322,7 +281322,7 @@
     "display": "void Save_ParamCalib(float, float)",
     "location": {
       "column": "12",
-      "line": "179",
+      "line": "178",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Save_ParamCalib",
@@ -281336,7 +281336,7 @@
     "display": "void Save_ParamCalib(float, float)",
     "location": {
       "column": "12",
-      "line": "179",
+      "line": "178",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Save_ParamCalib",
@@ -281350,7 +281350,7 @@
     "display": "void Init_ParamCalib(void)",
     "location": {
       "column": "12",
-      "line": "180",
+      "line": "179",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Init_ParamCalib",
@@ -281364,7 +281364,7 @@
     "display": "void Init_ParamCalib(void)",
     "location": {
       "column": "12",
-      "line": "180",
+      "line": "179",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Init_ParamCalib",
@@ -281378,7 +281378,7 @@
     "display": "void Save_TempAlarm(uint8_t, float, float)",
     "location": {
       "column": "12",
-      "line": "182",
+      "line": "181",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Save_TempAlarm",
@@ -281392,7 +281392,7 @@
     "display": "void Save_TempAlarm(uint8_t, float, float)",
     "location": {
       "column": "12",
-      "line": "182",
+      "line": "181",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Save_TempAlarm",
@@ -281406,7 +281406,7 @@
     "display": "void Init_TempAlarm(void)",
     "location": {
       "column": "12",
-      "line": "183",
+      "line": "182",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Init_TempAlarm",
@@ -281420,7 +281420,7 @@
     "display": "void Init_TempAlarm(void)",
     "location": {
       "column": "12",
-      "line": "183",
+      "line": "182",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Init_TempAlarm",
@@ -281434,7 +281434,7 @@
     "display": "float Filter_Clo(float)",
     "location": {
       "column": "12",
-      "line": "185",
+      "line": "184",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Filter_Clo",
@@ -281448,7 +281448,7 @@
     "display": "float Filter_Clo(float)",
     "location": {
       "column": "12",
-      "line": "185",
+      "line": "184",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Filter_Clo",
@@ -281462,7 +281462,7 @@
     "display": "float Filter_Temp(float)",
     "location": {
       "column": "12",
-      "line": "186",
+      "line": "185",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Filter_Temp",
@@ -281476,7 +281476,7 @@
     "display": "float Filter_Temp(float)",
     "location": {
       "column": "12",
-      "line": "186",
+      "line": "185",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Filter_Temp",
@@ -281490,7 +281490,7 @@
     "display": "float ConvertTemperature_Calib(float)",
     "location": {
       "column": "12",
-      "line": "187",
+      "line": "186",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "ConvertTemperature_Calib",
@@ -281504,7 +281504,7 @@
     "display": "void quickSort_Sampling(int32_t *, int32_t *, uint8_t, uint8_t)",
     "location": {
       "column": "12",
-      "line": "189",
+      "line": "188",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "quickSort_Sampling",
@@ -281518,7 +281518,7 @@
     "display": "void quickSort_Sampling(int32_t *, int32_t *, uint8_t, uint8_t)",
     "location": {
       "column": "12",
-      "line": "189",
+      "line": "188",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "quickSort_Sampling",
@@ -281532,7 +281532,7 @@
     "display": "float quickSort_Sampling_Value(int32_t)",
     "location": {
       "column": "12",
-      "line": "190",
+      "line": "189",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "quickSort_Sampling_Value",
@@ -281546,7 +281546,7 @@
     "display": "float quickSort_Sampling_Value(int32_t)",
     "location": {
       "column": "12",
-      "line": "190",
+      "line": "189",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "quickSort_Sampling_Value",
@@ -281560,7 +281560,7 @@
     "display": "void Send_RS458_Sensor(uint8_t *, uint16_t)",
     "location": {
       "column": "12",
-      "line": "192",
+      "line": "191",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Send_RS458_Sensor",
@@ -281574,7 +281574,7 @@
     "display": "void Send_RS458_Sensor(uint8_t *, uint16_t)",
     "location": {
       "column": "12",
-      "line": "192",
+      "line": "191",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Send_RS458_Sensor",
@@ -281588,7 +281588,7 @@
     "display": "uint32_t Read_Register_Rs485(uint8_t *, uint16_t *, uint8_t)",
     "location": {
       "column": "12",
-      "line": "193",
+      "line": "192",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Read_Register_Rs485",
@@ -281602,7 +281602,7 @@
     "display": "uint32_t Read_Register_Rs485(uint8_t *, uint16_t *, uint8_t)",
     "location": {
       "column": "12",
-      "line": "193",
+      "line": "192",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Read_Register_Rs485",
@@ -281616,7 +281616,7 @@
     "display": "void RS485_Done_Calib(void)",
     "location": {
       "column": "12",
-      "line": "195",
+      "line": "194",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "RS485_Done_Calib",
@@ -281630,7 +281630,7 @@
     "display": "void RS485_Done_Calib(void)",
     "location": {
       "column": "12",
-      "line": "195",
+      "line": "194",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "RS485_Done_Calib",
@@ -281644,7 +281644,7 @@
     "display": "void RS485_Enter_Calib(void)",
     "location": {
       "column": "12",
-      "line": "196",
+      "line": "195",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "RS485_Enter_Calib",
@@ -281658,7 +281658,7 @@
     "display": "void RS485_Enter_Calib(void)",
     "location": {
       "column": "12",
-      "line": "196",
+      "line": "195",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "RS485_Enter_Calib",
@@ -281672,7 +281672,7 @@
     "display": "void RS485_LogData_Calib(uint8_t, const void *, uint16_t)",
     "location": {
       "column": "12",
-      "line": "197",
+      "line": "196",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "RS485_LogData_Calib",
@@ -281686,7 +281686,7 @@
     "display": "void RS485_LogData_Calib(uint8_t, const void *, uint16_t)",
     "location": {
       "column": "12",
-      "line": "197",
+      "line": "196",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "RS485_LogData_Calib",
@@ -281700,7 +281700,7 @@
     "display": "void Handle_Data_Trans_Sensor(sData *, uint8_t)",
     "location": {
       "column": "12",
-      "line": "199",
+      "line": "198",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Handle_Data_Trans_Sensor",
@@ -281714,7 +281714,7 @@
     "display": "void Handle_Data_Trans_Sensor(sData *, uint8_t)",
     "location": {
       "column": "12",
-      "line": "199",
+      "line": "198",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Handle_Data_Trans_Sensor",
@@ -281728,7 +281728,7 @@
     "display": "void Handle_Data_Trans_SS_Clo(sData *, uint8_t)",
     "location": {
       "column": "12",
-      "line": "200",
+      "line": "199",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Handle_Data_Trans_SS_Clo",
@@ -281742,7 +281742,7 @@
     "display": "void Handle_Data_Trans_SS_Clo(sData *, uint8_t)",
     "location": {
       "column": "12",
-      "line": "200",
+      "line": "199",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Handle_Data_Trans_SS_Clo",
@@ -281756,7 +281756,7 @@
     "display": "void Handle_Data_Recv_Sensor(sData, uint8_t)",
     "location": {
       "column": "12",
-      "line": "202",
+      "line": "201",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Handle_Data_Recv_Sensor",
@@ -281770,7 +281770,7 @@
     "display": "void Handle_Data_Recv_Sensor(sData, uint8_t)",
     "location": {
       "column": "12",
-      "line": "202",
+      "line": "201",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Handle_Data_Recv_Sensor",
@@ -281784,7 +281784,7 @@
     "display": "void Handle_Data_Recv_SS_Clo(sData, uint8_t)",
     "location": {
       "column": "12",
-      "line": "203",
+      "line": "202",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Handle_Data_Recv_SS_Clo",
@@ -281798,7 +281798,7 @@
     "display": "void Handle_Data_Recv_SS_Clo(sData, uint8_t)",
     "location": {
       "column": "12",
-      "line": "203",
+      "line": "202",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Handle_Data_Recv_SS_Clo",
@@ -281812,7 +281812,7 @@
     "display": "void Handle_State_Sensor(uint8_t, uint8_t)",
     "location": {
       "column": "12",
-      "line": "205",
+      "line": "204",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Handle_State_Sensor",
@@ -281826,7 +281826,7 @@
     "display": "void Handle_State_Sensor(uint8_t, uint8_t)",
     "location": {
       "column": "12",
-      "line": "205",
+      "line": "204",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Handle_State_Sensor",
@@ -281840,7 +281840,7 @@
     "display": "void Handle_State_SS_Clo(uint8_t, uint8_t)",
     "location": {
       "column": "12",
-      "line": "206",
+      "line": "205",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Handle_State_SS_Clo",
@@ -281854,7 +281854,7 @@
     "display": "void Handle_State_SS_Clo(uint8_t, uint8_t)",
     "location": {
       "column": "12",
-      "line": "206",
+      "line": "205",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Handle_State_SS_Clo",
@@ -281868,7 +281868,7 @@
     "display": "void Handle_Data_Measure(uint8_t)",
     "location": {
       "column": "12",
-      "line": "208",
+      "line": "207",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Handle_Data_Measure",
@@ -281882,7 +281882,7 @@
     "display": "void Handle_Data_Measure(uint8_t)",
     "location": {
       "column": "12",
-      "line": "208",
+      "line": "207",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Handle_Data_Measure",
@@ -281896,7 +281896,7 @@
     "display": "void Init_Chlorine_Calib(void)",
     "location": {
       "column": "6",
-      "line": "210",
+      "line": "209",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Init_Chlorine_Calib",
@@ -281910,7 +281910,7 @@
     "display": "void Init_Chlorine_Calib(void)",
     "location": {
       "column": "6",
-      "line": "210",
+      "line": "209",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Init_Chlorine_Calib",
@@ -281924,7 +281924,7 @@
     "display": "void Save_Chlorine_Calib(uint16_t, uint16_t, int16_t, int16_t, int16_t)",
     "location": {
       "column": "6",
-      "line": "211",
+      "line": "210",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Save_Chlorine_Calib",
@@ -281938,7 +281938,7 @@
     "display": "void Save_Chlorine_Calib(uint16_t, uint16_t, int16_t, int16_t, int16_t)",
     "location": {
       "column": "6",
-      "line": "211",
+      "line": "210",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Save_Chlorine_Calib",
@@ -281952,7 +281952,7 @@
     "display": "void Save_Chlorine_PointCalib(uint16_t, int16_t, int16_t, int16_t, uint16_t, int16_t, int16_t, int16_t)",
     "location": {
       "column": "6",
-      "line": "218",
+      "line": "217",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Save_Chlorine_PointCalib",
@@ -281966,7 +281966,7 @@
     "display": "void Save_Chlorine_PointCalib(uint16_t, int16_t, int16_t, int16_t, uint16_t, int16_t, int16_t, int16_t)",
     "location": {
       "column": "6",
-      "line": "218",
+      "line": "217",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Save_Chlorine_PointCalib",
@@ -281980,7 +281980,7 @@
     "display": "void Init_Chlorine_PointCalib_1(void)",
     "location": {
       "column": "6",
-      "line": "226",
+      "line": "225",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Init_Chlorine_PointCalib_1",
@@ -281994,7 +281994,7 @@
     "display": "void Init_Chlorine_PointCalib_1(void)",
     "location": {
       "column": "6",
-      "line": "226",
+      "line": "225",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Init_Chlorine_PointCalib_1",
@@ -282008,7 +282008,7 @@
     "display": "float Chlorine_Compensation_pH(uint16_t, int16_t, int16_t)",
     "location": {
       "column": "7",
-      "line": "227",
+      "line": "226",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Chlorine_Compensation_pH",
@@ -282022,7 +282022,7 @@
     "display": "float Chlorine_Compensation_pH(uint16_t, int16_t, int16_t)",
     "location": {
       "column": "7",
-      "line": "227",
+      "line": "226",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Chlorine_Compensation_pH",
@@ -282036,7 +282036,7 @@
     "display": "void DCU_Logdata_Calib(uint8_t, int32_t)",
     "location": {
       "column": "6",
-      "line": "228",
+      "line": "227",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "DCU_Logdata_Calib",
@@ -282050,7 +282050,7 @@
     "display": "void DCU_Logdata_Calib(uint8_t, int32_t)",
     "location": {
       "column": "6",
-      "line": "228",
+      "line": "227",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "DCU_Logdata_Calib",
@@ -282064,7 +282064,7 @@
     "display": "void DCU_Enter_Calib(void)",
     "location": {
       "column": "6",
-      "line": "229",
+      "line": "228",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "DCU_Enter_Calib",
@@ -282078,7 +282078,7 @@
     "display": "void DCU_Enter_Calib(void)",
     "location": {
       "column": "6",
-      "line": "229",
+      "line": "228",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "DCU_Enter_Calib",
@@ -282092,7 +282092,7 @@
     "display": "void Save_Const_Temp_Compensation_Chlorine(uint16_t)",
     "location": {
       "column": "6",
-      "line": "231",
+      "line": "230",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Save_Const_Temp_Compensation_Chlorine",
@@ -282106,7 +282106,7 @@
     "display": "void Save_Const_Temp_Compensation_Chlorine(uint16_t)",
     "location": {
       "column": "6",
-      "line": "231",
+      "line": "230",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Save_Const_Temp_Compensation_Chlorine",
@@ -282120,7 +282120,7 @@
     "display": "void Init_Const_Temp_Compensation_Chlorine(void)",
     "location": {
       "column": "6",
-      "line": "232",
+      "line": "231",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Init_Const_Temp_Compensation_Chlorine",
@@ -282134,7 +282134,7 @@
     "display": "void Init_Const_Temp_Compensation_Chlorine(void)",
     "location": {
       "column": "6",
-      "line": "232",
+      "line": "231",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.h"
     },
     "name": "Init_Const_Temp_Compensation_Chlorine",
@@ -337904,13 +337904,27 @@
     "scope": null
   },
   {
+    "ID": "c:user_app_sensor.c@F@fevent_refresh_wdg_hard",
+    "What": "Function",
+    "defdec": "Dec",
+    "display": "uint8_t fevent_refresh_wdg_hard(uint8_t)",
+    "location": {
+      "column": "16",
+      "line": "19",
+      "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
+    },
+    "name": "fevent_refresh_wdg_hard",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
     "ID": "c:@sEventAppSensor",
     "What": "Variable",
     "defdec": "Def",
     "display": "sEventAppSensor",
     "location": {
       "column": "29",
-      "line": "20",
+      "line": "21",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "sEventAppSensor",
@@ -337924,7 +337938,7 @@
     "display": "aSampling_STT",
     "location": {
       "column": "9",
-      "line": "34",
+      "line": "36",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "aSampling_STT",
@@ -337938,7 +337952,7 @@
     "display": "aSampling_VALUE",
     "location": {
       "column": "9",
-      "line": "35",
+      "line": "37",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "aSampling_VALUE",
@@ -337952,7 +337966,7 @@
     "display": "CountBufferHandleRecvSS",
     "location": {
       "column": "10",
-      "line": "36",
+      "line": "38",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "CountBufferHandleRecvSS",
@@ -337966,7 +337980,7 @@
     "display": "aDATA_CALIB",
     "location": {
       "column": "9",
-      "line": "37",
+      "line": "39",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "aDATA_CALIB",
@@ -337980,7 +337994,7 @@
     "display": "sData_Calib",
     "location": {
       "column": "9",
-      "line": "38",
+      "line": "40",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "sData_Calib",
@@ -337994,7 +338008,7 @@
     "display": "sUart485SS",
     "location": {
       "column": "14",
-      "line": "39",
+      "line": "41",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "sUart485SS",
@@ -338008,7 +338022,7 @@
     "display": "sKindMode485",
     "location": {
       "column": "21",
-      "line": "41",
+      "line": "43",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "sKindMode485",
@@ -338022,7 +338036,7 @@
     "display": "sConvertChlorine",
     "location": {
       "column": "29",
-      "line": "46",
+      "line": "48",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "sConvertChlorine",
@@ -338036,7 +338050,7 @@
     "display": "Kind_Trans_Calib",
     "location": {
       "column": "9",
-      "line": "48",
+      "line": "50",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Kind_Trans_Calib",
@@ -338050,7 +338064,7 @@
     "display": "sTempAlarm",
     "location": {
       "column": "21",
-      "line": "50",
+      "line": "52",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "sTempAlarm",
@@ -338064,7 +338078,7 @@
     "display": "sSensor_Clo",
     "location": {
       "column": "21",
-      "line": "51",
+      "line": "53",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "sSensor_Clo",
@@ -338078,7 +338092,7 @@
     "display": "sHandleRs485",
     "location": {
       "column": "21",
-      "line": "52",
+      "line": "54",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "sHandleRs485",
@@ -338092,7 +338106,7 @@
     "display": "spHRecvMaster",
     "location": {
       "column": "25",
-      "line": "53",
+      "line": "55",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "spHRecvMaster",
@@ -338106,7 +338120,7 @@
     "display": "DCU_Log_DataCalib",
     "location": {
       "column": "9",
-      "line": "55",
+      "line": "57",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "DCU_Log_DataCalib",
@@ -338120,7 +338134,7 @@
     "display": "DCU_Log_KindCalib",
     "location": {
       "column": "9",
-      "line": "56",
+      "line": "58",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "DCU_Log_KindCalib",
@@ -338134,7 +338148,7 @@
     "display": "uint8_t fevent_sensor_entry(uint8_t)",
     "location": {
       "column": "16",
-      "line": "58",
+      "line": "60",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "fevent_sensor_entry",
@@ -338148,7 +338162,7 @@
     "display": "uint8_t fevent_sensor_transmit(uint8_t)",
     "location": {
       "column": "16",
-      "line": "63",
+      "line": "65",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "fevent_sensor_transmit",
@@ -338156,13 +338170,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@2526@F@fevent_sensor_transmit@Frame",
+    "ID": "c:user_app_sensor.c@2670@F@fevent_sensor_transmit@Frame",
     "What": "Variable",
     "defdec": "Def",
     "display": "Frame",
     "location": {
       "column": "13",
-      "line": "66",
+      "line": "68",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Frame",
@@ -338170,13 +338184,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@2554@F@fevent_sensor_transmit@sFrame",
+    "ID": "c:user_app_sensor.c@2698@F@fevent_sensor_transmit@sFrame",
     "What": "Variable",
     "defdec": "Def",
     "display": "sFrame",
     "location": {
       "column": "11",
-      "line": "67",
+      "line": "69",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "sFrame",
@@ -338190,7 +338204,7 @@
     "display": "uint8_t fevent_sensor_receive_handle(uint8_t)",
     "location": {
       "column": "16",
-      "line": "100",
+      "line": "102",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "fevent_sensor_receive_handle",
@@ -338204,7 +338218,7 @@
     "display": "uint8_t fevent_sensor_receive_complete(uint8_t)",
     "location": {
       "column": "16",
-      "line": "121",
+      "line": "123",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "fevent_sensor_receive_complete",
@@ -338212,13 +338226,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@4141@F@fevent_sensor_receive_complete@Crc_Check",
+    "ID": "c:user_app_sensor.c@4285@F@fevent_sensor_receive_complete@Crc_Check",
     "What": "Variable",
     "defdec": "Def",
     "display": "Crc_Check",
     "location": {
       "column": "14",
-      "line": "124",
+      "line": "126",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Crc_Check",
@@ -338226,13 +338240,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@4170@F@fevent_sensor_receive_complete@Crc_Recv",
+    "ID": "c:user_app_sensor.c@4314@F@fevent_sensor_receive_complete@Crc_Recv",
     "What": "Variable",
     "defdec": "Def",
     "display": "Crc_Recv",
     "location": {
       "column": "14",
-      "line": "125",
+      "line": "127",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Crc_Recv",
@@ -338246,7 +338260,7 @@
     "display": "uint8_t fevent_sensor_wait_calib(uint8_t)",
     "location": {
       "column": "16",
-      "line": "162",
+      "line": "164",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "fevent_sensor_wait_calib",
@@ -338260,7 +338274,7 @@
     "display": "uint8_t fevent_detect_ph_recv(uint8_t)",
     "location": {
       "column": "16",
-      "line": "171",
+      "line": "173",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "fevent_detect_ph_recv",
@@ -338274,7 +338288,7 @@
     "display": "uint8_t fevent_temp_alarm(uint8_t)",
     "location": {
       "column": "16",
-      "line": "178",
+      "line": "180",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "fevent_temp_alarm",
@@ -338288,10 +338302,38 @@
     "display": "uint8_t fevent_refresh_iwdg(uint8_t)",
     "location": {
       "column": "16",
-      "line": "197",
+      "line": "199",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "fevent_refresh_iwdg",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:user_app_sensor.c@F@fevent_refresh_wdg_hard",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "uint8_t fevent_refresh_wdg_hard(uint8_t)",
+    "location": {
+      "column": "16",
+      "line": "206",
+      "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
+    },
+    "name": "fevent_refresh_wdg_hard",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:user_app_sensor.c@6481@F@fevent_refresh_wdg_hard@state",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "state",
+    "location": {
+      "column": "20",
+      "line": "208",
+      "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
+    },
+    "name": "state",
     "origin": "project_file",
     "scope": null
   },
@@ -338302,7 +338344,7 @@
     "display": "void Handle_Data_Measure(uint8_t)",
     "location": {
       "column": "6",
-      "line": "204",
+      "line": "226",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Handle_Data_Measure",
@@ -338310,13 +338352,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@6385@F@Handle_Data_Measure@Stamp",
+    "ID": "c:user_app_sensor.c@7084@F@Handle_Data_Measure@Stamp",
     "What": "Variable",
     "defdec": "Def",
     "display": "Stamp",
     "location": {
       "column": "11",
-      "line": "206",
+      "line": "228",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Stamp",
@@ -338330,7 +338372,7 @@
     "display": "void quickSort_Sampling(int32_t *, int32_t *, uint8_t, uint8_t)",
     "location": {
       "column": "6",
-      "line": "240",
+      "line": "262",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "quickSort_Sampling",
@@ -338338,13 +338380,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@7729@F@quickSort_Sampling@i",
+    "ID": "c:user_app_sensor.c@8428@F@quickSort_Sampling@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
     "location": {
       "column": "15",
-      "line": "244",
+      "line": "266",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "i",
@@ -338352,13 +338394,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@7787@F@quickSort_Sampling@j",
+    "ID": "c:user_app_sensor.c@8486@F@quickSort_Sampling@j",
     "What": "Variable",
     "defdec": "Def",
     "display": "j",
     "location": {
       "column": "17",
-      "line": "246",
+      "line": "268",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "j",
@@ -338366,13 +338408,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@7912@F@quickSort_Sampling@temp",
+    "ID": "c:user_app_sensor.c@8611@F@quickSort_Sampling@temp",
     "What": "Variable",
     "defdec": "Def",
     "display": "temp",
     "location": {
       "column": "8",
-      "line": "250",
+      "line": "272",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "temp",
@@ -338386,7 +338428,7 @@
     "display": "float quickSort_Sampling_Value(int32_t)",
     "location": {
       "column": "7",
-      "line": "263",
+      "line": "285",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "quickSort_Sampling_Value",
@@ -338394,13 +338436,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@8235@F@quickSort_Sampling_Value@Handle_Once",
+    "ID": "c:user_app_sensor.c@8934@F@quickSort_Sampling_Value@Handle_Once",
     "What": "Variable",
     "defdec": "Def",
     "display": "Handle_Once",
     "location": {
       "column": "20",
-      "line": "265",
+      "line": "287",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Handle_Once",
@@ -338408,13 +338450,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@8272@F@quickSort_Sampling_Value@Result",
+    "ID": "c:user_app_sensor.c@8971@F@quickSort_Sampling_Value@Result",
     "What": "Variable",
     "defdec": "Def",
     "display": "Result",
     "location": {
       "column": "11",
-      "line": "266",
+      "line": "288",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Result",
@@ -338422,13 +338464,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@8473@F@quickSort_Sampling_Value@i",
+    "ID": "c:user_app_sensor.c@9172@F@quickSort_Sampling_Value@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
     "location": {
       "column": "25",
-      "line": "277",
+      "line": "299",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "i",
@@ -338436,13 +338478,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@8907@F@quickSort_Sampling_Value@i",
+    "ID": "c:user_app_sensor.c@9606@F@quickSort_Sampling_Value@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
     "location": {
       "column": "25",
-      "line": "290",
+      "line": "312",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "i",
@@ -338456,7 +338498,7 @@
     "display": "float Filter_Clo(float)",
     "location": {
       "column": "7",
-      "line": "308",
+      "line": "330",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Filter_Clo",
@@ -338464,13 +338506,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@9517@F@Filter_Clo@x_est",
+    "ID": "c:user_app_sensor.c@10216@F@Filter_Clo@x_est",
     "What": "Variable",
     "defdec": "Def",
     "display": "x_est",
     "location": {
       "column": "18",
-      "line": "311",
+      "line": "333",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "x_est",
@@ -338478,13 +338520,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@9571@F@Filter_Clo@P",
+    "ID": "c:user_app_sensor.c@10270@F@Filter_Clo@P",
     "What": "Variable",
     "defdec": "Def",
     "display": "P",
     "location": {
       "column": "18",
-      "line": "312",
+      "line": "334",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "P",
@@ -338492,13 +338534,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@9637@F@Filter_Clo@x_est_last",
+    "ID": "c:user_app_sensor.c@10336@F@Filter_Clo@x_est_last",
     "What": "Variable",
     "defdec": "Def",
     "display": "x_est_last",
     "location": {
       "column": "18",
-      "line": "314",
+      "line": "336",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "x_est_last",
@@ -338506,13 +338548,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@9675@F@Filter_Clo@Q",
+    "ID": "c:user_app_sensor.c@10374@F@Filter_Clo@Q",
     "What": "Variable",
     "defdec": "Def",
     "display": "Q",
     "location": {
       "column": "11",
-      "line": "316",
+      "line": "338",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Q",
@@ -338520,13 +338562,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@9719@F@Filter_Clo@R",
+    "ID": "c:user_app_sensor.c@10418@F@Filter_Clo@R",
     "What": "Variable",
     "defdec": "Def",
     "display": "R",
     "location": {
       "column": "11",
-      "line": "317",
+      "line": "339",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "R",
@@ -338534,13 +338576,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@9764@F@Filter_Clo@x_pred",
+    "ID": "c:user_app_sensor.c@10463@F@Filter_Clo@x_pred",
     "What": "Variable",
     "defdec": "Def",
     "display": "x_pred",
     "location": {
       "column": "11",
-      "line": "319",
+      "line": "341",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "x_pred",
@@ -338548,13 +338590,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@9764@F@Filter_Clo@P_pred",
+    "ID": "c:user_app_sensor.c@10463@F@Filter_Clo@P_pred",
     "What": "Variable",
     "defdec": "Dec",
     "display": "P_pred",
     "location": {
       "column": "19",
-      "line": "319",
+      "line": "341",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "P_pred",
@@ -338562,13 +338604,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@9764@F@Filter_Clo@K",
+    "ID": "c:user_app_sensor.c@10463@F@Filter_Clo@K",
     "What": "Variable",
     "defdec": "Dec",
     "display": "K",
     "location": {
       "column": "27",
-      "line": "319",
+      "line": "341",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "K",
@@ -338576,13 +338618,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@9800@F@Filter_Clo@varFloat",
+    "ID": "c:user_app_sensor.c@10499@F@Filter_Clo@varFloat",
     "What": "Variable",
     "defdec": "Def",
     "display": "varFloat",
     "location": {
       "column": "11",
-      "line": "321",
+      "line": "343",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "varFloat",
@@ -338596,7 +338638,7 @@
     "display": "float Filter_Temp(float)",
     "location": {
       "column": "7",
-      "line": "358",
+      "line": "380",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Filter_Temp",
@@ -338610,7 +338652,7 @@
     "display": "void Handle_Data_Trans_Sensor(sData *, uint8_t)",
     "location": {
       "column": "6",
-      "line": "364",
+      "line": "386",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Handle_Data_Trans_Sensor",
@@ -338624,7 +338666,7 @@
     "display": "void Handle_Data_Recv_Sensor(sData, uint8_t)",
     "location": {
       "column": "6",
-      "line": "368",
+      "line": "390",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Handle_Data_Recv_Sensor",
@@ -338638,7 +338680,7 @@
     "display": "void Handle_State_Sensor(uint8_t, uint8_t)",
     "location": {
       "column": "6",
-      "line": "374",
+      "line": "396",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Handle_State_Sensor",
@@ -338652,7 +338694,7 @@
     "display": "Const_PH_Compensation_Chlorine_f",
     "location": {
       "column": "7",
-      "line": "381",
+      "line": "403",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Const_PH_Compensation_Chlorine_f",
@@ -338666,7 +338708,7 @@
     "display": "void Handle_Data_Trans_SS_Clo(sData *, uint8_t)",
     "location": {
       "column": "6",
-      "line": "383",
+      "line": "405",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Handle_Data_Trans_SS_Clo",
@@ -338674,13 +338716,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@11335@F@Handle_Data_Trans_SS_Clo@aData",
+    "ID": "c:user_app_sensor.c@12034@F@Handle_Data_Trans_SS_Clo@aData",
     "What": "Variable",
     "defdec": "Def",
     "display": "aData",
     "location": {
       "column": "13",
-      "line": "385",
+      "line": "407",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "aData",
@@ -338688,13 +338730,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@11364@F@Handle_Data_Trans_SS_Clo@ph_Send_f",
+    "ID": "c:user_app_sensor.c@12063@F@Handle_Data_Trans_SS_Clo@ph_Send_f",
     "What": "Variable",
     "defdec": "Def",
     "display": "ph_Send_f",
     "location": {
       "column": "11",
-      "line": "386",
+      "line": "408",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "ph_Send_f",
@@ -338702,13 +338744,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@11424@F@Handle_Data_Trans_SS_Clo@ph_Send_u32",
+    "ID": "c:user_app_sensor.c@12123@F@Handle_Data_Trans_SS_Clo@ph_Send_u32",
     "What": "Variable",
     "defdec": "Def",
     "display": "ph_Send_u32",
     "location": {
       "column": "14",
-      "line": "388",
+      "line": "410",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "ph_Send_u32",
@@ -338722,7 +338764,7 @@
     "display": "void Handle_Data_Recv_SS_Clo(sData, uint8_t)",
     "location": {
       "column": "6",
-      "line": "466",
+      "line": "488",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Handle_Data_Recv_SS_Clo",
@@ -338730,13 +338772,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@14966@F@Handle_Data_Recv_SS_Clo@Pos",
+    "ID": "c:user_app_sensor.c@15665@F@Handle_Data_Recv_SS_Clo@Pos",
     "What": "Variable",
     "defdec": "Def",
     "display": "Pos",
     "location": {
       "column": "14",
-      "line": "468",
+      "line": "490",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Pos",
@@ -338744,13 +338786,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@14989@F@Handle_Data_Recv_SS_Clo@Stamp_Hex",
+    "ID": "c:user_app_sensor.c@15688@F@Handle_Data_Recv_SS_Clo@Stamp_Hex",
     "What": "Variable",
     "defdec": "Def",
     "display": "Stamp_Hex",
     "location": {
       "column": "14",
-      "line": "469",
+      "line": "491",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Stamp_Hex",
@@ -338758,13 +338800,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@15024@F@Handle_Data_Recv_SS_Clo@test_1",
+    "ID": "c:user_app_sensor.c@15723@F@Handle_Data_Recv_SS_Clo@test_1",
     "What": "Variable",
     "defdec": "Def",
     "display": "test_1",
     "location": {
       "column": "11",
-      "line": "471",
+      "line": "493",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "test_1",
@@ -338778,7 +338820,7 @@
     "display": "void Handle_State_SS_Clo(uint8_t, uint8_t)",
     "location": {
       "column": "6",
-      "line": "546",
+      "line": "568",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Handle_State_SS_Clo",
@@ -338792,7 +338834,7 @@
     "display": "void Save_Const_Temp_Compensation_Chlorine(uint16_t)",
     "location": {
       "column": "6",
-      "line": "601",
+      "line": "623",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Save_Const_Temp_Compensation_Chlorine",
@@ -338800,13 +338842,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@19491@F@Save_Const_Temp_Compensation_Chlorine@aData",
+    "ID": "c:user_app_sensor.c@20190@F@Save_Const_Temp_Compensation_Chlorine@aData",
     "What": "Variable",
     "defdec": "Def",
     "display": "aData",
     "location": {
       "column": "13",
-      "line": "604",
+      "line": "626",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "aData",
@@ -338814,13 +338856,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@19520@F@Save_Const_Temp_Compensation_Chlorine@length",
+    "ID": "c:user_app_sensor.c@20219@F@Save_Const_Temp_Compensation_Chlorine@length",
     "What": "Variable",
     "defdec": "Def",
     "display": "length",
     "location": {
       "column": "13",
-      "line": "605",
+      "line": "627",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "length",
@@ -338834,7 +338876,7 @@
     "display": "void Init_Const_Temp_Compensation_Chlorine(void)",
     "location": {
       "column": "6",
-      "line": "616",
+      "line": "638",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Init_Const_Temp_Compensation_Chlorine",
@@ -338848,7 +338890,7 @@
     "display": "void Save_Chlorine_Calib(uint16_t, uint16_t, int16_t, int16_t, int16_t)",
     "location": {
       "column": "6",
-      "line": "632",
+      "line": "654",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Save_Chlorine_Calib",
@@ -338856,13 +338898,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@20687@F@Save_Chlorine_Calib@aData",
+    "ID": "c:user_app_sensor.c@21386@F@Save_Chlorine_Calib@aData",
     "What": "Variable",
     "defdec": "Def",
     "display": "aData",
     "location": {
       "column": "13",
-      "line": "639",
+      "line": "661",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "aData",
@@ -338870,13 +338912,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@20717@F@Save_Chlorine_Calib@length",
+    "ID": "c:user_app_sensor.c@21416@F@Save_Chlorine_Calib@length",
     "What": "Variable",
     "defdec": "Def",
     "display": "length",
     "location": {
       "column": "13",
-      "line": "640",
+      "line": "662",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "length",
@@ -338890,7 +338932,7 @@
     "display": "void Init_Chlorine_Calib(void)",
     "location": {
       "column": "6",
-      "line": "667",
+      "line": "689",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Init_Chlorine_Calib",
@@ -338904,7 +338946,7 @@
     "display": "void Save_Chlorine_PointCalib(uint16_t, int16_t, int16_t, int16_t, uint16_t, int16_t, int16_t, int16_t)",
     "location": {
       "column": "6",
-      "line": "698",
+      "line": "720",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Save_Chlorine_PointCalib",
@@ -338912,13 +338954,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@23289@F@Save_Chlorine_PointCalib@aData",
+    "ID": "c:user_app_sensor.c@23988@F@Save_Chlorine_PointCalib@aData",
     "What": "Variable",
     "defdec": "Def",
     "display": "aData",
     "location": {
       "column": "13",
-      "line": "708",
+      "line": "730",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "aData",
@@ -338926,13 +338968,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@23319@F@Save_Chlorine_PointCalib@length",
+    "ID": "c:user_app_sensor.c@24018@F@Save_Chlorine_PointCalib@length",
     "What": "Variable",
     "defdec": "Def",
     "display": "length",
     "location": {
       "column": "13",
-      "line": "709",
+      "line": "731",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "length",
@@ -338946,7 +338988,7 @@
     "display": "void Init_Chlorine_PointCalib_1(void)",
     "location": {
       "column": "6",
-      "line": "749",
+      "line": "771",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Init_Chlorine_PointCalib_1",
@@ -338960,7 +339002,7 @@
     "display": "float Chlorine_Compensation_pH(uint16_t, int16_t, int16_t)",
     "location": {
       "column": "7",
-      "line": "794",
+      "line": "816",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Chlorine_Compensation_pH",
@@ -338968,13 +339010,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@26803@F@Chlorine_Compensation_pH@Result",
+    "ID": "c:user_app_sensor.c@27502@F@Chlorine_Compensation_pH@Result",
     "What": "Variable",
     "defdec": "Def",
     "display": "Result",
     "location": {
       "column": "11",
-      "line": "796",
+      "line": "818",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Result",
@@ -338982,13 +339024,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@26828@F@Chlorine_Compensation_pH@alpha",
+    "ID": "c:user_app_sensor.c@27527@F@Chlorine_Compensation_pH@alpha",
     "What": "Variable",
     "defdec": "Def",
     "display": "alpha",
     "location": {
       "column": "11",
-      "line": "798",
+      "line": "820",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "alpha",
@@ -338996,13 +339038,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@26873@F@Chlorine_Compensation_pH@Const_Compensation_Point",
+    "ID": "c:user_app_sensor.c@27572@F@Chlorine_Compensation_pH@Const_Compensation_Point",
     "What": "Variable",
     "defdec": "Def",
     "display": "Const_Compensation_Point",
     "location": {
       "column": "11",
-      "line": "799",
+      "line": "821",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Const_Compensation_Point",
@@ -339010,13 +339052,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@26914@F@Chlorine_Compensation_pH@Const_Compensation_Clo",
+    "ID": "c:user_app_sensor.c@27613@F@Chlorine_Compensation_pH@Const_Compensation_Clo",
     "What": "Variable",
     "defdec": "Def",
     "display": "Const_Compensation_Clo",
     "location": {
       "column": "11",
-      "line": "800",
+      "line": "822",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Const_Compensation_Clo",
@@ -339024,13 +339066,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@26953@F@Chlorine_Compensation_pH@temp_var",
+    "ID": "c:user_app_sensor.c@27652@F@Chlorine_Compensation_pH@temp_var",
     "What": "Variable",
     "defdec": "Def",
     "display": "temp_var",
     "location": {
       "column": "11",
-      "line": "801",
+      "line": "823",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "temp_var",
@@ -339038,13 +339080,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@26978@F@Chlorine_Compensation_pH@pH_var",
+    "ID": "c:user_app_sensor.c@27677@F@Chlorine_Compensation_pH@pH_var",
     "What": "Variable",
     "defdec": "Def",
     "display": "pH_var",
     "location": {
       "column": "11",
-      "line": "802",
+      "line": "824",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "pH_var",
@@ -339052,13 +339094,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@27001@F@Chlorine_Compensation_pH@Clo_Point",
+    "ID": "c:user_app_sensor.c@27700@F@Chlorine_Compensation_pH@Clo_Point",
     "What": "Variable",
     "defdec": "Def",
     "display": "Clo_Point",
     "location": {
       "column": "11",
-      "line": "803",
+      "line": "825",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Clo_Point",
@@ -339066,13 +339108,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@27027@F@Chlorine_Compensation_pH@Clo_Var",
+    "ID": "c:user_app_sensor.c@27726@F@Chlorine_Compensation_pH@Clo_Var",
     "What": "Variable",
     "defdec": "Def",
     "display": "Clo_Var",
     "location": {
       "column": "11",
-      "line": "804",
+      "line": "826",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Clo_Var",
@@ -339080,13 +339122,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@27057@F@Chlorine_Compensation_pH@ADC_Zero",
+    "ID": "c:user_app_sensor.c@27756@F@Chlorine_Compensation_pH@ADC_Zero",
     "What": "Variable",
     "defdec": "Def",
     "display": "ADC_Zero",
     "location": {
       "column": "14",
-      "line": "806",
+      "line": "828",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "ADC_Zero",
@@ -339094,13 +339136,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@27091@F@Chlorine_Compensation_pH@ADC_Slope_u",
+    "ID": "c:user_app_sensor.c@27790@F@Chlorine_Compensation_pH@ADC_Slope_u",
     "What": "Variable",
     "defdec": "Def",
     "display": "ADC_Slope_u",
     "location": {
       "column": "14",
-      "line": "808",
+      "line": "830",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "ADC_Slope_u",
@@ -339108,13 +339150,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@27122@F@Chlorine_Compensation_pH@Clo_Slope_f",
+    "ID": "c:user_app_sensor.c@27821@F@Chlorine_Compensation_pH@Clo_Slope_f",
     "What": "Variable",
     "defdec": "Def",
     "display": "Clo_Slope_f",
     "location": {
       "column": "11",
-      "line": "809",
+      "line": "831",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Clo_Slope_f",
@@ -339122,13 +339164,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@27150@F@Chlorine_Compensation_pH@Temp_Slope_f",
+    "ID": "c:user_app_sensor.c@27849@F@Chlorine_Compensation_pH@Temp_Slope_f",
     "What": "Variable",
     "defdec": "Def",
     "display": "Temp_Slope_f",
     "location": {
       "column": "11",
-      "line": "810",
+      "line": "832",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Temp_Slope_f",
@@ -339136,13 +339178,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@27179@F@Chlorine_Compensation_pH@pH_Slope_f",
+    "ID": "c:user_app_sensor.c@27878@F@Chlorine_Compensation_pH@pH_Slope_f",
     "What": "Variable",
     "defdec": "Def",
     "display": "pH_Slope_f",
     "location": {
       "column": "11",
-      "line": "811",
+      "line": "833",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "pH_Slope_f",
@@ -339150,13 +339192,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@27212@F@Chlorine_Compensation_pH@ADC_Point_u",
+    "ID": "c:user_app_sensor.c@27911@F@Chlorine_Compensation_pH@ADC_Point_u",
     "What": "Variable",
     "defdec": "Def",
     "display": "ADC_Point_u",
     "location": {
       "column": "14",
-      "line": "813",
+      "line": "835",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "ADC_Point_u",
@@ -339164,13 +339206,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@27243@F@Chlorine_Compensation_pH@Clo_Point_f",
+    "ID": "c:user_app_sensor.c@27942@F@Chlorine_Compensation_pH@Clo_Point_f",
     "What": "Variable",
     "defdec": "Def",
     "display": "Clo_Point_f",
     "location": {
       "column": "11",
-      "line": "814",
+      "line": "836",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Clo_Point_f",
@@ -339178,13 +339220,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@27271@F@Chlorine_Compensation_pH@Temp_Point_f",
+    "ID": "c:user_app_sensor.c@27970@F@Chlorine_Compensation_pH@Temp_Point_f",
     "What": "Variable",
     "defdec": "Def",
     "display": "Temp_Point_f",
     "location": {
       "column": "11",
-      "line": "815",
+      "line": "837",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Temp_Point_f",
@@ -339192,13 +339234,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@27300@F@Chlorine_Compensation_pH@pH_Point_f",
+    "ID": "c:user_app_sensor.c@27999@F@Chlorine_Compensation_pH@pH_Point_f",
     "What": "Variable",
     "defdec": "Def",
     "display": "pH_Point_f",
     "location": {
       "column": "11",
-      "line": "816",
+      "line": "838",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "pH_Point_f",
@@ -339206,13 +339248,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@27333@F@Chlorine_Compensation_pH@stamp_ADC_Slope_u",
+    "ID": "c:user_app_sensor.c@28032@F@Chlorine_Compensation_pH@stamp_ADC_Slope_u",
     "What": "Variable",
     "defdec": "Def",
     "display": "stamp_ADC_Slope_u",
     "location": {
       "column": "14",
-      "line": "818",
+      "line": "840",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "stamp_ADC_Slope_u",
@@ -339220,13 +339262,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@27370@F@Chlorine_Compensation_pH@stamp_Clo_Slope_f",
+    "ID": "c:user_app_sensor.c@28069@F@Chlorine_Compensation_pH@stamp_Clo_Slope_f",
     "What": "Variable",
     "defdec": "Def",
     "display": "stamp_Clo_Slope_f",
     "location": {
       "column": "13",
-      "line": "819",
+      "line": "841",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "stamp_Clo_Slope_f",
@@ -339234,13 +339276,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@27406@F@Chlorine_Compensation_pH@stamp_Temp_Slope_f",
+    "ID": "c:user_app_sensor.c@28105@F@Chlorine_Compensation_pH@stamp_Temp_Slope_f",
     "What": "Variable",
     "defdec": "Def",
     "display": "stamp_Temp_Slope_f",
     "location": {
       "column": "13",
-      "line": "820",
+      "line": "842",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "stamp_Temp_Slope_f",
@@ -339248,13 +339290,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@27443@F@Chlorine_Compensation_pH@stamp_pH_Slope_f",
+    "ID": "c:user_app_sensor.c@28142@F@Chlorine_Compensation_pH@stamp_pH_Slope_f",
     "What": "Variable",
     "defdec": "Def",
     "display": "stamp_pH_Slope_f",
     "location": {
       "column": "13",
-      "line": "821",
+      "line": "843",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "stamp_pH_Slope_f",
@@ -339262,13 +339304,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@27484@F@Chlorine_Compensation_pH@stamp_ADC_Point_u",
+    "ID": "c:user_app_sensor.c@28183@F@Chlorine_Compensation_pH@stamp_ADC_Point_u",
     "What": "Variable",
     "defdec": "Def",
     "display": "stamp_ADC_Point_u",
     "location": {
       "column": "14",
-      "line": "823",
+      "line": "845",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "stamp_ADC_Point_u",
@@ -339276,13 +339318,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@27521@F@Chlorine_Compensation_pH@stamp_Clo_Point_f",
+    "ID": "c:user_app_sensor.c@28220@F@Chlorine_Compensation_pH@stamp_Clo_Point_f",
     "What": "Variable",
     "defdec": "Def",
     "display": "stamp_Clo_Point_f",
     "location": {
       "column": "13",
-      "line": "824",
+      "line": "846",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "stamp_Clo_Point_f",
@@ -339290,13 +339332,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@27557@F@Chlorine_Compensation_pH@stamp_Temp_Point_f",
+    "ID": "c:user_app_sensor.c@28256@F@Chlorine_Compensation_pH@stamp_Temp_Point_f",
     "What": "Variable",
     "defdec": "Def",
     "display": "stamp_Temp_Point_f",
     "location": {
       "column": "13",
-      "line": "825",
+      "line": "847",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "stamp_Temp_Point_f",
@@ -339304,13 +339346,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@27594@F@Chlorine_Compensation_pH@stamp_pH_Point_f",
+    "ID": "c:user_app_sensor.c@28293@F@Chlorine_Compensation_pH@stamp_pH_Point_f",
     "What": "Variable",
     "defdec": "Def",
     "display": "stamp_pH_Point_f",
     "location": {
       "column": "13",
-      "line": "826",
+      "line": "848",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "stamp_pH_Point_f",
@@ -339318,13 +339360,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@27699@F@Chlorine_Compensation_pH@array_stt",
+    "ID": "c:user_app_sensor.c@28398@F@Chlorine_Compensation_pH@array_stt",
     "What": "Variable",
     "defdec": "Def",
     "display": "array_stt",
     "location": {
       "column": "14",
-      "line": "832",
+      "line": "854",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "array_stt",
@@ -339332,13 +339374,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@27731@F@Chlorine_Compensation_pH@array_pH",
+    "ID": "c:user_app_sensor.c@28430@F@Chlorine_Compensation_pH@array_pH",
     "What": "Variable",
     "defdec": "Def",
     "display": "array_pH",
     "location": {
       "column": "14",
-      "line": "833",
+      "line": "855",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "array_pH",
@@ -339346,13 +339388,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@28017@F@Chlorine_Compensation_pH@i",
+    "ID": "c:user_app_sensor.c@28716@F@Chlorine_Compensation_pH@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
     "location": {
       "column": "17",
-      "line": "844",
+      "line": "866",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "i",
@@ -339360,13 +339402,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@28064@F@Chlorine_Compensation_pH@j",
+    "ID": "c:user_app_sensor.c@28763@F@Chlorine_Compensation_pH@j",
     "What": "Variable",
     "defdec": "Def",
     "display": "j",
     "location": {
       "column": "21",
-      "line": "846",
+      "line": "868",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "j",
@@ -339374,13 +339416,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@28185@F@Chlorine_Compensation_pH@temp",
+    "ID": "c:user_app_sensor.c@28884@F@Chlorine_Compensation_pH@temp",
     "What": "Variable",
     "defdec": "Def",
     "display": "temp",
     "location": {
       "column": "25",
-      "line": "850",
+      "line": "872",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "temp",
@@ -339388,13 +339430,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@28543@F@Chlorine_Compensation_pH@arr_Slope",
+    "ID": "c:user_app_sensor.c@29242@F@Chlorine_Compensation_pH@arr_Slope",
     "What": "Variable",
     "defdec": "Def",
     "display": "arr_Slope",
     "location": {
       "column": "13",
-      "line": "863",
+      "line": "885",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "arr_Slope",
@@ -339402,13 +339444,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@28571@F@Chlorine_Compensation_pH@arr_Point",
+    "ID": "c:user_app_sensor.c@29270@F@Chlorine_Compensation_pH@arr_Point",
     "What": "Variable",
     "defdec": "Def",
     "display": "arr_Point",
     "location": {
       "column": "13",
-      "line": "864",
+      "line": "886",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "arr_Point",
@@ -339416,13 +339458,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@31300@F@Chlorine_Compensation_pH@a",
+    "ID": "c:user_app_sensor.c@31999@F@Chlorine_Compensation_pH@a",
     "What": "Variable",
     "defdec": "Def",
     "display": "a",
     "location": {
       "column": "11",
-      "line": "947",
+      "line": "969",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "a",
@@ -339430,13 +339472,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@31318@F@Chlorine_Compensation_pH@b",
+    "ID": "c:user_app_sensor.c@32017@F@Chlorine_Compensation_pH@b",
     "What": "Variable",
     "defdec": "Def",
     "display": "b",
     "location": {
       "column": "11",
-      "line": "948",
+      "line": "970",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "b",
@@ -339450,7 +339492,7 @@
     "display": "void DCU_Logdata_Calib(uint8_t, int32_t)",
     "location": {
       "column": "6",
-      "line": "1007",
+      "line": "1029",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "DCU_Logdata_Calib",
@@ -339464,7 +339506,7 @@
     "display": "void DCU_Enter_Calib(void)",
     "location": {
       "column": "6",
-      "line": "1014",
+      "line": "1036",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "DCU_Enter_Calib",
@@ -339472,13 +339514,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@34231@F@DCU_Enter_Calib@Value",
+    "ID": "c:user_app_sensor.c@34930@F@DCU_Enter_Calib@Value",
     "What": "Variable",
     "defdec": "Def",
     "display": "Value",
     "location": {
       "column": "13",
-      "line": "1016",
+      "line": "1038",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Value",
@@ -339492,7 +339534,7 @@
     "display": "void RS485_Done_Calib(void)",
     "location": {
       "column": "6",
-      "line": "1077",
+      "line": "1099",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "RS485_Done_Calib",
@@ -339506,7 +339548,7 @@
     "display": "void RS485_Enter_Calib(void)",
     "location": {
       "column": "6",
-      "line": "1083",
+      "line": "1105",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "RS485_Enter_Calib",
@@ -339520,7 +339562,7 @@
     "display": "void RS485_LogData_Calib(uint8_t, const void *, uint16_t)",
     "location": {
       "column": "6",
-      "line": "1090",
+      "line": "1112",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "RS485_LogData_Calib",
@@ -339528,13 +339570,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@37407@F@RS485_LogData_Calib@dst8",
+    "ID": "c:user_app_sensor.c@38106@F@RS485_LogData_Calib@dst8",
     "What": "Variable",
     "defdec": "Def",
     "display": "dst8",
     "location": {
       "column": "14",
-      "line": "1092",
+      "line": "1114",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "dst8",
@@ -339548,7 +339590,7 @@
     "display": "uint32_t Read_Register_Rs485(uint8_t *, uint16_t *, uint8_t)",
     "location": {
       "column": "10",
-      "line": "1120",
+      "line": "1142",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Read_Register_Rs485",
@@ -339556,13 +339598,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@38294@F@Read_Register_Rs485@stamp",
+    "ID": "c:user_app_sensor.c@38993@F@Read_Register_Rs485@stamp",
     "What": "Variable",
     "defdec": "Def",
     "display": "stamp",
     "location": {
       "column": "14",
-      "line": "1122",
+      "line": "1144",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "stamp",
@@ -339570,13 +339612,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@38319@F@Read_Register_Rs485@length",
+    "ID": "c:user_app_sensor.c@39018@F@Read_Register_Rs485@length",
     "What": "Variable",
     "defdec": "Def",
     "display": "length",
     "location": {
       "column": "14",
-      "line": "1123",
+      "line": "1145",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "length",
@@ -339590,7 +339632,7 @@
     "display": "void Send_RS458_Sensor(uint8_t *, uint16_t)",
     "location": {
       "column": "13",
-      "line": "1140",
+      "line": "1162",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Send_RS458_Sensor",
@@ -339604,7 +339646,7 @@
     "display": "void Save_ParamCalib(float, float)",
     "location": {
       "column": "6",
-      "line": "1163",
+      "line": "1185",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Save_ParamCalib",
@@ -339612,13 +339654,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@39715@F@Save_ParamCalib@aData",
+    "ID": "c:user_app_sensor.c@40414@F@Save_ParamCalib@aData",
     "What": "Variable",
     "defdec": "Def",
     "display": "aData",
     "location": {
       "column": "13",
-      "line": "1166",
+      "line": "1188",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "aData",
@@ -339626,13 +339668,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@39745@F@Save_ParamCalib@length",
+    "ID": "c:user_app_sensor.c@40444@F@Save_ParamCalib@length",
     "What": "Variable",
     "defdec": "Def",
     "display": "length",
     "location": {
       "column": "13",
-      "line": "1167",
+      "line": "1189",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "length",
@@ -339640,13 +339682,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@39774@F@Save_ParamCalib@hexUint_Compensation_Clo",
+    "ID": "c:user_app_sensor.c@40473@F@Save_ParamCalib@hexUint_Compensation_Clo",
     "What": "Variable",
     "defdec": "Def",
     "display": "hexUint_Compensation_Clo",
     "location": {
       "column": "14",
-      "line": "1169",
+      "line": "1191",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "hexUint_Compensation_Clo",
@@ -339654,13 +339696,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@39818@F@Save_ParamCalib@hexUint_Compensation_temp",
+    "ID": "c:user_app_sensor.c@40517@F@Save_ParamCalib@hexUint_Compensation_temp",
     "What": "Variable",
     "defdec": "Def",
     "display": "hexUint_Compensation_temp",
     "location": {
       "column": "14",
-      "line": "1170",
+      "line": "1192",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "hexUint_Compensation_temp",
@@ -339674,7 +339716,7 @@
     "display": "void Init_ParamCalib(void)",
     "location": {
       "column": "6",
-      "line": "1192",
+      "line": "1214",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Init_ParamCalib",
@@ -339682,13 +339724,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@40715@F@Init_ParamCalib@hexUint_Compensation_Clo",
+    "ID": "c:user_app_sensor.c@41414@F@Init_ParamCalib@hexUint_Compensation_Clo",
     "What": "Variable",
     "defdec": "Def",
     "display": "hexUint_Compensation_Clo",
     "location": {
       "column": "14",
-      "line": "1195",
+      "line": "1217",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "hexUint_Compensation_Clo",
@@ -339696,13 +339738,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@40759@F@Init_ParamCalib@hexUint_Compensation_temp",
+    "ID": "c:user_app_sensor.c@41458@F@Init_ParamCalib@hexUint_Compensation_temp",
     "What": "Variable",
     "defdec": "Def",
     "display": "hexUint_Compensation_temp",
     "location": {
       "column": "14",
-      "line": "1196",
+      "line": "1218",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "hexUint_Compensation_temp",
@@ -339716,7 +339758,7 @@
     "display": "void Save_TempAlarm(uint8_t, float, float)",
     "location": {
       "column": "6",
-      "line": "1221",
+      "line": "1243",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Save_TempAlarm",
@@ -339724,13 +339766,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@42002@F@Save_TempAlarm@aData",
+    "ID": "c:user_app_sensor.c@42701@F@Save_TempAlarm@aData",
     "What": "Variable",
     "defdec": "Def",
     "display": "aData",
     "location": {
       "column": "13",
-      "line": "1224",
+      "line": "1246",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "aData",
@@ -339738,13 +339780,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@42032@F@Save_TempAlarm@length",
+    "ID": "c:user_app_sensor.c@42731@F@Save_TempAlarm@length",
     "What": "Variable",
     "defdec": "Def",
     "display": "length",
     "location": {
       "column": "13",
-      "line": "1225",
+      "line": "1247",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "length",
@@ -339752,13 +339794,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@42061@F@Save_TempAlarm@hexUint_AlarmUpper",
+    "ID": "c:user_app_sensor.c@42760@F@Save_TempAlarm@hexUint_AlarmUpper",
     "What": "Variable",
     "defdec": "Def",
     "display": "hexUint_AlarmUpper",
     "location": {
       "column": "14",
-      "line": "1227",
+      "line": "1249",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "hexUint_AlarmUpper",
@@ -339766,13 +339808,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@42100@F@Save_TempAlarm@hexUint_AlarmLower",
+    "ID": "c:user_app_sensor.c@42799@F@Save_TempAlarm@hexUint_AlarmLower",
     "What": "Variable",
     "defdec": "Def",
     "display": "hexUint_AlarmLower",
     "location": {
       "column": "14",
-      "line": "1228",
+      "line": "1250",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "hexUint_AlarmLower",
@@ -339786,7 +339828,7 @@
     "display": "void Init_TempAlarm(void)",
     "location": {
       "column": "6",
-      "line": "1253",
+      "line": "1275",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Init_TempAlarm",
@@ -339794,13 +339836,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@42994@F@Init_TempAlarm@hexUint_AlarmUpper",
+    "ID": "c:user_app_sensor.c@43693@F@Init_TempAlarm@hexUint_AlarmUpper",
     "What": "Variable",
     "defdec": "Def",
     "display": "hexUint_AlarmUpper",
     "location": {
       "column": "14",
-      "line": "1257",
+      "line": "1279",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "hexUint_AlarmUpper",
@@ -339808,13 +339850,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@43033@F@Init_TempAlarm@hexUint_AlarmLower",
+    "ID": "c:user_app_sensor.c@43732@F@Init_TempAlarm@hexUint_AlarmLower",
     "What": "Variable",
     "defdec": "Def",
     "display": "hexUint_AlarmLower",
     "location": {
       "column": "14",
-      "line": "1258",
+      "line": "1280",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "hexUint_AlarmLower",
@@ -339828,7 +339870,7 @@
     "display": "void Init_Parameter_Sensor(void)",
     "location": {
       "column": "13",
-      "line": "1286",
+      "line": "1308",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Init_Parameter_Sensor",
@@ -339842,7 +339884,7 @@
     "display": "void AT_CMD_Reset_Slave(sData *, uint16_t)",
     "location": {
       "column": "6",
-      "line": "1293",
+      "line": "1315",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "AT_CMD_Reset_Slave",
@@ -339850,13 +339892,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@44526@F@AT_CMD_Reset_Slave@aTemp",
+    "ID": "c:user_app_sensor.c@45225@F@AT_CMD_Reset_Slave@aTemp",
     "What": "Variable",
     "defdec": "Def",
     "display": "aTemp",
     "location": {
       "column": "13",
-      "line": "1295",
+      "line": "1317",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "aTemp",
@@ -339864,13 +339906,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@44559@F@AT_CMD_Reset_Slave@length",
+    "ID": "c:user_app_sensor.c@45258@F@AT_CMD_Reset_Slave@length",
     "What": "Variable",
     "defdec": "Def",
     "display": "length",
     "location": {
       "column": "14",
-      "line": "1296",
+      "line": "1318",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "length",
@@ -339884,7 +339926,7 @@
     "display": "void AT_CMD_Restore_Slave(sData *, uint16_t)",
     "location": {
       "column": "6",
-      "line": "1304",
+      "line": "1326",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "AT_CMD_Restore_Slave",
@@ -339892,49 +339934,7 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@44901@F@AT_CMD_Restore_Slave@aTemp",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "aTemp",
-    "location": {
-      "column": "13",
-      "line": "1306",
-      "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
-    },
-    "name": "aTemp",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:user_app_sensor.c@44934@F@AT_CMD_Restore_Slave@length",
-    "What": "Variable",
-    "defdec": "Def",
-    "display": "length",
-    "location": {
-      "column": "14",
-      "line": "1307",
-      "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
-    },
-    "name": "length",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:@F@AT_CMD_Get_ID_Slave",
-    "What": "Function",
-    "defdec": "Def",
-    "display": "void AT_CMD_Get_ID_Slave(sData *, uint16_t)",
-    "location": {
-      "column": "6",
-      "line": "1326",
-      "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
-    },
-    "name": "AT_CMD_Get_ID_Slave",
-    "origin": "project_file",
-    "scope": null
-  },
-  {
-    "ID": "c:user_app_sensor.c@45672@F@AT_CMD_Get_ID_Slave@aTemp",
+    "ID": "c:user_app_sensor.c@45600@F@AT_CMD_Restore_Slave@aTemp",
     "What": "Variable",
     "defdec": "Def",
     "display": "aTemp",
@@ -339948,13 +339948,55 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@45733@F@AT_CMD_Get_ID_Slave@StrResp",
+    "ID": "c:user_app_sensor.c@45633@F@AT_CMD_Restore_Slave@length",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "length",
+    "location": {
+      "column": "14",
+      "line": "1329",
+      "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
+    },
+    "name": "length",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:@F@AT_CMD_Get_ID_Slave",
+    "What": "Function",
+    "defdec": "Def",
+    "display": "void AT_CMD_Get_ID_Slave(sData *, uint16_t)",
+    "location": {
+      "column": "6",
+      "line": "1348",
+      "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
+    },
+    "name": "AT_CMD_Get_ID_Slave",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:user_app_sensor.c@46371@F@AT_CMD_Get_ID_Slave@aTemp",
+    "What": "Variable",
+    "defdec": "Def",
+    "display": "aTemp",
+    "location": {
+      "column": "13",
+      "line": "1350",
+      "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
+    },
+    "name": "aTemp",
+    "origin": "project_file",
+    "scope": null
+  },
+  {
+    "ID": "c:user_app_sensor.c@46432@F@AT_CMD_Get_ID_Slave@StrResp",
     "What": "Variable",
     "defdec": "Def",
     "display": "StrResp",
     "location": {
       "column": "11",
-      "line": "1329",
+      "line": "1351",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "StrResp",
@@ -339968,7 +340010,7 @@
     "display": "void AT_CMD_Set_ID_Slave(sData *, uint16_t)",
     "location": {
       "column": "6",
-      "line": "1337",
+      "line": "1359",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "AT_CMD_Set_ID_Slave",
@@ -339976,13 +340018,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@46109@F@AT_CMD_Set_ID_Slave@TempU32",
+    "ID": "c:user_app_sensor.c@46808@F@AT_CMD_Set_ID_Slave@TempU32",
     "What": "Variable",
     "defdec": "Def",
     "display": "TempU32",
     "location": {
       "column": "14",
-      "line": "1339",
+      "line": "1361",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "TempU32",
@@ -339990,13 +340032,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@46220@F@AT_CMD_Set_ID_Slave@length",
+    "ID": "c:user_app_sensor.c@46919@F@AT_CMD_Set_ID_Slave@length",
     "What": "Variable",
     "defdec": "Def",
     "display": "length",
     "location": {
       "column": "17",
-      "line": "1342",
+      "line": "1364",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "length",
@@ -340004,13 +340046,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@46253@F@AT_CMD_Set_ID_Slave@i",
+    "ID": "c:user_app_sensor.c@46952@F@AT_CMD_Set_ID_Slave@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
     "location": {
       "column": "21",
-      "line": "1343",
+      "line": "1365",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "i",
@@ -340024,7 +340066,7 @@
     "display": "void AT_CMD_Get_BR_Slave(sData *, uint16_t)",
     "location": {
       "column": "6",
-      "line": "1366",
+      "line": "1388",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "AT_CMD_Get_BR_Slave",
@@ -340032,13 +340074,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@47045@F@AT_CMD_Get_BR_Slave@aTemp",
+    "ID": "c:user_app_sensor.c@47744@F@AT_CMD_Get_BR_Slave@aTemp",
     "What": "Variable",
     "defdec": "Def",
     "display": "aTemp",
     "location": {
       "column": "13",
-      "line": "1368",
+      "line": "1390",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "aTemp",
@@ -340046,13 +340088,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@47106@F@AT_CMD_Get_BR_Slave@StrResp",
+    "ID": "c:user_app_sensor.c@47805@F@AT_CMD_Get_BR_Slave@StrResp",
     "What": "Variable",
     "defdec": "Def",
     "display": "StrResp",
     "location": {
       "column": "11",
-      "line": "1369",
+      "line": "1391",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "StrResp",
@@ -340066,7 +340108,7 @@
     "display": "void AT_CMD_Set_BR_Slave(sData *, uint16_t)",
     "location": {
       "column": "6",
-      "line": "1377",
+      "line": "1399",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "AT_CMD_Set_BR_Slave",
@@ -340074,13 +340116,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@47488@F@AT_CMD_Set_BR_Slave@TempU32",
+    "ID": "c:user_app_sensor.c@48187@F@AT_CMD_Set_BR_Slave@TempU32",
     "What": "Variable",
     "defdec": "Def",
     "display": "TempU32",
     "location": {
       "column": "14",
-      "line": "1379",
+      "line": "1401",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "TempU32",
@@ -340088,13 +340130,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@47599@F@AT_CMD_Set_BR_Slave@length",
+    "ID": "c:user_app_sensor.c@48298@F@AT_CMD_Set_BR_Slave@length",
     "What": "Variable",
     "defdec": "Def",
     "display": "length",
     "location": {
       "column": "17",
-      "line": "1382",
+      "line": "1404",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "length",
@@ -340102,13 +340144,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@47632@F@AT_CMD_Set_BR_Slave@i",
+    "ID": "c:user_app_sensor.c@48331@F@AT_CMD_Set_BR_Slave@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
     "location": {
       "column": "21",
-      "line": "1383",
+      "line": "1405",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "i",
@@ -340122,7 +340164,7 @@
     "display": "void AT_CMD_Get_Clo_Const_Temp(sData *, uint16_t)",
     "location": {
       "column": "12",
-      "line": "1406",
+      "line": "1428",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "AT_CMD_Get_Clo_Const_Temp",
@@ -340130,13 +340172,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@48435@F@AT_CMD_Get_Clo_Const_Temp@aTemp",
+    "ID": "c:user_app_sensor.c@49134@F@AT_CMD_Get_Clo_Const_Temp@aTemp",
     "What": "Variable",
     "defdec": "Def",
     "display": "aTemp",
     "location": {
       "column": "13",
-      "line": "1408",
+      "line": "1430",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "aTemp",
@@ -340144,13 +340186,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@48503@F@AT_CMD_Get_Clo_Const_Temp@StrResp",
+    "ID": "c:user_app_sensor.c@49202@F@AT_CMD_Get_Clo_Const_Temp@StrResp",
     "What": "Variable",
     "defdec": "Def",
     "display": "StrResp",
     "location": {
       "column": "11",
-      "line": "1409",
+      "line": "1431",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "StrResp",
@@ -340164,7 +340206,7 @@
     "display": "void AT_CMD_Set_Clo_Const_Temp(sData *, uint16_t)",
     "location": {
       "column": "12",
-      "line": "1415",
+      "line": "1437",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "AT_CMD_Set_Clo_Const_Temp",
@@ -340172,13 +340214,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@48875@F@AT_CMD_Set_Clo_Const_Temp@TempU32",
+    "ID": "c:user_app_sensor.c@49574@F@AT_CMD_Set_Clo_Const_Temp@TempU32",
     "What": "Variable",
     "defdec": "Def",
     "display": "TempU32",
     "location": {
       "column": "14",
-      "line": "1417",
+      "line": "1439",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "TempU32",
@@ -340186,13 +340228,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@48986@F@AT_CMD_Set_Clo_Const_Temp@length",
+    "ID": "c:user_app_sensor.c@49685@F@AT_CMD_Set_Clo_Const_Temp@length",
     "What": "Variable",
     "defdec": "Def",
     "display": "length",
     "location": {
       "column": "17",
-      "line": "1420",
+      "line": "1442",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "length",
@@ -340200,13 +340242,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@49019@F@AT_CMD_Set_Clo_Const_Temp@i",
+    "ID": "c:user_app_sensor.c@49718@F@AT_CMD_Set_Clo_Const_Temp@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
     "location": {
       "column": "21",
-      "line": "1421",
+      "line": "1443",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "i",
@@ -340220,7 +340262,7 @@
     "display": "void AT_CMD_Get_Clo_Zero_Slope(sData *, uint16_t)",
     "location": {
       "column": "12",
-      "line": "1444",
+      "line": "1466",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "AT_CMD_Get_Clo_Zero_Slope",
@@ -340228,13 +340270,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@49756@F@AT_CMD_Get_Clo_Zero_Slope@aTemp",
+    "ID": "c:user_app_sensor.c@50455@F@AT_CMD_Get_Clo_Zero_Slope@aTemp",
     "What": "Variable",
     "defdec": "Def",
     "display": "aTemp",
     "location": {
       "column": "11",
-      "line": "1446",
+      "line": "1468",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "aTemp",
@@ -340242,13 +340284,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@49828@F@AT_CMD_Get_Clo_Zero_Slope@StrResp",
+    "ID": "c:user_app_sensor.c@50527@F@AT_CMD_Get_Clo_Zero_Slope@StrResp",
     "What": "Variable",
     "defdec": "Def",
     "display": "StrResp",
     "location": {
       "column": "11",
-      "line": "1447",
+      "line": "1469",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "StrResp",
@@ -340262,7 +340304,7 @@
     "display": "void AT_CMD_Set_Clo_Zero_Slope(sData *, uint16_t)",
     "location": {
       "column": "12",
-      "line": "1472",
+      "line": "1494",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "AT_CMD_Set_Clo_Zero_Slope",
@@ -340270,13 +340312,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@51436@F@AT_CMD_Set_Clo_Zero_Slope@TempU32",
+    "ID": "c:user_app_sensor.c@52135@F@AT_CMD_Set_Clo_Zero_Slope@TempU32",
     "What": "Variable",
     "defdec": "Def",
     "display": "TempU32",
     "location": {
       "column": "14",
-      "line": "1474",
+      "line": "1496",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "TempU32",
@@ -340284,13 +340326,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@51463@F@AT_CMD_Set_Clo_Zero_Slope@Text_1",
+    "ID": "c:user_app_sensor.c@52162@F@AT_CMD_Set_Clo_Zero_Slope@Text_1",
     "What": "Variable",
     "defdec": "Def",
     "display": "Text_1",
     "location": {
       "column": "13",
-      "line": "1475",
+      "line": "1497",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Text_1",
@@ -340298,13 +340340,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@51488@F@AT_CMD_Set_Clo_Zero_Slope@Text_2",
+    "ID": "c:user_app_sensor.c@52187@F@AT_CMD_Set_Clo_Zero_Slope@Text_2",
     "What": "Variable",
     "defdec": "Def",
     "display": "Text_2",
     "location": {
       "column": "13",
-      "line": "1476",
+      "line": "1498",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Text_2",
@@ -340312,13 +340354,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@51673@F@AT_CMD_Set_Clo_Zero_Slope@length",
+    "ID": "c:user_app_sensor.c@52372@F@AT_CMD_Set_Clo_Zero_Slope@length",
     "What": "Variable",
     "defdec": "Def",
     "display": "length",
     "location": {
       "column": "17",
-      "line": "1481",
+      "line": "1503",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "length",
@@ -340326,13 +340368,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@51706@F@AT_CMD_Set_Clo_Zero_Slope@i",
+    "ID": "c:user_app_sensor.c@52405@F@AT_CMD_Set_Clo_Zero_Slope@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
     "location": {
       "column": "21",
-      "line": "1482",
+      "line": "1504",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "i",
@@ -340340,13 +340382,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@52035@F@AT_CMD_Set_Clo_Zero_Slope@ADC_Zero",
+    "ID": "c:user_app_sensor.c@52734@F@AT_CMD_Set_Clo_Zero_Slope@ADC_Zero",
     "What": "Variable",
     "defdec": "Def",
     "display": "ADC_Zero",
     "location": {
       "column": "22",
-      "line": "1490",
+      "line": "1512",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "ADC_Zero",
@@ -340354,13 +340396,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@52095@F@AT_CMD_Set_Clo_Zero_Slope@ADC_Slope",
+    "ID": "c:user_app_sensor.c@52794@F@AT_CMD_Set_Clo_Zero_Slope@ADC_Slope",
     "What": "Variable",
     "defdec": "Def",
     "display": "ADC_Slope",
     "location": {
       "column": "22",
-      "line": "1491",
+      "line": "1513",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "ADC_Slope",
@@ -340368,13 +340410,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@52157@F@AT_CMD_Set_Clo_Zero_Slope@Clo_Calib",
+    "ID": "c:user_app_sensor.c@52856@F@AT_CMD_Set_Clo_Zero_Slope@Clo_Calib",
     "What": "Variable",
     "defdec": "Def",
     "display": "Clo_Calib",
     "location": {
       "column": "21",
-      "line": "1492",
+      "line": "1514",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Clo_Calib",
@@ -340382,13 +340424,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@52224@F@AT_CMD_Set_Clo_Zero_Slope@Temp_Calib",
+    "ID": "c:user_app_sensor.c@52923@F@AT_CMD_Set_Clo_Zero_Slope@Temp_Calib",
     "What": "Variable",
     "defdec": "Def",
     "display": "Temp_Calib",
     "location": {
       "column": "21",
-      "line": "1493",
+      "line": "1515",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Temp_Calib",
@@ -340396,13 +340438,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@52293@F@AT_CMD_Set_Clo_Zero_Slope@pH_Calib",
+    "ID": "c:user_app_sensor.c@52992@F@AT_CMD_Set_Clo_Zero_Slope@pH_Calib",
     "What": "Variable",
     "defdec": "Def",
     "display": "pH_Calib",
     "location": {
       "column": "21",
-      "line": "1494",
+      "line": "1516",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "pH_Calib",
@@ -340410,13 +340452,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@52358@F@AT_CMD_Set_Clo_Zero_Slope@Result",
+    "ID": "c:user_app_sensor.c@53057@F@AT_CMD_Set_Clo_Zero_Slope@Result",
     "What": "Variable",
     "defdec": "Def",
     "display": "Result",
     "location": {
       "column": "21",
-      "line": "1495",
+      "line": "1517",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Result",
@@ -340430,7 +340472,7 @@
     "display": "void AT_CMD_Get_Clo_Calib_Point(sData *, uint16_t)",
     "location": {
       "column": "12",
-      "line": "1531",
+      "line": "1553",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "AT_CMD_Get_Clo_Calib_Point",
@@ -340438,13 +340480,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@53531@F@AT_CMD_Get_Clo_Calib_Point@aTemp",
+    "ID": "c:user_app_sensor.c@54230@F@AT_CMD_Get_Clo_Calib_Point@aTemp",
     "What": "Variable",
     "defdec": "Def",
     "display": "aTemp",
     "location": {
       "column": "11",
-      "line": "1533",
+      "line": "1555",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "aTemp",
@@ -340452,13 +340494,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@53606@F@AT_CMD_Get_Clo_Calib_Point@StrResp",
+    "ID": "c:user_app_sensor.c@54305@F@AT_CMD_Get_Clo_Calib_Point@StrResp",
     "What": "Variable",
     "defdec": "Def",
     "display": "StrResp",
     "location": {
       "column": "11",
-      "line": "1534",
+      "line": "1556",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "StrResp",
@@ -340472,7 +340514,7 @@
     "display": "void AT_CMD_Set_Clo_Calib_Point(sData *, uint16_t)",
     "location": {
       "column": "12",
-      "line": "1561",
+      "line": "1583",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "AT_CMD_Set_Clo_Calib_Point",
@@ -340480,13 +340522,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@55371@F@AT_CMD_Set_Clo_Calib_Point@TempU32",
+    "ID": "c:user_app_sensor.c@56070@F@AT_CMD_Set_Clo_Calib_Point@TempU32",
     "What": "Variable",
     "defdec": "Def",
     "display": "TempU32",
     "location": {
       "column": "14",
-      "line": "1563",
+      "line": "1585",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "TempU32",
@@ -340494,13 +340536,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@55398@F@AT_CMD_Set_Clo_Calib_Point@Text_1",
+    "ID": "c:user_app_sensor.c@56097@F@AT_CMD_Set_Clo_Calib_Point@Text_1",
     "What": "Variable",
     "defdec": "Def",
     "display": "Text_1",
     "location": {
       "column": "13",
-      "line": "1564",
+      "line": "1586",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Text_1",
@@ -340508,13 +340550,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@55423@F@AT_CMD_Set_Clo_Calib_Point@Text_2",
+    "ID": "c:user_app_sensor.c@56122@F@AT_CMD_Set_Clo_Calib_Point@Text_2",
     "What": "Variable",
     "defdec": "Def",
     "display": "Text_2",
     "location": {
       "column": "13",
-      "line": "1565",
+      "line": "1587",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Text_2",
@@ -340522,13 +340564,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@55608@F@AT_CMD_Set_Clo_Calib_Point@length",
+    "ID": "c:user_app_sensor.c@56307@F@AT_CMD_Set_Clo_Calib_Point@length",
     "What": "Variable",
     "defdec": "Def",
     "display": "length",
     "location": {
       "column": "17",
-      "line": "1570",
+      "line": "1592",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "length",
@@ -340536,13 +340578,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@55641@F@AT_CMD_Set_Clo_Calib_Point@i",
+    "ID": "c:user_app_sensor.c@56340@F@AT_CMD_Set_Clo_Calib_Point@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
     "location": {
       "column": "21",
-      "line": "1571",
+      "line": "1593",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "i",
@@ -340550,13 +340592,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@55970@F@AT_CMD_Set_Clo_Calib_Point@ADC_Point1",
+    "ID": "c:user_app_sensor.c@56669@F@AT_CMD_Set_Clo_Calib_Point@ADC_Point1",
     "What": "Variable",
     "defdec": "Def",
     "display": "ADC_Point1",
     "location": {
       "column": "22",
-      "line": "1579",
+      "line": "1601",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "ADC_Point1",
@@ -340564,13 +340606,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@56040@F@AT_CMD_Set_Clo_Calib_Point@Clo_Point1",
+    "ID": "c:user_app_sensor.c@56739@F@AT_CMD_Set_Clo_Calib_Point@Clo_Point1",
     "What": "Variable",
     "defdec": "Def",
     "display": "Clo_Point1",
     "location": {
       "column": "21",
-      "line": "1580",
+      "line": "1602",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Clo_Point1",
@@ -340578,13 +340620,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@56109@F@AT_CMD_Set_Clo_Calib_Point@Temp_Point1",
+    "ID": "c:user_app_sensor.c@56808@F@AT_CMD_Set_Clo_Calib_Point@Temp_Point1",
     "What": "Variable",
     "defdec": "Def",
     "display": "Temp_Point1",
     "location": {
       "column": "21",
-      "line": "1581",
+      "line": "1603",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Temp_Point1",
@@ -340592,13 +340634,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@56180@F@AT_CMD_Set_Clo_Calib_Point@pH_Point1",
+    "ID": "c:user_app_sensor.c@56879@F@AT_CMD_Set_Clo_Calib_Point@pH_Point1",
     "What": "Variable",
     "defdec": "Def",
     "display": "pH_Point1",
     "location": {
       "column": "21",
-      "line": "1582",
+      "line": "1604",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "pH_Point1",
@@ -340606,13 +340648,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@56247@F@AT_CMD_Set_Clo_Calib_Point@ADC_Point2",
+    "ID": "c:user_app_sensor.c@56946@F@AT_CMD_Set_Clo_Calib_Point@ADC_Point2",
     "What": "Variable",
     "defdec": "Def",
     "display": "ADC_Point2",
     "location": {
       "column": "22",
-      "line": "1583",
+      "line": "1605",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "ADC_Point2",
@@ -340620,13 +340662,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@56317@F@AT_CMD_Set_Clo_Calib_Point@Clo_Point2",
+    "ID": "c:user_app_sensor.c@57016@F@AT_CMD_Set_Clo_Calib_Point@Clo_Point2",
     "What": "Variable",
     "defdec": "Def",
     "display": "Clo_Point2",
     "location": {
       "column": "21",
-      "line": "1584",
+      "line": "1606",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Clo_Point2",
@@ -340634,13 +340676,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@56386@F@AT_CMD_Set_Clo_Calib_Point@Temp_Point2",
+    "ID": "c:user_app_sensor.c@57085@F@AT_CMD_Set_Clo_Calib_Point@Temp_Point2",
     "What": "Variable",
     "defdec": "Def",
     "display": "Temp_Point2",
     "location": {
       "column": "21",
-      "line": "1585",
+      "line": "1607",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Temp_Point2",
@@ -340648,13 +340690,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@56457@F@AT_CMD_Set_Clo_Calib_Point@pH_Point2",
+    "ID": "c:user_app_sensor.c@57156@F@AT_CMD_Set_Clo_Calib_Point@pH_Point2",
     "What": "Variable",
     "defdec": "Def",
     "display": "pH_Point2",
     "location": {
       "column": "21",
-      "line": "1586",
+      "line": "1608",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "pH_Point2",
@@ -340662,13 +340704,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@56538@F@AT_CMD_Set_Clo_Calib_Point@Result",
+    "ID": "c:user_app_sensor.c@57237@F@AT_CMD_Set_Clo_Calib_Point@Result",
     "What": "Variable",
     "defdec": "Def",
     "display": "Result",
     "location": {
       "column": "21",
-      "line": "1588",
+      "line": "1610",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Result",
@@ -340682,7 +340724,7 @@
     "display": "void Init_AppSensor(void)",
     "location": {
       "column": "12",
-      "line": "1631",
+      "line": "1653",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Init_AppSensor",
@@ -340696,7 +340738,7 @@
     "display": "uint8_t AppSensor_Task(void)",
     "location": {
       "column": "16",
-      "line": "1663",
+      "line": "1685",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "AppSensor_Task",
@@ -340704,13 +340746,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@59434@F@AppSensor_Task@i",
+    "ID": "c:user_app_sensor.c@60133@F@AppSensor_Task@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
     "location": {
       "column": "13",
-      "line": "1665",
+      "line": "1687",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "i",
@@ -340718,13 +340760,13 @@
     "scope": null
   },
   {
-    "ID": "c:user_app_sensor.c@59454@F@AppSensor_Task@Result",
+    "ID": "c:user_app_sensor.c@60153@F@AppSensor_Task@Result",
     "What": "Variable",
     "defdec": "Def",
     "display": "Result",
     "location": {
       "column": "13",
-      "line": "1666",
+      "line": "1688",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Slave_LanChang_Clo\\Project_Slave_Sensor_EnviroTrack\\user_app\\user_app_sensor\\user_app_sensor.c"
     },
     "name": "Result",

@@ -16,6 +16,7 @@ static uint8_t fevent_sensor_wait_calib(uint8_t event);
 static uint8_t fevent_detect_connect(uint8_t event);
 static uint8_t fevent_temp_alarm(uint8_t event);
 static uint8_t fevent_refresh_iwdg(uint8_t event);
+static uint8_t fevent_refresh_wdg_hard(uint8_t event);
 /*==============================Struct=============================*/
 sEvent_struct               sEventAppSensor[]=
 {
@@ -30,6 +31,7 @@ sEvent_struct               sEventAppSensor[]=
   {_EVENT_DETECT_CONNECT,            1, 5, 15000,            fevent_detect_connect},
   {_EVENT_TEMP_ALARM,                1, 5, 2000,             fevent_temp_alarm},
   {_EVENT_REFRESH_IWDG,              1, 5, 250,              fevent_refresh_iwdg},
+  {_EVENT_REFRESH_WDG_HARD,          1, 5, 5,                fevent_refresh_wdg_hard},
 };
 int32_t aSampling_STT[NUMBER_SAMPLING_SS] = {0};
 int32_t aSampling_VALUE[NUMBER_SAMPLING_SS] = {0};
@@ -194,6 +196,26 @@ static uint8_t fevent_temp_alarm(uint8_t event)
 static uint8_t fevent_refresh_iwdg(uint8_t event)
 {
     HAL_IWDG_Refresh(&hiwdg);
+    fevent_enable(sEventAppSensor, event);
+    return 1;
+}
+
+static uint8_t fevent_refresh_wdg_hard(uint8_t event)
+{
+    static uint8_t state = 0;
+    
+    if(state == 0)
+    {
+        HAL_GPIO_WritePin(TOGGLE_RESET_GPIO_Port, TOGGLE_RESET_Pin, GPIO_PIN_SET);
+        sEventAppSensor[_EVENT_REFRESH_WDG_HARD].e_period = 5;
+        state++;
+    }
+    else
+    {
+        HAL_GPIO_WritePin(TOGGLE_RESET_GPIO_Port, TOGGLE_RESET_Pin, GPIO_PIN_RESET);
+        sEventAppSensor[_EVENT_REFRESH_WDG_HARD].e_period = 500;
+        state = 0;
+    }
     fevent_enable(sEventAppSensor, event);
     return 1;
 }

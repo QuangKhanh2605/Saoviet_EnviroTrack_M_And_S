@@ -16,6 +16,7 @@ static uint8_t fevent_sensor_wait_calib(uint8_t event);
 static uint8_t fevent_detect_connect(uint8_t event);
 static uint8_t fevent_temp_alarm(uint8_t event);
 static uint8_t fevent_refresh_iwdg(uint8_t event);
+static uint8_t fevent_refresh_wdg_hard(uint8_t event);
 /*==============================Struct=============================*/
 sEvent_struct               sEventAppSensor[]=
 {
@@ -30,6 +31,7 @@ sEvent_struct               sEventAppSensor[]=
   {_EVENT_DETECT_CONNECT,            1, 5, 15000,            fevent_detect_connect},
   {_EVENT_TEMP_ALARM,                1, 5, 2000,             fevent_temp_alarm},
   {_EVENT_REFRESH_IWDG,              1, 5, 250,              fevent_refresh_iwdg},
+  {_EVENT_REFRESH_WDG_HARD,          1, 5, 5,                fevent_refresh_wdg_hard},
 };
 int32_t aSampling_STT[NUMBER_SAMPLING_SS] = {0};
 int32_t aSampling_VALUE[NUMBER_SAMPLING_SS] = {0};
@@ -202,6 +204,26 @@ static uint8_t fevent_refresh_iwdg(uint8_t event)
     fevent_enable(sEventAppSensor, event);
     return 1;
 }
+
+static uint8_t fevent_refresh_wdg_hard(uint8_t event)
+{
+    static uint8_t state = 0;
+    
+    if(state == 0)
+    {
+        HAL_GPIO_WritePin(TOGGLE_RESET_GPIO_Port, TOGGLE_RESET_Pin, GPIO_PIN_SET);
+        sEventAppSensor[_EVENT_REFRESH_WDG_HARD].e_period = 5;
+        state++;
+    }
+    else
+    {
+        HAL_GPIO_WritePin(TOGGLE_RESET_GPIO_Port, TOGGLE_RESET_Pin, GPIO_PIN_RESET);
+        sEventAppSensor[_EVENT_REFRESH_WDG_HARD].e_period = 500;
+        state = 0;
+    }
+    fevent_enable(sEventAppSensor, event);
+    return 1;
+}
 /*==================Function Handle Data=================*/
 void Handle_Data_Measure(uint8_t KindRecv)
 {
@@ -236,130 +258,6 @@ void Handle_Data_Measure(uint8_t KindRecv)
         sSensor_pH.temp_Value_f = 0;
         sSensor_pH.pH_Filter_f = Filter_Temp(sSensor_pH.temp_Value_f);;
     }
-}
-
-/*====================Filter Data===================*/
-void quickSort_Sampling(int32_t array_stt[],int32_t array_sampling[], uint8_t left, uint8_t right)
-{
-/*---------------------- Sap xep noi bot --------------------*/
-  
-  for(uint8_t i = 0; i < NUMBER_SAMPLING_SS; i++)
-  {
-    for(uint8_t j = 0; j < NUMBER_SAMPLING_SS - 1; j++)
-    {
-        if(array_sampling[j] > array_sampling[j + 1])
-        {
-			int temp = 0;
-            temp = array_sampling[j];
-			array_sampling[j] = array_sampling[j+1];
-			array_sampling[j+1] = temp;
-            
-            temp = array_stt[j];
-			array_stt[j] = array_stt[j+1];
-			array_stt[j+1] = temp;
-        }
-    }
-  }
-}
-
-float quickSort_Sampling_Value(int32_t Value)
-{
-    static uint8_t Handle_Once = 0;
-    float Result = 0;
-    
-//    if(Value == 0)
-//    {
-//        Handle_Once = 0;
-//    }
-//    else
-//    {
-        if(Handle_Once == 0)
-        {
-            Handle_Once = 1;
-            for(uint8_t i = 0; i< NUMBER_SAMPLING_SS; i++)
-            {
-              aSampling_STT[i] = i;
-              
-              if(aSampling_VALUE[i] == 0)
-                aSampling_VALUE[i] = Value;
-            }
-            
-            quickSort_Sampling(aSampling_STT, aSampling_VALUE, 0, NUMBER_SAMPLING_SS - 1);
-            Result = aSampling_VALUE[NUMBER_SAMPLING_SS/2];
-        }
-        else
-        {
-            for(uint8_t i = 0; i < NUMBER_SAMPLING_SS; i++)
-            {
-                if(aSampling_STT[i] == NUMBER_SAMPLING_SS - 1)
-                {
-                    aSampling_STT[i] = 0;
-                    aSampling_VALUE[i] = Value;
-                }
-                else
-                    aSampling_STT[i] = aSampling_STT[i] + 1;
-            }
-
-            quickSort_Sampling(aSampling_STT, aSampling_VALUE, 0, NUMBER_SAMPLING_SS - 1);
-            Result = aSampling_VALUE[NUMBER_SAMPLING_SS/2];
-        }
-//    }
-    return Result;
-}
-
-float Filter_pH(float var)
-{
-    //Kalman Filter
-    static float x_est = 0.0;   // Uoc luong ban dau
-    static float P = 1.0;       // Hiep phuong sai ban dau
-    
-    static float x_est_last = 0;
-  
-    float Q = 0.0000001;  // Nhieu mo hinh
-    float R = 0.0001;   // Nhieu cam bien
-
-    float x_pred, P_pred, K;
-    
-    float varFloat = 0;
-//    int32_t varInt32 = 0;
-    
-    if(var != 0)
-    {
-//        varFloat = Handle_int32_To_Float_Scale(var, scale);
-        varFloat = var;
-        
-        //Thay doi nhanh du lieu
-        if(x_est_last - varFloat > 0.2 || varFloat - x_est_last > 0.2)
-        {
-           Q *=1000; 
-        }
-        
-        // Buoc du doan
-        x_pred = x_est;
-        P_pred = P + Q;
-
-        // Tinh he so kalman
-        K = P_pred / (P_pred + R);
-
-        // Cap nhat gia tri
-        x_est = x_pred + K * (varFloat - x_pred);
-        P = (1 - K) * P_pred;
-        
-//        varInt32 = Hanlde_Float_To_Int32_Scale_Round(x_est, scale);
-    }
-    else
-    {
-        P = 1;
-        x_est = 0;
-    }
-    x_est_last = x_est;
-//    return varInt32;
-    return x_est;
-}
-
-float Filter_Temp(float var)
-{
-    return var;
 }
 
 /*=====================Handle Sensor=====================*/
@@ -517,6 +415,129 @@ void Handle_State_SS_pH(uint8_t KindRecv, uint8_t KindDetect)
         sSensor_pH.Measure_AD = 0;
         sHandleRs485.State_Recv_pH = 0;
     }
+}
+/*====================Filter Data===================*/
+void quickSort_Sampling(int32_t array_stt[],int32_t array_sampling[], uint8_t left, uint8_t right)
+{
+/*---------------------- Sap xep noi bot --------------------*/
+  
+  for(uint8_t i = 0; i < NUMBER_SAMPLING_SS; i++)
+  {
+    for(uint8_t j = 0; j < NUMBER_SAMPLING_SS - 1; j++)
+    {
+        if(array_sampling[j] > array_sampling[j + 1])
+        {
+			int temp = 0;
+            temp = array_sampling[j];
+			array_sampling[j] = array_sampling[j+1];
+			array_sampling[j+1] = temp;
+            
+            temp = array_stt[j];
+			array_stt[j] = array_stt[j+1];
+			array_stt[j+1] = temp;
+        }
+    }
+  }
+}
+
+float quickSort_Sampling_Value(int32_t Value)
+{
+    static uint8_t Handle_Once = 0;
+    float Result = 0;
+    
+//    if(Value == 0)
+//    {
+//        Handle_Once = 0;
+//    }
+//    else
+//    {
+        if(Handle_Once == 0)
+        {
+            Handle_Once = 1;
+            for(uint8_t i = 0; i< NUMBER_SAMPLING_SS; i++)
+            {
+              aSampling_STT[i] = i;
+              
+              if(aSampling_VALUE[i] == 0)
+                aSampling_VALUE[i] = Value;
+            }
+            
+            quickSort_Sampling(aSampling_STT, aSampling_VALUE, 0, NUMBER_SAMPLING_SS - 1);
+            Result = aSampling_VALUE[NUMBER_SAMPLING_SS/2];
+        }
+        else
+        {
+            for(uint8_t i = 0; i < NUMBER_SAMPLING_SS; i++)
+            {
+                if(aSampling_STT[i] == NUMBER_SAMPLING_SS - 1)
+                {
+                    aSampling_STT[i] = 0;
+                    aSampling_VALUE[i] = Value;
+                }
+                else
+                    aSampling_STT[i] = aSampling_STT[i] + 1;
+            }
+
+            quickSort_Sampling(aSampling_STT, aSampling_VALUE, 0, NUMBER_SAMPLING_SS - 1);
+            Result = aSampling_VALUE[NUMBER_SAMPLING_SS/2];
+        }
+//    }
+    return Result;
+}
+
+float Filter_pH(float var)
+{
+    //Kalman Filter
+    static float x_est = 0.0;   // Uoc luong ban dau
+    static float P = 1.0;       // Hiep phuong sai ban dau
+    
+    static float x_est_last = 0;
+  
+    float Q = 0.0000001;  // Nhieu mo hinh
+    float R = 0.0001;   // Nhieu cam bien
+
+    float x_pred, P_pred, K;
+    
+    float varFloat = 0;
+//    int32_t varInt32 = 0;
+    
+    if(var != 0)
+    {
+//        varFloat = Handle_int32_To_Float_Scale(var, scale);
+        varFloat = var;
+        
+        //Thay doi nhanh du lieu
+        if(x_est_last - varFloat > 0.2 || varFloat - x_est_last > 0.2)
+        {
+           Q *=1000; 
+        }
+        
+        // Buoc du doan
+        x_pred = x_est;
+        P_pred = P + Q;
+
+        // Tinh he so kalman
+        K = P_pred / (P_pred + R);
+
+        // Cap nhat gia tri
+        x_est = x_pred + K * (varFloat - x_pred);
+        P = (1 - K) * P_pred;
+        
+//        varInt32 = Hanlde_Float_To_Int32_Scale_Round(x_est, scale);
+    }
+    else
+    {
+        P = 1;
+        x_est = 0;
+    }
+    x_est_last = x_est;
+//    return varInt32;
+    return x_est;
+}
+
+float Filter_Temp(float var)
+{
+    return var;
 }
 
 /*======================Function Calib Sensor=====================*/
