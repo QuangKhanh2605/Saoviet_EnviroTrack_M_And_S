@@ -21,6 +21,7 @@ uint16_t CountBufferHandleRecv = 0;
 /*========================Function Handle========================*/
 static uint8_t fevent_rs485_entry(uint8_t event)
 {
+    HAL_GPIO_WritePin(ON_PW_RS485_GPIO_Port, ON_PW_RS485_Pin, GPIO_PIN_SET);
     return 1;
 }
 

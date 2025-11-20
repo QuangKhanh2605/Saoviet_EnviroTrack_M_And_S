@@ -7,7 +7,7 @@
 #include "event_driven.h"
 
 /*==================Define UART sensor===================*/
-extern DMA_HandleTypeDef        hdma_usart3_rx;
+extern DMA_HandleTypeDef              hdma_usart3_rx;
 
 #define uart_rs485SS	              huart3
 #define uart_dma_rs485SS              hdma_usart3_rx

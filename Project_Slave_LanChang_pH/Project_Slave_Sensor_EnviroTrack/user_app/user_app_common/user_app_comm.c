@@ -460,9 +460,9 @@ void SysApp_Setting (void)
     Init_AppRs485();
 #endif
     
-#ifdef USING_APP_SENSOR
-    Init_AppSensor();
-#endif
+//#ifdef USING_APP_SENSOR
+//    Init_AppSensor();
+//#endif
     
 #ifdef USING_APP_TEMH
     AppTemH_Init();

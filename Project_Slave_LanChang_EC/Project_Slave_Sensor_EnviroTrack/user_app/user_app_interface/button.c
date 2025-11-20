@@ -416,7 +416,7 @@ void BUTTON_Enter_Process (void)
                 switch (sLCD.sScreenBack.Para_u8)
                 {
                     case __SET_OFFSET_EC:
-                      Save_ParamCalib((float)(sButton.Old_value/100), sSensor_EC.TDS_Offset_f, sSensor_EC.Salinity_Offset_f, sSensor_EC.temp_Offset_f);
+                      Save_ParamCalib((float)(sButton.Old_value), sSensor_EC.TDS_Offset_f, sSensor_EC.Salinity_Offset_f, sSensor_EC.temp_Offset_f);
                       break;
                       
                     case __SET_OFFSET_TDS:

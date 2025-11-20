@@ -1,7 +1,6 @@
 user_app_sensor.pbi: \
   D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_util\user_util.h \
   D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_util\user_modbus_rtu.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\Core\Inc\iwdg.h \
   D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_component\user_convert_variable\user_convert_variable.h \
   D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_app_common\user_define.h \
   D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\user_app\user_app_modbus_rtu\user_app_modbus_rtu.h \
@@ -59,7 +58,6 @@ user_app_sensor.pbi: \
   D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_rtc.h \
   D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_pwr_ex.h \
   D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_pwr.h \
-  D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_iwdg.h \
   D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_flash_ramfunc.h \
   D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_flash_ex.h \
   D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Slave_LanChang_Clo\Project_Slave_Sensor_EnviroTrack\EWARM\..\Drivers\STM32L4xx_HAL_Driver\Inc\stm32l4xx_hal_flash.h \

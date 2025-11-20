@@ -35,15 +35,19 @@ typedef enum
     
     _EVENT_BUTTON_SCAN,
     _EVENT_BUTTON_DETECTTED,
+    _EVENT_OFF_SPEAKER,
     
     _EVENT_END_DISPLAY,
 }sEVENT_DISPLAY;
 
 typedef enum
 {
+    __SC1_TITLE,
+    __SC1_PH,
     __SC1_CLO,
     __SC1_TEMP,
     
+    __PASS_WORD_TITLE,
     __PASS_WORD_1,
     __PASS_WORD_2,
     
@@ -58,6 +62,7 @@ typedef enum
     __SET_MODBUS_BR,
 
     __SET_CLO_TITLE,
+    __SET_CLO_TITLE_2,
     __SET_CLO_ZERO,
     __SET_CLO_SLOPE,
     __SET_CLO_CLB_PH_1,
@@ -68,6 +73,7 @@ typedef enum
     __SET_OFFSET_CLO,
     __SET_OFFSET_TEMP,
 
+    __SCR_INFOR_TITLE,
     __SCR_INFOR_FW_VERSION_1,
     __SCR_INFOR_FW_VERSION_2,
     
@@ -171,6 +177,8 @@ typedef struct
     
     int32_t     Clo_Offset_i32;
     int32_t     temp_Offset_i32;
+    
+    int32_t     pH_Compensation_i32;
 }sParameter_Display;
 
 extern sEvent_struct        sEventDisplay[];
@@ -183,6 +191,7 @@ extern sParameter_Display   sParaDisplay;
 uint8_t Display_Task(void);
 void    Display_Init(void);
 
+void    On_Speaker(uint16_t TimeOn);
 void    Display_Show_Screen (uint8_t screen);
 void    Display_Show_Oject (uint8_t object);
 uint8_t Display_Check_Toggle (uint8_t object, uint8_t Flag);
@@ -196,6 +205,7 @@ void    Display_Set_Screen_Flag (sScreenInformation *screen, void *pData, uint8_
 
 uint8_t Display_Check_Password (uint8_t *pPass);
 
+void    Display_Show_Static_Param (void);
 void    Display_Show_State_Sensor_Network (uint8_t screen);
 void    Display_Show_State_Setting (uint8_t screen);
 void    Deinit_LCD12864(void);

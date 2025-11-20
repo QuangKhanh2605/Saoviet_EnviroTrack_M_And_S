@@ -1104,9 +1104,6 @@
           <name>$PROJ_DIR$\..\Core\Src\dma.c</name>
         </file>
         <file>
-          <name>$PROJ_DIR$\..\Core\Src\iwdg.c</name>
-        </file>
-        <file>
           <name>$PROJ_DIR$\..\Core\Src\usart.c</name>
         </file>
         <file>
@@ -1135,7 +1132,10 @@
     <group>
       <name>STM32L4xx_HAL_Driver</name>
       <file>
-        <name>$PROJ_DIR$\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_iwdg.c</name>
+        <name>$PROJ_DIR$\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_uart.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_uart_ex.c</name>
       </file>
       <file>
         <name>$PROJ_DIR$\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal.c</name>
@@ -1181,12 +1181,6 @@
       </file>
       <file>
         <name>$PROJ_DIR$\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_exti.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_uart.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_uart_ex.c</name>
       </file>
       <file>
         <name>$PROJ_DIR$\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_rtc.c</name>

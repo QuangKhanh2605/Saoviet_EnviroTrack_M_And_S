@@ -150,6 +150,7 @@ void BUTTON_Enter_Process (void)
                     Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SET_OFFSET, 0,
                                        __SET_OFFSET_CLO, __SET_OFFSET_CLO, __SET_OFFSET_TEMP,
                                        NULL, 0xF1);
+                    break;
                     
                 case __SCR_SET_INFOR:
                     UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
@@ -420,11 +421,11 @@ void BUTTON_Enter_Process (void)
                 switch (sLCD.sScreenBack.Para_u8)
                 {
                     case __SET_OFFSET_CLO:
-                      Save_ParamCalib((float)(sButton.Old_value/100), sSensor_Clo.temp_Offset_f);
+                      Save_ParamCalib(((float)sButton.Old_value/100), sSensor_Clo.temp_Offset_f);
                       break;
                       
                     case __SET_OFFSET_TEMP:
-                      Save_ParamCalib(sSensor_Clo.Clo_Offset_f, (float)(sButton.Old_value/100));
+                      Save_ParamCalib(sSensor_Clo.Clo_Offset_f, ((float)sButton.Old_value/100));
                       break;
                       
                     default:

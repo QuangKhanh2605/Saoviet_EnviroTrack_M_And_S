@@ -7,7 +7,7 @@
 #include "event_driven.h"
 
 /*==================Define UART sensor===================*/
-extern DMA_HandleTypeDef        hdma_usart3_rx;
+extern DMA_HandleTypeDef              hdma_usart3_rx;
 
 #define uart_rs485SS	              huart3
 #define uart_dma_rs485SS              hdma_usart3_rx
@@ -25,7 +25,7 @@ extern DMA_HandleTypeDef        hdma_usart3_rx;
 #define UART_RS485SS_MODE             UART_RS485SS_IT
 
 #define SENSOR_DE_GPIO_PORT                RS485_2_TXDE_GPIO_Port  
-#define SENSOR_DE_GPIO_PIN                 RS485_2_TXDE_Pin    
+#define SENSOR_DE_GPIO_PIN                 RS485_2_TXDE_Pin   
 
 /*======================Function======================*/
 void RS485SS_Init_Data (void);

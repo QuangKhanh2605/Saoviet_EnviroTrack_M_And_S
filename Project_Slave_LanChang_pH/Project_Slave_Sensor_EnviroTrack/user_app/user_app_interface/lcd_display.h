@@ -35,15 +35,18 @@ typedef enum
     
     _EVENT_BUTTON_SCAN,
     _EVENT_BUTTON_DETECTTED,
+    _EVENT_OFF_SPEAKER,
     
     _EVENT_END_DISPLAY,
 }sEVENT_DISPLAY;
 
 typedef enum
 {
+    __SC1_TITLE,
     __SC1_PH_ATC,
     __SC1_TEMP,
     
+    __PASS_WORD_TITLE,
     __PASS_WORD_1,
     __PASS_WORD_2,
     
@@ -69,6 +72,7 @@ typedef enum
     __SET_OFFSET_PH,
     __SET_OFFSET_TEMP,
 
+    __SCR_INFOR_TITLE,
     __SCR_INFOR_FW_VERSION_1,
     __SCR_INFOR_FW_VERSION_2,
     
@@ -180,13 +184,13 @@ extern sLCDinformation      sLCD;
 extern sOjectInformation   sLCDObject[];
 extern sParameter_Display   sParaDisplay;
 /*=========================Function=======================*/
-
 uint8_t Display_Task(void);
 void    Display_Init(void);
 
 void    Display_Show_Screen (uint8_t screen);
 void    Display_Show_Oject (uint8_t object);
 uint8_t Display_Check_Toggle (uint8_t object, uint8_t Flag);
+void    On_Speaker(uint16_t TimeOn);
 
 void    Update_ParaDisplay(void);
 void    Display_Set_Screen (sScreenInformation *screen, uint8_t index, uint8_t subindex,
@@ -197,6 +201,7 @@ void    Display_Set_Screen_Flag (sScreenInformation *screen, void *pData, uint8_
 
 uint8_t Display_Check_Password (uint8_t *pPass);
 
+void    Display_Show_Static_Param (void);
 void    Display_Show_State_Sensor_Network (uint8_t screen);
 void    Display_Show_State_Setting (uint8_t screen);
 void    Deinit_LCD12864(void);

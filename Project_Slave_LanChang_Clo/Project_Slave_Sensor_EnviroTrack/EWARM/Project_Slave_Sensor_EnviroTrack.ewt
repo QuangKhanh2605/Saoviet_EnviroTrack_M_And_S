@@ -1205,9 +1205,6 @@
                     <name>$PROJ_DIR$\..\Core\Src\gpio.c</name>
                 </file>
                 <file>
-                    <name>$PROJ_DIR$\..\Core\Src\iwdg.c</name>
-                </file>
-                <file>
                     <name>$PROJ_DIR$\..\Core\Src\main.c</name>
                 </file>
                 <file>
@@ -1270,9 +1267,6 @@
             </file>
             <file>
                 <name>$PROJ_DIR$\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_i2c_ex.c</name>
-            </file>
-            <file>
-                <name>$PROJ_DIR$\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_iwdg.c</name>
             </file>
             <file>
                 <name>$PROJ_DIR$\..\Drivers\STM32L4xx_HAL_Driver\Src\stm32l4xx_hal_pwr.c</name>

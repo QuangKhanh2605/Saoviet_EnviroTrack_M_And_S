@@ -150,6 +150,7 @@ void BUTTON_Enter_Process (void)
                     Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SET_OFFSET, 0,
                                        __SET_OFFSET_TURB, __SET_OFFSET_TURB, __SET_OFFSET_TEMP,
                                        NULL, 0xF1);
+                    break;
                     
                 case __SCR_SET_INFOR:
                     UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));

@@ -20,7 +20,7 @@
         <LeaveTargetRunning>_ 0</LeaveTargetRunning>
     </StLinkDriver>
     <DebugChecksum>
-        <Checksum>4117894348</Checksum>
+        <Checksum>1434113958</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -68,47 +68,48 @@
         <Fmt8>Struct_Pulse-Factor_u8	3	0</Fmt8>
         <Fmt9>Struct_Pulse-Flow_i32	3	0</Fmt9>
         <Fmt10>Struct_Pulse-IsOver5Pulse_u8	3	0</Fmt10>
-        <Fmt11>Struct_UserSensor-User_Clo	3	0</Fmt11>
-        <Fmt12>Struct_UserSensor-User_EC	3	0</Fmt12>
-        <Fmt13>Struct_UserSensor-User_Turb	3	0</Fmt13>
-        <Fmt14>Struct_UserSensor-User_pH	3	0</Fmt14>
-        <Fmt15>sAppWmPressureInfor-Mode_u8	3	0</Fmt15>
-        <Fmt16>sAppWmPressureInfor-Val_i32	3	0</Fmt16>
-        <Fmt17>sEvent_struct-e_name	3	0</Fmt17>
-        <Fmt18>sEvent_struct-e_status	3	0</Fmt18>
-        <Fmt19>sModbusDeviceData-Factor	4	0</Fmt19>
-        <Fmt20>sModbusDeviceData-Status_u8	3	0</Fmt20>
-        <Fmt21>sModbusDeviceData-Type_u8	3	0</Fmt21>
-        <Fmt22>sModbusInfor-MType_u8	3	0</Fmt22>
-        <Fmt23>sModbusInfor-SlaveId_u8	3	0</Fmt23>
-        <Fmt24>sOjectInformation-Col_u8	3	0</Fmt24>
-        <Fmt25>sOjectInformation-Mode_u8	3	0</Fmt25>
-        <Fmt26>sOjectInformation-Para_u8	3	0</Fmt26>
-        <Fmt27>sOjectInformation-Row_u8	3	0</Fmt27>
-        <Fmt28>sOjectInformation-Scale_u8	3	0</Fmt28>
-        <Fmt29>sOjectInformation-Screen_u8	3	0</Fmt29>
-        <Fmt30>sOjectInformation-dType_u8	3	0</Fmt30>
-        <Fmt31>sPressureLinearInter-InUnit_u8	3	0</Fmt31>
-        <Fmt32>sPressureLinearInter-OutUnit_u8	3	0</Fmt32>
-        <Fmt33>sRecordMemoryManager-AddAStart_u32	4	0</Fmt33>
-        <Fmt34>sRecordMemoryManager-AddAStop_u32	4	0</Fmt34>
-        <Fmt35>sRecordMemoryManager-AddA_u32	4	0</Fmt35>
-        <Fmt36>sRecordMemoryManager-AddBStart_u32	4	0</Fmt36>
-        <Fmt37>sRecordMemoryManager-AddBStop_u32	4	0</Fmt37>
-        <Fmt38>sRecordMemoryManager-AddB_u32	4	0</Fmt38>
-        <Fmt39>sRecordMemoryManager-AddIndex_u32	4	0</Fmt39>
-        <Fmt40>sRecordMemoryManager-cReaded_u8	3	0</Fmt40>
-        <Fmt41>sRequestATcmd-Port_u8	3	0</Fmt41>
-        <Fmt42>sRequestATcmd-Status_u8	3	0</Fmt42>
-        <Fmt43>sScreenInformation-Flag_u8	4	0</Fmt43>
-        <Fmt44>sScreenInformation-Index_u8	3	0</Fmt44>
-        <Fmt45>sScreenInformation-ParaMax_u8	3	0</Fmt45>
-        <Fmt46>sScreenInformation-ParaMin_u8	3	0</Fmt46>
-        <Fmt47>sScreenInformation-Para_u8	3	0</Fmt47>
-        <Fmt48>sScreenInformation-SubIndex_u8	3	0</Fmt48>
-        <Fmt49>sStruct_RS485_pH-Count_Disconnect	3	0</Fmt49>
-        <Fmt50>sStruct_RS485_pH-State_Connect_u8	3	0</Fmt50>
-        <Fmt51>sStruct_RS485_pH-State_Recv_Data	3	0</Fmt51>
+        <Fmt11>Struct_SS_Value-State_u8	3	0</Fmt11>
+        <Fmt12>Struct_UserSensor-User_Clo	3	0</Fmt12>
+        <Fmt13>Struct_UserSensor-User_EC	3	0</Fmt13>
+        <Fmt14>Struct_UserSensor-User_Turb	3	0</Fmt14>
+        <Fmt15>Struct_UserSensor-User_pH	3	0</Fmt15>
+        <Fmt16>sAppWmPressureInfor-Mode_u8	3	0</Fmt16>
+        <Fmt17>sAppWmPressureInfor-Val_i32	3	0</Fmt17>
+        <Fmt18>sEvent_struct-e_name	3	0</Fmt18>
+        <Fmt19>sEvent_struct-e_status	3	0</Fmt19>
+        <Fmt20>sModbusDeviceData-Factor	4	0</Fmt20>
+        <Fmt21>sModbusDeviceData-Status_u8	3	0</Fmt21>
+        <Fmt22>sModbusDeviceData-Type_u8	3	0</Fmt22>
+        <Fmt23>sModbusInfor-MType_u8	3	0</Fmt23>
+        <Fmt24>sModbusInfor-SlaveId_u8	3	0</Fmt24>
+        <Fmt25>sOjectInformation-Col_u8	3	0</Fmt25>
+        <Fmt26>sOjectInformation-Mode_u8	3	0</Fmt26>
+        <Fmt27>sOjectInformation-Para_u8	3	0</Fmt27>
+        <Fmt28>sOjectInformation-Row_u8	3	0</Fmt28>
+        <Fmt29>sOjectInformation-Scale_u8	3	0</Fmt29>
+        <Fmt30>sOjectInformation-Screen_u8	3	0</Fmt30>
+        <Fmt31>sOjectInformation-dType_u8	3	0</Fmt31>
+        <Fmt32>sPressureLinearInter-InUnit_u8	3	0</Fmt32>
+        <Fmt33>sPressureLinearInter-OutUnit_u8	3	0</Fmt33>
+        <Fmt34>sRecordMemoryManager-AddAStart_u32	4	0</Fmt34>
+        <Fmt35>sRecordMemoryManager-AddAStop_u32	4	0</Fmt35>
+        <Fmt36>sRecordMemoryManager-AddA_u32	4	0</Fmt36>
+        <Fmt37>sRecordMemoryManager-AddBStart_u32	4	0</Fmt37>
+        <Fmt38>sRecordMemoryManager-AddBStop_u32	4	0</Fmt38>
+        <Fmt39>sRecordMemoryManager-AddB_u32	4	0</Fmt39>
+        <Fmt40>sRecordMemoryManager-AddIndex_u32	4	0</Fmt40>
+        <Fmt41>sRecordMemoryManager-cReaded_u8	3	0</Fmt41>
+        <Fmt42>sRequestATcmd-Port_u8	3	0</Fmt42>
+        <Fmt43>sRequestATcmd-Status_u8	3	0</Fmt43>
+        <Fmt44>sScreenInformation-Flag_u8	4	0</Fmt44>
+        <Fmt45>sScreenInformation-Index_u8	3	0</Fmt45>
+        <Fmt46>sScreenInformation-ParaMax_u8	3	0</Fmt46>
+        <Fmt47>sScreenInformation-ParaMin_u8	3	0</Fmt47>
+        <Fmt48>sScreenInformation-Para_u8	3	0</Fmt48>
+        <Fmt49>sScreenInformation-SubIndex_u8	3	0</Fmt49>
+        <Fmt50>sStruct_RS485_pH-Count_Disconnect	3	0</Fmt50>
+        <Fmt51>sStruct_RS485_pH-State_Connect_u8	3	0</Fmt51>
+        <Fmt52>sStruct_RS485_pH-State_Recv_Data	3	0</Fmt52>
     </struct_types>
     <array_types>
         <Fmt0>uint32_t[6]	3	0</Fmt0>

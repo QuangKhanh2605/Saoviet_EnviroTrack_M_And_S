@@ -19,7 +19,6 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "dma.h"
-#include "iwdg.h"
 #include "usart.h"
 #include "rtc.h"
 #include "spi.h"
@@ -92,7 +91,6 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_DMA_Init();
-  MX_IWDG_Init();
   MX_LPUART1_UART_Init();
   MX_RTC_Init();
   MX_SPI2_Init();

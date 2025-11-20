@@ -97,7 +97,7 @@ uint8_t _Cb_W_ModbusRTU_REG_Baudrate(sData *str, uint16_t Pos)
 uint8_t _Cb_R_ModbusRTU_REG_pH_Measure(sData *str, uint16_t Pos)
 {
     uint32_t hexValue = 0;
-    hexValue = Handle_Float_To_hexUint32(sSensor_EC.EC_Value_f);
+    hexValue = Handle_Float_To_hexUint32(sSensor_EC.EC_Filter_f);
     sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue >> 8;
     sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue;
     sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue >> 24;
@@ -109,7 +109,7 @@ uint8_t _Cb_R_ModbusRTU_REG_pH_Measure(sData *str, uint16_t Pos)
 uint8_t _Cb_R_ModbusRTU_REG_Temp_Measure(sData *str, uint16_t Pos)
 {
     uint32_t hexValue = 0;
-    hexValue = Handle_Float_To_hexUint32(sSensor_EC.temp_Value_f);
+    hexValue = Handle_Float_To_hexUint32(sSensor_EC.temp_Filter_f);
     sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue >> 8;
     sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue;
     sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue >> 24;
@@ -121,7 +121,7 @@ uint8_t _Cb_R_ModbusRTU_REG_Temp_Measure(sData *str, uint16_t Pos)
 uint8_t _Cb_R_ModbusRTU_REG_TDS_Measure(sData *str, uint16_t Pos)
 {
     uint32_t hexValue = 0;
-    hexValue = Handle_Float_To_hexUint32(sSensor_EC.TDS_Value_f);
+    hexValue = Handle_Float_To_hexUint32(sSensor_EC.TDS_Filter_f);
     sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue >> 8;
     sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue;
     sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue >> 24;
@@ -133,7 +133,7 @@ uint8_t _Cb_R_ModbusRTU_REG_TDS_Measure(sData *str, uint16_t Pos)
 uint8_t _Cb_R_ModbusRTU_REG_Sal_Measure(sData *str, uint16_t Pos)
 {
     uint32_t hexValue = 0;
-    hexValue = Handle_Float_To_hexUint32(sSensor_EC.Salinity_Value_f);
+    hexValue = Handle_Float_To_hexUint32(sSensor_EC.Salinity_Filter_f);
     sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue >> 8;
     sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue;
     sLogData_ModbusRTU.Data_a8[sLogData_ModbusRTU.Length_u16++] = hexValue >> 24;

@@ -148,22 +148,22 @@
         + Port uart
         ...
 */
-extern DMA_HandleTypeDef            hdma_usart3_rx;
+extern DMA_HandleTypeDef            hdma_lpuart_rx;
 
-#define uart_debug	                huart3
-#define uart_dma_debug              hdma_usart3_rx
+#define uart_debug	                hlpuart1
+#define uart_dma_debug              hdma_lpuart_rx
 
-#define MX_UART_DBG_Init            MX_USART3_UART_Init            //Func init Uart sim
+#define MX_UART_DBG_Init            MX_LPUART1_UART_Init            //Func init Uart sim
 
 /* Definition for USARTx's NVIC */
-#define USART_DBG_IRQn              USART3_IRQn
+#define USART_DBG_IRQn              LPUART1_IRQn
 #define USART_DBG_Priority          1
 
 /*-- Rx uart: DMA with IDLE line | Interupt line  ----*/
 #define UART_DBG_DMA                0
 #define UART_DBG_IT                 1
 
-#define UART_DBG_MODE               UART_DBG_DMA
+#define UART_DBG_MODE               UART_DBG_IT
 
 
 

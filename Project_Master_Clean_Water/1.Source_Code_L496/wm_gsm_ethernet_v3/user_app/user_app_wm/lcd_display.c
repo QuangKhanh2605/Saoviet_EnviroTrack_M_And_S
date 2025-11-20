@@ -61,12 +61,12 @@ sOjectInformation   sLCDObject[] =
     
     {   __PARAM_CM44,       "Sensor.",            NULL,   _DTYPE_STRING,   0,      NULL,      0,  0,  0x00,    _LCD_SCREEN_CM44    },
 //    {   __SC1_ID_DCU,       NULL,               NULL,   _DTYPE_STRING,   0,      NULL,      2,  20, 0x00,    _LCD_SCREEN_CM44    },
-    {   __SC1_CLO_DU,       "CLO DU: ",         NULL,   _DTYPE_I16,        0,   "  mg/L     ",  2,  0,  0x00,    _LCD_SCREEN_CM44    },
-    {   __SC1_PH_WATER,     "PH ATC: ",         NULL,   _DTYPE_I16,        0,   "  pH       ",  2,  0,  0x00,    _LCD_SCREEN_CM44    },
-    {   __SC1_TURB,         "NTU   : ",         NULL,   _DTYPE_I16,        0,   "  NTU      ",  2,  0,  0x00,    _LCD_SCREEN_CM44    },
-    {   __SC1_EC,           "EC    : ",         NULL,   _DTYPE_I16,        0,   "  uS/cm    ",  2,  0,  0x00,    _LCD_SCREEN_CM44    },
-    {   __SC1_SALINITY,     "Do man: ",         NULL,   _DTYPE_I16,        0,   "  %        ",  2,  0,  0x00,    _LCD_SCREEN_CM44    },
-    {   __SC1_TEMP,         "Temp  : ",         NULL,   _DTYPE_I16,        0,   "  ‰C       ",  2,  0,  0x00,    _LCD_SCREEN_CM44    },
+    {   __SC1_CLO_DU,       "CLO DU: ",         NULL,   _DTYPE_I16,        0,   "  mg/L",   2,  0,  0x00,    _LCD_SCREEN_CM44    },
+    {   __SC1_PH_WATER,     "PH ATC: ",         NULL,   _DTYPE_I16,        0,   "  pH",     2,  0,  0x00,    _LCD_SCREEN_CM44    },
+    {   __SC1_TURB,         "NTU   : ",         NULL,   _DTYPE_I16,        0,   "  NTU",    2,  0,  0x00,    _LCD_SCREEN_CM44    },
+    {   __SC1_EC,           "EC    : ",         NULL,   _DTYPE_I16,        0,   "  uS/cm",  2,  0,  0x00,    _LCD_SCREEN_CM44    },
+    {   __SC1_SALINITY,     "Do man: ",         NULL,   _DTYPE_I16,        0,   "  %",      2,  0,  0x00,    _LCD_SCREEN_CM44    },
+    {   __SC1_TEMP,         "Temp  : ",         NULL,   _DTYPE_I16,        0,   "  ‰C",     2,  0,  0x00,    _LCD_SCREEN_CM44    },
     //screen channel 1
 
     {   __CHANEL_1,         "CH.1  ",           NULL,   _DTYPE_STRING,   0,      NULL,      0,  0,  0x00,    _LCD_SCREEN_2    },
@@ -125,12 +125,12 @@ sOjectInformation   sLCDObject[] =
     {   __SET_REQ_2_1,      "*Tsend Data:",     NULL,   _DTYPE_STRING,   0,      NULL,      2,  24, 0x00,    _LCD_SCR_SET_FREQ },
     {   __SET_REQ_2_2,      NULL,               NULL,   _DTYPE_U32,      0,      " (min)",  3,  36, 0x02,    _LCD_SCR_SET_FREQ },
 
-    {   __SET_OFFSET_SS_PH,         "1.pH  : ",     NULL,   _DTYPE_I32,    0xFE,      " pH       ",      2,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
-    {   __SET_OFFSET_SS_CLO,        "2.Clo : ",     NULL,   _DTYPE_I32,    0xFE,      " mg/L     ",      3,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
-    {   __SET_OFFSET_SS_TURB,       "3.Turb: ",     NULL,   _DTYPE_I32,    0xFE,      " NTU      ",      4,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
-    {   __SET_OFFSET_SS_EC,         "4.EC  : ",     NULL,   _DTYPE_I32,    0xFE,      " uS/cm    ",      5,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
-    {   __SET_OFFSET_SS_SALINITY,   "5.Sal : ",     NULL,   _DTYPE_I32,    0xFE,      " %        ",      6,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
-    {   __SET_OFFSET_SS_TEMP,       "6.Temp: ",     NULL,   _DTYPE_I32,    0xFE,      " ‰C       ",      7,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
+    {   __SET_OFFSET_SS_PH,         "1.pH  : ",     NULL,   _DTYPE_I32,    0xFE,      " pH",        2,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
+    {   __SET_OFFSET_SS_CLO,        "2.Clo : ",     NULL,   _DTYPE_I32,    0xFE,      " mg/L",      3,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
+    {   __SET_OFFSET_SS_TURB,       "3.Turb: ",     NULL,   _DTYPE_I32,    0xFE,      " NTU",       4,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
+    {   __SET_OFFSET_SS_EC,         "4.EC  : ",     NULL,   _DTYPE_I32,    0xFE,      " uS/cm",     5,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
+    {   __SET_OFFSET_SS_SALINITY,   "5.Sal : ",     NULL,   _DTYPE_I32,    0xFE,      " %",         6,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
+    {   __SET_OFFSET_SS_TEMP,       "6.Temp: ",     NULL,   _DTYPE_I32,    0xFE,      " ‰C",        7,  0, 0x00,    _LCD_SCR_SET_OFFSET_SENSOR },
     
     {   __SET_OPTION_SS_TITLE,  "OPTION SENSOR",  NULL,   _DTYPE_STRING,   0x00, NULL,        2,  26,  0x00,    _LCD_SCR_SET_OPTION_SENSOR  },
     {   __SET_OPTION_SS_PH,     "1.pH      : ",   NULL,   _DTYPE_U8,   0x00, NULL,            3,  14,  0x00,    _LCD_SCR_SET_OPTION_SENSOR  },
@@ -515,6 +515,18 @@ void Display_Show_Screen (uint8_t screen)
     
     for (i = 0; i < __OJECT_END; i++) {
         if (sLCDObject[i].Screen_u8 == screen) {
+          if(i == __SC1_CLO_DU && sUserSensor.User_Clo == _INACTIVE_SENSOR)
+            continue;
+          
+          if(i == __SC1_PH_WATER && sUserSensor.User_pH == _INACTIVE_SENSOR)
+            continue;
+          
+          if(i == __SC1_TURB && sUserSensor.User_Turb == _INACTIVE_SENSOR)
+            continue;
+          
+          if(i == __SC1_EC || i == __SC1_EC && sUserSensor.User_EC == _INACTIVE_SENSOR)
+            continue;
+          
             Display_Show_Oject(i);
         }
     }
@@ -945,49 +957,61 @@ void Display_Show_State_Sensor_Network (uint8_t screen)
 {
     if(screen == _LCD_SCREEN_CM44)
     {
-        if(sDataSensorMeasure.spH.State_u8 == 0)
+        if(sUserSensor.User_pH == _ACTIVE_SENSOR)
         {
-            glcd_tiny_draw_string(120, sLCDObject[__SC1_PH_WATER].Row_u8, " ");
-        }
-        else
-        {
-            glcd_tiny_draw_string(120, sLCDObject[__SC1_PH_WATER].Row_u8, "N");
+            if(sDataSensorMeasure.spH.State_u8 == 0)
+            {
+                glcd_tiny_draw_string(120, sLCDObject[__SC1_PH_WATER].Row_u8, " ");
+            }
+            else
+            {
+                glcd_tiny_draw_string(120, sLCDObject[__SC1_PH_WATER].Row_u8, "N");
+            }
         }
         
-        if(sDataSensorMeasure.sClo.State_u8 == 0)
+        if(sUserSensor.User_Clo == _ACTIVE_SENSOR)
         {
-            glcd_tiny_draw_string(120, sLCDObject[__SC1_CLO_DU].Row_u8, " ");
-        }
-        else
-        {
-            glcd_tiny_draw_string(120, sLCDObject[__SC1_CLO_DU].Row_u8, "N");
+            if(sDataSensorMeasure.sClo.State_u8 == 0)
+            {
+                glcd_tiny_draw_string(120, sLCDObject[__SC1_CLO_DU].Row_u8, " ");
+            }
+            else
+            {
+                glcd_tiny_draw_string(120, sLCDObject[__SC1_CLO_DU].Row_u8, "N");
+            }
         }
 
-        if(sDataSensorMeasure.sTurb.State_u8 == 0)
+        if(sUserSensor.User_Turb == _ACTIVE_SENSOR)
         {
-            glcd_tiny_draw_string(120, sLCDObject[__SC1_TURB].Row_u8, " ");
-        }
-        else
-        {
-            glcd_tiny_draw_string(120, sLCDObject[__SC1_TURB].Row_u8, "N");
-        }
-        
-        if(sDataSensorMeasure.sEC.State_u8 == 0)
-        {
-            glcd_tiny_draw_string(120, sLCDObject[__SC1_EC].Row_u8, " ");
-        }
-        else
-        {
-            glcd_tiny_draw_string(120, sLCDObject[__SC1_EC].Row_u8, "N");
+            if(sDataSensorMeasure.sTurb.State_u8 == 0)
+            {
+                glcd_tiny_draw_string(120, sLCDObject[__SC1_TURB].Row_u8, " ");
+            }
+            else
+            {
+                glcd_tiny_draw_string(120, sLCDObject[__SC1_TURB].Row_u8, "N");
+            }
         }
         
-        if(sDataSensorMeasure.sSal.State_u8 == 0)
+        if(sUserSensor.User_EC == _ACTIVE_SENSOR)
         {
-            glcd_tiny_draw_string(120, sLCDObject[__SC1_SALINITY].Row_u8, " ");
-        }
-        else
-        {
-            glcd_tiny_draw_string(120, sLCDObject[__SC1_SALINITY].Row_u8, "N");
+            if(sDataSensorMeasure.sEC.State_u8 == 0)
+            {
+                glcd_tiny_draw_string(120, sLCDObject[__SC1_EC].Row_u8, " ");
+            }
+            else
+            {
+                glcd_tiny_draw_string(120, sLCDObject[__SC1_EC].Row_u8, "N");
+            }
+            
+            if(sDataSensorMeasure.sSal.State_u8 == 0)
+            {
+                glcd_tiny_draw_string(120, sLCDObject[__SC1_SALINITY].Row_u8, " ");
+            }
+            else
+            {
+                glcd_tiny_draw_string(120, sLCDObject[__SC1_SALINITY].Row_u8, "N");
+            }
         }
         
         if(sDataSensorMeasure.sTemp.State_u8 == 0)

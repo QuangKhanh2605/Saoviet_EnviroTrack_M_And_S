@@ -2,7 +2,6 @@
 #include "user_define.h"
 #include "user_convert_variable.h"
 #include "user_app_modbus_rtu.h"
-#include "iwdg.h"
 #include "user_connect_sensor.h"
 #include "user_modbus_rtu.h"
 
@@ -15,14 +14,14 @@ static uint8_t fevent_sensor_wait_calib(uint8_t event);
 
 static uint8_t fevent_detect_connect(uint8_t event);
 static uint8_t fevent_temp_alarm(uint8_t event);
-static uint8_t fevent_refresh_iwdg(uint8_t event);
 static uint8_t fevent_refresh_wdg_hard(uint8_t event);
+static uint8_t fevent_sensor_reset(uint8_t event);
 /*==============================Struct=============================*/
 sEvent_struct               sEventAppSensor[]=
 {
   {_EVENT_SENSOR_ENTRY,              1, 5, 2,                fevent_sensor_entry},            //Doi slave khoi dong moi truyen opera
   
-  {_EVENT_SENSOR_TRANSMIT,           0, 0, 1500,             fevent_sensor_transmit},
+  {_EVENT_SENSOR_TRANSMIT,           1, 0, 1500,             fevent_sensor_transmit},
   {_EVENT_SENSOR_RECEIVE_HANDLE,     0, 5, 5,                fevent_sensor_receive_handle},
   {_EVENT_SENSOR_RECEIVE_COMPLETE,   0, 5, 500,              fevent_sensor_receive_complete},
   
@@ -30,8 +29,9 @@ sEvent_struct               sEventAppSensor[]=
   
   {_EVENT_DETECT_CONNECT,            1, 5, 15000,            fevent_detect_connect},
   {_EVENT_TEMP_ALARM,                1, 5, 2000,             fevent_temp_alarm},
-  {_EVENT_REFRESH_IWDG,              1, 5, 250,              fevent_refresh_iwdg},
   {_EVENT_REFRESH_WDG_HARD,          1, 5, 5,                fevent_refresh_wdg_hard},
+  
+  {_EVENT_SENSOR_RESET,              1, 0, 2000,             fevent_sensor_reset},
 };
 int32_t aSampling_STT[NUMBER_SAMPLING_SS] = {0};
 int32_t aSampling_VALUE[NUMBER_SAMPLING_SS] = {0};
@@ -90,9 +90,9 @@ static uint8_t fevent_sensor_transmit(uint8_t event)
           break;
     }
     
-    fevent_active(sEventAppRs485, _EVENT_SENSOR_RECEIVE_HANDLE);
-    fevent_enable(sEventAppRs485, _EVENT_SENSOR_RECEIVE_COMPLETE);
-    fevent_enable(sEventAppRs485, event);
+    fevent_active(sEventAppSensor, _EVENT_SENSOR_RECEIVE_HANDLE);
+    fevent_enable(sEventAppSensor, _EVENT_SENSOR_RECEIVE_COMPLETE);
+    fevent_enable(sEventAppSensor, event);
     return 1;
 }
 
@@ -104,7 +104,7 @@ static uint8_t fevent_sensor_receive_handle(uint8_t event)
         if(CountBufferHandleRecvSS == sUart485SS.Length_u16)
         {
             CountBufferHandleRecvSS = 0;
-            fevent_active(sEventAppRs485, _EVENT_RS485_RECEIVE_COMPLETE);
+            fevent_active(sEventAppSensor, _EVENT_RS485_RECEIVE_COMPLETE);
             return 1;
         }
         else
@@ -113,7 +113,7 @@ static uint8_t fevent_sensor_receive_handle(uint8_t event)
         }
     }
     
-    fevent_enable(sEventAppRs485, event);
+    fevent_enable(sEventAppSensor, event);
     return 1;
 }
 
@@ -130,7 +130,7 @@ static uint8_t fevent_sensor_receive_complete(uint8_t event)
         Crc_Check = ModRTU_CRC(sUart485SS.Data_a8, sUart485SS.Length_u16 - 2);
         if(Crc_Check == Crc_Recv)
         {
-            fevent_enable(sEventAppRs485, _EVENT_RS485_REFRESH);
+            fevent_enable(sEventAppSensor, _EVENT_SENSOR_RESET);
             
             if(sUart485SS.Data_a8[0] == ID_DEFAULT_SS_TURB)
             {
@@ -154,7 +154,7 @@ static uint8_t fevent_sensor_receive_complete(uint8_t event)
     
     Handle_Data_Measure(sKindMode485.Recv);
 
-    fevent_disable(sEventAppRs485, _EVENT_SENSOR_RECEIVE_HANDLE);
+    fevent_disable(sEventAppSensor, _EVENT_SENSOR_RECEIVE_HANDLE);
     return 1;
 }
 
@@ -193,13 +193,6 @@ static uint8_t fevent_temp_alarm(uint8_t event)
     return 1;
 }
 
-static uint8_t fevent_refresh_iwdg(uint8_t event)
-{
-    HAL_IWDG_Refresh(&hiwdg);
-    fevent_enable(sEventAppSensor, event);
-    return 1;
-}
-
 static uint8_t fevent_refresh_wdg_hard(uint8_t event)
 {
     static uint8_t state = 0;
@@ -213,9 +206,32 @@ static uint8_t fevent_refresh_wdg_hard(uint8_t event)
     else
     {
         HAL_GPIO_WritePin(TOGGLE_RESET_GPIO_Port, TOGGLE_RESET_Pin, GPIO_PIN_RESET);
-        sEventAppSensor[_EVENT_REFRESH_WDG_HARD].e_period = 500;
+        sEventAppSensor[_EVENT_REFRESH_WDG_HARD].e_period = 100;
         state = 0;
     }
+    fevent_enable(sEventAppSensor, event);
+    return 1;
+}
+
+static uint8_t fevent_sensor_reset(uint8_t event)
+{
+    static uint8_t state = 0;
+    if(state == 0)
+    {
+        state = 1;
+        HAL_GPIO_WritePin(ON_PW_RS485_GPIO_Port, ON_PW_RS485_Pin, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(ON_PW_SEN1_GPIO_Port, ON_PW_SEN1_Pin, GPIO_PIN_RESET);
+        HAL_GPIO_WritePin(ON_PW_SEN2_GPIO_Port, ON_PW_SEN2_Pin, GPIO_PIN_RESET);
+        sEventAppSensor[_EVENT_SENSOR_RESET].e_period = 2000;
+    }
+    else
+    {
+        state = 0;
+        HAL_GPIO_WritePin(ON_PW_SEN1_GPIO_Port, ON_PW_SEN1_Pin, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(ON_PW_SEN2_GPIO_Port, ON_PW_SEN2_Pin, GPIO_PIN_SET);
+        sEventAppSensor[_EVENT_SENSOR_RESET].e_period = 60000;
+    }
+    
     fevent_enable(sEventAppSensor, event);
     return 1;
 }
@@ -660,7 +676,7 @@ void        Send_RS458_Sensor(uint8_t *aData, uint16_t Length_u16)
     HAL_GPIO_WritePin(SENSOR_DE_GPIO_PORT, SENSOR_DE_GPIO_PIN, GPIO_PIN_SET);
     HAL_Delay(10);
     // Send
-//    RS485_Init_Data();
+    RS485SS_Init_Data();
     HAL_UART_Transmit(&uart_rs485SS, aData , Length_u16, 1000); 
     
     //Dua DE ve Receive

@@ -6,7 +6,7 @@
 #include "user_util.h"
 #include "event_driven.h"
 
-#define ID_DEFAULT_SS_CLO       7
+#define ID_DEFAULT_SS_CLO       1
 
 #define NUMBER_SAMPLING_SS      10
 
@@ -29,10 +29,12 @@ typedef enum
     _EVENT_SENSOR_RECEIVE_COMPLETE,
     
     _EVENT_SENSOR_WAIT_CALIB,
+    
     _EVENT_DETECT_PH_RECV,
     _EVENT_TEMP_ALARM,
-    _EVENT_REFRESH_IWDG,
     _EVENT_REFRESH_WDG_HARD,
+    
+    _EVENT_SENSOR_RESET,
     
     _EVENT_SENSOR_END,
 }eKindEventSENSOR;

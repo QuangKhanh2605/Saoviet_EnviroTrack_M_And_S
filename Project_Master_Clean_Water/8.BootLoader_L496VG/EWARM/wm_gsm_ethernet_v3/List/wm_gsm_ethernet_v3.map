@@ -1,52 +1,52 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.40.2.214/W32 for ARM                  14/Jul/2025  10:42:22
+# IAR ELF Linker V8.40.2.214/W32 for ARM                  18/Nov/2025  14:30:22
 # Copyright 2007-2019 IAR Systems AB.
 #
 #    Output file  =
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Exe\wm_gsm_ethernet_v3.out
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Exe\wm_gsm_ethernet_v3.out
 #    Map file     =
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\List\wm_gsm_ethernet_v3.map
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\List\wm_gsm_ethernet_v3.map
 #    Command line =
-#        -f C:\Users\PC\AppData\Local\Temp\EW3F21.tmp
-#        (D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\event_driven.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\gpio.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\main.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\onchipflash.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\queue_p.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\startup_stm32l496xx.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_cortex.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_dma.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_dma_ex.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_exti.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_flash.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_flash_ex.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_flash_ramfunc.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_gpio.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_i2c.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_i2c_ex.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_msp.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_pwr.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_pwr_ex.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_rcc.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_rcc_ex.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_tim.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_tim_ex.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_uart.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_uart_ex.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_it.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\system_stm32l4xx.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\usart.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\user_internal_mem.o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\user_util.o
+#        -f C:\Users\PC\AppData\Local\Temp\EWD4B5.tmp
+#        (D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\event_driven.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\gpio.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\main.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\onchipflash.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\queue_p.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\startup_stm32l496xx.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_cortex.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_dma.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_dma_ex.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_exti.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_flash.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_flash_ex.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_flash_ramfunc.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_gpio.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_i2c.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_i2c_ex.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_msp.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_pwr.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_pwr_ex.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_rcc.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_rcc_ex.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_tim.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_tim_ex.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_uart.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_hal_uart_ex.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\stm32l4xx_it.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\system_stm32l4xx.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\usart.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\user_internal_mem.o
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj\user_util.o
 #        --no_out_extension -o
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Exe\wm_gsm_ethernet_v3.out
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Exe\wm_gsm_ethernet_v3.out
 #        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
 #        --map
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\List\wm_gsm_ethernet_v3.map
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\List\wm_gsm_ethernet_v3.map
 #        --config
-#        D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM/stm32l496xx_flash.icf
+#        D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM/stm32l496xx_flash.icf
 #        --semihosting --entry __iar_program_start --vfe --text_out locale)
 #
 ###############################################################################
@@ -294,7 +294,7 @@ command line/config:
     ---------------------------------------------------
     Total:
 
-D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj: [1]
+D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj: [1]
     gpio.o                        316
     main.o                        464      383    1'084
     onchipflash.o                 222
@@ -482,7 +482,7 @@ uwTickFreq              0x2000'0454    0x1  Data  Gb  stm32l4xx_hal.o [1]
 uwTickPrio              0x2000'042c    0x4  Data  Gb  stm32l4xx_hal.o [1]
 
 
-[1] = D:\Saoviet_Git\Saoviet_EnviroTrack\Project_Datalogger_Sensor\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj
+[1] = D:\Saoviet_Git\Saoviet_EnviroTrack_M_And_S\Project_Master_Clean_Water\8.BootLoader_L496VG\EWARM\wm_gsm_ethernet_v3\Obj
 [2] = dl7M_tlf.a
 [3] = m7M_tls.a
 [4] = rt7M_tl.a

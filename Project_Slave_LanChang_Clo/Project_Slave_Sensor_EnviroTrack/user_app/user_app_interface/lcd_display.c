@@ -8,6 +8,7 @@ static uint8_t _Cb_button_scan (uint8_t event);
 static uint8_t _Cb_button_detect (uint8_t event);
 static uint8_t _Cb_Display_Auto_SW (uint8_t event);
 static uint8_t _Cb_Display_Logo (uint8_t event);
+static uint8_t _Cb_Off_Speaker(uint8_t event);
 extern sData   sFirmVersion;
 
 
@@ -20,13 +21,14 @@ sEvent_struct sEventDisplay [] =
     
     { _EVENT_BUTTON_SCAN, 		    0, 0, 2,    	_Cb_button_scan  },
     { _EVENT_BUTTON_DETECTTED, 	    0, 0, 10, 		_Cb_button_detect },
+    { _EVENT_OFF_SPEAKER,           0, 5, 5,        _Cb_Off_Speaker},
 };
 
 sLCDinformation      sLCD;
 
 sParameter_Display   sParaDisplay = {0};
 
-sData   sModelVersion = {(uint8_t *) "LEVEL_ULTRA_SAOVIET", 19}; 
+sData   sModelVersion = {(uint8_t *) "SLAVE_ENVIR_SAOVIET", 19}; 
 
 uint8_t aPASSWORD[4] = {"0000"};
 
@@ -39,40 +41,46 @@ uint8_t aSTT_SETTING_ERROR[14]  = {"     Error   "};
 sOjectInformation  sLCDObject[] = 
 {
 //          para          name                  value      dtype         scale   unit      row  col      screen
-    {   __SC1_CLO,        "Clo: ",          NULL,   _DTYPE_STRING,   0xFE,      NULL,      0,  4,  0x00,      _LCD_SCREEN_1  },
-    {   __SC1_TEMP,       "Temp  : ",       NULL,   _DTYPE_STRING,   0xFE,      NULL,      3,  4,  0x00,      _LCD_SCREEN_1  },
+    {   __SC1_TITLE,      "Sensor.",        NULL,   _DTYPE_STRING,   0x00,      NULL,      0,  0,  0x00,      _LCD_SCREEN_1  },
+    {   __SC1_PH,         "pH:",            NULL,   _DTYPE_I32,   0xFE,         NULL,      0,  78,  0x00,      _LCD_SCREEN_1  },
+    {   __SC1_CLO,        NULL,             NULL,   _DTYPE_I16,   0xFE,      "mg/L",       4,  0,  0x00,      _LCD_SCREEN_1  },
+    {   __SC1_TEMP,       "Temp  : ",       NULL,   _DTYPE_I16,   0xFE,      "  ‰C",       7,  0,  0x00,      _LCD_SCREEN_1  },
   
-    {   __PASS_WORD_1,    "Enter Password",   NULL,   _DTYPE_STRING,   0,      NULL,      1,  28, 0x00,      _LCD_SCR_PASS    },
-    {   __PASS_WORD_2,    NULL,               NULL,   _DTYPE_STRING,   0,      NULL,      2,  58, 0x00,      _LCD_SCR_PASS    },
+    {   __PASS_WORD_TITLE,  "Loggin",       NULL,   _DTYPE_STRING,   0x00,     NULL,     0,   0, 0x00,      _LCD_SCR_PASS    },
+    {   __PASS_WORD_1,    "Enter Password",   NULL,   _DTYPE_STRING,   0,      NULL,      2,  24, 0x00,      _LCD_SCR_PASS    },
+    {   __PASS_WORD_2,    NULL,               NULL,   _DTYPE_STRING,   0,      NULL,      3,  48, 0x00,      _LCD_SCR_PASS    },
     
-    {   __SCR_SET_TITLE,  "SETTING",          NULL,   _DTYPE_STRING,   0,      NULL,      0,   50, 0x00,      _LCD_SCR_SETTING },
-    {   __SCR_SET_MODBUS, "1.Modbus RTU",     NULL,   _DTYPE_STRING,   0,      NULL,      1,   18, 0x00,      _LCD_SCR_SETTING },
-    {   __SCR_SET_CALIB,  "2.Calibration",    NULL,   _DTYPE_STRING,   0,      NULL,      2,   18, 0x00,      _LCD_SCR_SETTING },
-    {   __SCR_SET_OFFSET, "3.Offset",         NULL,   _DTYPE_STRING,   0,      NULL,      3,   18, 0x00,      _LCD_SCR_SETTING },
-    {   __SCR_SET_INFOR,  "4.Information",    NULL,   _DTYPE_STRING,   0,      NULL,      4,   18, 0x00,      _LCD_SCR_SETTING },
+    {   __SCR_SET_TITLE,  "SETTING",          NULL,   _DTYPE_STRING,   0,      NULL,      0,   0, 0x00,      _LCD_SCR_SETTING },
+    {   __SCR_SET_MODBUS, "1.Modbus RTU",     NULL,   _DTYPE_STRING,   0,      NULL,      2,   18, 0x00,      _LCD_SCR_SETTING },
+    {   __SCR_SET_CALIB,  "2.Calibration",    NULL,   _DTYPE_STRING,   0,      NULL,      3,   18, 0x00,      _LCD_SCR_SETTING },
+    {   __SCR_SET_OFFSET, "3.Offset",         NULL,   _DTYPE_STRING,   0,      NULL,      4,   18, 0x00,      _LCD_SCR_SETTING },
+    {   __SCR_SET_INFOR,  "4.Information",    NULL,   _DTYPE_STRING,   0,      NULL,      5,   18, 0x00,      _LCD_SCR_SETTING },
     
-    {   __SET_MODBUS_TITLE,     "SET MODBUS RTU", NULL,   _DTYPE_STRING,   0,      NULL,      0,   28, 0x00,     _LCD_SCR_SET_MODBUS },
-    {   __SET_MODBUS_ID,        "1.ID      : ",   NULL,   _DTYPE_U8,       0x00,   NULL,      1,   4, 0x00,      _LCD_SCR_SET_MODBUS },
-    {   __SET_MODBUS_BR,        "2.Baudrate: ",   NULL,   _DTYPE_U32,      0x00,   NULL,      2,   4, 0x00,      _LCD_SCR_SET_MODBUS },
+    {   __SET_MODBUS_TITLE,     "SET MODBUS RTU", NULL,   _DTYPE_STRING,   0,      NULL,      0,   0, 0x00,     _LCD_SCR_SET_MODBUS },
+    {   __SET_MODBUS_ID,        "1.ID      : ",   NULL,   _DTYPE_U8,       0x00,   NULL,      2,   4, 0x00,      _LCD_SCR_SET_MODBUS },
+    {   __SET_MODBUS_BR,        "2.Baudrate: ",   NULL,   _DTYPE_U32,      0x00,   NULL,      3,   4, 0x00,      _LCD_SCR_SET_MODBUS },
     
-    {   __SET_CLO_TITLE,    "Chlorine   AD: ",  NULL,   _DTYPE_U16,      0xFE,  NULL,       2,  5,  0x00,    _LCD_SCR_SET_CALIB_SS_CLO},
+    {   __SET_CLO_TITLE,    "CALIB CLORINE",    NULL,   _DTYPE_STRING,   0,     NULL,      0,   0, 0x00,     _LCD_SCR_SET_CALIB_SS_CLO },
+    {   __SET_CLO_TITLE_2,  "Chlorine   AD: ",  NULL,   _DTYPE_U16,      0xFE,  NULL,       2,  5,  0x00,    _LCD_SCR_SET_CALIB_SS_CLO},
     {   __SET_CLO_ZERO,     "1.Zero",           NULL,   _DTYPE_STRING,   0,     NULL,       3,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_CLO},
     {   __SET_CLO_SLOPE,    "2.Slope :   ",     NULL,   _DTYPE_I16,      0xFE,  NULL,       4,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_CLO},
     {   __SET_CLO_CLB_PH_1, "3.P_pH1 :   ",     NULL,   _DTYPE_I16,      0xFE,  NULL,       5,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_CLO},
     {   __SET_CLO_CLB_PH_2, "4.P_pH2 :   ",     NULL,   _DTYPE_I16,      0xFE,  NULL,       6,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_CLO},
     {   __SET_CLO_CLB_TEMP, "5.C_Temp:   ",     NULL,   _DTYPE_I16,      0xFC,  NULL,       7,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_CLO},
     
-    {   __SET_OFFSET_TITLE, "OFFSET",           NULL,   _DTYPE_STRING,  0,      NULL,       0,  28, 0x00,    _LCD_SCR_SET_OFFSET},
-    {   __SET_OFFSET_CLO,   "1.Clo  : ",        NULL,   _DTYPE_I32,     0xFE,   NULL,       1,  14, 0x00,    _LCD_SCR_SET_OFFSET},
-    {   __SET_OFFSET_TEMP,  "2.Temp : ",        NULL,   _DTYPE_I32,     0xFE,   NULL,       2,  14, 0x00,    _LCD_SCR_SET_OFFSET},
     
-    {   __SCR_INFOR_FW_VERSION_1,     "*Version",       NULL,   _DTYPE_STRING,   0,      NULL,      0,   28, 0x00,      _LCD_SCR_SET_INFORMATION },
-    {   __SCR_INFOR_FW_VERSION_2,           NULL,       NULL,   _DTYPE_STRING,   0,      NULL,      1,    4, 0x00,       _LCD_SCR_SET_INFORMATION },
+    {   __SET_OFFSET_TITLE, "OFFSET",           NULL,   _DTYPE_STRING,  0,      NULL,       0,  0, 0x00,    _LCD_SCR_SET_OFFSET},
+    {   __SET_OFFSET_CLO,   "1.Clo  : ",        NULL,   _DTYPE_I32,     0xFE,   " mg/L",   2,  14, 0x00,    _LCD_SCR_SET_OFFSET},
+    {   __SET_OFFSET_TEMP,  "2.Temp : ",        NULL,   _DTYPE_I32,     0xFE,   " ‰C",     3,  14, 0x00,    _LCD_SCR_SET_OFFSET},
     
-    {   __SCR_INFOR_MODEL_1,          "*Model",         NULL,   _DTYPE_STRING,   0,      NULL,      2,   28, 0x00,      _LCD_SCR_SET_INFORMATION },
-    {   __SCR_INFOR_MODEL_2,                NULL,       NULL,   _DTYPE_STRING,   0,      NULL,      3,    4, 0x00,       _LCD_SCR_SET_INFORMATION },
+    {   __SCR_INFOR_TITLE,          "Infor.",   NULL,   _DTYPE_STRING,   0,      NULL,      0,   0, 0x00,    _LCD_SCR_SET_INFORMATION },
+    {   __SCR_INFOR_FW_VERSION_1,     "*Version",       NULL,   _DTYPE_STRING,   0,      NULL,      2,   28, 0x00,      _LCD_SCR_SET_INFORMATION },
+    {   __SCR_INFOR_FW_VERSION_2,           NULL,       NULL,   _DTYPE_STRING,   0,      NULL,      3,    4, 0x00,       _LCD_SCR_SET_INFORMATION },
     
-    {   __CHECK_STATE_SETTING,        NULL,             NULL,   _DTYPE_STRING,   0,      NULL,      1,  24, 0x00,     _LCD_SCR_CHECK_SETTING},
+    {   __SCR_INFOR_MODEL_1,          "*Model",         NULL,   _DTYPE_STRING,   0,      NULL,      4,   28, 0x00,      _LCD_SCR_SET_INFORMATION },
+    {   __SCR_INFOR_MODEL_2,                NULL,       NULL,   _DTYPE_STRING,   0,      NULL,      5,    4, 0x00,       _LCD_SCR_SET_INFORMATION },
+    
+    {   __CHECK_STATE_SETTING,        NULL,             NULL,   _DTYPE_STRING,   0,      NULL,      3,  24, 0x00,     _LCD_SCR_CHECK_SETTING},
     
     {   __SET_RESTORE_1,    "Successfully!",    NULL,   _DTYPE_STRING,   0,      NULL,      3,  24, 0x02,    _LCD_SCR_SET_RESTORE},
 };
@@ -82,18 +90,23 @@ static char charNotDetectPress = '-';
 /*=========================Function=========================*/
 void Display_Init (void)
 {
+//    HAL_GPIO_WritePin (LCD_ON_OFF_GPIO_Port, LCD_ON_OFF_Pin, GPIO_PIN_SET);   
+    HAL_GPIO_WritePin (LCD_RW_GPIO_Port, LCD_RW_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin (LCD_C86_GPIO_Port, LCD_C86_Pin, GPIO_PIN_RESET); 
+    
     glcd_init();
-    glcd_clear_buffer();
-    glcd_write();	
-    Deinit_LCD12864();
+//    glcd_clear_buffer();
+//    glcd_write();	
+//    Deinit_LCD12864();
     
     sLCDObject[__SET_MODBUS_ID].pData  = &sParaDisplay.ID_u8; 
     sLCDObject[__SET_MODBUS_BR].pData  = &sParaDisplay.Baudrate_u32; 
     
+    sLCDObject[__SC1_PH].pData         = &sParaDisplay.pH_Compensation_i32;   
     sLCDObject[__SC1_CLO].pData        = &sParaDisplay.Clo_Filter_i32;    
     sLCDObject[__SC1_TEMP].pData       = &sParaDisplay.Temp_Filter_i32;   
     
-    sLCDObject[__SET_CLO_TITLE].pData       = &sConvertChlorine.Measure_AD; 
+    sLCDObject[__SET_CLO_TITLE_2].pData     = &sConvertChlorine.Measure_AD; 
     sLCDObject[__SET_CLO_SLOPE].pData       = &sConvertChlorine.Clo_Calib_Slope ; 
     sLCDObject[__SET_CLO_SLOPE].Scale_u8    = sConvertChlorine.Scale; 
     
@@ -105,6 +118,9 @@ void Display_Init (void)
     
     sLCDObject[__SET_CLO_CLB_TEMP].pData    = &sConvertChlorine.sConst_Compensation_Temp.Value; 
     sLCDObject[__SET_CLO_CLB_TEMP].Scale_u8 = sConvertChlorine.sConst_Compensation_Temp.Scale; 
+    
+    sLCDObject[__SET_OFFSET_CLO].pData      = &sParaDisplay.Clo_Offset_i32 ; 
+    sLCDObject[__SET_OFFSET_TEMP].pData     = &sParaDisplay.temp_Offset_i32; 
 
     sLCDObject[__SCR_INFOR_FW_VERSION_2].pData   = sFirmVersion.Data_a8;
     sLCDObject[__SCR_INFOR_MODEL_2].pData   = sModelVersion.Data_a8;
@@ -136,16 +152,14 @@ static uint8_t _Cb_Display_Init (uint8_t event)
 {
     if(sLCD.Ready_u8 == false)
     {
-//        UTIL_Printf_Str(DBLEVEL_M, "u_lcd: init...\r\n");
-        
-//        HAL_GPIO_WritePin (LCD_ON_OFF_GPIO_Port, LCD_ON_OFF_Pin, GPIO_PIN_SET);   
-//        HAL_GPIO_WritePin (LCD_RW_GPIO_Port, LCD_RW_Pin, GPIO_PIN_RESET);
-//        HAL_GPIO_WritePin (LCD_C86_GPIO_Port, LCD_C86_Pin, GPIO_PIN_RESET); 
-        
-        glcd_init();
-        glcd_clear_buffer();
-        glcd_write();	
-        Deinit_LCD12864();
+//    HAL_GPIO_WritePin (LCD_ON_OFF_GPIO_Port, LCD_ON_OFF_Pin, GPIO_PIN_SET);   
+    HAL_GPIO_WritePin (LCD_RW_GPIO_Port, LCD_RW_Pin, GPIO_PIN_RESET);
+    HAL_GPIO_WritePin (LCD_C86_GPIO_Port, LCD_C86_Pin, GPIO_PIN_RESET); 
+    
+    glcd_init();
+//    glcd_clear_buffer();
+//    glcd_write();	
+//    Deinit_LCD12864();
     
         glcd_tiny_set_font(Font5x7, 5, 7, 32, 127 + 10);
         
@@ -184,8 +198,8 @@ static uint8_t _Cb_Display_Logo (uint8_t event)
 //            glcd_tiny_draw_string(34+4, 1, "CHAT LUONG");
 //            glcd_tiny_draw_string(31+4, 2, "LA NIEM TIN");
 //            https://saovietgroup.com.vn/
-              glcd_tiny_draw_string(44, 1, "Website:");
-              glcd_tiny_draw_string(8, 2, "saovietgroup.com.vn");
+              glcd_tiny_draw_string(44, 3, "Website:");
+              glcd_tiny_draw_string(8, 4, "saovietgroup.com.vn");
             
 //            glcd_draw_rect(0, 0, 128, 64,BLACK);
             
@@ -305,6 +319,7 @@ static uint8_t _Cb_button_scan (uint8_t event)
     if (sButton.Status == 1) {
         fevent_active(sEventDisplay, _EVENT_BUTTON_DETECTTED);
         sButton.LandMarkPressButton_u32 = RtCountSystick_u32;
+        On_Speaker(50);
     }
 
     fevent_enable(sEventDisplay, event);
@@ -322,7 +337,20 @@ static uint8_t _Cb_button_detect (uint8_t event)
 	return 1;
 }
 
+static uint8_t _Cb_Off_Speaker(uint8_t event)
+{
+    HAL_GPIO_WritePin(SPEAKERS_GPIO_Port, SPEAKERS_Pin, GPIO_PIN_RESET);
+    return 1;
+}
+
 /*==========================Function LCD=======================*/
+void On_Speaker(uint16_t TimeOn)
+{
+    HAL_GPIO_WritePin(SPEAKERS_GPIO_Port, SPEAKERS_Pin, GPIO_PIN_SET);
+    sEventDisplay[_EVENT_OFF_SPEAKER].e_period = TimeOn;
+    fevent_enable(sEventDisplay, _EVENT_OFF_SPEAKER);
+}
+
 void Update_ParaDisplay(void)
 {
     sParaDisplay.ID_u8 = sSlave_ModbusRTU.ID;
@@ -336,6 +364,8 @@ void Update_ParaDisplay(void)
     
     sParaDisplay.Clo_Offset_i32   = (int32_t)(sSensor_Clo.Clo_Offset_f*100);
     sParaDisplay.temp_Offset_i32 = (int32_t)(sSensor_Clo.temp_Offset_f*100);
+    
+    sParaDisplay.pH_Compensation_i32 = (int32_t)(spHRecvMaster.pH_f*100);
 }
 
 void Display_Show_Oject (uint8_t object)
@@ -410,20 +440,34 @@ void Display_Show_Oject (uint8_t object)
             }
         }
 
-        if(object == _LCD_SCREEN_1)
+//        glcd_tiny_draw_string(PosX, sLCDObject[object].Row_u8, aTEMP);
+//        PosX += strlen(aTEMP)* (font_current.width + 1);
+        
+        if(object == __SC1_CLO)
         {
+          uint8_t PosNumber = 0;
+          uint8_t Offset = 0;
+          if(sLCDObject[object].Scale_u8 != 0x00)
+            Offset = 9;
+
           glcd_set_font(Liberation_Sans15x21_Numbers,15,21,46,57);
-          glcd_draw_string_xy(PosX, sLCDObject[object].Row_u8, aTEMP);
-          glcd_set_font(Liberation_Sans17x17_Alpha, 17, 17, 65, 90);
-          glcd_draw_string_xy(100, 7, "M");
+          PosNumber = strlen(aTEMP)* (font_current.width + 1);
+          
+          if(PosNumber/2 < 95 - 64)
+            PosX = 64 - PosNumber/2 + Offset;
+          else
+            PosX = 95 - PosNumber + Offset;
+          
+          glcd_draw_string_xy(PosX, ((sLCDObject[object].Row_u8+1)*8 - font_current.height - 1), aTEMP);
+          PosX += PosNumber - Offset;
           glcd_tiny_set_font(Font5x7, 5, 7, 32, 127 + 10);
         }
         else
         {
           glcd_tiny_set_font(Font5x7, 5, 7, 32, 127 + 10);
           glcd_tiny_draw_string(PosX, sLCDObject[object].Row_u8, aTEMP);
+          PosX += strlen(aTEMP)* (font_current.width + 1);
         }
-        PosX += strlen(aTEMP)* (font_current.width + 1);
     }
     
     //Show Unit
@@ -464,7 +508,7 @@ void Display_Show_Screen (uint8_t screen)
     glcd_clear_buffer();
 //    LCD_Clear();
 //    //Show static param: stime, icon internet,...
-//    Display_Show_Static_Param();
+    Display_Show_Static_Param();
 //    
 //    //Show state connect sensor
     Display_Show_State_Sensor_Network(screen);
@@ -540,18 +584,70 @@ uint8_t Display_Check_Password (uint8_t pPass[])
         + stime
         + icon: internet, baterry, "____"
 */
+void Display_Show_Static_Param (void)
+{
+//    static uint8_t cCharge = 0, batlevel = 0;
+//    uint8_t TempPos = 0;
+//    char aData[32] = {0};
+//    static uint32_t LandMarkNextScreen = 0;
+//    
+//    //Hien thi sac pin
+//    if (Display_Show_Charge_Bat(&batlevel) == 1) {
+//        if (Check_Time_Out(LandMarkNextScreen, 500) == true) {
+//            LandMarkNextScreen = RtCountSystick_u32;
+//            cCharge++;
+//        } 
+//        
+//        if(cCharge > 3) {
+//            cCharge = batlevel;
+//        }
+//    } else {
+//        LandMarkNextScreen = RtCountSystick_u32;
+//        cCharge = batlevel;
+//    }
+//        
+//    glcd_tiny_draw_char(120, 0, PIN_ZERO + cCharge);
+//        
+//    //Hien thi cot song sim
+//    if (sSimCommVar.State_u8 == _SIM_CONN_MQTT) {
+//        glcd_tiny_draw_char(114, 0, CONNECT_DISPLAY);
+//        TempPos = 6;
+//    } else {
+//        glcd_tiny_draw_char(114, 0, 0x20U);    
+//    }
+//    
+//    //hien thi cot ethernet
+//    if (sAppEthVar.Status_u8 == _ETH_MQTT_CONNECTED) {
+//        glcd_tiny_draw_char(114 - TempPos, 0, FONT_ETHERNET);    
+//    } else {
+//        glcd_tiny_draw_char(114 - TempPos, 0, 0x20U);    
+//    }
+//    
+//    //Hien thi stime
+//    sprintf(aData, "%02d:%02d:%02d", sRTC.hour, sRTC.min, sRTC.sec);
+//    glcd_tiny_draw_string(48, 0, (char *) aData);
+    
+    //Hien thi gáº¡ch duoi
+    glcd_draw_line(0, 8, 127, 8, BLACK); 
+}
+
+/*
+    Func: show static param
+        + stime
+        + icon: internet, baterry, "____"
+*/
 void Display_Show_State_Sensor_Network (uint8_t screen)
 {
     if(screen == _LCD_SCREEN_1)
     {
         if(sSensor_Clo.State_Connect == _SENSOR_DISCONNECT)
         {
-            glcd_tiny_draw_string(120, sLCDObject[__SC1_CLO].Row_u8, " ");
+//            glcd_tiny_draw_string(120, sLCDObject[__SC1_CLO].Row_u8, " ");
             glcd_tiny_draw_string(120, sLCDObject[__SC1_TEMP].Row_u8, " ");
         }
         else
         {
-            glcd_tiny_draw_string(120, sLCDObject[__SC1_CLO].Row_u8, "N");
+//            glcd_tiny_draw_string(120, sLCDObject[__SC1_CLO].Row_u8, "N");
             glcd_tiny_draw_string(120, sLCDObject[__SC1_TEMP].Row_u8, "N");
         }
     }

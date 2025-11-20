@@ -32,7 +32,7 @@ extern DMA_HandleTypeDef            hdma_usart1_rx;
 #define UART_RS485_MODE             UART_RS485_IT
 
 #define DE_GPIO_PORT                RS485_1_TXDE_GPIO_Port  
-#define DE_GPIO_PIN                 RS485_1_TXDE_Pin     
+#define DE_GPIO_PIN                 RS485_1_TXDE_Pin  
 
 ///*
 //    * Uart danh cho 485 so 1

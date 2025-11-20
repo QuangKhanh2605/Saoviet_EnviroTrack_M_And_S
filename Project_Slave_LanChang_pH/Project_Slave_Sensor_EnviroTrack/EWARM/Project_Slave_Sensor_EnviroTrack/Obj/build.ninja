@@ -22,7 +22,6 @@ rule browsedata
 #Build steps
 build dma.pbi : index dma.xcl
 build gpio.pbi : index gpio.xcl
-build iwdg.pbi : index iwdg.xcl
 build main.pbi : index main.xcl
 build rtc.pbi : index rtc.xcl
 build spi.pbi : index spi.xcl
@@ -41,7 +40,6 @@ build stm32l4xx_hal_flash_ramfunc.pbi : index stm32l4xx_hal_flash_ramfunc.xcl
 build stm32l4xx_hal_gpio.pbi : index stm32l4xx_hal_gpio.xcl
 build stm32l4xx_hal_i2c.pbi : index stm32l4xx_hal_i2c.xcl
 build stm32l4xx_hal_i2c_ex.pbi : index stm32l4xx_hal_i2c_ex.xcl
-build stm32l4xx_hal_iwdg.pbi : index stm32l4xx_hal_iwdg.xcl
 build stm32l4xx_hal_pwr.pbi : index stm32l4xx_hal_pwr.xcl
 build stm32l4xx_hal_pwr_ex.pbi : index stm32l4xx_hal_pwr_ex.xcl
 build stm32l4xx_hal_rcc.pbi : index stm32l4xx_hal_rcc.xcl
@@ -90,15 +88,15 @@ build user_string.pbi : index user_string.xcl
 build user_time.pbi : index user_time.xcl
 build user_tiny_vsnprintf.pbi : index user_tiny_vsnprintf.xcl
 build user_util.pbi : index user_util.xcl
-build Project_Slave_Sensor_EnviroTrack_part0.pbi : link dma.pbi gpio.pbi iwdg.pbi main.pbi rtc.pbi spi.pbi stm32l4xx_hal_msp.pbi stm32l4xx_it.pbi
-build Project_Slave_Sensor_EnviroTrack_part1.pbi : link usart.pbi system_stm32l4xx.pbi stm32l4xx_hal.pbi stm32l4xx_hal_cortex.pbi stm32l4xx_hal_dma.pbi stm32l4xx_hal_dma_ex.pbi stm32l4xx_hal_exti.pbi stm32l4xx_hal_flash.pbi
-build Project_Slave_Sensor_EnviroTrack_part2.pbi : link stm32l4xx_hal_flash_ex.pbi stm32l4xx_hal_flash_ramfunc.pbi stm32l4xx_hal_gpio.pbi stm32l4xx_hal_i2c.pbi stm32l4xx_hal_i2c_ex.pbi stm32l4xx_hal_iwdg.pbi stm32l4xx_hal_pwr.pbi stm32l4xx_hal_pwr_ex.pbi
-build Project_Slave_Sensor_EnviroTrack_part3.pbi : link stm32l4xx_hal_rcc.pbi stm32l4xx_hal_rcc_ex.pbi stm32l4xx_hal_rtc.pbi stm32l4xx_hal_rtc_ex.pbi stm32l4xx_hal_spi.pbi stm32l4xx_hal_spi_ex.pbi stm32l4xx_hal_uart.pbi stm32l4xx_hal_uart_ex.pbi
-build Project_Slave_Sensor_EnviroTrack_part4.pbi : link user_app_comm.pbi button.pbi lcd_display.pbi user_app_modbus_rtu.pbi user_app_rs485.pbi user_rs485.pbi user_app_sensor.pbi user_connect_sensor.pbi
-build Project_Slave_Sensor_EnviroTrack_part5.pbi : link user_at_serial.pbi user_uart.pbi user_convert_variable.pbi user_internal_mem.pbi user_mem_comm.pbi event_driven.pbi NT75451.pbi PCD8544.pbi
-build Project_Slave_Sensor_EnviroTrack_part6.pbi : link ST7565R.pbi STM32F0xx.pbi STM32F10x.pbi STM32F4.pbi STM32L4.pbi glcd.pbi graphics.pbi graphs.pbi
-build Project_Slave_Sensor_EnviroTrack_part7.pbi : link text.pbi text_tiny.pbi unit_tests.pbi queue_p.pbi user_rtc.pbi user_timer.pbi user_adv_trace.pbi onchipflash.pbi
-build Project_Slave_Sensor_EnviroTrack_part8.pbi : link user_modbus_rtu.pbi user_obis_sv.pbi user_string.pbi user_time.pbi user_tiny_vsnprintf.pbi user_util.pbi
+build Project_Slave_Sensor_EnviroTrack_part0.pbi : link dma.pbi gpio.pbi main.pbi rtc.pbi spi.pbi stm32l4xx_hal_msp.pbi stm32l4xx_it.pbi usart.pbi
+build Project_Slave_Sensor_EnviroTrack_part1.pbi : link system_stm32l4xx.pbi stm32l4xx_hal.pbi stm32l4xx_hal_cortex.pbi stm32l4xx_hal_dma.pbi stm32l4xx_hal_dma_ex.pbi stm32l4xx_hal_exti.pbi stm32l4xx_hal_flash.pbi stm32l4xx_hal_flash_ex.pbi
+build Project_Slave_Sensor_EnviroTrack_part2.pbi : link stm32l4xx_hal_flash_ramfunc.pbi stm32l4xx_hal_gpio.pbi stm32l4xx_hal_i2c.pbi stm32l4xx_hal_i2c_ex.pbi stm32l4xx_hal_pwr.pbi stm32l4xx_hal_pwr_ex.pbi stm32l4xx_hal_rcc.pbi stm32l4xx_hal_rcc_ex.pbi
+build Project_Slave_Sensor_EnviroTrack_part3.pbi : link stm32l4xx_hal_rtc.pbi stm32l4xx_hal_rtc_ex.pbi stm32l4xx_hal_spi.pbi stm32l4xx_hal_spi_ex.pbi stm32l4xx_hal_uart.pbi stm32l4xx_hal_uart_ex.pbi user_app_comm.pbi button.pbi
+build Project_Slave_Sensor_EnviroTrack_part4.pbi : link lcd_display.pbi user_app_modbus_rtu.pbi user_app_rs485.pbi user_rs485.pbi user_app_sensor.pbi user_connect_sensor.pbi user_at_serial.pbi user_uart.pbi
+build Project_Slave_Sensor_EnviroTrack_part5.pbi : link user_convert_variable.pbi user_internal_mem.pbi user_mem_comm.pbi event_driven.pbi NT75451.pbi PCD8544.pbi ST7565R.pbi STM32F0xx.pbi
+build Project_Slave_Sensor_EnviroTrack_part6.pbi : link STM32F10x.pbi STM32F4.pbi STM32L4.pbi glcd.pbi graphics.pbi graphs.pbi text.pbi text_tiny.pbi
+build Project_Slave_Sensor_EnviroTrack_part7.pbi : link unit_tests.pbi queue_p.pbi user_rtc.pbi user_timer.pbi user_adv_trace.pbi onchipflash.pbi user_modbus_rtu.pbi user_obis_sv.pbi
+build Project_Slave_Sensor_EnviroTrack_part8.pbi : link user_string.pbi user_time.pbi user_tiny_vsnprintf.pbi user_util.pbi
 build Project_Slave_Sensor_EnviroTrack.pbd : link Project_Slave_Sensor_EnviroTrack_part0.pbi Project_Slave_Sensor_EnviroTrack_part1.pbi Project_Slave_Sensor_EnviroTrack_part2.pbi Project_Slave_Sensor_EnviroTrack_part3.pbi Project_Slave_Sensor_EnviroTrack_part4.pbi Project_Slave_Sensor_EnviroTrack_part5.pbi Project_Slave_Sensor_EnviroTrack_part6.pbi Project_Slave_Sensor_EnviroTrack_part7.pbi Project_Slave_Sensor_EnviroTrack_part8.pbi
 build Project_Slave_Sensor_EnviroTrack.pbw : browsedata Project_Slave_Sensor_EnviroTrack.pbd
 

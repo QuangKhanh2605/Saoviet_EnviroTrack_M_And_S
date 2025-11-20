@@ -160,7 +160,7 @@ void glcd_ST7565R_init(void) {
 	glcd_command(0xa0); /* ADC select in normal mode */
 	glcd_command(0xae); /* Display OFF */
 	glcd_command(0xc8); /* Common output mode select: reverse direction (last 3 bits are ignored) */
-    glcd_command(0xa2); /* LCD bias set at 1/9 */
+	glcd_command(0xa2); /* LCD bias set at 1/9 */
 	glcd_command(0x2f); /* Power control set to operating mode: 7 */
 	glcd_command(0x21); /* Internal resistor ratio, set to: 1 */
 	glcd_set_contrast(40); /* Set contrast, value experimentally determined, can set to 6-bit value, 0 to 63 */

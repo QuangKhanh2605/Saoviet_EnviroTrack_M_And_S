@@ -16,11 +16,13 @@ sEvent_struct               sEventAppRs485[]=
 
   {_EVENT_RS485_REFRESH,            0, 5, 60000,            fevent_rs485_refresh},
 };
+
 extern sData sUart485;
 uint16_t CountBufferHandleRecv = 0;
 /*========================Function Handle========================*/
 static uint8_t fevent_rs485_entry(uint8_t event)
 {
+    HAL_GPIO_WritePin(ON_PW_RS485_GPIO_Port, ON_PW_RS485_Pin, GPIO_PIN_SET);
     return 1;
 }
 
@@ -51,7 +53,6 @@ static uint8_t fevent_rs485_refresh(uint8_t event)
 {
     return 1;
 }
-
 /*==================Handle Task and Init app=================*/
 void Init_UartRs485(uint32_t Baudrate)
 {
