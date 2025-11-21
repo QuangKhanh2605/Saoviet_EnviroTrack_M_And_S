@@ -28,7 +28,7 @@ sLCDinformation      sLCD;
 
 sParameter_Display   sParaDisplay = {0};
 
-sData   sModelVersion = {(uint8_t *) "LEVEL_ULTRA_SAOVIET", 19}; 
+sData   sModelVersion = {(uint8_t *) "SV_ENVI_LC_EC", 13}; 
 
 uint8_t aPASSWORD[4] = {"0000"};
 
@@ -42,7 +42,7 @@ sOjectInformation  sLCDObject[] =
 {
 //          para          name                  value      dtype         scale   unit      row  col      screen
     {   __SC1_TITLE,      "Sensor.",        NULL,   _DTYPE_STRING,   0x00,      NULL,      0,  0,  0x00,      _LCD_SCREEN_1  },
-    {   __SC1_EC,         NULL,       NULL,   _DTYPE_I32,   0x00,      "uS/cm", 4,  0,  0x00,      _LCD_SCREEN_1  },
+    {   __SC1_EC,         NULL,       NULL,   _DTYPE_I32,   0x00,      " uS/cm", 4,  0,  0x00,      _LCD_SCREEN_1  },
 //    {   __SC1_TDS,        "TDS  : ",       NULL,   _DTYPE_I32,   0xFE,      NULL,    3,  0,  0x00,      _LCD_SCREEN_1  },
     {   __SC1_SALINITY,   "Salt : ",       NULL,   _DTYPE_I32,   0xFE,      "  %",     6,  0,  0x00,      _LCD_SCREEN_1  },
     {   __SC1_TEMP,       "Temp : ",       NULL,   _DTYPE_I32,   0xFE,      "  ‰C",    7,  0,  0x00,      _LCD_SCREEN_1  },
@@ -67,10 +67,10 @@ sOjectInformation  sLCDObject[] =
     {   __SET_EC_CALIB,     "2.Calib: ",        NULL,   _DTYPE_I16,      0x00,  NULL,       4,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_EC},
     
     {   __SET_OFFSET_TITLE,     "OFFSET",           NULL,   _DTYPE_STRING,  0,      NULL,       0,  0, 0x00,    _LCD_SCR_SET_OFFSET},
-    {   __SET_OFFSET_EC,        "1.EC      : ",       NULL,    _DTYPE_I32,     0xFE,   NULL,       2,  14, 0x00,    _LCD_SCR_SET_OFFSET},
-    {   __SET_OFFSET_TDS,       "2.TDS     : ",       NULL,    _DTYPE_I32,     0xFE,   NULL,       3,  14, 0x00,    _LCD_SCR_SET_OFFSET},
-    {   __SET_OFFSET_SALINITY,  "3.Salinity: ",       NULL,    _DTYPE_I32,     0xFE,   NULL,       4,  14, 0x00,    _LCD_SCR_SET_OFFSET},
-    {   __SET_OFFSET_TEMP,      "4.Temp    : ",       NULL,    _DTYPE_I32,     0xFE,   NULL,       5,  14, 0x00,    _LCD_SCR_SET_OFFSET},
+    {   __SET_OFFSET_EC,        "1.EC   : ",       NULL,    _DTYPE_I32,     0x00,   " uS/cm",       2,  14, 0x00,    _LCD_SCR_SET_OFFSET},
+    {   __SET_OFFSET_TDS,       "2.TDS  : ",       NULL,    _DTYPE_I32,     0xFE,   " mg/L",       3,  14, 0x00,    _LCD_SCR_SET_OFFSET},
+    {   __SET_OFFSET_SALINITY,  "3.Salt : ",       NULL,    _DTYPE_I32,     0xFE,   "  %",       4,  14, 0x00,    _LCD_SCR_SET_OFFSET},
+    {   __SET_OFFSET_TEMP,      "4.Temp : ",       NULL,    _DTYPE_I32,     0xFE,   "  ‰C",       5,  14, 0x00,    _LCD_SCR_SET_OFFSET},
     
     {   __SCR_INFOR_TITLE,          "Infor.",   NULL,   _DTYPE_STRING,   0,      NULL,      0,   0, 0x00,           _LCD_SCR_SET_INFORMATION },
     {   __SCR_INFOR_FW_VERSION_1,     "*Version",       NULL,   _DTYPE_STRING,   0,      NULL,      2,   28, 0x00,      _LCD_SCR_SET_INFORMATION },
@@ -107,7 +107,7 @@ void Display_Init (void)
     sLCDObject[__SC1_SALINITY].pData   = &sParaDisplay.Salinity_Filter_i32;    
     sLCDObject[__SC1_TEMP].pData       = &sParaDisplay.Temp_Filter_i32;    
     
-    sLCDObject[__SET_EC_TITLE].pData    = &sParaDisplay.EC_Filter_i32; 
+    sLCDObject[__SET_EC_TITLE_1].pData    = &sParaDisplay.EC_Filter_i32; 
     
     sLCDObject[__SET_EC_CONST].pData    = &sParaDisplay.EC_Calib_Const_i32; 
     sLCDObject[__SET_EC_CALIB].pData    = &sParaDisplay.EC_Calib_Value_i32; 
@@ -115,7 +115,7 @@ void Display_Init (void)
     sLCDObject[__SET_OFFSET_EC].pData       = &sParaDisplay.EC_Offset_i32; 
     sLCDObject[__SET_OFFSET_TDS].pData      = &sParaDisplay.TDS_Offset_i32; 
     sLCDObject[__SET_OFFSET_SALINITY].pData = &sParaDisplay.Salinity_Offset_i32; 
-    sLCDObject[__SET_OFFSET_TEMP].pData     = &sParaDisplay.EC_Offset_i32; 
+    sLCDObject[__SET_OFFSET_TEMP].pData     = &sParaDisplay.temp_Offset_i32; 
 
     sLCDObject[__SCR_INFOR_FW_VERSION_2].pData   = sFirmVersion.Data_a8;
     sLCDObject[__SCR_INFOR_MODEL_2].pData   = sModelVersion.Data_a8;
@@ -316,7 +316,6 @@ static uint8_t _Cb_button_scan (uint8_t event)
     if (sButton.Status == 1) {
         fevent_active(sEventDisplay, _EVENT_BUTTON_DETECTTED);
         sButton.LandMarkPressButton_u32 = RtCountSystick_u32;
-        On_Speaker(50);
     }
 
     fevent_enable(sEventDisplay, event);

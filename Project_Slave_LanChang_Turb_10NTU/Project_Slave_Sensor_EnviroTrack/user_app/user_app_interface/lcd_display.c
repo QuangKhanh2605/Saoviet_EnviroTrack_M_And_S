@@ -28,7 +28,7 @@ sLCDinformation      sLCD;
 
 sParameter_Display   sParaDisplay = {0};
 
-sData   sModelVersion = {(uint8_t *) "LEVEL_ULTRA_SAOVIET", 19}; 
+sData   sModelVersion = {(uint8_t *) "SV_ENVI_LC_TURB10", 17}; 
 
 uint8_t aPASSWORD[4] = {"0000"};
 
@@ -60,24 +60,24 @@ sOjectInformation  sLCDObject[] =
     {   __SET_MODBUS_BR,        "2.Baudrate: ",   NULL,   _DTYPE_U32,      0x00,   NULL,      3,   4, 0x00,      _LCD_SCR_SET_MODBUS },
     
     {   __SET_TUR_TITLE_A,  "CALIB SENSOR",     NULL,   _DTYPE_STRING,   0x00,  NULL,       0,  0,  0x00,    _LCD_SCR_SET_CALIB_SS_TUR_TAB_1},
-    {   __SET_TUR_TITLE_A1, "Tur  NTU: ",       NULL,   _DTYPE_U32,      0x00,  NULL,       3,  5,  0x00,    _LCD_SCR_SET_CALIB_SS_TUR_TAB_1},
-    {   __SET_TUR_TITLE_A2, "Tur   AD: ",       NULL,   _DTYPE_U32,      0x00,  NULL,       2,  5,  0x00,    _LCD_SCR_SET_CALIB_SS_TUR_TAB_1},
-    {   __SET_TUR_VALUE_P1, "1.1st NTU: ",      NULL,   _DTYPE_I16,      0xFE,  NULL,       3,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_TUR_TAB_1},
-    {   __SET_TUR_AD_P1,    "2.1st AD : ",      NULL,   _DTYPE_U32,      0x00,  NULL,       4,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_TUR_TAB_1},
-    {   __SET_TUR_VALUE_P2, "3.2nd NTU: ",      NULL,   _DTYPE_I16,      0xFE,  NULL,       5,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_TUR_TAB_1},
-    {   __SET_TUR_AD_P2,    "4.2nd AD : ",      NULL,   _DTYPE_U32,      0x00,  NULL,       6,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_TUR_TAB_1},
+    {   __SET_TUR_TITLE_A1, "Tur  NTU: ",       NULL,   _DTYPE_U32,      0x00,  NULL,       2,  5,  0x00,    _LCD_SCR_SET_CALIB_SS_TUR_TAB_1},
+    {   __SET_TUR_TITLE_A2, "Tur   AD: ",       NULL,   _DTYPE_U32,      0x00,  NULL,       3,  5,  0x00,    _LCD_SCR_SET_CALIB_SS_TUR_TAB_1},
+    {   __SET_TUR_VALUE_P1, "1.1st NTU: ",      NULL,   _DTYPE_I16,      0xFE,  NULL,       4,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_TUR_TAB_1},
+    {   __SET_TUR_AD_P1,    "2.1st AD : ",      NULL,   _DTYPE_U32,      0x00,  NULL,       5,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_TUR_TAB_1},
+    {   __SET_TUR_VALUE_P2, "3.2nd NTU: ",      NULL,   _DTYPE_I16,      0xFE,  NULL,       6,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_TUR_TAB_1},
+    {   __SET_TUR_AD_P2,    "4.2nd AD : ",      NULL,   _DTYPE_U32,      0x00,  NULL,       7,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_TUR_TAB_1},
     
     {   __SET_TUR_TITLE_B,  "CALIB SENSOR",     NULL,   _DTYPE_STRING,   0x00,  NULL,       0,  0,  0x00,    _LCD_SCR_SET_CALIB_SS_TUR_TAB_2},
     {   __SET_TUR_TITLE_B1, "Tur   NTU: ",      NULL,   _DTYPE_U32,      0x00,  NULL,       2,  5, 0x00,     _LCD_SCR_SET_CALIB_SS_TUR_TAB_2},
-    {   __SET_TUR_TITLE_B2, "Tur    AD: ",      NULL,   _DTYPE_U32,      0x00,  NULL,       2,  5, 0x00,     _LCD_SCR_SET_CALIB_SS_TUR_TAB_2},
-    {   __SET_TUR_VALUE_P3, "5.3rd NTU: ",      NULL,   _DTYPE_I16,      0xFE,  NULL,       3,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_TUR_TAB_2},
-    {   __SET_TUR_AD_P3,    "6.3rd AD : ",      NULL,   _DTYPE_U32,      0x00,  NULL,       4,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_TUR_TAB_2},
-    {   __SET_TUR_VALUE_P4, "7.4th NTU: ",      NULL,   _DTYPE_I16,      0xFE,  NULL,       5,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_TUR_TAB_2},
-    {   __SET_TUR_AD_P4,    "8.4th AD : ",      NULL,   _DTYPE_U32,      0x00,  NULL,       6,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_TUR_TAB_2},
+    {   __SET_TUR_TITLE_B2, "Tur    AD: ",      NULL,   _DTYPE_U32,      0x00,  NULL,       3,  5, 0x00,     _LCD_SCR_SET_CALIB_SS_TUR_TAB_2},
+    {   __SET_TUR_VALUE_P3, "5.3rd NTU: ",      NULL,   _DTYPE_I16,      0xFE,  NULL,       4,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_TUR_TAB_2},
+    {   __SET_TUR_AD_P3,    "6.3rd AD : ",      NULL,   _DTYPE_U32,      0x00,  NULL,       5,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_TUR_TAB_2},
+    {   __SET_TUR_VALUE_P4, "7.4th NTU: ",      NULL,   _DTYPE_I16,      0xFE,  NULL,       6,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_TUR_TAB_2},
+    {   __SET_TUR_AD_P4,    "8.4th AD : ",      NULL,   _DTYPE_U32,      0x00,  NULL,       7,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_TUR_TAB_2},
     
     {   __SET_OFFSET_TITLE, "OFFSET",           NULL,   _DTYPE_STRING,  0,      NULL,       0,  0, 0x00,    _LCD_SCR_SET_OFFSET},
-    {   __SET_OFFSET_TURB,  "1.Turb : ",        NULL,   _DTYPE_I32,     0xFE,   NULL,       2,  14, 0x00,    _LCD_SCR_SET_OFFSET},
-    {   __SET_OFFSET_TEMP,  "2.Temp : ",        NULL,   _DTYPE_I32,     0xFE,   NULL,       3,  14, 0x00,    _LCD_SCR_SET_OFFSET},
+    {   __SET_OFFSET_TURB,  "1.Turb : ",        NULL,   _DTYPE_I32,     0xFE,   "  NTU",       2,  14, 0x00,    _LCD_SCR_SET_OFFSET},
+    {   __SET_OFFSET_TEMP,  "2.Temp : ",        NULL,   _DTYPE_I32,     0xFE,   "  ‰C",       3,  14, 0x00,    _LCD_SCR_SET_OFFSET},
     
     {   __SCR_INFOR_TITLE,          "Infor.",   NULL,   _DTYPE_STRING,   0,      NULL,      0,   0, 0x00,    _LCD_SCR_SET_INFORMATION },
     {   __SCR_INFOR_FW_VERSION_1,   "*Version", NULL,   _DTYPE_STRING,   0,      NULL,      2,   28, 0x00,      _LCD_SCR_SET_INFORMATION },
@@ -124,6 +124,9 @@ void Display_Init (void)
     sLCDObject[__SET_TUR_AD_P3].pData        = &sSensor_Turb.Third_AD_u32;
     sLCDObject[__SET_TUR_VALUE_P4].pData     = &sParaDisplay.Fourth_Value_i32;
     sLCDObject[__SET_TUR_AD_P4].pData        = &sSensor_Turb.Fourth_AD_u32;
+    
+    sLCDObject[__SET_OFFSET_TURB].pData      = &sParaDisplay.Turb_Offset_i32; 
+    sLCDObject[__SET_OFFSET_TEMP].pData      = &sParaDisplay.temp_Offset_i32; 
 
     sLCDObject[__SCR_INFOR_FW_VERSION_2].pData   = sFirmVersion.Data_a8;
     sLCDObject[__SCR_INFOR_MODEL_2].pData   = sModelVersion.Data_a8;
@@ -322,7 +325,6 @@ static uint8_t _Cb_button_scan (uint8_t event)
     if (sButton.Status == 1) {
         fevent_active(sEventDisplay, _EVENT_BUTTON_DETECTTED);
         sButton.LandMarkPressButton_u32 = RtCountSystick_u32;
-        On_Speaker(50);
     }
 
     fevent_enable(sEventDisplay, event);
@@ -648,12 +650,12 @@ void Display_Show_State_Sensor_Network (uint8_t screen)
     {
         if(sSensor_Turb.State_Connect == _SENSOR_DISCONNECT)
         {
-            glcd_tiny_draw_string(120, sLCDObject[__SC1_TURB].Row_u8, " ");
+//            glcd_tiny_draw_string(120, sLCDObject[__SC1_TURB].Row_u8, " ");
             glcd_tiny_draw_string(120, sLCDObject[__SC1_TEMP].Row_u8, " ");
         }
         else
         {
-            glcd_tiny_draw_string(120, sLCDObject[__SC1_TURB].Row_u8, "N");
+//            glcd_tiny_draw_string(120, sLCDObject[__SC1_TURB].Row_u8, "N");
             glcd_tiny_draw_string(120, sLCDObject[__SC1_TEMP].Row_u8, "N");
         }
     }

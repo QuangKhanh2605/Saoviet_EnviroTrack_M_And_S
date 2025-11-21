@@ -150,6 +150,7 @@ void BUTTON_Enter_Process (void)
                     Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SET_OFFSET, 0,
                                        __SET_OFFSET_EC, __SET_OFFSET_EC, __SET_OFFSET_TEMP,
                                        NULL, 0xF1);
+                    break;
                     
                 case __SCR_SET_INFOR:
                     UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
@@ -388,6 +389,7 @@ void BUTTON_Enter_Process (void)
           {
               case _LCD_SCR_SET_MODBUS:
                 sParaDisplay.State_Setting = _STATE_SETTING_DONE;
+                On_Speaker(50);
                 switch (sLCD.sScreenBack.Para_u8)
                 {
                     case __SET_MODBUS_ID:
@@ -413,22 +415,23 @@ void BUTTON_Enter_Process (void)
                 
               case _LCD_SCR_SET_OFFSET:
                 sParaDisplay.State_Setting = _STATE_SETTING_DONE;
+                On_Speaker(50);
                 switch (sLCD.sScreenBack.Para_u8)
                 {
                     case __SET_OFFSET_EC:
-                      Save_ParamCalib((float)(sButton.Old_value), sSensor_EC.TDS_Offset_f, sSensor_EC.Salinity_Offset_f, sSensor_EC.temp_Offset_f);
+                      Save_ParamCalib(((float)sButton.Old_value), sSensor_EC.TDS_Offset_f, sSensor_EC.Salinity_Offset_f, sSensor_EC.temp_Offset_f);
                       break;
                       
                     case __SET_OFFSET_TDS:
-                      Save_ParamCalib(sSensor_EC.EC_Offset_f, (float)(sButton.Old_value/100), sSensor_EC.Salinity_Offset_f, sSensor_EC.temp_Offset_f);
+                      Save_ParamCalib(sSensor_EC.EC_Offset_f, ((float)sButton.Old_value/100), sSensor_EC.Salinity_Offset_f, sSensor_EC.temp_Offset_f);
                       break;
                       
                     case __SET_OFFSET_SALINITY:
-                      Save_ParamCalib(sSensor_EC.EC_Offset_f, sSensor_EC.TDS_Offset_f, (float)(sButton.Old_value/100), sSensor_EC.temp_Offset_f);
+                      Save_ParamCalib(sSensor_EC.EC_Offset_f, sSensor_EC.TDS_Offset_f, ((float)sButton.Old_value/100), sSensor_EC.temp_Offset_f);
                       break;
                       
                     case __SET_OFFSET_TEMP:
-                      Save_ParamCalib(sSensor_EC.EC_Offset_f, sSensor_EC.TDS_Offset_f, sSensor_EC.Salinity_Offset_f, (float)(sButton.Old_value/100));
+                      Save_ParamCalib(sSensor_EC.EC_Offset_f, sSensor_EC.TDS_Offset_f, sSensor_EC.Salinity_Offset_f, ((float)sButton.Old_value/100));
                       break;
                       
                     default:
@@ -939,7 +942,7 @@ void BUTTON_ESC_Process (void)
                 {
                     case 0:
                         Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SETTING, 0,
-                                            __SET_EC_CONST, __SET_EC_CONST, __SET_EC_CALIB,
+                                            __SCR_SET_CALIB, __SCR_SET_MODBUS, __SCR_SET_INFOR,
                                             NULL, 0xF1);
                         UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
                         break;
@@ -961,7 +964,7 @@ void BUTTON_ESC_Process (void)
                 {
                     case 0:
                         Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SETTING, 0,
-                                            __SET_EC_CALIB, __SET_EC_CONST, __SET_EC_CALIB,
+                                            __SCR_SET_CALIB, __SCR_SET_MODBUS, __SCR_SET_INFOR,
                                             NULL, 0xF1);
                         UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
                         break;
@@ -991,7 +994,7 @@ void BUTTON_ESC_Process (void)
                     {
                         case 0:
                             Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SETTING, 0,
-                                                __SCR_SET_MODBUS, __SCR_SET_MODBUS, __SCR_SET_INFOR,
+                                                __SCR_SET_OFFSET, __SCR_SET_MODBUS, __SCR_SET_INFOR,
                                                 NULL, 0xF1);
                             UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
                             break;             
@@ -1013,7 +1016,7 @@ void BUTTON_ESC_Process (void)
                     {
                         case 0:
                             Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SETTING, 0,
-                                                __SCR_SET_MODBUS, __SCR_SET_MODBUS, __SCR_SET_INFOR,
+                                                __SCR_SET_OFFSET, __SCR_SET_MODBUS, __SCR_SET_INFOR,
                                                 NULL, 0xF1);
                             UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
                             break;             
@@ -1035,7 +1038,7 @@ void BUTTON_ESC_Process (void)
                     {
                         case 0:
                             Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SETTING, 0,
-                                                __SCR_SET_MODBUS, __SCR_SET_MODBUS, __SCR_SET_INFOR,
+                                                __SCR_SET_OFFSET, __SCR_SET_MODBUS, __SCR_SET_INFOR,
                                                 NULL, 0xF1);
                             UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
                             break;             
@@ -1057,7 +1060,7 @@ void BUTTON_ESC_Process (void)
                     {
                         case 0:
                             Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SETTING, 0,
-                                                __SCR_SET_MODBUS, __SCR_SET_MODBUS, __SCR_SET_INFOR,
+                                                __SCR_SET_OFFSET, __SCR_SET_MODBUS, __SCR_SET_INFOR,
                                                 NULL, 0xF1);
                             UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
                             break;         

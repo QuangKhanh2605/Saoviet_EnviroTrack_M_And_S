@@ -393,6 +393,7 @@ void BUTTON_Enter_Process (void)
           {
               case _LCD_SCR_SET_MODBUS:
                 sParaDisplay.State_Setting = _STATE_SETTING_DONE;
+                On_Speaker(50);
                 switch (sLCD.sScreenBack.Para_u8)
                 {
                     case __SET_MODBUS_ID:
@@ -418,6 +419,7 @@ void BUTTON_Enter_Process (void)
                 
               case _LCD_SCR_SET_OFFSET:
                 sParaDisplay.State_Setting = _STATE_SETTING_DONE;
+                On_Speaker(50);
                 switch (sLCD.sScreenBack.Para_u8)
                 {
                     case __SET_OFFSET_CLO:
@@ -963,7 +965,7 @@ void BUTTON_ESC_Process (void)
                     {
                         case 0:
                             Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SETTING, 0,
-                                                __SCR_SET_MODBUS, __SCR_SET_MODBUS, __SCR_SET_INFOR,
+                                                __SCR_SET_OFFSET, __SCR_SET_MODBUS, __SCR_SET_INFOR,
                                                 NULL, 0xF1);
                             UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
                             break;             
@@ -985,7 +987,7 @@ void BUTTON_ESC_Process (void)
                     {
                         case 0:
                             Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SETTING, 0,
-                                                __SCR_SET_MODBUS, __SCR_SET_MODBUS, __SCR_SET_INFOR,
+                                                __SCR_SET_OFFSET, __SCR_SET_MODBUS, __SCR_SET_INFOR,
                                                 NULL, 0xF1);
                             UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
                             break;         

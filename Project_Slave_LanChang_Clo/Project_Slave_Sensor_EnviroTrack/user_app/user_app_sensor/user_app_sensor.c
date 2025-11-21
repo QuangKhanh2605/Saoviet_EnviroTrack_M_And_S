@@ -19,9 +19,9 @@ static uint8_t fevent_sensor_reset(uint8_t event);
 /*==============================Struct=============================*/
 sEvent_struct               sEventAppSensor[]=
 {
-  {_EVENT_SENSOR_ENTRY,              1, 5, 2,                fevent_sensor_entry},            //Doi slave khoi dong moi truyen opera
+  {_EVENT_SENSOR_ENTRY,              1, 5, 10000,            fevent_sensor_entry},            //Doi slave khoi dong moi truyen opera
   
-  {_EVENT_SENSOR_TRANSMIT,           1, 0, 1500,             fevent_sensor_transmit},
+  {_EVENT_SENSOR_TRANSMIT,           0, 5, 1500,             fevent_sensor_transmit},
   {_EVENT_SENSOR_RECEIVE_HANDLE,     0, 5, 5,                fevent_sensor_receive_handle},
   {_EVENT_SENSOR_RECEIVE_COMPLETE,   0, 5, 500,              fevent_sensor_receive_complete},
   
@@ -59,6 +59,7 @@ uint8_t DCU_Log_KindCalib = 0;
 /*========================Function Handle========================*/
 static uint8_t fevent_sensor_entry(uint8_t event)
 {
+    fevent_enable(sEventAppSensor, _EVENT_SENSOR_TRANSMIT);
     return 1;
 }
 
@@ -216,7 +217,7 @@ static uint8_t fevent_refresh_wdg_hard(uint8_t event)
     else
     {
         HAL_GPIO_WritePin(TOGGLE_RESET_GPIO_Port, TOGGLE_RESET_Pin, GPIO_PIN_RESET);
-        sEventAppSensor[_EVENT_REFRESH_WDG_HARD].e_period = 100;
+        sEventAppSensor[_EVENT_REFRESH_WDG_HARD].e_period = 250;
         state = 0;
     }
     fevent_enable(sEventAppSensor, event);
@@ -233,6 +234,10 @@ static uint8_t fevent_sensor_reset(uint8_t event)
         HAL_GPIO_WritePin(ON_PW_SEN1_GPIO_Port, ON_PW_SEN1_Pin, GPIO_PIN_RESET);
         HAL_GPIO_WritePin(ON_PW_SEN2_GPIO_Port, ON_PW_SEN2_Pin, GPIO_PIN_RESET);
         sEventAppSensor[_EVENT_SENSOR_RESET].e_period = 2000;
+        
+        MX_UART_RS485SS_Init();
+        RS485SS_Stop_RX_Mode();
+        RS485SS_Init_RX_Mode();
     }
     else
     {
@@ -253,7 +258,7 @@ void Handle_Data_Measure(uint8_t KindRecv)
     {
         case _RS485_SS_CLO_OPERA:
             
-            sSensor_Clo.Clo_Value_f = quickSort_Sampling_Value((int32_t)(sSensor_Clo.Clo_Value_f));
+            sSensor_Clo.Clo_Value_f = quickSort_Sampling_Value((int32_t)(sSensor_Clo.Clo_Value_f*100));
             
             sSensor_Clo.Clo_Filter_f = Filter_Clo(sSensor_Clo.Clo_Value_f);
             sSensor_Clo.temp_Filter_f = Filter_Temp(sSensor_Clo.temp_Value_f);
@@ -277,7 +282,7 @@ void Handle_Data_Measure(uint8_t KindRecv)
     if(sSensor_Clo.State_Connect == _SENSOR_DISCONNECT)
     {
         sSensor_Clo.temp_Value_f = 0;
-        sSensor_Clo.temp_Value_f = Filter_Temp(sSensor_Clo.temp_Value_f);;
+        sSensor_Clo.temp_Filter_f = Filter_Temp(sSensor_Clo.temp_Value_f);;
     }
 }
 
@@ -347,7 +352,7 @@ float quickSort_Sampling_Value(int32_t Value)
             Result = aSampling_VALUE[NUMBER_SAMPLING_SS/2];
         }
 //    }
-    return Result;
+    return Result/100;
 }
 
 float Filter_Clo(float var)
@@ -1064,6 +1069,7 @@ void DCU_Enter_Calib(void)
 //    if(sSensor_pH.sPH_Value.Value > 0 && sConvertChlorine.Temp_Calib_Slope>0)
 //    {
         sParaDisplay.State_Setting = _STATE_SETTING_DONE;
+        On_Speaker(50);
 
         switch(DCU_Log_KindCalib)
         {

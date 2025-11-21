@@ -28,7 +28,7 @@ sLCDinformation      sLCD;
 
 sParameter_Display   sParaDisplay = {0};
 
-sData   sModelVersion = {(uint8_t *) "SLAVE_ENVIR_SAOVIET", 19}; 
+sData   sModelVersion = {(uint8_t *) "SV_ENVI_LC_PH", 13}; 
 
 uint8_t aPASSWORD[4] = {"0000"};
 
@@ -314,7 +314,6 @@ static uint8_t _Cb_button_scan (uint8_t event)
     if (sButton.Status == 1) {
         fevent_active(sEventDisplay, _EVENT_BUTTON_DETECTTED);
         sButton.LandMarkPressButton_u32 = RtCountSystick_u32;
-        On_Speaker(50);
     }
 
     fevent_enable(sEventDisplay, event);

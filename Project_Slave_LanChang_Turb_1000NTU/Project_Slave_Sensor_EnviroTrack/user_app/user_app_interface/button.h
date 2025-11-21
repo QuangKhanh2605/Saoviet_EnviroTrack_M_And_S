@@ -9,10 +9,10 @@
 #define BUT_COUNT_HOLD          50
 #define BUT_COUNT_FAST          50
 
-#define BUTTON_ESC          HAL_GPIO_ReadPin(BUTTON_PRESS_4_GPIO_Port, BUTTON_PRESS_4_Pin)
-#define BUTTON_DOWN         HAL_GPIO_ReadPin(BUTTON_PRESS_3_GPIO_Port, BUTTON_PRESS_3_Pin)
-#define BUTTON_UP           HAL_GPIO_ReadPin(BUTTON_PRESS_2_GPIO_Port, BUTTON_PRESS_2_Pin)
-#define BUTTON_ENTER        HAL_GPIO_ReadPin(BUTTON_PRESS_1_GPIO_Port, BUTTON_PRESS_1_Pin)
+#define BUTTON_ENTER          HAL_GPIO_ReadPin(BUTTON_PRESS_4_GPIO_Port, BUTTON_PRESS_4_Pin)
+#define BUTTON_UP             HAL_GPIO_ReadPin(BUTTON_PRESS_1_GPIO_Port, BUTTON_PRESS_1_Pin)
+#define BUTTON_DOWN           HAL_GPIO_ReadPin(BUTTON_PRESS_2_GPIO_Port, BUTTON_PRESS_2_Pin)
+#define BUTTON_ESC            HAL_GPIO_ReadPin(BUTTON_PRESS_3_GPIO_Port, BUTTON_PRESS_3_Pin)
 
 // Button
 typedef struct

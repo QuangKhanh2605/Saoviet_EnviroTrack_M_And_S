@@ -19,9 +19,9 @@ static uint8_t fevent_sensor_reset(uint8_t event);
 /*==============================Struct=============================*/
 sEvent_struct               sEventAppSensor[]=
 {
-  {_EVENT_SENSOR_ENTRY,              1, 5, 2,                fevent_sensor_entry},            //Doi slave khoi dong moi truyen opera
+  {_EVENT_SENSOR_ENTRY,              1, 5, 10000,            fevent_sensor_entry},            //Doi slave khoi dong moi truyen opera
   
-  {_EVENT_SENSOR_TRANSMIT,           1, 0, 1500,             fevent_sensor_transmit},
+  {_EVENT_SENSOR_TRANSMIT,           0, 5, 1500,             fevent_sensor_transmit},
   {_EVENT_SENSOR_RECEIVE_HANDLE,     0, 5, 5,                fevent_sensor_receive_handle},
   {_EVENT_SENSOR_RECEIVE_COMPLETE,   0, 5, 500,              fevent_sensor_receive_complete},
   
@@ -58,6 +58,7 @@ extern sData sUart485SS;
 /*========================Function Handle========================*/
 static uint8_t fevent_sensor_entry(uint8_t event)
 {
+    fevent_enable(sEventAppSensor, _EVENT_SENSOR_TRANSMIT);
     return 1;
 }
 
@@ -208,7 +209,7 @@ static uint8_t fevent_refresh_wdg_hard(uint8_t event)
     else
     {
         HAL_GPIO_WritePin(TOGGLE_RESET_GPIO_Port, TOGGLE_RESET_Pin, GPIO_PIN_RESET);
-        sEventAppSensor[_EVENT_REFRESH_WDG_HARD].e_period = 100;
+        sEventAppSensor[_EVENT_REFRESH_WDG_HARD].e_period = 250;
         state = 0;
     }
     fevent_enable(sEventAppSensor, event);
@@ -225,6 +226,10 @@ static uint8_t fevent_sensor_reset(uint8_t event)
         HAL_GPIO_WritePin(ON_PW_SEN1_GPIO_Port, ON_PW_SEN1_Pin, GPIO_PIN_RESET);
         HAL_GPIO_WritePin(ON_PW_SEN2_GPIO_Port, ON_PW_SEN2_Pin, GPIO_PIN_RESET);
         sEventAppSensor[_EVENT_SENSOR_RESET].e_period = 2000;
+        
+        MX_UART_RS485SS_Init();
+        RS485SS_Stop_RX_Mode();
+        RS485SS_Init_RX_Mode();
     }
     else
     {
@@ -269,7 +274,7 @@ void Handle_Data_Measure(uint8_t KindRecv)
     if(sSensor_pH.State_Connect == _SENSOR_DISCONNECT)
     {
         sSensor_pH.temp_Value_f = 0;
-        sSensor_pH.temp_Value_f = Filter_Temp(sSensor_pH.temp_Value_f);;
+        sSensor_pH.temp_Filter_f = Filter_Temp(sSensor_pH.temp_Value_f);;
     }
 }
 
@@ -558,6 +563,7 @@ void RS485_Done_Calib(void)
 {
     sParaDisplay.State_Setting = _STATE_SETTING_DONE;
     fevent_disable(sEventAppSensor, _EVENT_SENSOR_WAIT_CALIB);
+    On_Speaker(50);
 }
 
 void RS485_Enter_Calib(void)
