@@ -169,6 +169,11 @@ typedef struct
     uint8_t     ID_u8;
     uint32_t    Baudrate_u32;
     
+    uint8_t     Scale_EC;
+    uint8_t     Scale_TDS;
+    uint8_t     Scale_Salt;
+    uint8_t     Scale_Temp;
+    
     int32_t     EC_Value_i32;
     int32_t     TDS_Value_i32;
     int32_t     Salinity_Value_i32;

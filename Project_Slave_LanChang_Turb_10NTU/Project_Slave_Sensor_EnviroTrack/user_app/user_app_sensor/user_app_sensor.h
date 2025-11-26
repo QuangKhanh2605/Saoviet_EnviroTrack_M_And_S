@@ -32,7 +32,6 @@ typedef enum
     
     _EVENT_DETECT_CONNECT,
     _EVENT_TEMP_ALARM,
-    _EVENT_REFRESH_WDG_HARD,
     
     _EVENT_SENSOR_RESET,
     

@@ -26,11 +26,14 @@ sEvent_struct sEventDisplay [] =
 
 sLCDinformation      sLCD;
 
-sParameter_Display   sParaDisplay = {0};
+sParameter_Display   sParaDisplay = {
+    .Scale_Clo    = 0xFE,
+    .Scale_Temp   = 0xFE,
+};
 
 sData   sModelVersion = {(uint8_t *) "SV_ENVI_LC_CLO", 14}; 
 
-uint8_t aPASSWORD[4] = {"0000"};
+uint8_t aPASSWORD[4] = {"1111"};
 
 uint8_t aSTT_SETTING_FREE[14]   = {"              "};
 uint8_t aSTT_SETTING_ENTER[14]  = {"Enter to Setup"};
@@ -41,10 +44,10 @@ uint8_t aSTT_SETTING_ERROR[14]  = {"     Error   "};
 sOjectInformation  sLCDObject[] = 
 {
 //          para          name                  value      dtype         scale   unit      row  col      screen
-    {   __SC1_TITLE,      "Sensor.",        NULL,   _DTYPE_STRING,   0x00,      NULL,      0,  0,  0x00,      _LCD_SCREEN_1  },
+    {   __SC1_TITLE,      "Chlorine.",      NULL,   _DTYPE_STRING,   0,      NULL,      0,  0,  0x00,      _LCD_SCREEN_1  },
     {   __SC1_PH,         "pH:",            NULL,   _DTYPE_I32,   0xFE,         NULL,      0,  78,  0x00,      _LCD_SCREEN_1  },
-    {   __SC1_CLO,        NULL,             NULL,   _DTYPE_I16,   0xFE,      "mg/L",       4,  0,  0x00,      _LCD_SCREEN_1  },
-    {   __SC1_TEMP,       "Temp  : ",       NULL,   _DTYPE_I16,   0xFE,      "  ‰C",       7,  0,  0x00,      _LCD_SCREEN_1  },
+    {   __SC1_CLO,        NULL,             NULL,   _DTYPE_I16,   0,         "mg/L",       4,  0,  0x00,      _LCD_SCREEN_1  },
+    {   __SC1_TEMP,       "Temp  : ",       NULL,   _DTYPE_I16,   0,         "  ‰C",       7,  0,  0x00,      _LCD_SCREEN_1  },
   
     {   __PASS_WORD_TITLE,  "Loggin",       NULL,   _DTYPE_STRING,   0x00,     NULL,     0,   0, 0x00,      _LCD_SCR_PASS    },
     {   __PASS_WORD_1,    "Enter Password",   NULL,   _DTYPE_STRING,   0,      NULL,      2,  24, 0x00,      _LCD_SCR_PASS    },
@@ -61,17 +64,18 @@ sOjectInformation  sLCDObject[] =
     {   __SET_MODBUS_BR,        "2.Baudrate: ",   NULL,   _DTYPE_U32,      0x00,   NULL,      3,   4, 0x00,      _LCD_SCR_SET_MODBUS },
     
     {   __SET_CLO_TITLE,    "CALIB CLORINE",    NULL,   _DTYPE_STRING,   0,     NULL,      0,   0, 0x00,     _LCD_SCR_SET_CALIB_SS_CLO },
-    {   __SET_CLO_TITLE_2,  "Chlorine   AD: ",  NULL,   _DTYPE_U16,      0xFE,  NULL,       2,  5,  0x00,    _LCD_SCR_SET_CALIB_SS_CLO},
-    {   __SET_CLO_ZERO,     "1.Zero",           NULL,   _DTYPE_STRING,   0,     NULL,       3,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_CLO},
-    {   __SET_CLO_SLOPE,    "2.Slope :   ",     NULL,   _DTYPE_I16,      0xFE,  NULL,       4,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_CLO},
-    {   __SET_CLO_CLB_PH_1, "3.P_pH1 :   ",     NULL,   _DTYPE_I16,      0xFE,  NULL,       5,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_CLO},
-    {   __SET_CLO_CLB_PH_2, "4.P_pH2 :   ",     NULL,   _DTYPE_I16,      0xFE,  NULL,       6,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_CLO},
-    {   __SET_CLO_CLB_TEMP, "5.C_Temp:   ",     NULL,   _DTYPE_I16,      0xFC,  NULL,       7,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_CLO},
+    {   __SET_CLO_TITLE_2,  "AD: ",  NULL,   _DTYPE_U16,      0xFE,  NULL,       2,  0,  0x00,               _LCD_SCR_SET_CALIB_SS_CLO},
+    {   __SET_CLO_TITLE_3,  "CLO: ",  NULL,   _DTYPE_U16,      0xFE,  NULL,       2,  60,  0x00,              _LCD_SCR_SET_CALIB_SS_CLO},
+    {   __SET_CLO_ZERO,     "1.Zero",           NULL,   _DTYPE_STRING,   0,     NULL,       3,  0, 0x00,    _LCD_SCR_SET_CALIB_SS_CLO},
+    {   __SET_CLO_SLOPE,    "2.Slope : ",       NULL,   _DTYPE_I16,      0,  " mg/L",       4,  0, 0x00,    _LCD_SCR_SET_CALIB_SS_CLO},
+    {   __SET_CLO_CLB_PH_1, "3.P_pH1 : ",       NULL,   _DTYPE_I16,      0,  " mg/L",       5,  0, 0x00,    _LCD_SCR_SET_CALIB_SS_CLO},
+    {   __SET_CLO_CLB_PH_2, "4.P_pH2 : ",       NULL,   _DTYPE_I16,      0,  " mg/L",       6,  0, 0x00,    _LCD_SCR_SET_CALIB_SS_CLO},
+    {   __SET_CLO_CLB_TEMP, "5.C_Temp: ",       NULL,   _DTYPE_I16,      0xFC,  NULL,       7,  0, 0x00,    _LCD_SCR_SET_CALIB_SS_CLO},
     
     
     {   __SET_OFFSET_TITLE, "OFFSET",           NULL,   _DTYPE_STRING,  0,      NULL,       0,  0, 0x00,    _LCD_SCR_SET_OFFSET},
-    {   __SET_OFFSET_CLO,   "1.Clo  : ",        NULL,   _DTYPE_I32,     0xFE,   " mg/L",   2,  14, 0x00,    _LCD_SCR_SET_OFFSET},
-    {   __SET_OFFSET_TEMP,  "2.Temp : ",        NULL,   _DTYPE_I32,     0xFE,   " ‰C",     3,  14, 0x00,    _LCD_SCR_SET_OFFSET},
+    {   __SET_OFFSET_CLO,   "1.Clo  : ",        NULL,   _DTYPE_I32,     0,   " mg/L",   2,  0, 0x00,    _LCD_SCR_SET_OFFSET},
+    {   __SET_OFFSET_TEMP,  "2.Temp : ",        NULL,   _DTYPE_I32,     0,   " ‰C",     3,  0, 0x00,    _LCD_SCR_SET_OFFSET},
     
     {   __SCR_INFOR_TITLE,          "Infor.",   NULL,   _DTYPE_STRING,   0,      NULL,      0,   0, 0x00,    _LCD_SCR_SET_INFORMATION },
     {   __SCR_INFOR_FW_VERSION_1,     "*Version",       NULL,   _DTYPE_STRING,   0,      NULL,      2,   28, 0x00,      _LCD_SCR_SET_INFORMATION },
@@ -103,10 +107,15 @@ void Display_Init (void)
     sLCDObject[__SET_MODBUS_BR].pData  = &sParaDisplay.Baudrate_u32; 
     
     sLCDObject[__SC1_PH].pData         = &sParaDisplay.pH_Compensation_i32;   
-    sLCDObject[__SC1_CLO].pData        = &sParaDisplay.Clo_Filter_i32;    
+    sLCDObject[__SC1_CLO].pData        = &sParaDisplay.Clo_Filter_i32; 
+    sLCDObject[__SC1_CLO].Scale_u8     = sParaDisplay.Scale_Clo;
     sLCDObject[__SC1_TEMP].pData       = &sParaDisplay.Temp_Filter_i32;   
+    sLCDObject[__SC1_TEMP].Scale_u8    = sParaDisplay.Scale_Temp;
     
     sLCDObject[__SET_CLO_TITLE_2].pData     = &sConvertChlorine.Measure_AD; 
+    sLCDObject[__SET_CLO_TITLE_3].pData     = &sParaDisplay.Clo_Value_i32; 
+    sLCDObject[__SET_CLO_TITLE_3].Scale_u8  = sParaDisplay.Scale_Clo;
+    
     sLCDObject[__SET_CLO_SLOPE].pData       = &sConvertChlorine.Clo_Calib_Slope ; 
     sLCDObject[__SET_CLO_SLOPE].Scale_u8    = sConvertChlorine.Scale; 
     
@@ -119,8 +128,10 @@ void Display_Init (void)
     sLCDObject[__SET_CLO_CLB_TEMP].pData    = &sConvertChlorine.sConst_Compensation_Temp.Value; 
     sLCDObject[__SET_CLO_CLB_TEMP].Scale_u8 = sConvertChlorine.sConst_Compensation_Temp.Scale; 
     
-    sLCDObject[__SET_OFFSET_CLO].pData      = &sParaDisplay.Clo_Offset_i32 ; 
+    sLCDObject[__SET_OFFSET_CLO].pData      = &sParaDisplay.Clo_Offset_i32 ;
+    sLCDObject[__SET_OFFSET_CLO].Scale_u8   = sParaDisplay.Scale_Clo;
     sLCDObject[__SET_OFFSET_TEMP].pData     = &sParaDisplay.temp_Offset_i32; 
+    sLCDObject[__SET_OFFSET_TEMP].Scale_u8  = sParaDisplay.Scale_Temp;
 
     sLCDObject[__SCR_INFOR_FW_VERSION_2].pData   = sFirmVersion.Data_a8;
     sLCDObject[__SCR_INFOR_MODEL_2].pData   = sModelVersion.Data_a8;
@@ -355,14 +366,14 @@ void Update_ParaDisplay(void)
     sParaDisplay.ID_u8 = sSlave_ModbusRTU.ID;
     sParaDisplay.Baudrate_u32 = aBaudrate_value[sSlave_ModbusRTU.Baudrate];
     
-    sParaDisplay.Clo_Value_i32 = (int32_t)(sSensor_Clo.Clo_Value_f*100);
-    sParaDisplay.Temp_Value_i32 = (int32_t)(sSensor_Clo.temp_Value_f*100);
+    sParaDisplay.Clo_Value_i32 = (int32_t)(sSensor_Clo.Clo_Value_f * Calculator_Scale(sParaDisplay.Scale_Clo));
+    sParaDisplay.Temp_Value_i32 = (int32_t)(sSensor_Clo.temp_Value_f * Calculator_Scale(sParaDisplay.Scale_Temp));
     
-    sParaDisplay.Clo_Filter_i32 = (int32_t)(sSensor_Clo.Clo_Filter_f*100);
-    sParaDisplay.Temp_Filter_i32 = (int32_t)(sSensor_Clo.temp_Filter_f*100);
+    sParaDisplay.Clo_Filter_i32 = (int32_t)(sSensor_Clo.Clo_Filter_f * Calculator_Scale(sParaDisplay.Scale_Clo));
+    sParaDisplay.Temp_Filter_i32 = (int32_t)(sSensor_Clo.temp_Filter_f * Calculator_Scale(sParaDisplay.Scale_Temp));
     
-    sParaDisplay.Clo_Offset_i32   = (int32_t)(sSensor_Clo.Clo_Offset_f*100);
-    sParaDisplay.temp_Offset_i32 = (int32_t)(sSensor_Clo.temp_Offset_f*100);
+    sParaDisplay.Clo_Offset_i32   = (int32_t)(sSensor_Clo.Clo_Offset_f * Calculator_Scale(sParaDisplay.Scale_Clo));
+    sParaDisplay.temp_Offset_i32 = (int32_t)(sSensor_Clo.temp_Offset_f * Calculator_Scale(sParaDisplay.Scale_Temp));
     
     sParaDisplay.pH_Compensation_i32 = (int32_t)(spHRecvMaster.pH_f*100);
 }

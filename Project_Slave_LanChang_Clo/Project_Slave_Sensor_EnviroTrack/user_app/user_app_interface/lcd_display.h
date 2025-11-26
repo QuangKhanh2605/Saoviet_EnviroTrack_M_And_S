@@ -63,6 +63,7 @@ typedef enum
 
     __SET_CLO_TITLE,
     __SET_CLO_TITLE_2,
+    __SET_CLO_TITLE_3,
     __SET_CLO_ZERO,
     __SET_CLO_SLOPE,
     __SET_CLO_CLB_PH_1,
@@ -169,6 +170,9 @@ typedef struct
     uint8_t     ID_u8;
     uint32_t    Baudrate_u32;
 
+    uint8_t     Scale_Clo;
+    uint8_t     Scale_Temp;
+    
     int32_t     Clo_Value_i32;
     int32_t     Temp_Value_i32;
     

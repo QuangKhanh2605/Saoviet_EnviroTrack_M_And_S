@@ -524,7 +524,10 @@ void Display_Show_Screen (uint8_t screen)
           if(i == __SC1_TURB && sUserSensor.User_Turb == _INACTIVE_SENSOR)
             continue;
           
-          if(i == __SC1_EC || i == __SC1_EC && sUserSensor.User_EC == _INACTIVE_SENSOR)
+          if(i == __SC1_EC && sUserSensor.User_EC == _INACTIVE_SENSOR)
+            continue;
+          
+          if(i == __SC1_SALINITY && sUserSensor.User_EC == _INACTIVE_SENSOR)
             continue;
           
             Display_Show_Oject(i);

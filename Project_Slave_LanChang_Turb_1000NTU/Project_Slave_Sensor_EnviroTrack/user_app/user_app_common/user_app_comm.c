@@ -68,7 +68,7 @@ char aSaoVietCom[15][71] =
 };
 
 
-sData   sFirmVersion = {(uint8_t *) "SVTH_SVM_DLS_V1_2_2", 19}; 
+sData   sFirmVersion = {(uint8_t *) "SVTH_SVM_DLS_V1_1_1", 19}; 
 
 static UTIL_TIMER_Object_t TimerTx;
 
@@ -508,9 +508,9 @@ void Main_Task (void)
     SysApp_Init();
     SysApp_Setting();
     
-    UTIL_Printf_Str (DBLEVEL_M, "\r\n=========================\r\n" );
-    UTIL_Printf_Str (DBLEVEL_M,     "==== MAIN PROGRAMING ====\r\n" );
-    UTIL_Printf_Str (DBLEVEL_M,     "=========================\r\n" );
+//    UTIL_Printf_Str (DBLEVEL_M, "\r\n=========================\r\n" );
+//    UTIL_Printf_Str (DBLEVEL_M,     "==== MAIN PROGRAMING ====\r\n" );
+//    UTIL_Printf_Str (DBLEVEL_M,     "=========================\r\n" );
     
 //    APP_LOG(TS_OFF, DBLEVEL_M, "SVWM VERSION: \"%s\"\r\n", (char *) sFirmVersion.Data_a8 );
 

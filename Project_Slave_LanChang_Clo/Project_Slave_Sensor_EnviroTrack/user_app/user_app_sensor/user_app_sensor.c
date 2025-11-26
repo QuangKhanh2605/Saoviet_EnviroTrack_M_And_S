@@ -14,7 +14,6 @@ static uint8_t fevent_sensor_wait_calib(uint8_t event);
 
 static uint8_t fevent_detect_ph_recv(uint8_t event);
 static uint8_t fevent_temp_alarm(uint8_t event);
-static uint8_t fevent_refresh_wdg_hard(uint8_t event);
 static uint8_t fevent_sensor_reset(uint8_t event);
 /*==============================Struct=============================*/
 sEvent_struct               sEventAppSensor[]=
@@ -29,7 +28,6 @@ sEvent_struct               sEventAppSensor[]=
   
   {_EVENT_DETECT_PH_RECV,            1, 5, 60000,            fevent_detect_ph_recv},
   {_EVENT_TEMP_ALARM,                1, 5, 2000,             fevent_temp_alarm},
-  {_EVENT_REFRESH_WDG_HARD,          1, 5, 5,                fevent_refresh_wdg_hard},
   
   {_EVENT_SENSOR_RESET,              1, 0, 2000,             fevent_sensor_reset},
 };
@@ -200,26 +198,6 @@ static uint8_t fevent_temp_alarm(uint8_t event)
 //    else 
 //        ALARM_OFF;
     
-    fevent_enable(sEventAppSensor, event);
-    return 1;
-}
-
-static uint8_t fevent_refresh_wdg_hard(uint8_t event)
-{
-    static uint8_t state = 0;
-    
-    if(state == 0)
-    {
-        HAL_GPIO_WritePin(TOGGLE_RESET_GPIO_Port, TOGGLE_RESET_Pin, GPIO_PIN_SET);
-        sEventAppSensor[_EVENT_REFRESH_WDG_HARD].e_period = 5;
-        state++;
-    }
-    else
-    {
-        HAL_GPIO_WritePin(TOGGLE_RESET_GPIO_Port, TOGGLE_RESET_Pin, GPIO_PIN_RESET);
-        sEventAppSensor[_EVENT_REFRESH_WDG_HARD].e_period = 250;
-        state = 0;
-    }
     fevent_enable(sEventAppSensor, event);
     return 1;
 }
@@ -531,7 +509,6 @@ void Handle_Data_Recv_SS_Clo(sData sDataRS485, uint8_t KindRecv)
             
           Stamp_Hex = Read_Register_Rs485(sDataRS485.Data_a8, &Pos, 4);
           sConvertChlorine.Measure_AD =  Handle_HexFloat_To_Int32_Round(Stamp_Hex, 0xFE);
-          
           break;
 //          Pos = 3;
 //          
@@ -556,7 +533,7 @@ void Handle_Data_Recv_SS_Clo(sData sDataRS485, uint8_t KindRecv)
           if(sConvertChlorine.sClo_Du.Value < 0)
             sConvertChlorine.sClo_Du.Value = 0;
           
-          sSensor_Clo.Clo_Value_f = (float)(sConvertChlorine.sClo_Du.Value/100);
+          sSensor_Clo.Clo_Value_f = ((float)sConvertChlorine.sClo_Du.Value/100);
           break;
           
         //Recv Calib
@@ -569,7 +546,6 @@ void Handle_Data_Recv_SS_Clo(sData sDataRS485, uint8_t KindRecv)
             
           Stamp_Hex = Read_Register_Rs485(sDataRS485.Data_a8, &Pos, 4);
           sConvertChlorine.Measure_AD =  Handle_HexFloat_To_Int32_Round(Stamp_Hex, 0xFE);
-          
           test_1 = Chlorine_Compensation_pH(sConvertChlorine.Measure_AD, (int16_t)(spHRecvMaster.pH_f*100), (int16_t)(sSensor_Clo.temp_Value_f));
           
           sConvertChlorine.sClo_Du.Value = (int16_t)(test_1*100);
@@ -841,18 +817,19 @@ void Init_Chlorine_PointCalib_1(void)
 #endif    
 }
 
+    
 float Chlorine_Compensation_pH(uint16_t adc, int16_t pH, int16_t temp_C) 
 {
     float Result = 0;
 
     float alpha = 0.001f; // he so nhiet do
+
     float Const_Compensation_Point = 0;
     float Const_Compensation_Clo = 0;
     float temp_var = 0;
     float pH_var = 0;
     float Clo_Point = 0;
     float Clo_Var = 0;
-    
     uint16_t ADC_Zero = 0;
     
     uint16_t ADC_Slope_u = 0;

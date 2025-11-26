@@ -26,11 +26,16 @@ sEvent_struct sEventDisplay [] =
 
 sLCDinformation      sLCD;
 
-sParameter_Display   sParaDisplay = {0};
+sParameter_Display   sParaDisplay = {
+    .Scale_EC    = 0x00,
+    .Scale_TDS   = 0xFE,
+    .Scale_Salt  = 0xFF,
+    .Scale_Temp  = 0xFE,
+};
 
 sData   sModelVersion = {(uint8_t *) "SV_ENVI_LC_EC", 13}; 
 
-uint8_t aPASSWORD[4] = {"0000"};
+uint8_t aPASSWORD[4] = {"1111"};
 
 uint8_t aSTT_SETTING_FREE[14]   = {"              "};
 uint8_t aSTT_SETTING_ENTER[14]  = {"Enter to Setup"};
@@ -41,11 +46,11 @@ uint8_t aSTT_SETTING_ERROR[14]  = {"     Error   "};
 sOjectInformation  sLCDObject[] = 
 {
 //          para          name                  value      dtype         scale   unit      row  col      screen
-    {   __SC1_TITLE,      "Sensor.",        NULL,   _DTYPE_STRING,   0x00,      NULL,      0,  0,  0x00,      _LCD_SCREEN_1  },
-    {   __SC1_EC,         NULL,       NULL,   _DTYPE_I32,   0x00,      " uS/cm", 4,  0,  0x00,      _LCD_SCREEN_1  },
-//    {   __SC1_TDS,        "TDS  : ",       NULL,   _DTYPE_I32,   0xFE,      NULL,    3,  0,  0x00,      _LCD_SCREEN_1  },
-    {   __SC1_SALINITY,   "Salt : ",       NULL,   _DTYPE_I32,   0xFE,      "  %",     6,  0,  0x00,      _LCD_SCREEN_1  },
-    {   __SC1_TEMP,       "Temp : ",       NULL,   _DTYPE_I32,   0xFE,      "  ‰C",    7,  0,  0x00,      _LCD_SCREEN_1  },
+    {   __SC1_TITLE,      "EC.",        NULL,   _DTYPE_STRING,   0,      NULL,      0,  0,  0x00,      _LCD_SCREEN_1  },
+    {   __SC1_EC,         NULL,         NULL,   _DTYPE_I32,   0,      " uS/cm", 4,  0,  0x00,      _LCD_SCREEN_1  },
+//    {   __SC1_TDS,        "TDS  : ",       NULL,   _DTYPE_I32,   0,      NULL,    3,  0,  0x00,      _LCD_SCREEN_1  },
+    {   __SC1_SALINITY,   "Salt : ",    NULL,   _DTYPE_I32,   0,      "  %",     6,  0,  0x00,      _LCD_SCREEN_1  },
+    {   __SC1_TEMP,       "Temp : ",    NULL,   _DTYPE_I32,   0,      "  ‰C",    7,  0,  0x00,      _LCD_SCREEN_1  },
   
     {   __PASS_WORD_TITLE,  "Loggin",         NULL,   _DTYPE_STRING,   0,      NULL,     0,   0, 0x00,      _LCD_SCR_PASS    },
     {   __PASS_WORD_1,    "Enter Password",   NULL,   _DTYPE_STRING,   0,      NULL,      2,  24, 0x00,      _LCD_SCR_PASS    },
@@ -61,16 +66,16 @@ sOjectInformation  sLCDObject[] =
     {   __SET_MODBUS_ID,        "1.ID      : ",   NULL,   _DTYPE_U8,       0x00,   NULL,      2,   4, 0x00,      _LCD_SCR_SET_MODBUS },
     {   __SET_MODBUS_BR,        "2.Baudrate: ",   NULL,   _DTYPE_U32,      0x00,   NULL,      3,   4, 0x00,      _LCD_SCR_SET_MODBUS },
 
-    {   __SET_EC_TITLE,     "CALIB SENSOR",     NULL,   _DTYPE_STRING,   0x00,  NULL,       0,  0,  0x00,    _LCD_SCR_SET_CALIB_SS_EC},
-    {   __SET_EC_TITLE_1,   "EC         AD: ",  NULL,   _DTYPE_I16,      0x00,  NULL,       2,  5,  0x00,    _LCD_SCR_SET_CALIB_SS_EC},
-    {   __SET_EC_CONST,     "1.Const: ",        NULL,   _DTYPE_I16,      0x00,  NULL,       3,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_EC},
-    {   __SET_EC_CALIB,     "2.Calib: ",        NULL,   _DTYPE_I16,      0x00,  NULL,       4,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_EC},
+    {   __SET_EC_TITLE,     "CALIB SENSOR",     NULL,   _DTYPE_STRING,   0,  NULL,       0,  0,  0x00,    _LCD_SCR_SET_CALIB_SS_EC},
+    {   __SET_EC_TITLE_1,   "EC         AD: ",  NULL,   _DTYPE_I16,      0,  NULL,       2,  5,  0x00,    _LCD_SCR_SET_CALIB_SS_EC},
+    {   __SET_EC_CONST,     "1.Const: ",        NULL,   _DTYPE_I16,      0,  NULL,       3,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_EC},
+    {   __SET_EC_CALIB,     "2.Calib: ",        NULL,   _DTYPE_I16,      0,  NULL,       4,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_EC},
     
     {   __SET_OFFSET_TITLE,     "OFFSET",           NULL,   _DTYPE_STRING,  0,      NULL,       0,  0, 0x00,    _LCD_SCR_SET_OFFSET},
-    {   __SET_OFFSET_EC,        "1.EC   : ",       NULL,    _DTYPE_I32,     0x00,   " uS/cm",       2,  14, 0x00,    _LCD_SCR_SET_OFFSET},
-    {   __SET_OFFSET_TDS,       "2.TDS  : ",       NULL,    _DTYPE_I32,     0xFE,   " mg/L",       3,  14, 0x00,    _LCD_SCR_SET_OFFSET},
-    {   __SET_OFFSET_SALINITY,  "3.Salt : ",       NULL,    _DTYPE_I32,     0xFE,   "  %",       4,  14, 0x00,    _LCD_SCR_SET_OFFSET},
-    {   __SET_OFFSET_TEMP,      "4.Temp : ",       NULL,    _DTYPE_I32,     0xFE,   "  ‰C",       5,  14, 0x00,    _LCD_SCR_SET_OFFSET},
+    {   __SET_OFFSET_EC,        "1.EC   : ",       NULL,    _DTYPE_I32,     0,   " uS/cm",   2,  0, 0x00,    _LCD_SCR_SET_OFFSET},
+    {   __SET_OFFSET_TDS,       "2.TDS  : ",       NULL,    _DTYPE_I32,     0,   " mg/L",    3,  0, 0x00,    _LCD_SCR_SET_OFFSET},
+    {   __SET_OFFSET_SALINITY,  "3.Salt : ",       NULL,    _DTYPE_I32,     0,   "  %",      4,  0, 0x00,    _LCD_SCR_SET_OFFSET},
+    {   __SET_OFFSET_TEMP,      "4.Temp : ",       NULL,    _DTYPE_I32,     0,   "  ‰C",     5,  0, 0x00,    _LCD_SCR_SET_OFFSET},
     
     {   __SCR_INFOR_TITLE,          "Infor.",   NULL,   _DTYPE_STRING,   0,      NULL,      0,   0, 0x00,           _LCD_SCR_SET_INFORMATION },
     {   __SCR_INFOR_FW_VERSION_1,     "*Version",       NULL,   _DTYPE_STRING,   0,      NULL,      2,   28, 0x00,      _LCD_SCR_SET_INFORMATION },
@@ -102,20 +107,31 @@ void Display_Init (void)
     sLCDObject[__SET_MODBUS_ID].pData  = &sParaDisplay.ID_u8; 
     sLCDObject[__SET_MODBUS_BR].pData  = &sParaDisplay.Baudrate_u32; 
     
-    sLCDObject[__SC1_EC].pData         = &sParaDisplay.EC_Filter_i32;    
+    sLCDObject[__SC1_EC].pData         = &sParaDisplay.EC_Filter_i32;   
+    sLCDObject[__SC1_EC].Scale_u8      = sParaDisplay.Scale_EC; 
 //    sLCDObject[__SC1_TDS].pData        = &sParaDisplay.TDS_Filter_i32;    
+//    sLCDObject[__SC1_TDS].Scale_u8      = sParaDisplay.Scale_TDS; 
     sLCDObject[__SC1_SALINITY].pData   = &sParaDisplay.Salinity_Filter_i32;    
+    sLCDObject[__SC1_SALINITY].Scale_u8= sParaDisplay.Scale_Salt; 
     sLCDObject[__SC1_TEMP].pData       = &sParaDisplay.Temp_Filter_i32;    
+    sLCDObject[__SC1_TEMP].Scale_u8    = sParaDisplay.Scale_Temp; 
     
     sLCDObject[__SET_EC_TITLE_1].pData    = &sParaDisplay.EC_Filter_i32; 
+    sLCDObject[__SET_EC_TITLE_1].Scale_u8      = sParaDisplay.Scale_EC; 
     
     sLCDObject[__SET_EC_CONST].pData    = &sParaDisplay.EC_Calib_Const_i32; 
+    sLCDObject[__SET_EC_CONST].Scale_u8 = 0xFD; 
     sLCDObject[__SET_EC_CALIB].pData    = &sParaDisplay.EC_Calib_Value_i32; 
+    sLCDObject[__SET_EC_CALIB].Scale_u8       = sParaDisplay.Scale_EC; 
     
-    sLCDObject[__SET_OFFSET_EC].pData       = &sParaDisplay.EC_Offset_i32; 
-    sLCDObject[__SET_OFFSET_TDS].pData      = &sParaDisplay.TDS_Offset_i32; 
-    sLCDObject[__SET_OFFSET_SALINITY].pData = &sParaDisplay.Salinity_Offset_i32; 
-    sLCDObject[__SET_OFFSET_TEMP].pData     = &sParaDisplay.temp_Offset_i32; 
+    sLCDObject[__SET_OFFSET_EC].pData           = &sParaDisplay.EC_Offset_i32; 
+    sLCDObject[__SET_OFFSET_EC].Scale_u8        = sParaDisplay.Scale_EC; 
+    sLCDObject[__SET_OFFSET_TDS].pData          = &sParaDisplay.TDS_Offset_i32; 
+    sLCDObject[__SET_OFFSET_TDS].Scale_u8       = sParaDisplay.Scale_TDS; 
+    sLCDObject[__SET_OFFSET_SALINITY].pData     = &sParaDisplay.Salinity_Offset_i32; 
+    sLCDObject[__SET_OFFSET_SALINITY].Scale_u8  = sParaDisplay.Scale_Salt; 
+    sLCDObject[__SET_OFFSET_TEMP].pData         = &sParaDisplay.temp_Offset_i32;
+    sLCDObject[__SET_OFFSET_TEMP].Scale_u8      = sParaDisplay.Scale_Temp; 
 
     sLCDObject[__SCR_INFOR_FW_VERSION_2].pData   = sFirmVersion.Data_a8;
     sLCDObject[__SCR_INFOR_MODEL_2].pData   = sModelVersion.Data_a8;
@@ -352,23 +368,23 @@ void Update_ParaDisplay(void)
     sParaDisplay.ID_u8 = sSlave_ModbusRTU.ID;
     sParaDisplay.Baudrate_u32 = aBaudrate_value[sSlave_ModbusRTU.Baudrate];
     
-    sParaDisplay.EC_Value_i32 = (int32_t)(sSensor_EC.EC_Value_f);
-    sParaDisplay.TDS_Value_i32 = (int32_t)(sSensor_EC.TDS_Value_f*100);
-    sParaDisplay.Salinity_Value_i32 = (int32_t)(sSensor_EC.Salinity_Value_f*100);
-    sParaDisplay.Temp_Value_i32 = (int32_t)(sSensor_EC.temp_Value_f*100);
+    sParaDisplay.EC_Value_i32 = (int32_t)(sSensor_EC.EC_Value_f * Calculator_Scale(sParaDisplay.Scale_EC));
+    sParaDisplay.TDS_Value_i32 = (int32_t)(sSensor_EC.TDS_Value_f * Calculator_Scale(sParaDisplay.Scale_TDS));
+    sParaDisplay.Salinity_Value_i32 = (int32_t)(sSensor_EC.Salinity_Value_f * Calculator_Scale(sParaDisplay.Scale_Salt));
+    sParaDisplay.Temp_Value_i32 = (int32_t)(sSensor_EC.temp_Value_f * Calculator_Scale(sParaDisplay.Scale_Temp));
     
-    sParaDisplay.EC_Filter_i32 = (int32_t)(sSensor_EC.EC_Filter_f);
-    sParaDisplay.TDS_Filter_i32 = (int32_t)(sSensor_EC.TDS_Filter_f*100);
-    sParaDisplay.Salinity_Filter_i32 = (int32_t)(sSensor_EC.Salinity_Filter_f*100);
-    sParaDisplay.Temp_Filter_i32 = (int32_t)(sSensor_EC.temp_Filter_f*100);
+    sParaDisplay.EC_Filter_i32 = (int32_t)(sSensor_EC.EC_Filter_f * Calculator_Scale(sParaDisplay.Scale_EC));
+    sParaDisplay.TDS_Filter_i32 = (int32_t)(sSensor_EC.TDS_Filter_f * Calculator_Scale(sParaDisplay.Scale_TDS));
+    sParaDisplay.Salinity_Filter_i32 = (int32_t)(sSensor_EC.Salinity_Filter_f * Calculator_Scale(sParaDisplay.Scale_Salt));
+    sParaDisplay.Temp_Filter_i32 = (int32_t)(sSensor_EC.temp_Filter_f * Calculator_Scale(sParaDisplay.Scale_Temp));
     
-    sParaDisplay.EC_Offset_i32   = (int32_t)(sSensor_EC.EC_Offset_f);
-    sParaDisplay.TDS_Offset_i32  = (int32_t)(sSensor_EC.TDS_Offset_f*100);
-    sParaDisplay.Salinity_Offset_i32 = (int32_t)(sSensor_EC.Salinity_Offset_f*100);
-    sParaDisplay.temp_Offset_i32 = (int32_t)(sSensor_EC.temp_Offset_f*100);
+    sParaDisplay.EC_Offset_i32   = (int32_t)(sSensor_EC.EC_Offset_f * Calculator_Scale(sParaDisplay.Scale_EC));
+    sParaDisplay.TDS_Offset_i32  = (int32_t)(sSensor_EC.TDS_Offset_f * Calculator_Scale(sParaDisplay.Scale_TDS));
+    sParaDisplay.Salinity_Offset_i32 = (int32_t)(sSensor_EC.Salinity_Offset_f * Calculator_Scale(sParaDisplay.Scale_Salt));
+    sParaDisplay.temp_Offset_i32 = (int32_t)(sSensor_EC.temp_Offset_f * Calculator_Scale(sParaDisplay.Scale_Temp));
     
     sParaDisplay.EC_Calib_Const_i32 = (int32_t)(sSensor_EC.EC_Calib_Const_f*1000);
-    sParaDisplay.EC_Calib_Value_i32 = (int32_t)(sSensor_EC.EC_Calib_Value_f);
+    sParaDisplay.EC_Calib_Value_i32 = (int32_t)(sSensor_EC.EC_Calib_Value_f * Calculator_Scale(sParaDisplay.Scale_EC));
 }
 
 void Display_Show_Oject (uint8_t object)

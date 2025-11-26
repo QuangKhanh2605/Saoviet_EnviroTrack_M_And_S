@@ -6,7 +6,7 @@
 
 #define BUT_TIME_DETECT         80
 
-#define BUT_COUNT_HOLD          50
+#define BUT_COUNT_HOLD          100
 #define BUT_COUNT_FAST          50
 
 #define BUTTON_ENTER          HAL_GPIO_ReadPin(BUTTON_PRESS_4_GPIO_Port, BUTTON_PRESS_4_Pin)

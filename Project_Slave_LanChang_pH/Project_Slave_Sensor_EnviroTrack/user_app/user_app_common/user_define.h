@@ -121,6 +121,7 @@
 #include "user_rs485.h"  
 #include "user_connect_sensor.h"  
 #include "user_app_modbus_rtu.h"
+#include "user_convert_variable.h"
 /*========================== User define =================================*/
 /*     Chu ki wake up
       - Chu ki nay se duoc set timer danh thuc MCU day.

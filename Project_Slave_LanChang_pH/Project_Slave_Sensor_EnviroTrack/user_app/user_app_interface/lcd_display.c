@@ -26,11 +26,14 @@ sEvent_struct sEventDisplay [] =
 
 sLCDinformation      sLCD;
 
-sParameter_Display   sParaDisplay = {0};
+sParameter_Display   sParaDisplay = {
+    .Scale_pH    = 0xFE,
+    .Scale_Temp  = 0xFE,
+};
 
 sData   sModelVersion = {(uint8_t *) "SV_ENVI_LC_PH", 13}; 
 
-uint8_t aPASSWORD[4] = {"0000"};
+uint8_t aPASSWORD[4] = {"1111"};
 
 uint8_t aSTT_SETTING_FREE[14]   = {"              "};
 uint8_t aSTT_SETTING_ENTER[14]  = {"Enter to Setup"};
@@ -41,9 +44,9 @@ uint8_t aSTT_SETTING_ERROR[14]  = {"     Error   "};
 sOjectInformation  sLCDObject[] = 
 {
 //          para          name                  value      dtype         scale   unit      row  col      screen
-    {   __SC1_TITLE,      "Sensor.",        NULL,   _DTYPE_STRING,   0x00,      NULL,      0,  0,  0x00,      _LCD_SCREEN_1  },
-    {   __SC1_PH_ATC,     NULL,             NULL,   _DTYPE_I16,        0xFE,     "pH",      4,  0,  0x00,      _LCD_SCREEN_1  },
-    {   __SC1_TEMP,       "Temp  : ",       NULL,   _DTYPE_I16,      0xFE,      " ‰C",      7,  0,  0x00,      _LCD_SCREEN_1  },
+    {   __SC1_TITLE,      "pH.",            NULL,   _DTYPE_STRING,   0,      NULL,      0,  0,  0x00,      _LCD_SCREEN_1  },
+    {   __SC1_PH_ATC,     NULL,             NULL,   _DTYPE_I16,      0,    "pH",      4,  0,  0x00,      _LCD_SCREEN_1  },
+    {   __SC1_TEMP,       "Temp  : ",       NULL,   _DTYPE_I16,      0,      " ‰C",      7,  0,  0x00,      _LCD_SCREEN_1  },
   
     {   __PASS_WORD_TITLE,  "Loggin",         NULL,   _DTYPE_STRING,   0,      NULL,     0,   0, 0x00,      _LCD_SCR_PASS    },
     {   __PASS_WORD_1,    "Enter Password",   NULL,   _DTYPE_STRING,   0,      NULL,      2,  24, 0x00,      _LCD_SCR_PASS    },
@@ -59,17 +62,17 @@ sOjectInformation  sLCDObject[] =
     {   __SET_MODBUS_ID,        "1.ID      : ",   NULL,   _DTYPE_U8,       0x00,   NULL,      2,   4, 0x00,   _LCD_SCR_SET_MODBUS },
     {   __SET_MODBUS_BR,        "2.Baudrate: ",   NULL,   _DTYPE_U32,      0x00,   NULL,      3,   4, 0x00,   _LCD_SCR_SET_MODBUS },
     
-    {   __SET_PH_TITLE,     "CALIB SENSOR",     NULL,   _DTYPE_STRING,   0x00,  NULL,       0,  0,  0x00,    _LCD_SCR_SET_CALIB_SS_PH},
-    {   __SET_PH_VALUE,     "pH: ",             NULL,   _DTYPE_I32,      0x00,  NULL,       2,  5,  0x00,    _LCD_SCR_SET_CALIB_SS_PH},
-    {   __SET_AD_VALUE,     "AD: ",             NULL,   _DTYPE_I32,      0x00,  NULL,       2,  90, 0x00,    _LCD_SCR_SET_CALIB_SS_PH},
-    {   __SET_PH_Z_SOLUTION,"1.Z_Solution: ",   NULL,   _DTYPE_I16,      0xFE,  NULL,       3,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_PH},
-    {   __SET_PH_ZERO,      "2.Zero",           NULL,   _DTYPE_STRING,   0,     NULL,       4,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_PH},
-    {   __SET_PH_S_SOLUTION,"3.S_Solution: ",   NULL,   _DTYPE_I16,      0xFE,  NULL,       5,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_PH},
-    {   __SET_PH_SLOPE,     "4.Slope",          NULL,   _DTYPE_STRING,   0,     NULL,       6,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_PH},
+    {   __SET_PH_TITLE,     "CALIB SENSOR",     NULL,   _DTYPE_STRING,   0,  NULL,       0,  0,  0x00,    _LCD_SCR_SET_CALIB_SS_PH},
+    {   __SET_PH_VALUE,     "pH: ",             NULL,   _DTYPE_I32,      0,  NULL,       2,  5,  0x00,    _LCD_SCR_SET_CALIB_SS_PH},
+    {   __SET_AD_VALUE,     "AD: ",             NULL,   _DTYPE_I32,      0,  NULL,       3,  5, 0x00,    _LCD_SCR_SET_CALIB_SS_PH},
+    {   __SET_PH_Z_SOLUTION,"1.Z_Solution: ",   NULL,   _DTYPE_I16,      0,  NULL,       4,  0, 0x00,    _LCD_SCR_SET_CALIB_SS_PH},
+    {   __SET_PH_ZERO,      "2.Zero",           NULL,   _DTYPE_STRING,   0,     NULL,       5,  0, 0x00,    _LCD_SCR_SET_CALIB_SS_PH},
+    {   __SET_PH_S_SOLUTION,"3.S_Solution: ",   NULL,   _DTYPE_I16,      0,  NULL,       6,  0, 0x00,    _LCD_SCR_SET_CALIB_SS_PH},
+    {   __SET_PH_SLOPE,     "4.Slope",          NULL,   _DTYPE_STRING,   0,     NULL,       7,  0, 0x00,    _LCD_SCR_SET_CALIB_SS_PH},
     
     {   __SET_OFFSET_TITLE, "OFFSET",           NULL,   _DTYPE_STRING,  0,      NULL,       0,  0, 0x00,     _LCD_SCR_SET_OFFSET},
-    {   __SET_OFFSET_PH,    "1.pH_ATC: ",       NULL,   _DTYPE_I32,     0xFE,   " pH",       2,  14, 0x00,    _LCD_SCR_SET_OFFSET},
-    {   __SET_OFFSET_TEMP,  "2.Temp  : ",       NULL,   _DTYPE_I32,     0xFE,   " ‰C",       3,  14, 0x00,    _LCD_SCR_SET_OFFSET},
+    {   __SET_OFFSET_PH,    "1.pH_ATC: ",       NULL,   _DTYPE_I32,     0,   " pH",       2,  0, 0x00,    _LCD_SCR_SET_OFFSET},
+    {   __SET_OFFSET_TEMP,  "2.Temp  : ",       NULL,   _DTYPE_I32,     0,   " ‰C",       3,  0, 0x00,    _LCD_SCR_SET_OFFSET},
     
     {   __SCR_INFOR_TITLE,          "Infor.",   NULL,   _DTYPE_STRING,   0,      NULL,      0,   0, 0x00,    _LCD_SCR_SET_INFORMATION },
     {   __SCR_INFOR_FW_VERSION_1,   "*Version", NULL,   _DTYPE_STRING,   0,      NULL,      2,   28, 0x00,   _LCD_SCR_SET_INFORMATION },
@@ -102,9 +105,12 @@ void Display_Init (void)
     sLCDObject[__SET_MODBUS_BR].pData  = &sParaDisplay.Baudrate_u32; 
     
     sLCDObject[__SC1_PH_ATC].pData     = &sParaDisplay.pH_Filter_i32;    
-    sLCDObject[__SC1_TEMP].pData       = &sParaDisplay.Temp_Filter_i32;    
+    sLCDObject[__SC1_PH_ATC].Scale_u8  = sParaDisplay.Scale_pH;    
+    sLCDObject[__SC1_TEMP].pData       = &sParaDisplay.Temp_Filter_i32;  
+    sLCDObject[__SC1_TEMP].Scale_u8  = sParaDisplay.Scale_Temp;    
     
-    sLCDObject[__SET_PH_VALUE].pData        = &sParaDisplay.pH_Value_i32; 
+    sLCDObject[__SET_PH_VALUE].pData        = &sParaDisplay.pH_Value_i32;
+    sLCDObject[__SET_PH_VALUE].Scale_u8     = sParaDisplay.Scale_pH;    
     sLCDObject[__SET_AD_VALUE].pData        = &sSensor_pH.Measure_AD;
     
     sLCDObject[__SET_PH_Z_SOLUTION].pData   = &sSensor_pH.sZero_Calib.Value ; 
@@ -113,7 +119,9 @@ void Display_Init (void)
     sLCDObject[__SET_PH_SLOPE].Scale_u8     = sSensor_pH.sSlope_Calib.Scale; 
     
     sLCDObject[__SET_OFFSET_PH].pData       = &sParaDisplay.pH_Offset_i32; 
+    sLCDObject[__SET_OFFSET_PH].Scale_u8    = sParaDisplay.Scale_pH;    
     sLCDObject[__SET_OFFSET_TEMP].pData     = &sParaDisplay.temp_Offset_i32; 
+    sLCDObject[__SET_OFFSET_TEMP].Scale_u8  = sParaDisplay.Scale_Temp;    
 
     sLCDObject[__SCR_INFOR_FW_VERSION_2].pData   = sFirmVersion.Data_a8;
     sLCDObject[__SCR_INFOR_MODEL_2].pData   = sModelVersion.Data_a8;
@@ -350,14 +358,14 @@ void Update_ParaDisplay(void)
     sParaDisplay.ID_u8 = sSlave_ModbusRTU.ID;
     sParaDisplay.Baudrate_u32 = aBaudrate_value[sSlave_ModbusRTU.Baudrate];
     
-    sParaDisplay.pH_Value_i32 = (int32_t)(sSensor_pH.pH_Value_f*100);
-    sParaDisplay.Temp_Value_i32 = (int32_t)(sSensor_pH.temp_Value_f*100);
+    sParaDisplay.pH_Value_i32 = (int32_t)(sSensor_pH.pH_Value_f * Calculator_Scale(sParaDisplay.Scale_pH));
+    sParaDisplay.Temp_Value_i32 = (int32_t)(sSensor_pH.temp_Value_f * Calculator_Scale(sParaDisplay.Scale_Temp));
     
-    sParaDisplay.pH_Filter_i32 = (int32_t)(sSensor_pH.pH_Filter_f*100);
-    sParaDisplay.Temp_Filter_i32 = (int32_t)(sSensor_pH.temp_Filter_f*100);
+    sParaDisplay.pH_Filter_i32 = (int32_t)(sSensor_pH.pH_Filter_f * Calculator_Scale(sParaDisplay.Scale_pH));
+    sParaDisplay.Temp_Filter_i32 = (int32_t)(sSensor_pH.temp_Filter_f * Calculator_Scale(sParaDisplay.Scale_Temp));
     
-    sParaDisplay.pH_Offset_i32   = (int32_t)(sSensor_pH.pH_Offset_f*100);
-    sParaDisplay.temp_Offset_i32 = (int32_t)(sSensor_pH.temp_Offset_f*100);
+    sParaDisplay.pH_Offset_i32   = (int32_t)(sSensor_pH.pH_Offset_f * Calculator_Scale(sParaDisplay.Scale_pH));
+    sParaDisplay.temp_Offset_i32 = (int32_t)(sSensor_pH.temp_Offset_f * Calculator_Scale(sParaDisplay.Scale_Temp));
 }
 
 void Display_Show_Oject (uint8_t object)

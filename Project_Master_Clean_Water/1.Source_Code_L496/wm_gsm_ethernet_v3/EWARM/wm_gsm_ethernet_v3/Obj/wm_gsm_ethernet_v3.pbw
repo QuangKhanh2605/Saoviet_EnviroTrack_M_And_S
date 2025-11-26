@@ -496314,7 +496314,7 @@
     "display": "void Display_Show_Oject(uint8_t)",
     "location": {
       "column": "6",
-      "line": "538",
+      "line": "541",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "Display_Show_Oject",
@@ -496322,13 +496322,13 @@
     "scope": null
   },
   {
-    "ID": "c:lcd_display.c@27555@F@Display_Show_Oject@aTEMP",
+    "ID": "c:lcd_display.c@27651@F@Display_Show_Oject@aTEMP",
     "What": "Variable",
     "defdec": "Def",
     "display": "aTEMP",
     "location": {
       "column": "10",
-      "line": "540",
+      "line": "543",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "aTEMP",
@@ -496336,13 +496336,13 @@
     "scope": null
   },
   {
-    "ID": "c:lcd_display.c@27583@F@Display_Show_Oject@TempVal",
+    "ID": "c:lcd_display.c@27679@F@Display_Show_Oject@TempVal",
     "What": "Variable",
     "defdec": "Def",
     "display": "TempVal",
     "location": {
       "column": "13",
-      "line": "541",
+      "line": "544",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "TempVal",
@@ -496350,13 +496350,13 @@
     "scope": null
   },
   {
-    "ID": "c:lcd_display.c@27609@F@Display_Show_Oject@type",
+    "ID": "c:lcd_display.c@27705@F@Display_Show_Oject@type",
     "What": "Variable",
     "defdec": "Def",
     "display": "type",
     "location": {
       "column": "13",
-      "line": "542",
+      "line": "545",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "type",
@@ -496364,13 +496364,13 @@
     "scope": null
   },
   {
-    "ID": "c:lcd_display.c@27609@F@Display_Show_Oject@temp",
+    "ID": "c:lcd_display.c@27705@F@Display_Show_Oject@temp",
     "What": "Variable",
     "defdec": "Dec",
     "display": "temp",
     "location": {
       "column": "23",
-      "line": "542",
+      "line": "545",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "temp",
@@ -496378,13 +496378,13 @@
     "scope": null
   },
   {
-    "ID": "c:lcd_display.c@27642@F@Display_Show_Oject@PosX",
+    "ID": "c:lcd_display.c@27738@F@Display_Show_Oject@PosX",
     "What": "Variable",
     "defdec": "Def",
     "display": "PosX",
     "location": {
       "column": "14",
-      "line": "543",
+      "line": "546",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "PosX",
@@ -496392,13 +496392,13 @@
     "scope": null
   },
   {
-    "ID": "c:lcd_display.c@27944@F@Display_Show_Oject@i",
+    "ID": "c:lcd_display.c@28040@F@Display_Show_Oject@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
     "location": {
       "column": "26",
-      "line": "550",
+      "line": "553",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "i",
@@ -496406,13 +496406,13 @@
     "scope": null
   },
   {
-    "ID": "c:lcd_display.c@30063@F@Display_Show_Oject@i",
+    "ID": "c:lcd_display.c@30159@F@Display_Show_Oject@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
     "location": {
       "column": "30",
-      "line": "605",
+      "line": "608",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "i",
@@ -496426,7 +496426,7 @@
     "display": "uint8_t _Cb_button_scan(uint8_t)",
     "location": {
       "column": "16",
-      "line": "623",
+      "line": "626",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "_Cb_button_scan",
@@ -496440,7 +496440,7 @@
     "display": "uint8_t _Cb_button_detect(uint8_t)",
     "location": {
       "column": "16",
-      "line": "638",
+      "line": "641",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "_Cb_button_detect",
@@ -496454,7 +496454,7 @@
     "display": "uint8_t Display_Check_Toggle(uint8_t, uint8_t)",
     "location": {
       "column": "9",
-      "line": "654",
+      "line": "657",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "Display_Check_Toggle",
@@ -496462,13 +496462,13 @@
     "scope": null
   },
   {
-    "ID": "c:lcd_display.c@31212@F@Display_Check_Toggle@LandMarkToggle_u32",
+    "ID": "c:lcd_display.c@31308@F@Display_Check_Toggle@LandMarkToggle_u32",
     "What": "Variable",
     "defdec": "Def",
     "display": "LandMarkToggle_u32",
     "location": {
       "column": "21",
-      "line": "656",
+      "line": "659",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "LandMarkToggle_u32",
@@ -496476,13 +496476,13 @@
     "scope": null
   },
   {
-    "ID": "c:lcd_display.c@31275@F@Display_Check_Toggle@Hide",
+    "ID": "c:lcd_display.c@31371@F@Display_Check_Toggle@Hide",
     "What": "Variable",
     "defdec": "Def",
     "display": "Hide",
     "location": {
       "column": "20",
-      "line": "657",
+      "line": "660",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "Hide",
@@ -496496,7 +496496,7 @@
     "display": "void Display_Setup_SCREEN_Modb(void)",
     "location": {
       "column": "6",
-      "line": "676",
+      "line": "679",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "Display_Setup_SCREEN_Modb",
@@ -496504,13 +496504,13 @@
     "scope": null
   },
   {
-    "ID": "c:lcd_display.c@31873@F@Display_Setup_SCREEN_Modb@aCHANNEL",
+    "ID": "c:lcd_display.c@31969@F@Display_Setup_SCREEN_Modb@aCHANNEL",
     "What": "Variable",
     "defdec": "Def",
     "display": "aCHANNEL",
     "location": {
       "column": "17",
-      "line": "678",
+      "line": "681",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "aCHANNEL",
@@ -496524,7 +496524,7 @@
     "display": "void Display_Set_Screen_Flag(sScreenInformation *, void *, uint8_t)",
     "location": {
       "column": "6",
-      "line": "750",
+      "line": "753",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "Display_Set_Screen_Flag",
@@ -496532,13 +496532,13 @@
     "scope": null
   },
   {
-    "ID": "c:lcd_display.c@35272@F@Display_Set_Screen_Flag@i",
+    "ID": "c:lcd_display.c@35368@F@Display_Set_Screen_Flag@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
     "location": {
       "column": "18",
-      "line": "754",
+      "line": "757",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "i",
@@ -496552,7 +496552,7 @@
     "display": "void Display_Set_Screen(sScreenInformation *, uint8_t, uint8_t, uint8_t, uint8_t, uint8_t, void *, uint8_t)",
     "location": {
       "column": "6",
-      "line": "772",
+      "line": "775",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "Display_Set_Screen",
@@ -496566,7 +496566,7 @@
     "display": "uint8_t Display_Check_Password(uint8_t *)",
     "location": {
       "column": "9",
-      "line": "789",
+      "line": "792",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "Display_Check_Password",
@@ -496574,13 +496574,13 @@
     "scope": null
   },
   {
-    "ID": "c:lcd_display.c@36254@F@Display_Check_Password@i",
+    "ID": "c:lcd_display.c@36350@F@Display_Check_Password@i",
     "What": "Variable",
     "defdec": "Def",
     "display": "i",
     "location": {
       "column": "18",
-      "line": "791",
+      "line": "794",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "i",
@@ -496594,7 +496594,7 @@
     "display": "void Display_Process_Up_Pressure_2(sPressureLinearInter *)",
     "location": {
       "column": "6",
-      "line": "803",
+      "line": "806",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "Display_Process_Up_Pressure_2",
@@ -496608,7 +496608,7 @@
     "display": "void Display_Process_Down_Pressure_2(sPressureLinearInter *)",
     "location": {
       "column": "6",
-      "line": "853",
+      "line": "856",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "Display_Process_Down_Pressure_2",
@@ -496622,7 +496622,7 @@
     "display": "void Display_Show_Static_Param(void)",
     "location": {
       "column": "6",
-      "line": "904",
+      "line": "907",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "Display_Show_Static_Param",
@@ -496630,13 +496630,13 @@
     "scope": null
   },
   {
-    "ID": "c:lcd_display.c@39833@F@Display_Show_Static_Param@cCharge",
+    "ID": "c:lcd_display.c@39929@F@Display_Show_Static_Param@cCharge",
     "What": "Variable",
     "defdec": "Def",
     "display": "cCharge",
     "location": {
       "column": "20",
-      "line": "906",
+      "line": "909",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "cCharge",
@@ -496644,13 +496644,13 @@
     "scope": null
   },
   {
-    "ID": "c:lcd_display.c@39833@F@Display_Show_Static_Param@batlevel",
+    "ID": "c:lcd_display.c@39929@F@Display_Show_Static_Param@batlevel",
     "What": "Variable",
     "defdec": "Dec",
     "display": "batlevel",
     "location": {
       "column": "33",
-      "line": "906",
+      "line": "909",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "batlevel",
@@ -496658,13 +496658,13 @@
     "scope": null
   },
   {
-    "ID": "c:lcd_display.c@39880@F@Display_Show_Static_Param@TempPos",
+    "ID": "c:lcd_display.c@39976@F@Display_Show_Static_Param@TempPos",
     "What": "Variable",
     "defdec": "Def",
     "display": "TempPos",
     "location": {
       "column": "13",
-      "line": "907",
+      "line": "910",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "TempPos",
@@ -496672,13 +496672,13 @@
     "scope": null
   },
   {
-    "ID": "c:lcd_display.c@39906@F@Display_Show_Static_Param@aData",
+    "ID": "c:lcd_display.c@40002@F@Display_Show_Static_Param@aData",
     "What": "Variable",
     "defdec": "Def",
     "display": "aData",
     "location": {
       "column": "10",
-      "line": "908",
+      "line": "911",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "aData",
@@ -496686,13 +496686,13 @@
     "scope": null
   },
   {
-    "ID": "c:lcd_display.c@39933@F@Display_Show_Static_Param@LandMarkNextScreen",
+    "ID": "c:lcd_display.c@40029@F@Display_Show_Static_Param@LandMarkNextScreen",
     "What": "Variable",
     "defdec": "Def",
     "display": "LandMarkNextScreen",
     "location": {
       "column": "21",
-      "line": "909",
+      "line": "912",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "LandMarkNextScreen",
@@ -496706,7 +496706,7 @@
     "display": "void Display_Show_State_Sensor_Network(uint8_t)",
     "location": {
       "column": "6",
-      "line": "956",
+      "line": "959",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "Display_Show_State_Sensor_Network",
@@ -496720,7 +496720,7 @@
     "display": "void Display_Show_State_Calib_Sensor(uint8_t)",
     "location": {
       "column": "6",
-      "line": "1034",
+      "line": "1037",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "Display_Show_State_Calib_Sensor",
@@ -496734,7 +496734,7 @@
     "display": "void Display_Update_ScrSensor(uint8_t)",
     "location": {
       "column": "6",
-      "line": "1070",
+      "line": "1073",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "Display_Update_ScrSensor",
@@ -496742,13 +496742,13 @@
     "scope": null
   },
   {
-    "ID": "c:lcd_display.c@44748@F@Display_Update_ScrSensor@Row",
+    "ID": "c:lcd_display.c@44844@F@Display_Update_ScrSensor@Row",
     "What": "Variable",
     "defdec": "Def",
     "display": "Row",
     "location": {
       "column": "17",
-      "line": "1074",
+      "line": "1077",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "Row",
@@ -496762,7 +496762,7 @@
     "display": "void Update_ParaDisplay(void)",
     "location": {
       "column": "6",
-      "line": "1106",
+      "line": "1109",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "Update_ParaDisplay",
@@ -496776,7 +496776,7 @@
     "display": "uint8_t Display_Show_Charge_Bat(uint8_t *)",
     "location": {
       "column": "9",
-      "line": "1133",
+      "line": "1136",
       "path": "D:\\Saoviet_Git\\Saoviet_EnviroTrack_M_And_S\\Project_Master_Clean_Water\\1.Source_Code_L496\\wm_gsm_ethernet_v3\\user_app\\user_app_wm\\lcd_display.c"
     },
     "name": "Display_Show_Charge_Bat",

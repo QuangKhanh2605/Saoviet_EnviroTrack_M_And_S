@@ -27,7 +27,8 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN TD */
-
+uint32_t count_gettick = 0;
+uint8_t Flag_gettick = 0;
 /* USER CODE END TD */
 
 /* Private define ------------------------------------------------------------*/
@@ -195,6 +196,20 @@ void SysTick_Handler(void)
   HAL_IncTick();
   /* USER CODE BEGIN SysTick_IRQn 1 */
   RtCountSystick_u32++;
+  count_gettick++;
+  if(count_gettick>200)
+  {
+    count_gettick = 0;
+    if(Flag_gettick == 0)
+      Flag_gettick = 1;
+    else 
+      Flag_gettick = 0;
+    
+      if(Flag_gettick == 1)
+        HAL_GPIO_WritePin(TOGGLE_RESET_GPIO_Port, TOGGLE_RESET_Pin, GPIO_PIN_SET);
+      else
+        HAL_GPIO_WritePin(TOGGLE_RESET_GPIO_Port, TOGGLE_RESET_Pin, GPIO_PIN_RESET);
+  }
   /* USER CODE END SysTick_IRQn 1 */
 }
 
