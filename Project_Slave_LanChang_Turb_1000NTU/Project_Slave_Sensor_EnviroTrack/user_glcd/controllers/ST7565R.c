@@ -214,15 +214,31 @@ void glcd_ST7565R_init(void) {
 	/* Default init sequence */
 	/* Currently just set the same as GLCD_INIT_NHD_C12864A1Z_FSW_FBW_HTT */
 
-	glcd_command(0xa0); /* ADC select in normal mode */
-	glcd_command(0xae); /* Display OFF */
-//    glcd_command(0xa7); /* Display reverse: chu trang nen den */
-	glcd_command(0xc8); /* Common output mode select: reverse direction (last 3 bits are ignored): di kem vs a1*/
-	glcd_command(0xa2); /* LCD bias set at 1/9 */
-	glcd_command(0x2f); /* Power control set to operating mode: 7 */
-	glcd_command(0x22); /* Internal resistor ratio, set to: 2 */
-	glcd_set_contrast(63); /* Set contrast, value experimentally determined, value 0 to 63 */
-	glcd_command(0xaf); /* Display on */
+//	glcd_command(0xa0); /* ADC select in normal mode */
+//	glcd_command(0xae); /* Display OFF */
+////    glcd_command(0xa7); /* Display reverse: chu trang nen den */
+//	glcd_command(0xc8); /* Common output mode select: reverse direction (last 3 bits are ignored): di kem vs a1*/
+//	glcd_command(0xa2); /* LCD bias set at 1/9 */
+//	glcd_command(0x2f); /* Power control set to operating mode: 7 */
+//	glcd_command(0x22); /* Internal resistor ratio, set to: 2 */
+//	glcd_set_contrast(63); /* Set contrast, value experimentally determined, value 0 to 63 */
+//	glcd_command(0xaf); /* Display on */
+    
+    glcd_command(0xAE); // Display OFF
+    glcd_command(0xA2); // Bias 1/9
+    glcd_command(0xA0); // ADC normal
+    glcd_command(0xC8); // Common output reverse
+    glcd_command(0x2F); // Booster, Regulator, Follower ON
+    HAL_Delay(50);
+    glcd_command(0xA4); // Normal display
+    glcd_command(0x40); // Display start line = 0
+    glcd_command(0x25); // Internal R ratio
+	HAL_Delay(10);
+    glcd_command(0x81); // Electronic volume
+    glcd_command(0x12); // Contrast (tùy)
+	glcd_clear();
+    glcd_command(0xAF); // Display ON
+    HAL_Delay(5);
 
 #endif
 

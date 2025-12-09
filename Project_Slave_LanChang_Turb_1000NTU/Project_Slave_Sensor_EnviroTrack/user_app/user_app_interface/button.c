@@ -29,57 +29,126 @@ void BUTTON_Process(void)
     }
 }
 
-
-
 uint8_t BUTTON_scan(void)
 {
     uint8_t r_value = 0;
     static uint8_t last_value = 0;
     static uint32_t hold = 0;
-    
-	if (sButton.Status == 0)
-	{
-		r_value = (!BUTTON_ENTER<<0)|(!BUTTON_UP<<1)|(!BUTTON_DOWN<<2)|(!BUTTON_ESC<<3);
-        
-		switch(r_value)
-		{
-			case _ENTER:
+    static uint16_t block_time = 0;
+
+    if (block_time > 0) {
+        block_time--;
+        return 0;
+    }
+
+    if (sButton.Status == 0)
+    {
+        r_value = (!BUTTON_ENTER<<0)|(!BUTTON_UP<<1)|(!BUTTON_DOWN<<2)|(!BUTTON_ESC<<3);
+
+        switch(r_value)
+        {
+            case _ENTER:
             case _UP:
             case _DOWN:
             case _ESC:
+
                 sButton.Count++;
-                if (sButton.Count >= BUT_TIME_DETECT) {
+
+                if (sButton.Count >= BUT_TIME_DETECT)
+                {
                     sButton.Value = r_value;
                     sButton.Status = 1;
-                    
-                    if ( r_value == last_value ) {
+
+                    if (hold < BUT_COUNT_HOLD)
+                        block_time = 25;
+
+                    if ( r_value == last_value )
+                    {
                         hold++;
-                        if ( hold >= BUT_COUNT_FAST ) {
-                            sButton.Count = BUT_TIME_DETECT;
-                            hold = BUT_COUNT_FAST;
-                        } else if (hold >= BUT_COUNT_HOLD) {
-                            sButton.Count = BUT_TIME_DETECT - 2;
-                        } else {
+                        
+                        if (hold < BUT_COUNT_FAST/2) {
                             sButton.Count = 0;
                         }
-                    } else {
-                        sButton.Count = 0;  
+                        else if (hold < BUT_COUNT_FAST*3) {
+                            sButton.Count = BUT_TIME_DETECT - 15; 
+                        }
+                        else if (hold < BUT_COUNT_FAST*4) {
+                            sButton.Count = BUT_TIME_DETECT - 10; 
+                        }
+                        else {
+                            sButton.Count = BUT_TIME_DETECT - 2;                
+                            hold = BUT_COUNT_FAST*4;               
+                        }
+                    }
+                    else
+                    {
+                        sButton.Count = 0;
                         hold = 0;
-                    } 
-                                
+                    }
                     last_value = r_value;
                 }
-  				break;
-			default:
+                break;
+
+            default:
                 last_value = 0;
-				sButton.Count = BUT_TIME_DETECT/2;
+                sButton.Count = BUT_TIME_DETECT/2;
                 hold = 0;
-				break;
-		}
-	}
+                break;
+        }
+    }
 
     return sButton.Value;
 }
+
+//uint8_t BUTTON_scan(void)
+//{
+//    uint8_t r_value = 0;
+//    static uint8_t last_value = 0;
+//    static uint32_t hold = 0;
+//    
+//	if (sButton.Status == 0)
+//	{
+//		r_value = (!BUTTON_ENTER<<0)|(!BUTTON_UP<<1)|(!BUTTON_DOWN<<2)|(!BUTTON_ESC<<3);
+//        
+//		switch(r_value)
+//		{
+//			case _ENTER:
+//            case _UP:
+//            case _DOWN:
+//            case _ESC:
+//                sButton.Count++;
+//                if (sButton.Count >= BUT_TIME_DETECT) {
+//                    sButton.Value = r_value;
+//                    sButton.Status = 1;
+//                    
+//                    if ( r_value == last_value ) {
+//                        hold++;
+//                        if ( hold >= BUT_COUNT_FAST ) {
+//                            sButton.Count = BUT_TIME_DETECT;
+//                            hold = BUT_COUNT_FAST;
+//                        } else if (hold >= BUT_COUNT_HOLD) {
+//                            sButton.Count = BUT_TIME_DETECT - 2;
+//                        } else {
+//                            sButton.Count = 0;
+//                        }
+//                    } else {
+//                        sButton.Count = 0;  
+//                        hold = 0;
+//                    } 
+//                                
+//                    last_value = r_value;
+//                }
+//  				break;
+//			default:
+//                last_value = 0;
+//				sButton.Count = BUT_TIME_DETECT/2;
+//                hold = 0;
+//				break;
+//		}
+//	}
+//
+//    return sButton.Value;
+//}
 
 static char aTEST[10] = {"1234"};
 //static sPressureLinearInter sPressConfig = {0};
@@ -149,6 +218,13 @@ void BUTTON_Enter_Process (void)
                     UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
                     Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SET_OFFSET, 0,
                                        __SET_OFFSET_TURB, __SET_OFFSET_TURB, __SET_OFFSET_TEMP,
+                                       NULL, 0xF1);
+                    break;
+                    
+                case __SCR_SET_ALARM:
+                    UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                    Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SET_ALARM, 0,
+                                       __SET_ALARM_STATE, __SET_ALARM_STATE, __SET_ALARM_LOWER,
                                        NULL, 0xF1);
                     break;
                     
@@ -494,6 +570,86 @@ void BUTTON_Enter_Process (void)
                     break;
             }
             break;
+            
+        case _LCD_SCR_SET_ALARM:
+            switch(sLCD.sScreenNow.Para_u8)
+            {
+                case __SET_ALARM_STATE:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SET_ALARM, (sLCD.sScreenNow.SubIndex_u8+1),
+                                               __SET_ALARM_STATE, __SET_ALARM_STATE, __SET_ALARM_LOWER,
+                                               &sButton.Old_value, 0xF2);
+                            sButton.Old_value = sTempAlarm.State;
+                            break;
+                            
+                        case 1:
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_CHECK_SETTING, 0,
+                                               __CHECK_STATE_SETTING, __CHECK_STATE_SETTING, __CHECK_STATE_SETTING,
+                                               NULL, 0xF0);
+                            sParaDisplay.State_Setting = _STATE_SETTING_ENTER;
+                            break;
+                            
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                case __SET_ALARM_UPPER:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SET_ALARM, (sLCD.sScreenNow.SubIndex_u8+1),
+                                               __SET_ALARM_UPPER, __SET_ALARM_STATE, __SET_ALARM_LOWER,
+                                               &sButton.Old_value, 0xF2);
+                            sButton.Old_value = sParaDisplay.Alarm_Upper_i32;
+                            break;
+                            
+                        case 1:
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_CHECK_SETTING, 0,
+                                               __CHECK_STATE_SETTING, __CHECK_STATE_SETTING, __CHECK_STATE_SETTING,
+                                               NULL, 0xF0);
+                            sParaDisplay.State_Setting = _STATE_SETTING_ENTER;
+                            break;
+                            
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                case __SET_ALARM_LOWER:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SET_ALARM, (sLCD.sScreenNow.SubIndex_u8+1),
+                                               __SET_ALARM_LOWER, __SET_ALARM_STATE, __SET_ALARM_LOWER,
+                                               &sButton.Old_value, 0xF2);
+                            sButton.Old_value = sParaDisplay.Alarm_Lower_i32;
+                            break;
+                            
+                        case 1:
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_CHECK_SETTING, 0,
+                                               __CHECK_STATE_SETTING, __CHECK_STATE_SETTING, __CHECK_STATE_SETTING,
+                                               NULL, 0xF0);
+                            sParaDisplay.State_Setting = _STATE_SETTING_ENTER;
+                            break;
+                            
+                        default:
+                            break;
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+            break;
  
         case _LCD_SCR_CHECK_SETTING:
           switch(sLCD.sScreenBack.Index_u8)
@@ -535,6 +691,28 @@ void BUTTON_Enter_Process (void)
                       
                     case __SET_OFFSET_TEMP:
                       Save_ParamCalib(sSensor_Turb.Turb_Offset_f, ((float)sButton.Old_value/Calculator_Scale(sParaDisplay.Scale_Temp)));
+                      break;
+                      
+                    default:
+                      break;
+                }
+                break;
+                
+              case _LCD_SCR_SET_ALARM:
+                sParaDisplay.State_Setting = _STATE_SETTING_DONE;
+                On_Speaker(50);
+                switch (sLCD.sScreenBack.Para_u8)
+                {
+                    case __SET_ALARM_STATE:
+                      Save_TempAlarm((uint8_t)(sButton.Old_value), sTempAlarm.Alarm_Lower, sTempAlarm.Alarm_Upper);
+                      break;
+                      
+                    case __SET_ALARM_UPPER:
+                      Save_TempAlarm(sTempAlarm.State, sTempAlarm.Alarm_Lower, ((float)sButton.Old_value/Calculator_Scale(sParaDisplay.Scale_Alarm)));
+                      break;
+                      
+                    case __SET_ALARM_LOWER:
+                      Save_TempAlarm(sTempAlarm.State, ((float)sButton.Old_value/Calculator_Scale(sParaDisplay.Scale_Alarm)), sTempAlarm.Alarm_Upper);
                       break;
                       
                     default:
@@ -840,6 +1018,74 @@ void BUTTON_Up_Process (void)
             }
           }
           break;
+          
+        case _LCD_SCR_SET_ALARM:
+          if(sLCD.sScreenNow.SubIndex_u8 == 0)
+          {
+                if (sLCD.sScreenNow.Para_u8 > sLCD.sScreenNow.ParaMin_u8 ) {
+                    sLCD.sScreenNow.Para_u8--;
+                }
+                Display_Set_Screen_Flag(&sLCD.sScreenNow, NULL, 0xF1);
+          }
+          else
+          {
+            switch (sLCD.sScreenNow.Para_u8)
+            {
+                case __SET_ALARM_STATE:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            break;
+                            
+                        case 1:
+                            if(sButton.Old_value == 0)
+                                sButton.Old_value = 1;
+                            else
+                                sButton.Old_value = 0;
+                            break;
+                        
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                case __SET_ALARM_UPPER:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            break;
+                            
+                        case 1:
+                            if(sButton.Old_value < ALARM_MAX*Calculator_Scale(sParaDisplay.Scale_Alarm))
+                                sButton.Old_value++;
+                            break;
+                        
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                case __SET_ALARM_LOWER:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            break;
+                            
+                        case 1:
+                            if(sButton.Old_value < sParaDisplay.Alarm_Upper_i32)
+                                sButton.Old_value++;
+                            break;
+                        
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                default:
+                    break;
+            }
+          }
+          break;
             
         default:
           break;
@@ -1129,6 +1375,74 @@ void BUTTON_Down_Process (void)
                             
                         case 1:
                             sButton.Old_value--;
+                            break;
+                        
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                default:
+                    break;
+            }
+          }
+          break;
+          
+        case _LCD_SCR_SET_ALARM:
+          if(sLCD.sScreenNow.SubIndex_u8 == 0)
+          {
+                if (sLCD.sScreenNow.Para_u8 < sLCD.sScreenNow.ParaMax_u8 ) {
+                    sLCD.sScreenNow.Para_u8++;
+                }
+                Display_Set_Screen_Flag(&sLCD.sScreenNow, NULL, 0xF1);
+          }
+          else
+          {
+            switch (sLCD.sScreenNow.Para_u8)
+            {
+                case __SET_ALARM_STATE:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            break;
+                            
+                        case 1:
+                            if(sButton.Old_value == 0)
+                                sButton.Old_value = 1;
+                            else
+                                sButton.Old_value = 0;
+                            break;
+                        
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                case __SET_ALARM_UPPER:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            break;
+                            
+                        case 1:
+                            if(sButton.Old_value > sParaDisplay.Alarm_Lower_i32)
+                                sButton.Old_value--;
+                            break;
+                        
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                case __SET_ALARM_LOWER:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            break;
+                            
+                        case 1:
+                            if(sButton.Old_value > ALARM_MIN*Calculator_Scale(sParaDisplay.Scale_Alarm))
+                                sButton.Old_value--;
                             break;
                         
                         default:
@@ -1453,6 +1767,80 @@ void BUTTON_ESC_Process (void)
                     }
                     break;
                 
+              default:
+                break;
+          }
+          break;
+          
+        case _LCD_SCR_SET_ALARM:
+          switch(sLCD.sScreenNow.Para_u8)
+          {
+                case __SET_ALARM_STATE:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SETTING, 0,
+                                                __SCR_SET_ALARM, __SCR_SET_MODBUS, __SCR_SET_INFOR,
+                                                NULL, 0xF1);
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            break;             
+                          
+                        case 1:
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SET_ALARM, (sLCD.sScreenNow.SubIndex_u8-1),
+                                               __SET_ALARM_STATE, __SET_ALARM_STATE, __SET_ALARM_LOWER,
+                                               &sTempAlarm.State, 0xF1);
+                            break;
+                            
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                case __SET_ALARM_UPPER:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SETTING, 0,
+                                                __SCR_SET_ALARM, __SCR_SET_MODBUS, __SCR_SET_INFOR,
+                                                NULL, 0xF1);
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            break;             
+                          
+                        case 1:
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SET_ALARM, (sLCD.sScreenNow.SubIndex_u8-1),
+                                               __SET_ALARM_UPPER, __SET_ALARM_STATE, __SET_ALARM_LOWER,
+                                               &sParaDisplay.Alarm_Upper_i32, 0xF1);
+                            break;
+                            
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                case __SET_ALARM_LOWER:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SETTING, 0,
+                                                __SCR_SET_ALARM, __SCR_SET_MODBUS, __SCR_SET_INFOR,
+                                                NULL, 0xF1);
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            break;             
+                          
+                        case 1:
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SET_ALARM, (sLCD.sScreenNow.SubIndex_u8-1),
+                                               __SET_ALARM_LOWER, __SET_ALARM_STATE, __SET_ALARM_LOWER,
+                                               &sParaDisplay.Alarm_Lower_i32, 0xF1);
+                            break;
+                            
+                        default:
+                            break;
+                    }
+                    break;
+
               default:
                 break;
           }

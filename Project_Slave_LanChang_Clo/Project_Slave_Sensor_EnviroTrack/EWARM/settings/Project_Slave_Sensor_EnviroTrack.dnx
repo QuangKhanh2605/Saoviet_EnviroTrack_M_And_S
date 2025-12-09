@@ -20,7 +20,7 @@
         <LeaveTargetRunning>_ 0</LeaveTargetRunning>
     </StLinkDriver>
     <DebugChecksum>
-        <Checksum>1942911647</Checksum>
+        <Checksum>941250497</Checksum>
     </DebugChecksum>
     <Exceptions>
         <StopOnUncaught>_ 0</StopOnUncaught>
@@ -59,6 +59,7 @@
     <struct_types>
         <Fmt0>Struct_KindMode485-Recv	3	0</Fmt0>
         <Fmt1>Struct_KindMode485-Trans	3	0</Fmt1>
+        <Fmt2>struct_TempAlarm-State	3	0</Fmt2>
     </struct_types>
     <Trace2>
         <Enabled>0</Enabled>

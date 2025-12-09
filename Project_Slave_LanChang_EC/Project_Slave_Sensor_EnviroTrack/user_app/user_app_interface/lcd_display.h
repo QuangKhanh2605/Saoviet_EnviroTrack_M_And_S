@@ -56,6 +56,7 @@ typedef enum
     __SCR_SET_MODBUS,
     __SCR_SET_CALIB,
     __SCR_SET_OFFSET,
+    __SCR_SET_ALARM,
     __SCR_SET_INFOR,
     
     __SET_MODBUS_TITLE,
@@ -72,6 +73,11 @@ typedef enum
     __SET_OFFSET_TDS,
     __SET_OFFSET_SALINITY,
     __SET_OFFSET_TEMP,
+    
+    __SET_ALARM_TITLE,
+    __SET_ALARM_STATE,
+    __SET_ALARM_UPPER,
+    __SET_ALARM_LOWER,
 
     __SCR_INFOR_TITLE,
     __SCR_INFOR_FW_VERSION_1,
@@ -96,6 +102,7 @@ typedef enum
     _LCD_SCR_SET_MODBUS,
     _LCD_SCR_SET_CALIB_SS_EC,
     _LCD_SCR_SET_OFFSET,
+    _LCD_SCR_SET_ALARM,
     
     _LCD_SCR_SET_INFORMATION,
     
@@ -173,6 +180,7 @@ typedef struct
     uint8_t     Scale_TDS;
     uint8_t     Scale_Salt;
     uint8_t     Scale_Temp;
+    uint8_t     Scale_Alarm;
     
     int32_t     EC_Value_i32;
     int32_t     TDS_Value_i32;
@@ -191,6 +199,9 @@ typedef struct
     
     int32_t     EC_Calib_Const_i32;
     int32_t     EC_Calib_Value_i32;
+    
+    int32_t     Alarm_Upper_i32;
+    int32_t     Alarm_Lower_i32;
 }sParameter_Display;
 
 extern sEvent_struct        sEventDisplay[];

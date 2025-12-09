@@ -29,6 +29,7 @@ sLCDinformation      sLCD;
 sParameter_Display   sParaDisplay = {
     .Scale_pH    = 0xFE,
     .Scale_Temp  = 0xFE,
+    .Scale_Alarm  = 0xFE,
 };
 
 sData   sModelVersion = {(uint8_t *) "SV_ENVI_LC_PH", 13}; 
@@ -56,7 +57,8 @@ sOjectInformation  sLCDObject[] =
     {   __SCR_SET_MODBUS, "1.Modbus RTU",     NULL,   _DTYPE_STRING,   0,      NULL,      2,   18, 0x00,      _LCD_SCR_SETTING },
     {   __SCR_SET_CALIB,  "2.Calibration",    NULL,   _DTYPE_STRING,   0,      NULL,      3,   18, 0x00,      _LCD_SCR_SETTING },
     {   __SCR_SET_OFFSET, "3.Offset",         NULL,   _DTYPE_STRING,   0,      NULL,      4,   18, 0x00,      _LCD_SCR_SETTING },
-    {   __SCR_SET_INFOR,  "4.Information",    NULL,   _DTYPE_STRING,   0,      NULL,      5,   18, 0x00,      _LCD_SCR_SETTING },
+    {   __SCR_SET_ALARM,  "4.Warning",        NULL,   _DTYPE_STRING,   0,      NULL,      5,   18, 0x00,      _LCD_SCR_SETTING },
+    {   __SCR_SET_INFOR,  "5.Information",    NULL,   _DTYPE_STRING,   0,      NULL,      6,   18, 0x00,      _LCD_SCR_SETTING },
     
     {   __SET_MODBUS_TITLE,     "SET MODBUS RTU", NULL,   _DTYPE_STRING,   0,      NULL,      0,   0, 0x00,   _LCD_SCR_SET_MODBUS },
     {   __SET_MODBUS_ID,        "1.ID      : ",   NULL,   _DTYPE_U8,       0x00,   NULL,      2,   4, 0x00,   _LCD_SCR_SET_MODBUS },
@@ -73,6 +75,11 @@ sOjectInformation  sLCDObject[] =
     {   __SET_OFFSET_TITLE, "OFFSET",           NULL,   _DTYPE_STRING,  0,      NULL,       0,  0, 0x00,     _LCD_SCR_SET_OFFSET},
     {   __SET_OFFSET_PH,    "1.pH_ATC: ",       NULL,   _DTYPE_I32,     0,   " pH",       2,  0, 0x00,    _LCD_SCR_SET_OFFSET},
     {   __SET_OFFSET_TEMP,  "2.Temp  : ",       NULL,   _DTYPE_I32,     0,   " ‰C",       3,  0, 0x00,    _LCD_SCR_SET_OFFSET},
+    
+    {   __SET_ALARM_TITLE,      "WARNING PH",      NULL,    _DTYPE_STRING,  0,      NULL,        0,  0, 0x00,    _LCD_SCR_SET_ALARM},
+    {   __SET_ALARM_STATE,      "1.State: ",       NULL,    _DTYPE_I32,     0,      NULL,        2,  0, 0x00,    _LCD_SCR_SET_ALARM},
+    {   __SET_ALARM_UPPER,      "2.Upper: ",       NULL,    _DTYPE_I32,     0,      " pH",    3,  0, 0x00,    _LCD_SCR_SET_ALARM},
+    {   __SET_ALARM_LOWER,      "3.Lower: ",       NULL,    _DTYPE_I32,     0,      " pH",    4,  0, 0x00,    _LCD_SCR_SET_ALARM},
     
     {   __SCR_INFOR_TITLE,          "Infor.",   NULL,   _DTYPE_STRING,   0,      NULL,      0,   0, 0x00,    _LCD_SCR_SET_INFORMATION },
     {   __SCR_INFOR_FW_VERSION_1,   "*Version", NULL,   _DTYPE_STRING,   0,      NULL,      2,   28, 0x00,   _LCD_SCR_SET_INFORMATION },
@@ -121,7 +128,13 @@ void Display_Init (void)
     sLCDObject[__SET_OFFSET_PH].pData       = &sParaDisplay.pH_Offset_i32; 
     sLCDObject[__SET_OFFSET_PH].Scale_u8    = sParaDisplay.Scale_pH;    
     sLCDObject[__SET_OFFSET_TEMP].pData     = &sParaDisplay.temp_Offset_i32; 
-    sLCDObject[__SET_OFFSET_TEMP].Scale_u8  = sParaDisplay.Scale_Temp;    
+    sLCDObject[__SET_OFFSET_TEMP].Scale_u8  = sParaDisplay.Scale_Temp;  
+    
+    sLCDObject[__SET_ALARM_STATE].pData         = &sTempAlarm.State;
+    sLCDObject[__SET_ALARM_UPPER].pData         = &sParaDisplay.Alarm_Upper_i32;
+    sLCDObject[__SET_ALARM_UPPER].Scale_u8      = sParaDisplay.Scale_Alarm; 
+    sLCDObject[__SET_ALARM_LOWER].pData         = &sParaDisplay.Alarm_Lower_i32;
+    sLCDObject[__SET_ALARM_LOWER].Scale_u8      = sParaDisplay.Scale_Alarm; 
 
     sLCDObject[__SCR_INFOR_FW_VERSION_2].pData   = sFirmVersion.Data_a8;
     sLCDObject[__SCR_INFOR_MODEL_2].pData   = sModelVersion.Data_a8;
@@ -366,6 +379,9 @@ void Update_ParaDisplay(void)
     
     sParaDisplay.pH_Offset_i32   = (int32_t)(sSensor_pH.pH_Offset_f * Calculator_Scale(sParaDisplay.Scale_pH));
     sParaDisplay.temp_Offset_i32 = (int32_t)(sSensor_pH.temp_Offset_f * Calculator_Scale(sParaDisplay.Scale_Temp));
+    
+    sParaDisplay.Alarm_Upper_i32 = (int32_t)(sTempAlarm.Alarm_Upper * Calculator_Scale(sParaDisplay.Scale_Alarm));
+    sParaDisplay.Alarm_Lower_i32 = (int32_t)(sTempAlarm.Alarm_Lower * Calculator_Scale(sParaDisplay.Scale_Alarm));
 }
 
 void Display_Show_Oject (uint8_t object)

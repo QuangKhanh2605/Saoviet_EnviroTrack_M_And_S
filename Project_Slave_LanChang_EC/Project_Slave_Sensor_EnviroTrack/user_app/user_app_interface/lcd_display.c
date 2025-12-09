@@ -31,6 +31,7 @@ sParameter_Display   sParaDisplay = {
     .Scale_TDS   = 0xFE,
     .Scale_Salt  = 0xFF,
     .Scale_Temp  = 0xFE,
+    .Scale_Alarm = 0x00,
 };
 
 sData   sModelVersion = {(uint8_t *) "SV_ENVI_LC_EC", 13}; 
@@ -56,18 +57,19 @@ sOjectInformation  sLCDObject[] =
     {   __PASS_WORD_1,    "Enter Password",   NULL,   _DTYPE_STRING,   0,      NULL,      2,  24, 0x00,      _LCD_SCR_PASS    },
     {   __PASS_WORD_2,    NULL,               NULL,   _DTYPE_STRING,   0,      NULL,      3,  48, 0x00,      _LCD_SCR_PASS    },
     
-    {   __SCR_SET_TITLE,  "SETTING",          NULL,   _DTYPE_STRING,   0,      NULL,      0,   0, 0x00,      _LCD_SCR_SETTING },
+    {   __SCR_SET_TITLE,  "SETTING",          NULL,   _DTYPE_STRING,   0,      NULL,      0,   0, 0x00,       _LCD_SCR_SETTING },
     {   __SCR_SET_MODBUS, "1.Modbus RTU",     NULL,   _DTYPE_STRING,   0,      NULL,      2,   18, 0x00,      _LCD_SCR_SETTING },
     {   __SCR_SET_CALIB,  "2.Calibration",    NULL,   _DTYPE_STRING,   0,      NULL,      3,   18, 0x00,      _LCD_SCR_SETTING },
     {   __SCR_SET_OFFSET, "3.Offset",         NULL,   _DTYPE_STRING,   0,      NULL,      4,   18, 0x00,      _LCD_SCR_SETTING },
-    {   __SCR_SET_INFOR,  "4.Information",    NULL,   _DTYPE_STRING,   0,      NULL,      5,   18, 0x00,      _LCD_SCR_SETTING },
+    {   __SCR_SET_ALARM,  "4.Warning",        NULL,   _DTYPE_STRING,   0,      NULL,      5,   18, 0x00,      _LCD_SCR_SETTING },
+    {   __SCR_SET_INFOR,  "5.Information",    NULL,   _DTYPE_STRING,   0,      NULL,      6,   18, 0x00,      _LCD_SCR_SETTING },
     
     {   __SET_MODBUS_TITLE,     "SET MODBUS RTU", NULL,   _DTYPE_STRING,   0,      NULL,      0,   0, 0x00,     _LCD_SCR_SET_MODBUS },
     {   __SET_MODBUS_ID,        "1.ID      : ",   NULL,   _DTYPE_U8,       0x00,   NULL,      2,   4, 0x00,      _LCD_SCR_SET_MODBUS },
     {   __SET_MODBUS_BR,        "2.Baudrate: ",   NULL,   _DTYPE_U32,      0x00,   NULL,      3,   4, 0x00,      _LCD_SCR_SET_MODBUS },
 
     {   __SET_EC_TITLE,     "CALIB SENSOR",     NULL,   _DTYPE_STRING,   0,  NULL,       0,  0,  0x00,    _LCD_SCR_SET_CALIB_SS_EC},
-    {   __SET_EC_TITLE_1,   "EC         AD: ",  NULL,   _DTYPE_I16,      0,  NULL,       2,  5,  0x00,    _LCD_SCR_SET_CALIB_SS_EC},
+    {   __SET_EC_TITLE_1,   "EC: ",  NULL,   _DTYPE_I16,      0,  NULL,       2,  5,  0x00,    _LCD_SCR_SET_CALIB_SS_EC},
     {   __SET_EC_CONST,     "1.Const: ",        NULL,   _DTYPE_I16,      0,  NULL,       3,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_EC},
     {   __SET_EC_CALIB,     "2.Calib: ",        NULL,   _DTYPE_I16,      0,  NULL,       4,  14, 0x00,    _LCD_SCR_SET_CALIB_SS_EC},
     
@@ -76,6 +78,11 @@ sOjectInformation  sLCDObject[] =
     {   __SET_OFFSET_TDS,       "2.TDS  : ",       NULL,    _DTYPE_I32,     0,   " mg/L",    3,  0, 0x00,    _LCD_SCR_SET_OFFSET},
     {   __SET_OFFSET_SALINITY,  "3.Salt : ",       NULL,    _DTYPE_I32,     0,   "  %",      4,  0, 0x00,    _LCD_SCR_SET_OFFSET},
     {   __SET_OFFSET_TEMP,      "4.Temp : ",       NULL,    _DTYPE_I32,     0,   "  ‰C",     5,  0, 0x00,    _LCD_SCR_SET_OFFSET},
+    
+    {   __SET_ALARM_TITLE,      "WARNING EC",      NULL,    _DTYPE_STRING,  0,      NULL,        0,  0, 0x00,    _LCD_SCR_SET_ALARM},
+    {   __SET_ALARM_STATE,      "1.State: ",       NULL,    _DTYPE_I32,     0,      NULL,        2,  0, 0x00,    _LCD_SCR_SET_ALARM},
+    {   __SET_ALARM_UPPER,      "2.Upper: ",       NULL,    _DTYPE_I32,     0,      " uS/cm",    3,  0, 0x00,    _LCD_SCR_SET_ALARM},
+    {   __SET_ALARM_LOWER,      "3.Lower: ",       NULL,    _DTYPE_I32,     0,      " uS/cm",    4,  0, 0x00,    _LCD_SCR_SET_ALARM},
     
     {   __SCR_INFOR_TITLE,          "Infor.",   NULL,   _DTYPE_STRING,   0,      NULL,      0,   0, 0x00,           _LCD_SCR_SET_INFORMATION },
     {   __SCR_INFOR_FW_VERSION_1,     "*Version",       NULL,   _DTYPE_STRING,   0,      NULL,      2,   28, 0x00,      _LCD_SCR_SET_INFORMATION },
@@ -116,7 +123,7 @@ void Display_Init (void)
     sLCDObject[__SC1_TEMP].pData       = &sParaDisplay.Temp_Filter_i32;    
     sLCDObject[__SC1_TEMP].Scale_u8    = sParaDisplay.Scale_Temp; 
     
-    sLCDObject[__SET_EC_TITLE_1].pData    = &sParaDisplay.EC_Filter_i32; 
+    sLCDObject[__SET_EC_TITLE_1].pData    = &sParaDisplay.EC_Value_i32; 
     sLCDObject[__SET_EC_TITLE_1].Scale_u8      = sParaDisplay.Scale_EC; 
     
     sLCDObject[__SET_EC_CONST].pData    = &sParaDisplay.EC_Calib_Const_i32; 
@@ -132,6 +139,12 @@ void Display_Init (void)
     sLCDObject[__SET_OFFSET_SALINITY].Scale_u8  = sParaDisplay.Scale_Salt; 
     sLCDObject[__SET_OFFSET_TEMP].pData         = &sParaDisplay.temp_Offset_i32;
     sLCDObject[__SET_OFFSET_TEMP].Scale_u8      = sParaDisplay.Scale_Temp; 
+    
+    sLCDObject[__SET_ALARM_STATE].pData         = &sTempAlarm.State;
+    sLCDObject[__SET_ALARM_UPPER].pData         = &sParaDisplay.Alarm_Upper_i32;
+    sLCDObject[__SET_ALARM_UPPER].Scale_u8      = sParaDisplay.Scale_Alarm; 
+    sLCDObject[__SET_ALARM_LOWER].pData         = &sParaDisplay.Alarm_Lower_i32;
+    sLCDObject[__SET_ALARM_LOWER].Scale_u8      = sParaDisplay.Scale_Alarm; 
 
     sLCDObject[__SCR_INFOR_FW_VERSION_2].pData   = sFirmVersion.Data_a8;
     sLCDObject[__SCR_INFOR_MODEL_2].pData   = sModelVersion.Data_a8;
@@ -382,6 +395,9 @@ void Update_ParaDisplay(void)
     sParaDisplay.TDS_Offset_i32  = (int32_t)(sSensor_EC.TDS_Offset_f * Calculator_Scale(sParaDisplay.Scale_TDS));
     sParaDisplay.Salinity_Offset_i32 = (int32_t)(sSensor_EC.Salinity_Offset_f * Calculator_Scale(sParaDisplay.Scale_Salt));
     sParaDisplay.temp_Offset_i32 = (int32_t)(sSensor_EC.temp_Offset_f * Calculator_Scale(sParaDisplay.Scale_Temp));
+    
+    sParaDisplay.Alarm_Upper_i32 = (int32_t)(sTempAlarm.Alarm_Upper * Calculator_Scale(sParaDisplay.Scale_Alarm));
+    sParaDisplay.Alarm_Lower_i32 = (int32_t)(sTempAlarm.Alarm_Lower * Calculator_Scale(sParaDisplay.Scale_Alarm));
     
     sParaDisplay.EC_Calib_Const_i32 = (int32_t)(sSensor_EC.EC_Calib_Const_f*1000);
     sParaDisplay.EC_Calib_Value_i32 = (int32_t)(sSensor_EC.EC_Calib_Value_f * Calculator_Scale(sParaDisplay.Scale_EC));

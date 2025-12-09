@@ -15,6 +15,10 @@ typedef enum
     _E_REGISTER_PH_MEASURE,
     _E_REGISTER_TEMP_MEASURE,
     
+    _E_REGISTER_ALARM_STATE,
+    _E_REGISTER_ALARM_UPPER,
+    _E_REGISTER_ALARM_LOWER,
+    
     _E_REGISTER_END,
 }eRegister_ModbusRTU;
 

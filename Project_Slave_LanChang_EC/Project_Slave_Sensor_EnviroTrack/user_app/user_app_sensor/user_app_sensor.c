@@ -27,7 +27,7 @@ sEvent_struct               sEventAppSensor[]=
   {_EVENT_SENSOR_WAIT_CALIB,         0, 5, 5000,             fevent_sensor_wait_calib},
   
   {_EVENT_DETECT_CONNECT,            1, 5, 15000,            fevent_detect_connect},
-  {_EVENT_TEMP_ALARM,                1, 5, 2000,             fevent_temp_alarm},
+  {_EVENT_TEMP_ALARM,                1, 5, 60000,            fevent_temp_alarm},
   
   {_EVENT_SENSOR_RESET,              1, 0, 2000,             fevent_sensor_reset},
 };
@@ -174,19 +174,27 @@ static uint8_t fevent_detect_connect(uint8_t event)
 
 static uint8_t fevent_temp_alarm(uint8_t event)
 {
-//    if(sTempAlarm.State == 1)
-//    {
-//        if((sSensorTemp.TempObject_f > sTempAlarm.Alarm_Upper) || 
-//           (sSensorTemp.TempObject_f < sTempAlarm.Alarm_Lower))
-//        {
-//            ALARM_ON;
-//        }
-//        else
-//            ALARM_OFF;
-//    }
-//    else 
-//        ALARM_OFF;
+    if(sTempAlarm.State == 1 && sHandleRs485.State_Recv_EC == 1)
+    {
+        if((sSensor_EC.EC_Filter_f >= sTempAlarm.Alarm_Upper) || 
+           (sSensor_EC.EC_Filter_f < sTempAlarm.Alarm_Lower))
+        {
+            HAL_GPIO_WritePin(MCU_RL1_GPIO_Port, MCU_RL1_Pin, GPIO_PIN_SET); 
+            HAL_GPIO_WritePin(MCU_RL2_GPIO_Port, MCU_RL2_Pin, GPIO_PIN_SET); 
+        }
+        else
+        {
+            HAL_GPIO_WritePin(MCU_RL1_GPIO_Port, MCU_RL1_Pin, GPIO_PIN_RESET); 
+            HAL_GPIO_WritePin(MCU_RL2_GPIO_Port, MCU_RL2_Pin, GPIO_PIN_RESET); 
+        }
+    }
+    else 
+    {
+        HAL_GPIO_WritePin(MCU_RL1_GPIO_Port, MCU_RL1_Pin, GPIO_PIN_RESET); 
+        HAL_GPIO_WritePin(MCU_RL2_GPIO_Port, MCU_RL2_Pin, GPIO_PIN_RESET); 
+    }
     
+    sEventAppSensor[_EVENT_TEMP_ALARM].e_period = 1000;
     fevent_enable(sEventAppSensor, event);
     return 1;
 }
@@ -425,6 +433,7 @@ void Handle_Data_Recv_SS_EC(sData sDataRS485, uint8_t KindRecv)
 //          else 
 //            sSensor_EC.sConductivity_Value.Value = 32760;
           Convert_uint32Hex_To_Float(Stamp_Hex, &sSensor_EC.EC_Value_f);
+          sSensor_EC.EC_Value_f *=1000;
           
           Stamp_Hex = Read_Register_Rs485(sDataRS485.Data_a8, &Pos, 4);
 //          sSensor_EC.sResistivity_Value.Value =  Handle_HexFloat_To_Int32_Round(Stamp_Hex, sSensor_EC.sResistivity_Value.Scale);
@@ -450,6 +459,7 @@ void Handle_Data_Recv_SS_EC(sData sDataRS485, uint8_t KindRecv)
           
           Stamp_Hex = Read_Register_Rs485(sDataRS485.Data_a8, &Pos, 4);
           Convert_uint32Hex_To_Float(Stamp_Hex, &sSensor_EC.EC_Value_f);
+          sSensor_EC.EC_Value_f *=1000;
           sSensor_EC.EC_Calib_Value_f= sSensor_EC.EC_Value_f;
           
           Stamp_Hex = Read_Register_Rs485(sDataRS485.Data_a8, &Pos, 16);
@@ -756,8 +766,8 @@ void Init_TempAlarm(void)
     else
     {
         sTempAlarm.State = 0;
-        sTempAlarm.Alarm_Upper = LEVEL_MIN;
-        sTempAlarm.Alarm_Lower = LEVEL_MAX;
+        sTempAlarm.Alarm_Upper = ALARM_MAX;
+        sTempAlarm.Alarm_Lower = ALARM_MIN;
     }
 #endif   
 }
@@ -787,8 +797,8 @@ void AT_CMD_Restore_Slave(sData *str, uint16_t Pos)
     
     OnchipFlashPageErase(ADDR_TEMPERATURE_ALARM);
     sTempAlarm.State = 0;
-    sTempAlarm.Alarm_Upper = LEVEL_MAX;
-    sTempAlarm.Alarm_Lower = LEVEL_MIN;
+    sTempAlarm.Alarm_Upper = ALARM_MAX;
+    sTempAlarm.Alarm_Lower = ALARM_MIN;
     
     
     Insert_String_To_String(aTemp, &length, (uint8_t*)"Restore OK!\r\n",0 , 13);

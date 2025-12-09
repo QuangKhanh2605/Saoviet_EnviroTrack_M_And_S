@@ -72,6 +72,7 @@ void glcd_init(void)
 	glcd_reset();
 	glcd_enable_backlight(ENABLE);
 	glcd_ST7565R_init();
+    glcd_clear();
 
 #else
 	#error "Controller not supported by STM32F0xx"
@@ -205,8 +206,10 @@ void glcd_reset(void)
 
 
 	delay_ms(GLCD_RESET_TIME);
+    delay_ms(5);
 	//DelayTask(GLCD_RESET_TIME);
 	GLCD_RESET_HIGH();
+    delay_ms(5);
 	GLCD_DESELECT();
 }
 

@@ -10,8 +10,12 @@
 
 #define NUMBER_SAMPLING_SS      10
 
-#define LEVEL_MIN               50
-#define LEVEL_MAX               600
+#define EC_RANGE_MAX            2000    // don vi (us/cm)
+#define TDS_RANGE_MAX           2000    // don vi (mg/L)
+#define SALINITY_RANGE_MAX      100     // don vi (%)
+
+#define ALARM_MIN               0
+#define ALARM_MAX               EC_RANGE_MAX
 
 #define CURR_OUT_MIN            4
 #define CURR_OUT_MAX            20
@@ -19,9 +23,7 @@
 #define DAC_MIN                 0
 #define DAC_MAX                 4095
 
-#define EC_RANGE_MAX            2000    // don vi (us/cm)
-#define TDS_RANGE_MAX           2000    // don vi (mg/L)
-#define SALINITY_RANGE_MAX      100     // don vi (%)
+
 
 typedef enum
 {
