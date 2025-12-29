@@ -869,7 +869,7 @@
                     <item>Const_Compensation_Clo</item>
                     <item>Clo_Var</item>
                     <item>sTempAlarm</item>
-                    <item></item>
+                    <item />
                 </expressions>
                 <col-names>
                     <item>Expression</item>
