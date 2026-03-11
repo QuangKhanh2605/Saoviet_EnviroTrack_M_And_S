@@ -228,6 +228,13 @@ void BUTTON_Enter_Process (void)
                                        NULL, 0xF1);
                     break;
                     
+                case __SCR_SET_RANGE:
+                    UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                    Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SET_RANGE, 0,
+                                       __SET_RANGE_U_KEY, __SET_RANGE_U_KEY, __SET_RANGE_L_TEMP,
+                                       NULL, 0xF1);
+                    break;
+                    
                 case __SCR_SET_INFOR:
                     UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
                     Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SET_INFORMATION, 0,
@@ -472,6 +479,7 @@ void BUTTON_Enter_Process (void)
                                                __SET_ALARM_STATE, __SET_ALARM_STATE, __SET_ALARM_LOWER,
                                                &sButton.Old_value, 0xF2);
                             sButton.Old_value = sTempAlarm.State;
+                            sParaDisplay.aAlarm_State_u8 = (uint8_t *)&sButton.Old_value;
                             break;
                             
                         case 1:
@@ -520,6 +528,110 @@ void BUTTON_Enter_Process (void)
                                                __SET_ALARM_LOWER, __SET_ALARM_STATE, __SET_ALARM_LOWER,
                                                &sButton.Old_value, 0xF2);
                             sButton.Old_value = sParaDisplay.Alarm_Lower_i32;
+                            break;
+                            
+                        case 1:
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_CHECK_SETTING, 0,
+                                               __CHECK_STATE_SETTING, __CHECK_STATE_SETTING, __CHECK_STATE_SETTING,
+                                               NULL, 0xF0);
+                            sParaDisplay.State_Setting = _STATE_SETTING_ENTER;
+                            break;
+                            
+                        default:
+                            break;
+                    }
+                    break;
+
+                default:
+                    break;
+            }
+            break;
+            
+        case _LCD_SCR_SET_RANGE:
+            switch(sLCD.sScreenNow.Para_u8)
+            {
+                case __SET_RANGE_U_KEY:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SET_RANGE, (sLCD.sScreenNow.SubIndex_u8+1),
+                                               __SET_RANGE_U_KEY, __SET_RANGE_U_KEY, __SET_RANGE_L_TEMP,
+                                               &sButton.Old_value, 0xF2);
+                            sButton.Old_value = sParaDisplay.Upper_Key_i32;
+                            break;
+                            
+                        case 1:
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_CHECK_SETTING, 0,
+                                               __CHECK_STATE_SETTING, __CHECK_STATE_SETTING, __CHECK_STATE_SETTING,
+                                               NULL, 0xF0);
+                            sParaDisplay.State_Setting = _STATE_SETTING_ENTER;
+                            break;
+                            
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                case __SET_RANGE_L_KEY:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SET_RANGE, (sLCD.sScreenNow.SubIndex_u8+1),
+                                               __SET_RANGE_L_KEY, __SET_RANGE_U_KEY, __SET_RANGE_L_TEMP,
+                                               &sButton.Old_value, 0xF2);
+                            sButton.Old_value = sParaDisplay.Lower_Key_i32;
+                            break;
+                            
+                        case 1:
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_CHECK_SETTING, 0,
+                                               __CHECK_STATE_SETTING, __CHECK_STATE_SETTING, __CHECK_STATE_SETTING,
+                                               NULL, 0xF0);
+                            sParaDisplay.State_Setting = _STATE_SETTING_ENTER;
+                            break;
+                            
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                case __SET_RANGE_U_TEMP:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SET_RANGE, (sLCD.sScreenNow.SubIndex_u8+1),
+                                               __SET_RANGE_U_TEMP, __SET_RANGE_U_KEY, __SET_RANGE_L_TEMP,
+                                               &sButton.Old_value, 0xF2);
+                            sButton.Old_value = sParaDisplay.Upper_Temp_i32;
+                            break;
+                            
+                        case 1:
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_CHECK_SETTING, 0,
+                                               __CHECK_STATE_SETTING, __CHECK_STATE_SETTING, __CHECK_STATE_SETTING,
+                                               NULL, 0xF0);
+                            sParaDisplay.State_Setting = _STATE_SETTING_ENTER;
+                            break;
+                            
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                case __SET_RANGE_L_TEMP:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SET_RANGE, (sLCD.sScreenNow.SubIndex_u8+1),
+                                               __SET_RANGE_L_TEMP, __SET_RANGE_U_KEY, __SET_RANGE_L_TEMP,
+                                               &sButton.Old_value, 0xF2);
+                            sButton.Old_value = sParaDisplay.Lower_Temp_i32;
                             break;
                             
                         case 1:
@@ -610,6 +722,32 @@ void BUTTON_Enter_Process (void)
                       
                     case __SET_ALARM_LOWER:
                       Save_TempAlarm(sTempAlarm.State, ((float)sButton.Old_value/Calculator_Scale(sParaDisplay.Scale_Alarm)), sTempAlarm.Alarm_Upper);
+                      break;
+                      
+                    default:
+                      break;
+                }
+                break;
+                
+              case _LCD_SCR_SET_RANGE:
+                sParaDisplay.State_Setting = _STATE_SETTING_DONE;
+                On_Speaker(50);
+                switch (sLCD.sScreenBack.Para_u8)
+                {
+                    case __SET_RANGE_U_KEY:
+                      Save_MeasureRange(((float)sButton.Old_value/Calculator_Scale(sParaDisplay.Scale_Range)), sMeasureRange.Lower_Key, sMeasureRange.Upper_Temp, sMeasureRange.Lower_Temp);
+                      break;
+                      
+                    case __SET_RANGE_L_KEY:
+                      Save_MeasureRange(sMeasureRange.Upper_Key,((float)sButton.Old_value/Calculator_Scale(sParaDisplay.Scale_Range)) , sMeasureRange.Upper_Temp, sMeasureRange.Lower_Temp);
+                      break;
+                      
+                    case __SET_RANGE_U_TEMP:
+                      Save_MeasureRange(sMeasureRange.Upper_Key, sMeasureRange.Lower_Key,((float)sButton.Old_value/Calculator_Scale(sParaDisplay.Scale_Range)) , sMeasureRange.Lower_Temp);
+                      break;
+                      
+                    case __SET_RANGE_L_TEMP:
+                      Save_MeasureRange(sMeasureRange.Upper_Key, sMeasureRange.Lower_Key, sMeasureRange.Upper_Temp, ((float)sButton.Old_value/Calculator_Scale(sParaDisplay.Scale_Range)));
                       break;
                       
                     default:
@@ -901,6 +1039,88 @@ void BUTTON_Up_Process (void)
           }
           break;
           
+        case _LCD_SCR_SET_RANGE:
+          if(sLCD.sScreenNow.SubIndex_u8 == 0)
+          {
+                if (sLCD.sScreenNow.Para_u8 > sLCD.sScreenNow.ParaMin_u8 ) {
+                    sLCD.sScreenNow.Para_u8--;
+                }
+                Display_Set_Screen_Flag(&sLCD.sScreenNow, NULL, 0xF1);
+          }
+          else
+          {
+            switch (sLCD.sScreenNow.Para_u8)
+            {
+                case __SET_RANGE_U_KEY:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            break;
+                            
+                        case 1:
+                            if(sButton.Old_value < RANGE_KEY_MAX*Calculator_Scale(sParaDisplay.Scale_Range))
+                                sButton.Old_value++;
+                            break;
+                        
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                case __SET_RANGE_L_KEY:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            break;
+                            
+                        case 1:
+                            if(sButton.Old_value < sParaDisplay.Upper_Key_i32)
+                                sButton.Old_value++;
+                            break;
+                        
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                case __SET_RANGE_U_TEMP:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            break;
+                            
+                        case 1:
+                            if(sButton.Old_value < RANGE_TEMP_MAX*Calculator_Scale(sParaDisplay.Scale_Range))
+                                sButton.Old_value++;
+                            break;
+                        
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                case __SET_RANGE_L_TEMP:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            break;
+                            
+                        case 1:
+                            if(sButton.Old_value < sParaDisplay.Upper_Temp_i32)
+                                sButton.Old_value++;
+                            break;
+                        
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                default:
+                    break;
+            }
+          }
+          break;
+          
         default:
           break;
     }
@@ -1175,6 +1395,88 @@ void BUTTON_Down_Process (void)
             }
           }
           break;   
+          
+        case _LCD_SCR_SET_RANGE:
+          if(sLCD.sScreenNow.SubIndex_u8 == 0)
+          {
+                if (sLCD.sScreenNow.Para_u8 < sLCD.sScreenNow.ParaMax_u8 ) {
+                    sLCD.sScreenNow.Para_u8++;
+                }
+                Display_Set_Screen_Flag(&sLCD.sScreenNow, NULL, 0xF1);
+          }
+          else
+          {
+            switch (sLCD.sScreenNow.Para_u8)
+            {
+                case __SET_RANGE_U_KEY:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            break;
+                            
+                        case 1:
+                            if(sButton.Old_value > sParaDisplay.Lower_Key_i32)
+                                sButton.Old_value--;
+                            break;
+                        
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                case __SET_RANGE_L_KEY:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            break;
+                            
+                        case 1:
+                            if(sButton.Old_value > RANGE_KEY_MIN*Calculator_Scale(sParaDisplay.Scale_Range))
+                                sButton.Old_value--;
+                            break;
+                        
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                case __SET_RANGE_U_TEMP:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            break;
+                            
+                        case 1:
+                            if(sButton.Old_value > sParaDisplay.Lower_Temp_i32)
+                                sButton.Old_value--;
+                            break;
+                        
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                case __SET_RANGE_L_TEMP:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            break;
+                            
+                        case 1:
+                            if(sButton.Old_value > RANGE_TEMP_MIN*Calculator_Scale(sParaDisplay.Scale_Range))
+                                sButton.Old_value--;
+                            break;
+                        
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                default:
+                    break;
+            }
+          }
+          break;
             
         default:
           break;
@@ -1414,6 +1716,7 @@ void BUTTON_ESC_Process (void)
                             Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SET_ALARM, (sLCD.sScreenNow.SubIndex_u8-1),
                                                __SET_ALARM_STATE, __SET_ALARM_STATE, __SET_ALARM_LOWER,
                                                &sTempAlarm.State, 0xF1);
+                            sParaDisplay.aAlarm_State_u8 = &sTempAlarm.State;
                             break;
                             
                         default:
@@ -1458,6 +1761,102 @@ void BUTTON_ESC_Process (void)
                             Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SET_ALARM, (sLCD.sScreenNow.SubIndex_u8-1),
                                                __SET_ALARM_LOWER, __SET_ALARM_STATE, __SET_ALARM_LOWER,
                                                &sParaDisplay.Alarm_Lower_i32, 0xF1);
+                            break;
+                            
+                        default:
+                            break;
+                    }
+                    break;
+
+              default:
+                break;
+          }
+          break;
+          
+        case _LCD_SCR_SET_RANGE:
+          switch(sLCD.sScreenNow.Para_u8)
+          {
+                case __SET_RANGE_U_KEY:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SETTING, 0,
+                                                __SCR_SET_RANGE, __SCR_SET_MODBUS, __SCR_SET_INFOR,
+                                                NULL, 0xF1);
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            break;             
+                          
+                        case 1:
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SET_RANGE, (sLCD.sScreenNow.SubIndex_u8-1),
+                                               __SET_RANGE_U_KEY, __SET_RANGE_U_KEY, __SET_RANGE_L_TEMP,
+                                               &sParaDisplay.Upper_Key_i32, 0xF1);
+                            break;
+                            
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                case __SET_RANGE_L_KEY:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SETTING, 0,
+                                                __SCR_SET_RANGE, __SCR_SET_MODBUS, __SCR_SET_INFOR,
+                                                NULL, 0xF1);
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            break;             
+                          
+                        case 1:
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SET_RANGE, (sLCD.sScreenNow.SubIndex_u8-1),
+                                               __SET_RANGE_L_KEY, __SET_RANGE_U_KEY, __SET_RANGE_L_TEMP,
+                                               &sParaDisplay.Lower_Key_i32, 0xF1);
+                            break;
+                            
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                case __SET_RANGE_U_TEMP:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SETTING, 0,
+                                                __SCR_SET_RANGE, __SCR_SET_MODBUS, __SCR_SET_INFOR,
+                                                NULL, 0xF1);
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            break;             
+                          
+                        case 1:
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SET_RANGE, (sLCD.sScreenNow.SubIndex_u8-1),
+                                               __SET_RANGE_U_TEMP, __SET_RANGE_U_KEY, __SET_RANGE_L_TEMP,
+                                               &sParaDisplay.Upper_Temp_i32, 0xF1);
+                            break;
+                            
+                        default:
+                            break;
+                    }
+                    break;
+                    
+                case __SET_RANGE_L_TEMP:
+                    switch(sLCD.sScreenNow.SubIndex_u8)
+                    {
+                        case 0:
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SETTING, 0,
+                                                __SCR_SET_RANGE, __SCR_SET_MODBUS, __SCR_SET_INFOR,
+                                                NULL, 0xF1);
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            break;             
+                          
+                        case 1:
+                            UTIL_MEM_cpy(&sLCD.sScreenBack, &sLCD.sScreenNow, sizeof(sScreenInformation));
+                            Display_Set_Screen(&sLCD.sScreenNow, _LCD_SCR_SET_RANGE, (sLCD.sScreenNow.SubIndex_u8-1),
+                                               __SET_RANGE_L_TEMP, __SET_RANGE_U_KEY, __SET_RANGE_L_TEMP,
+                                               &sParaDisplay.Lower_Temp_i32, 0xF1);
                             break;
                             
                         default:

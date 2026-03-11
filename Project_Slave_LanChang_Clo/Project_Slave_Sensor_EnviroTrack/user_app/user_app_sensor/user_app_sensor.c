@@ -48,6 +48,7 @@ Struct_ConvertChlorine      sConvertChlorine ={0};
 uint8_t Kind_Trans_Calib = 0;
 
 struct_TempAlarm    sTempAlarm = {0};
+struct_MeasureRange sMeasureRange = {0};
 Struct_Sensor_Clo   sSensor_Clo= {0};
 Struct_Hanlde_RS485 sHandleRs485 = {0};
 Struct_pH_Recv_Master   spHRecvMaster={0,7};
@@ -249,10 +250,11 @@ void Handle_Data_Measure(uint8_t KindRecv)
             sSensor_Clo.Clo_Filter_f = Filter_Clo(sSensor_Clo.Clo_Value_f);
             sSensor_Clo.temp_Filter_f = Filter_Temp(sSensor_Clo.temp_Value_f);
             
-            sSensor_Clo.temp_Filter_f += sSensor_Clo.temp_Offset_f;
+            Stamp = sSensor_Clo.temp_Filter_f + sSensor_Clo.temp_Offset_f;
+            sSensor_Clo.temp_Filter_f = ((Stamp) > sMeasureRange.Upper_Temp) ? sMeasureRange.Upper_Temp : ((Stamp) < sMeasureRange.Lower_Temp ? sMeasureRange.Lower_Temp : (Stamp));
             
             Stamp = sSensor_Clo.Clo_Filter_f + sSensor_Clo.Clo_Offset_f;
-            sSensor_Clo.Clo_Filter_f = ((Stamp) > CLO_RANGE_MAX) ? CLO_RANGE_MAX : ((Stamp) < 0 ? 0 : (Stamp));
+            sSensor_Clo.Clo_Filter_f = ((Stamp) > sMeasureRange.Upper_Key) ? sMeasureRange.Upper_Key : ((Stamp) < sMeasureRange.Lower_Key ? sMeasureRange.Lower_Key : (Stamp));
           break;
           
         default:
@@ -1319,6 +1321,97 @@ void Init_TempAlarm(void)
 #endif   
 }
 
+void Save_MeasureRange(float Upper_Key, float Lower_Key, float Upper_Temp, float Lower_Temp)
+{
+#ifdef USING_APP_SENSOR
+    uint8_t aData[50] = {0};
+    uint8_t length = 0;
+  
+    uint32_t hexUint_UpperKey  = 0;
+    uint32_t hexUint_LowerKey  = 0;
+    uint32_t hexUint_UpperTemp  = 0;
+    uint32_t hexUint_LowerTemp  = 0;
+    
+    sMeasureRange.Upper_Key = Upper_Key;
+    sMeasureRange.Lower_Key = Lower_Key;
+    sMeasureRange.Upper_Temp = Upper_Temp;
+    sMeasureRange.Lower_Temp = Lower_Temp;
+    
+    hexUint_UpperKey  = Handle_Float_To_hexUint32(sMeasureRange.Upper_Key);
+    hexUint_LowerKey  = Handle_Float_To_hexUint32(sMeasureRange.Lower_Key);
+    hexUint_UpperTemp  = Handle_Float_To_hexUint32(sMeasureRange.Upper_Temp);
+    hexUint_LowerTemp  = Handle_Float_To_hexUint32(sMeasureRange.Lower_Temp);
+    
+    aData[length++] = hexUint_UpperKey >> 24;
+    aData[length++] = hexUint_UpperKey >> 16;
+    aData[length++] = hexUint_UpperKey >> 8;
+    aData[length++] = hexUint_UpperKey ;
+    
+    aData[length++] = hexUint_LowerKey >> 24;
+    aData[length++] = hexUint_LowerKey >> 16;
+    aData[length++] = hexUint_LowerKey >> 8;
+    aData[length++] = hexUint_LowerKey ;
+    
+    aData[length++] = hexUint_UpperTemp >> 24;
+    aData[length++] = hexUint_UpperTemp >> 16;
+    aData[length++] = hexUint_UpperTemp >> 8;
+    aData[length++] = hexUint_UpperTemp ;
+    
+    aData[length++] = hexUint_LowerTemp >> 24;
+    aData[length++] = hexUint_LowerTemp >> 16;
+    aData[length++] = hexUint_LowerTemp >> 8;
+    aData[length++] = hexUint_LowerTemp ;
+
+    Save_Array(ADDR_RANGE_SETTING, aData, length);
+#endif   
+}
+
+void Init_MeasureRange(void)
+{
+#ifdef USING_APP_SENSOR
+  
+    uint32_t hexUint_UpperKey  = 0;
+    uint32_t hexUint_LowerKey  = 0;
+    uint32_t hexUint_UpperTemp  = 0;
+    uint32_t hexUint_LowerTemp  = 0;
+  
+    if(*(__IO uint8_t*)(ADDR_RANGE_SETTING) != FLASH_BYTE_EMPTY)
+    {
+        hexUint_UpperKey  = *(__IO uint8_t*)(ADDR_RANGE_SETTING+2) << 24;
+        hexUint_UpperKey  |= *(__IO uint8_t*)(ADDR_RANGE_SETTING+3)<< 16;
+        hexUint_UpperKey  |= *(__IO uint8_t*)(ADDR_RANGE_SETTING+4)<< 8;
+        hexUint_UpperKey  |= *(__IO uint8_t*)(ADDR_RANGE_SETTING+5);
+        
+        hexUint_LowerKey  = *(__IO uint8_t*)(ADDR_RANGE_SETTING+6) << 24;
+        hexUint_LowerKey  |= *(__IO uint8_t*)(ADDR_RANGE_SETTING+7)<< 16;
+        hexUint_LowerKey  |= *(__IO uint8_t*)(ADDR_RANGE_SETTING+8)<< 8;
+        hexUint_LowerKey  |= *(__IO uint8_t*)(ADDR_RANGE_SETTING+9);
+        
+        hexUint_UpperTemp  = *(__IO uint8_t*)(ADDR_RANGE_SETTING+10) << 24;
+        hexUint_UpperTemp  |= *(__IO uint8_t*)(ADDR_RANGE_SETTING+11)<< 16;
+        hexUint_UpperTemp  |= *(__IO uint8_t*)(ADDR_RANGE_SETTING+12)<< 8;
+        hexUint_UpperTemp  |= *(__IO uint8_t*)(ADDR_RANGE_SETTING+13);
+        
+        hexUint_LowerTemp  = *(__IO uint8_t*)(ADDR_RANGE_SETTING+14) << 24;
+        hexUint_LowerTemp  |= *(__IO uint8_t*)(ADDR_RANGE_SETTING+15)<< 16;
+        hexUint_LowerTemp  |= *(__IO uint8_t*)(ADDR_RANGE_SETTING+16)<< 8;
+        hexUint_LowerTemp  |= *(__IO uint8_t*)(ADDR_RANGE_SETTING+17);
+        
+        Convert_uint32Hex_To_Float(hexUint_UpperKey, &sMeasureRange.Upper_Key);
+        Convert_uint32Hex_To_Float(hexUint_LowerKey, &sMeasureRange.Lower_Key);
+        Convert_uint32Hex_To_Float(hexUint_UpperTemp, &sMeasureRange.Upper_Temp);
+        Convert_uint32Hex_To_Float(hexUint_LowerTemp, &sMeasureRange.Lower_Temp);
+    }
+    else
+    {
+        sMeasureRange.Upper_Key = RANGE_KEY_MAX;
+        sMeasureRange.Lower_Key = RANGE_KEY_MIN;
+        sMeasureRange.Upper_Temp = RANGE_TEMP_MAX;
+        sMeasureRange.Lower_Temp = RANGE_TEMP_MIN;
+    }
+#endif   
+}
+
 void        Init_Parameter_Sensor(void)
 {
     sSensor_Clo.sSolution_Calibration.Value     = 100;
@@ -1668,6 +1761,7 @@ void       Init_AppSensor(void)
 {
     Init_ParamCalib();
     Init_TempAlarm();
+    Init_MeasureRange();
     Init_Parameter_Sensor();
     
     Init_Chlorine_Calib();

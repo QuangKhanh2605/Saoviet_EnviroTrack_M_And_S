@@ -62,6 +62,7 @@
     #define ADDR_CALIB_TEMPERATURE      0x08020800
     #define ADDR_TEMPERATURE_ALARM      0x08021000
     #define ADDR_CALIB_DAC              0x08021800
+    #define ADDR_RANGE_SETTING          0x08022000
 
     #define ADDR_CONST_PH_COMPENSATION  0x08022000    
     #define ADDR_CALIB_CHLORINE         0x08022800

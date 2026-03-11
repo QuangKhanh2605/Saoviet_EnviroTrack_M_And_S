@@ -21,6 +21,11 @@
 #define ALARM_MIN               0
 #define ALARM_MAX               TURB_RANGE_MAX
 
+#define RANGE_KEY_MAX           TURB_RANGE_MAX
+#define RANGE_KEY_MIN           0
+#define RANGE_TEMP_MAX          80
+#define RANGE_TEMP_MIN          0
+
 typedef enum
 {
     _EVENT_SENSOR_ENTRY,
@@ -99,6 +104,14 @@ typedef struct
 }struct_TempAlarm;
 
 typedef struct
+{
+    float Upper_Key;        //Gioi han tren thong so do chinh
+    float Lower_Key;        //Gioi han duoi thong so do chinh
+    float Upper_Temp;       //Gioi han tren thong so nhiet do
+    float Lower_Temp;       //Gioi han duoi thong so nhiet do
+}struct_MeasureRange;
+
+typedef struct
 {   
     int16_t Value;
     uint8_t Scale;
@@ -135,6 +148,7 @@ extern Struct_KindMode485   sKindMode485;
 extern struct_TempAlarm     sTempAlarm;
 extern Struct_Sensor_Turb   sSensor_Turb;
 extern Struct_Hanlde_RS485  sHandleRs485;
+extern struct_MeasureRange  sMeasureRange;
 /*====================Function Handle====================*/
 
 uint8_t    AppSensor_Task(void);
@@ -145,6 +159,9 @@ void       Init_ParamCalib(void);
 
 void       Save_TempAlarm(uint8_t State, float AlarmLower, float AlarmUpper);
 void       Init_TempAlarm(void);
+
+void       Save_MeasureRange(float Upper_Key, float Lower_Key, float Upper_Temp, float Lower_Temp);
+void       Init_MeasureRange(void);
 
 float      Filter_Turb(float var);
 float      Filter_Temp(float var);

@@ -515,3 +515,5 @@ uint32_t Handle_Float_To_hexUint32(float num)
     }
     return u_hexFloat;
 }
+
+

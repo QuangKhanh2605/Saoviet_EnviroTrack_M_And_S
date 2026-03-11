@@ -30,6 +30,7 @@ sParameter_Display   sParaDisplay = {
     .Scale_TURB   = 0xFF,
     .Scale_Temp   = 0xFE,
     .Scale_Alarm  = 0xFF,
+    .Scale_Range  = 0xFF,
 };
 
 sData   sModelVersion = {(uint8_t *) "SV_ENVI_LC_TURB1000", 19}; 
@@ -41,6 +42,8 @@ uint8_t aSTT_SETTING_ENTER[14]  = {"Enter to Setup"};
 uint8_t aSTT_SETTING_WAIT[14]   = {"    Waiting   "};
 uint8_t aSTT_SETTING_DONE[14]   = {"     Done    "};
 uint8_t aSTT_SETTING_ERROR[14]  = {"     Error   "};
+
+uint8_t *aModeSelectONOFF[2] = {"OFF", "ON"};
 
 sOjectInformation  sLCDObject[] = 
 {
@@ -55,10 +58,11 @@ sOjectInformation  sLCDObject[] =
     
     {   __SCR_SET_TITLE,  "SETTING",          NULL,   _DTYPE_STRING,   0,      NULL,      0,   0, 0x00,      _LCD_SCR_SETTING },
     {   __SCR_SET_MODBUS, "1.Modbus RTU",     NULL,   _DTYPE_STRING,   0,      NULL,      2,   18, 0x00,      _LCD_SCR_SETTING },
-    {   __SCR_SET_CALIB,  "2.Calibration",    NULL,   _DTYPE_STRING,   0,      NULL,      3,   18, 0x00,      _LCD_SCR_SETTING },
+    {   __SCR_SET_CALIB,  "2.Calib",          NULL,   _DTYPE_STRING,   0,      NULL,      3,   18, 0x00,      _LCD_SCR_SETTING },
     {   __SCR_SET_OFFSET, "3.Offset",         NULL,   _DTYPE_STRING,   0,      NULL,      4,   18, 0x00,      _LCD_SCR_SETTING },
     {   __SCR_SET_ALARM,  "4.Warning",        NULL,   _DTYPE_STRING,   0,      NULL,      5,   18, 0x00,      _LCD_SCR_SETTING },
-    {   __SCR_SET_INFOR,  "5.Information",    NULL,   _DTYPE_STRING,   0,      NULL,      6,   18, 0x00,      _LCD_SCR_SETTING },
+    {   __SCR_SET_RANGE,  "5.Range",          NULL,   _DTYPE_STRING,   0,      NULL,      6,   18, 0x00,      _LCD_SCR_SETTING },
+    {   __SCR_SET_INFOR,  "6.Information",    NULL,   _DTYPE_STRING,   0,      NULL,      7,   18, 0x00,      _LCD_SCR_SETTING },
     
     {   __SET_MODBUS_TITLE,     "SET MODBUS RTU", NULL,   _DTYPE_STRING,   0,      NULL,      0,   0, 0x00,     _LCD_SCR_SET_MODBUS },
     {   __SET_MODBUS_ID,        "1.ID      : ",   NULL,   _DTYPE_U8,       0x00,   NULL,      2,   4, 0x00,      _LCD_SCR_SET_MODBUS },
@@ -85,9 +89,15 @@ sOjectInformation  sLCDObject[] =
     {   __SET_OFFSET_TEMP,  "2.Temp : ",        NULL,   _DTYPE_I32,     0,   "  ‰C",       3,  0, 0x00,    _LCD_SCR_SET_OFFSET},
     
     {   __SET_ALARM_TITLE,      "WARNING TURB",      NULL,    _DTYPE_STRING,  0,      NULL,        0,  0, 0x00,    _LCD_SCR_SET_ALARM},
-    {   __SET_ALARM_STATE,      "1.State: ",       NULL,    _DTYPE_I32,     0,      NULL,        2,  0, 0x00,    _LCD_SCR_SET_ALARM},
+    {   __SET_ALARM_STATE,      "1.Mode : ",       NULL,    _DTYPE_STRING,     0,      NULL,        2,  0, 0x00,    _LCD_SCR_SET_ALARM},
     {   __SET_ALARM_UPPER,      "2.Upper: ",       NULL,    _DTYPE_I32,     0,      " NTU",    3,  0, 0x00,    _LCD_SCR_SET_ALARM},
     {   __SET_ALARM_LOWER,      "3.Lower: ",       NULL,    _DTYPE_I32,     0,      " NTU",    4,  0, 0x00,    _LCD_SCR_SET_ALARM},
+    
+    {   __SET_RANGE_TITLE,      "RANGE SETTING",    NULL,   _DTYPE_STRING,  0,      NULL,        0,  0, 0x00,       _LCD_SCR_SET_RANGE},
+    {   __SET_RANGE_U_KEY,        "1.U_Turb: ",      NULL,   _DTYPE_I32,  0,      " NTU",        2,  0, 0x00,    _LCD_SCR_SET_RANGE},
+    {   __SET_RANGE_L_KEY,        "2.L_Turb: ",      NULL,   _DTYPE_I32,  0,      " NTU",        3,  0, 0x00,    _LCD_SCR_SET_RANGE},
+    {   __SET_RANGE_U_TEMP,       "3.U_Temp: ",     NULL,   _DTYPE_I32,  0,      " ‰C",        4,  0, 0x00,    _LCD_SCR_SET_RANGE},
+    {   __SET_RANGE_L_TEMP,       "4.L_Temp: ",     NULL,   _DTYPE_I32,  0,      " ‰C",        5,  0, 0x00,    _LCD_SCR_SET_RANGE},
     
     {   __SCR_INFOR_TITLE,          "Infor.",   NULL,   _DTYPE_STRING,   0,      NULL,      0,   0, 0x00,    _LCD_SCR_SET_INFORMATION },
     {   __SCR_INFOR_FW_VERSION_1,   "*Version", NULL,   _DTYPE_STRING,   0,      NULL,      2,   28, 0x00,      _LCD_SCR_SET_INFORMATION },
@@ -114,6 +124,8 @@ void Display_Init (void)
 //    glcd_clear_buffer();
 //    glcd_write();	
 //    Deinit_LCD12864();
+    
+    sParaDisplay.aAlarm_State_u8 = &sTempAlarm.State;
     
     sLCDObject[__SET_MODBUS_ID].pData  = &sParaDisplay.ID_u8; 
     sLCDObject[__SET_MODBUS_BR].pData  = &sParaDisplay.Baudrate_u32; 
@@ -148,11 +160,20 @@ void Display_Init (void)
     sLCDObject[__SET_OFFSET_TEMP].pData      = &sParaDisplay.temp_Offset_i32; 
     sLCDObject[__SET_OFFSET_TEMP].Scale_u8   = sParaDisplay.Scale_Temp;
     
-    sLCDObject[__SET_ALARM_STATE].pData         = &sTempAlarm.State;
+//    sLCDObject[__SET_ALARM_STATE].pData         = &sTempAlarm.State;
     sLCDObject[__SET_ALARM_UPPER].pData         = &sParaDisplay.Alarm_Upper_i32;
     sLCDObject[__SET_ALARM_UPPER].Scale_u8      = sParaDisplay.Scale_Alarm; 
     sLCDObject[__SET_ALARM_LOWER].pData         = &sParaDisplay.Alarm_Lower_i32;
     sLCDObject[__SET_ALARM_LOWER].Scale_u8      = sParaDisplay.Scale_Alarm; 
+    
+    sLCDObject[__SET_RANGE_U_KEY].pData         = &sParaDisplay.Upper_Key_i32;
+    sLCDObject[__SET_RANGE_U_KEY].Scale_u8      = sParaDisplay.Scale_Range; 
+    sLCDObject[__SET_RANGE_L_KEY].pData         = &sParaDisplay.Lower_Key_i32;
+    sLCDObject[__SET_RANGE_L_KEY].Scale_u8      = sParaDisplay.Scale_Range; 
+    sLCDObject[__SET_RANGE_U_TEMP].pData        = &sParaDisplay.Upper_Temp_i32;
+    sLCDObject[__SET_RANGE_U_TEMP].Scale_u8     = sParaDisplay.Scale_Range; 
+    sLCDObject[__SET_RANGE_L_TEMP].pData        = &sParaDisplay.Lower_Temp_i32;
+    sLCDObject[__SET_RANGE_L_TEMP].Scale_u8     = sParaDisplay.Scale_Range; 
 
     sLCDObject[__SCR_INFOR_FW_VERSION_2].pData   = sFirmVersion.Data_a8;
     sLCDObject[__SCR_INFOR_MODEL_2].pData   = sModelVersion.Data_a8;
@@ -384,6 +405,7 @@ void On_Speaker(uint16_t TimeOn)
 
 void Update_ParaDisplay(void)
 {
+    sLCDObject[__SET_ALARM_STATE].pData         = aModeSelectONOFF[*sParaDisplay.aAlarm_State_u8];
     sParaDisplay.ID_u8 = sSlave_ModbusRTU.ID;
     sParaDisplay.Baudrate_u32 = aBaudrate_value[sSlave_ModbusRTU.Baudrate];
     
@@ -403,6 +425,11 @@ void Update_ParaDisplay(void)
     
     sParaDisplay.Alarm_Upper_i32 = (int32_t)(sTempAlarm.Alarm_Upper * Calculator_Scale(sParaDisplay.Scale_Alarm));
     sParaDisplay.Alarm_Lower_i32 = (int32_t)(sTempAlarm.Alarm_Lower * Calculator_Scale(sParaDisplay.Scale_Alarm));
+    
+    sParaDisplay.Upper_Key_i32  = (int32_t)(sMeasureRange.Upper_Key  * Calculator_Scale(sParaDisplay.Scale_Range));
+    sParaDisplay.Lower_Key_i32  = (int32_t)(sMeasureRange.Lower_Key  * Calculator_Scale(sParaDisplay.Scale_Range));
+    sParaDisplay.Upper_Temp_i32 = (int32_t)(sMeasureRange.Upper_Temp * Calculator_Scale(sParaDisplay.Scale_Range));
+    sParaDisplay.Lower_Temp_i32 = (int32_t)(sMeasureRange.Lower_Temp * Calculator_Scale(sParaDisplay.Scale_Range));
 }
 
 void Display_Show_Oject (uint8_t object)
