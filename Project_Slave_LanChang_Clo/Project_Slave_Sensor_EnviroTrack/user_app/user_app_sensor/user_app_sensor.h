@@ -40,6 +40,8 @@ typedef enum
     
     _EVENT_SENSOR_RESET,
     
+    _EVENT_HANDLE_STATE_SENSOR,
+    
     _EVENT_SENSOR_END,
 }eKindEventSENSOR;
 
@@ -85,6 +87,20 @@ typedef enum
     _DCU_CALIB_CLO_POINT2,
     _DCU_CALIB_CLO_CONST_TEMP,
 }eKindDCU_Calib_Sensor;
+
+typedef enum
+{
+    _SS_DISCONNECT,
+    _SS_ERROR,
+    _SS_MEASURE,
+    _SS_CALIB,
+}eKindStateSS;
+
+typedef enum
+{
+    _MEASURE_INVALID,
+    _MEASURE_VALID,
+}eKindStateMeasure;
 
 typedef struct 
 {
@@ -168,6 +184,10 @@ typedef struct
     Struct_SS_Value sSolution_Calibration;
     
     uint32_t        Measure_AD;
+    
+    uint8_t State_Sensor_u8;
+    uint8_t State_Measure_CLO_u8;
+    uint8_t State_Measure_Temp_u8;
 }Struct_Sensor_Clo;
 
 typedef struct

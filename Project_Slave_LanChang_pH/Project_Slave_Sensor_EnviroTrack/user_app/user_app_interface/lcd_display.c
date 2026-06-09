@@ -313,7 +313,7 @@ static uint8_t _Cb_Display_Auto_SW (uint8_t event)
     static uint16_t cNext = 0;
     static uint8_t MarkButtPressed = false;
     
-    if (Check_Time_Out(sButton.LandMarkPressButton_u32, 60000*10) == true) {
+    if (Check_Time_Out(sButton.LandMarkPressButton_u32, 60000*60) == true) {
         if (MarkButtPressed == true) {
             MarkButtPressed = false;
             sLCD.sScreenNow.Index_u8 = _LCD_SCREEN_1;
