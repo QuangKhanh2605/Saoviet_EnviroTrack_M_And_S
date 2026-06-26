@@ -378,6 +378,7 @@ uint8_t Modem_Check_RTU(sData *StrUartRecei)
             switch(StrUartRecei->Data_a8[1])
             {
                 case 0x03:
+                case 0x04:
                   Length = (StrUartRecei->Data_a8[4] << 8) | StrUartRecei->Data_a8[5];
                   for(uint8_t i = _E_REGISTER_BEGIN+1; i < _E_REGISTER_END; i++)
                   {
@@ -397,7 +398,7 @@ uint8_t Modem_Check_RTU(sData *StrUartRecei)
                   }
                   if(sLogData_ModbusRTU.Length_u16 > 0 && sLogData_ModbusRTU.Length_u16%2 == 0)
                   {
-                    ModRTU_Slave_ACK_Read_Frame(&sFrame, StrUartRecei->Data_a8[0], 0x03, Register, sLogData_ModbusRTU.Length_u16/2, sLogData_ModbusRTU.Data_a8);
+                    ModRTU_Slave_ACK_Read_Frame(&sFrame, StrUartRecei->Data_a8[0], StrUartRecei->Data_a8[1], Register, sLogData_ModbusRTU.Length_u16/2, sLogData_ModbusRTU.Data_a8);
                     Send_RS458_Master(sFrame.Data_a8, sFrame.Length_u16);
                   }
                   break;
